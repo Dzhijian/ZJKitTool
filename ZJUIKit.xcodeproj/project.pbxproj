@@ -48,12 +48,7 @@
 		04C747FE1FD62AAC00A749E3 /* UIDevice+ZJDivice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C747FD1FD62AAC00A749E3 /* UIDevice+ZJDivice.m */; };
 		04C748011FD62D9E00A749E3 /* NSString+ZJString.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C748001FD62D9E00A749E3 /* NSString+ZJString.m */; };
 		04C748041FD62F3000A749E3 /* UIImage+ZJImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C748031FD62F3000A749E3 /* UIImage+ZJImage.m */; };
-		04C748181FD648B200A749E3 /* BHInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7480F1FD648B200A749E3 /* BHInfiniteScrollView.m */; };
-		04C748191FD648B200A749E3 /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C748121FD648B200A749E3 /* FXPageControl.m */; };
-		04C7481A1FD648B200A749E3 /* BHInfiniteScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C748151FD648B200A749E3 /* BHInfiniteScrollViewCell.m */; };
-		04C7481B1FD648B200A749E3 /* BHInfiniteScrollViewTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C748171FD648B200A749E3 /* BHInfiniteScrollViewTitleView.m */; };
 		04C7481F1FD66FB400A749E3 /* ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7481E1FD66FB400A749E3 /* ZJButton.m */; };
-		04C748231FD67A1600A749E3 /* EllipsePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C748221FD67A1600A749E3 /* EllipsePageControl.m */; };
 		04CD60162011C01600FEACE3 /* NSArray+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD60152011C01600FEACE3 /* NSArray+ZJHelperKit.m */; };
 		04CD60192011C26E00FEACE3 /* NSDictionary+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD60182011C26E00FEACE3 /* NSDictionary+ZJHelperKit.m */; };
 		04CD601C2011C45500FEACE3 /* NSFileManager+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD601B2011C45500FEACE3 /* NSFileManager+ZJHelperKit.m */; };
@@ -71,6 +66,9 @@
 		04CD60422011E52500FEACE3 /* UIDevice+ZJHelperKitUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD60412011E52500FEACE3 /* UIDevice+ZJHelperKitUIKit.m */; };
 		04CD60452011E5A000FEACE3 /* UIAlertView+ZJHelperKitUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD60442011E5A000FEACE3 /* UIAlertView+ZJHelperKitUIKit.m */; };
 		04CD60482011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD60472011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m */; };
+		04DA13302015E1C800C619E5 /* UIView+ZJHUDHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA132F2015E1C800C619E5 /* UIView+ZJHUDHelperKit.m */; };
+		04DA13342015E73800C619E5 /* UITextView+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13332015E73800C619E5 /* UITextView+ZJHelperKit.m */; };
+		04DA13372015E97400C619E5 /* UITextView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13362015E97400C619E5 /* UITextView+ZJMasonryKit.m */; };
 		2FC7844A5B01816D274CD513 /* libPods-ZJUIKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C669F0165B11D48267E18B /* libPods-ZJUIKitTests.a */; };
 		48D9CD8AAB600BE3862E37B5 /* libPods-ZJUIKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48E274147C054F714A648 /* libPods-ZJUIKitUITests.a */; };
 		CC64667703DAB9FA6E5B5CDF /* libPods-ZJUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FF7541D9F6268AAE2A309E /* libPods-ZJUIKit.a */; };
@@ -178,18 +176,8 @@
 		04C748021FD62F3000A749E3 /* UIImage+ZJImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZJImage.h"; sourceTree = "<group>"; };
 		04C748031FD62F3000A749E3 /* UIImage+ZJImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZJImage.m"; sourceTree = "<group>"; };
 		04C748081FD6476C00A749E3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		04C7480E1FD648B200A749E3 /* BHInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollView.h; sourceTree = "<group>"; };
-		04C7480F1FD648B200A749E3 /* BHInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollView.m; sourceTree = "<group>"; };
-		04C748111FD648B200A749E3 /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
-		04C748121FD648B200A749E3 /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
-		04C748141FD648B200A749E3 /* BHInfiniteScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollViewCell.h; sourceTree = "<group>"; };
-		04C748151FD648B200A749E3 /* BHInfiniteScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewCell.m; sourceTree = "<group>"; };
-		04C748161FD648B200A749E3 /* BHInfiniteScrollViewTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollViewTitleView.h; sourceTree = "<group>"; };
-		04C748171FD648B200A749E3 /* BHInfiniteScrollViewTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewTitleView.m; sourceTree = "<group>"; };
 		04C7481D1FD66FB400A749E3 /* ZJButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJButton.h; sourceTree = "<group>"; };
 		04C7481E1FD66FB400A749E3 /* ZJButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJButton.m; sourceTree = "<group>"; };
-		04C748211FD67A1600A749E3 /* EllipsePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipsePageControl.h; sourceTree = "<group>"; };
-		04C748221FD67A1600A749E3 /* EllipsePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipsePageControl.m; sourceTree = "<group>"; };
 		04CD60142011C01600FEACE3 /* NSArray+ZJHelperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZJHelperKit.h"; sourceTree = "<group>"; };
 		04CD60152011C01600FEACE3 /* NSArray+ZJHelperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZJHelperKit.m"; sourceTree = "<group>"; };
 		04CD60172011C26E00FEACE3 /* NSDictionary+ZJHelperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZJHelperKit.h"; sourceTree = "<group>"; };
@@ -225,6 +213,12 @@
 		04CD60442011E5A000FEACE3 /* UIAlertView+ZJHelperKitUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+ZJHelperKitUIKit.m"; sourceTree = "<group>"; };
 		04CD60462011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+ZJHelperKit.h"; sourceTree = "<group>"; };
 		04CD60472011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04DA132E2015E1C800C619E5 /* UIView+ZJHUDHelperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJHUDHelperKit.h"; sourceTree = "<group>"; };
+		04DA132F2015E1C800C619E5 /* UIView+ZJHUDHelperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJHUDHelperKit.m"; sourceTree = "<group>"; };
+		04DA13322015E73800C619E5 /* UITextView+ZJHelperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04DA13332015E73800C619E5 /* UITextView+ZJHelperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04DA13352015E97400C619E5 /* UITextView+ZJMasonryKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJMasonryKit.h"; sourceTree = "<group>"; };
+		04DA13362015E97400C619E5 /* UITextView+ZJMasonryKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		19C669F0165B11D48267E18B /* libPods-ZJUIKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJUIKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EBAE25D6B8273A0D70AF7E /* Pods-ZJUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKitTests/Pods-ZJUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		75E48E274147C054F714A648 /* libPods-ZJUIKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJUIKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +311,10 @@
 				04CD60442011E5A000FEACE3 /* UIAlertView+ZJHelperKitUIKit.m */,
 				04CD60462011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.h */,
 				04CD60472011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m */,
+				04DA132E2015E1C800C619E5 /* UIView+ZJHUDHelperKit.h */,
+				04DA132F2015E1C800C619E5 /* UIView+ZJHUDHelperKit.m */,
+				04DA13322015E73800C619E5 /* UITextView+ZJHelperKit.h */,
+				04DA13332015E73800C619E5 /* UITextView+ZJHelperKit.m */,
 			);
 			path = HelperKit;
 			sourceTree = "<group>";
@@ -341,6 +339,8 @@
 				045C450920103FF000A4AD42 /* UIButton+ZJMasonryKit.m */,
 				045C450B20104A4900A4AD42 /* UIView+ZJMasonryKit.h */,
 				045C450C20104A4900A4AD42 /* UIView+ZJMasonryKit.m */,
+				04DA13352015E97400C619E5 /* UITextView+ZJMasonryKit.h */,
+				04DA13362015E97400C619E5 /* UITextView+ZJMasonryKit.m */,
 			);
 			path = "UIKit+Masonry";
 			sourceTree = "<group>";
@@ -373,7 +373,6 @@
 				045C44E8200F22D200A4AD42 /* ZJKit+Masonry */,
 				04C7482D1FD7C70700A749E3 /* Controller */,
 				04C7481C1FD6500900A749E3 /* View */,
-				04C7480C1FD6488700A749E3 /* Lib */,
 				0475BEE51FD12E8A00617353 /* AppDelegate.h */,
 				0475BEE61FD12E8A00617353 /* AppDelegate.m */,
 				0475BEEB1FD12E8A00617353 /* Main.storyboard */,
@@ -468,61 +467,12 @@
 			path = ChooseView;
 			sourceTree = "<group>";
 		};
-		04C7480C1FD6488700A749E3 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				04C748201FD67A1600A749E3 /* EllipsePageControl */,
-				04C7480D1FD648B200A749E3 /* BHInfiniteScrollView */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		04C7480D1FD648B200A749E3 /* BHInfiniteScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				04C7480E1FD648B200A749E3 /* BHInfiniteScrollView.h */,
-				04C7480F1FD648B200A749E3 /* BHInfiniteScrollView.m */,
-				04C748101FD648B200A749E3 /* FXPageControl */,
-				04C748131FD648B200A749E3 /* Views */,
-			);
-			path = BHInfiniteScrollView;
-			sourceTree = "<group>";
-		};
-		04C748101FD648B200A749E3 /* FXPageControl */ = {
-			isa = PBXGroup;
-			children = (
-				04C748111FD648B200A749E3 /* FXPageControl.h */,
-				04C748121FD648B200A749E3 /* FXPageControl.m */,
-			);
-			path = FXPageControl;
-			sourceTree = "<group>";
-		};
-		04C748131FD648B200A749E3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				04C748141FD648B200A749E3 /* BHInfiniteScrollViewCell.h */,
-				04C748151FD648B200A749E3 /* BHInfiniteScrollViewCell.m */,
-				04C748161FD648B200A749E3 /* BHInfiniteScrollViewTitleView.h */,
-				04C748171FD648B200A749E3 /* BHInfiniteScrollViewTitleView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		04C7481C1FD6500900A749E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				047D8B2B1FD943AF00BA8D55 /* ChooseView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		04C748201FD67A1600A749E3 /* EllipsePageControl */ = {
-			isa = PBXGroup;
-			children = (
-				04C748211FD67A1600A749E3 /* EllipsePageControl.h */,
-				04C748221FD67A1600A749E3 /* EllipsePageControl.m */,
-			);
-			path = EllipsePageControl;
 			sourceTree = "<group>";
 		};
 		04C7482D1FD7C70700A749E3 /* Controller */ = {
@@ -861,21 +811,19 @@
 				0475BF201FD14F8100617353 /* UIColor+ZJColor.m in Sources */,
 				04CD60452011E5A000FEACE3 /* UIAlertView+ZJHelperKitUIKit.m in Sources */,
 				045C45072010350D00A4AD42 /* UIControl+ZJHelperBlockKit.m in Sources */,
-				04C7481A1FD648B200A749E3 /* BHInfiniteScrollViewCell.m in Sources */,
 				04CD60222011C72D00FEACE3 /* NSMutableDictionary+ZJHelperKit.m in Sources */,
 				04CD603F2011E49100FEACE3 /* UIColor+ZJHelperKitUIkit.m in Sources */,
 				045C451020104BCA00A4AD42 /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */,
-				04C7481B1FD648B200A749E3 /* BHInfiniteScrollViewTitleView.m in Sources */,
 				04CD60482011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m in Sources */,
 				04C7481F1FD66FB400A749E3 /* ZJButton.m in Sources */,
 				0475BEEA1FD12E8A00617353 /* ViewController.m in Sources */,
+				04DA13302015E1C800C619E5 /* UIView+ZJHUDHelperKit.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				045C450D20104A4900A4AD42 /* UIView+ZJMasonryKit.m in Sources */,
 				04C747FE1FD62AAC00A749E3 /* UIDevice+ZJDivice.m in Sources */,
 				047BF86A1FF0A47200442E43 /* ZJChooseOneRightCell.m in Sources */,
 				04CD60342011CD7C00FEACE3 /* NSNumber+ZJHelperKit.m in Sources */,
 				04CD60312011CC5400FEACE3 /* NSDate+ZJHelperKit.m in Sources */,
-				04C748231FD67A1600A749E3 /* EllipsePageControl.m in Sources */,
 				04242DEF1FDA6F88004682D3 /* ZJFourChildView.m in Sources */,
 				047D8B311FD949AA00BA8D55 /* ZJOneChildView.m in Sources */,
 				045C4504200F567C00A4AD42 /* UIWebView+ZJMasonryKit.m in Sources */,
@@ -885,16 +833,16 @@
 				04242DE61FDA5FA5004682D3 /* ZJTwoChildView.m in Sources */,
 				045C44EE200F26D600A4AD42 /* ZJCommonKit.m in Sources */,
 				04CD601C2011C45500FEACE3 /* NSFileManager+ZJHelperKit.m in Sources */,
+				04DA13372015E97400C619E5 /* UITextView+ZJMasonryKit.m in Sources */,
 				04242DEC1FDA6F7C004682D3 /* ZJThreeChildView.m in Sources */,
 				04CD60162011C01600FEACE3 /* NSArray+ZJHelperKit.m in Sources */,
 				04C747F21FD4DFD600A749E3 /* UITextView+ZJTextView.m in Sources */,
-				04C748191FD648B200A749E3 /* FXPageControl.m in Sources */,
 				0475BF231FD1553300617353 /* UIViewController+ZJViewController.m in Sources */,
 				04CD60282011C8EE00FEACE3 /* NSString+ZJHelperKit.m in Sources */,
 				0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */,
 				04C747EF1FD4DE6F00A749E3 /* UIScrollView+ZJScrollView.m in Sources */,
-				04C748181FD648B200A749E3 /* BHInfiniteScrollView.m in Sources */,
 				047BF8661FF09B4600442E43 /* ZJChooseViewOneLeftCell.m in Sources */,
+				04DA13342015E73800C619E5 /* UITextView+ZJHelperKit.m in Sources */,
 				04CD601F2011C5C300FEACE3 /* NSMutableArray+ZJHelperKit.m in Sources */,
 				045C44FE200F4B3C00A4AD42 /* UITextField+ZJMasonryKit.m in Sources */,
 				04CD602E2011CBD600FEACE3 /* NSUserDefaults+ZJHelperKit.m in Sources */,

@@ -32,7 +32,8 @@
 #import "UIDevice+ZJHelperKitUIKit.h"
 #import "UIAlertView+ZJHelperKitUIKit.h"
 #import "UIActionSheet+ZJHelperKit.h"
-
+#import "UIView+ZJHUDHelperKit.h"
+#import "UITextView+ZJHelperKit.h"
 
 
 

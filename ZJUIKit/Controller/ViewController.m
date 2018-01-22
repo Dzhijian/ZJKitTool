@@ -14,7 +14,6 @@
 #import "UITextView+ZJTextView.h"
 #import "UITextField+ZJTextField.h"
 #import "UIImage+ZJImage.h"
-
 #import "ZJChooseViewController.h"
 #import "ZJUIMasonsyKit.h"
 @interface ViewController ()
@@ -36,42 +35,49 @@
     UIButton *chooseBtn = [UIButton zj_buttonWithFrame:CGRectMake(50, 60, 100, 40) title:@"筛选" titleColor:[UIColor whiteColor] imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:4 traget:self action:@selector(goToChooseViewController)];
     [self.view addSubview:chooseBtn];
     
-    
     [self zj_UIKitAndMasonry];
     
     
 }
 
+#pragma mark - 快速创建控件 + marsonry 布局
 -(void)zj_UIKitAndMasonry{
+    
     [UILabel zj_labelWithFont:14 lines:1 text:@"哈哈哈哈哈" textColor:kRedColor superView:self.view constraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(150);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.height.mas_equalTo(20);
     }];
-    [UILabel zj_labelWithFont:14 lines:1 text:@"hehheh " textColor:kRedColor superView:self.view constraints:^(MASConstraintMaker *make) {
+
+    
+    UILabel *lab = [UILabel zj_labelWithFont:16 text:@"666666666"];
+    [self.view addSubview:lab];
+    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(190);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.height.mas_equalTo(20);
     }];
-    UILabel *lab = [UILabel zj_labelWithFont:16 text:@"18819206239"];
-    [self.view addSubview:lab];
-    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(230);
-        make.left.mas_equalTo(20);
-        make.right.mas_equalTo(-20);
-        make.height.mas_equalTo(20);
-    }];
     
-    
+    kWeakObject(self);
     [UIView zj_viewWithBackColor:kRedColor supView:self.view constraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
-        make.centerY.mas_equalTo(0);
-        make.width.height.mas_equalTo(150);
+        make.centerY.mas_equalTo(-60);
+        make.width.height.mas_equalTo(100);
     } onTap:^(UITapGestureRecognizer *gesture) {
-        NSLog(@"哈哈哈哈");
+        
+        [weakObject.view zj_showBusyHUD];
     }];
+    
+    
+    UITextView *textView = [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请输入" superView:self.view constraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.bottom.mas_equalTo(-100);
+        make.height.mas_equalTo(180);
+    }];
+    
 }
 
 
@@ -83,7 +89,10 @@
 }
 
 
-
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+}
 
 
 
@@ -106,9 +115,9 @@
     }
 }
 
+
 -(void)image:(UIImage *)image didFinishSaving:(NSError *)error contextInfo:(void *)contextInfo{
     NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
-    
 }
 
 
