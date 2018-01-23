@@ -116,9 +116,9 @@ typedef enum : NSUInteger {
 -(void)twoViewRightTableDidSelectedWithLeftIndex:(NSInteger)LeftIndex rightIndex:(NSInteger)rightIndex mcid:(NSString *)mc_id{
 
     if (rightIndex == 0) {
-        [self.seleBtn setTitle:@"" forState:UIControlStateNormal];
+//        [self.seleBtn setTitle:@"" forState:UIControlStateNormal];
     }else{
-        [self.seleBtn setTitle:@"" forState:UIControlStateNormal];
+//        [self.seleBtn setTitle:@"" forState:UIControlStateNormal];
     }
     [self hideViewAction:nil];
     if ([self.delegate respondsToSelector:@selector(chooseTwoViewCellDidSelectedWithLeftIndex:rightIndex:mcid:)]) {
