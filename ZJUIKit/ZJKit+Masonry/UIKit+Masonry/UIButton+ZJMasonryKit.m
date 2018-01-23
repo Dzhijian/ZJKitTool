@@ -94,7 +94,17 @@
                       constraints:(ZJConstrainMaker)constaints
                           touchUp:(ZJButtonBlock)touchUp
 {
-    return [self zj_buttonWithTitle:title titleColor:titleColor backColor:backColor fontSize:fontSize isBold:isBold cornerRadius:cornerRadius supView:supView constraints:constaints touchUp:touchUp];
+    return [self zj_buttonWithTitle:title
+                         titleColor:titleColor
+                           norImage:nil
+                      selectedImage:nil
+                          backColor:backColor
+                           fontSize:fontSize
+                             isBold:isBold
+                       cornerRadius:cornerRadius
+                            supView:supView
+                        constraints:constaints
+                            touchUp:touchUp];
 }
 
 
@@ -168,7 +178,12 @@
     if (!kIsEmptyString(title)) {
         [button setTitle:title forState:UIControlStateNormal];
     }
-    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    if (titleColor) {
+        [button setTitleColor:titleColor forState:UIControlStateNormal];
+    }else{
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
     
     UIImage *normalImage = nil;
     if ([norImage isKindOfClass:[NSString class]]) {

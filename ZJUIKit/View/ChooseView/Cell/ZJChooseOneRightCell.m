@@ -17,18 +17,29 @@
 }
 
 
+-(void)setIsSelected:(BOOL)isSelected{
+    _isSelected = isSelected;
+    if (isSelected) {
+        self.titleLab.font = kBoldFontWithSize(14);
+        self.titleLab.textColor = kOrangeColor;
+    }else{
+        self.titleLab.font = kFontWithSize(14);
+        self.titleLab.textColor = kLightGrayColor;
+    }
+}
+
 
 // 添加所子控件
 -(void)setUpAllView{
     self.titleLab = [[UILabel alloc]init];
-    _titleLab.font = [UIFont systemFontOfSize:14];
-    _titleLab.textColor = [UIColor lightGrayColor];
+    _titleLab.font = kFontWithSize(14);
+    _titleLab.textColor = kBlackColor;
     [self.contentView addSubview:self.titleLab];
     
     
     self.detailLab = [[UILabel alloc]init];
-    _detailLab.font = [UIFont systemFontOfSize:13];
-    _detailLab.textColor = [UIColor grayColor];
+    _detailLab.font = kFontWithSize(13);
+    _detailLab.textColor = kLightGrayColor;
     [self.contentView addSubview:self.detailLab];
     
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {

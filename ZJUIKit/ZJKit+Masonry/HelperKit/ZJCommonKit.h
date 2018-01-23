@@ -10,13 +10,13 @@
 #import <Masonry.h>
 
 
-// Get weak reference object.
+// 获得弱引用对象
 #define kWeakObject(object) __weak __typeof(object) weakObject = object;
 
-// Get weak reference object.
+// 弱引用的对象。
 #define kWeak(caller, object) __weak __typeof(object) caller = object;
 
-// Get strong reference object.
+// 强引用对象。
 #define kStrongObject(object) __strong __typedef(object) strongObject = object;
 
 // 获取主线程
@@ -25,10 +25,10 @@
 // 获取全局队列
 #define kGlobalThread dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
-// Radians convert to degress.
+// 弧度转换为度。
 #define kRadiansToDegrees(radians) ((radians) * (180.0 / M_PI))
 
-// Degrees convert to randians.
+// 度转换为randians。
 #define kDegreesToRadians(angle) ((angle) / 180.0 * M_PI)
 
 // 获取系统版本号
@@ -70,13 +70,13 @@ green:(g) / 255.0  \
 blue:(b) / 255.0  \
 alpha:(a)])
 
-// More easy way to use hex color to generate color.
+// 更简单的方法是使用十六进制颜色来生成颜色。
 #define kHexRGB(rgb) k16RGBColor(rgb)
 
-// More easy way to generate a color object.
+// 更简单的生成颜色对象的方法。
 #define kRGB(r,g,b) kRGBColor(r,g,b)
 
-// More easy way to generate a color object with rgb and alpha.
+// 使用rgb和alpha生成颜色对象的更简单方法。
 #define kRGBA(r,g,b,a) kRGBAColor(r, g, b, a)
 
 
@@ -115,24 +115,24 @@ alpha:(a)])
 
 #pragma mark - Judge 判断
 
-// Judge whether it is an empty string.
+// 判断它是否是空字符串。
 #define kIsEmptyString(s) (s == nil || [s isKindOfClass:[NSNull class]] || ([s isKindOfClass:[NSString class]] && s.length == 0))
 
-// Judge whether it is a nil or null object.
+// 判断它是否为nil或null对象。
 #define kIsEmptyObject(obj) (obj == nil || [obj isKindOfClass:[NSNull class]])
 
-// Judge whether it is a vaid dictionary.
+// 判断它是否是一个有效的字典。
 #define kIsDictionary(objDict) (objDict != nil && [objDict isKindOfClass:[NSDictionary class]])
 
-// Judge whether it is a valid array.
+// 判断它是否是一个有效的数组。
 #define kIsArray(objArray) (objArray != nil && [objArray isKindOfClass:[NSArray class]])
 
-// Judge whether the device it is ipad. 判断是否是ipad
+//  判断是否是ipad
 #define kIsIPad \
 ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]\
 && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
-// Judge whether current orientation is landscape. 横屏判断
+// 判断当前定位是否为横向。
 #define kIsLandscape (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
 
 

@@ -34,6 +34,7 @@
 #import "UIActionSheet+ZJHelperKit.h"
 #import "UIView+ZJHUDHelperKit.h"
 #import "UITextView+ZJHelperKit.h"
+#import "UIImageView+ZJCornerRadiusHelperKit.h"
 
 
 

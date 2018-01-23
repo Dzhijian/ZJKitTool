@@ -657,4 +657,231 @@
     return [NSDate dateWithTimeIntervalSince1970:time];
 }
 
+
+// 获取当前的时间戳(秒为单位)
++(NSString *)getNowTimeTimestamp{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"]; // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    
+    //设置时区,这个对于时间的处理有时很重要
+    
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    
+    [formatter setTimeZone:timeZone];
+    
+    NSDate *datenow = [NSDate date];//现在时间,你可以输出来看下是什么格式
+    
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+    
+    return timeSp;
+    
+}
+
+// 根据出生日期计算年龄
++(NSString *)dateToCalculateAge:(NSDate *)bornDate{
+    //获得当前系统时间
+    NSDate *currentDate = [NSDate date];
+    //获得当前系统时间与出生日期之间的时间间隔
+    NSTimeInterval time = [currentDate timeIntervalSinceDate:bornDate];
+    //时间间隔以秒作为单位,求年的话除以60*60*24*356
+    int age = ((int)time)/(3600*24*365);
+    return [NSString stringWithFormat:@"%d",age];
+}
+
++ (NSDate *)dateWithString:(NSString *)str format:(NSString *)formating
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formating];
+    return [dateFormatter dateFromString:str];
+}
+
++ (NSString *)dateToString:(NSDate *)date format:(NSString *)formating
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formating];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
+    return [dateFormatter stringFromDate:date];
+}
+
++ (NSString *)dateWithTimeInterval:(NSTimeInterval)interval format:(NSString *)formating
+{
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formating];
+    return [dateFormatter stringFromDate:date];
+}
+
++ (NSTimeInterval)timeIntervalWithString:(NSString *)str format:(NSString *)formating
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formating];
+    NSDate *date = [dateFormatter dateFromString:str];
+    return [date timeIntervalSince1970];
+}
+
++ (NSString*)weekdayStringFromDate:(NSDate*)inputDate {
+    
+    NSArray *weekdays = [NSArray arrayWithObjects:@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六", nil];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+    
+    [calendar setTimeZone: timeZone];
+    
+    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+    
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:inputDate];
+    
+    return [weekdays objectAtIndex:theComponents.weekday-1];
+}
+//根据时间戳获取星期几
++ (NSString *)getWeekDayFordate:(NSTimeInterval)dateTime
+{
+    NSArray *weekday = [NSArray arrayWithObjects: [NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
+    NSDate *newDate = [NSDate dateWithTimeIntervalSince1970:dateTime];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:newDate];
+    NSString *weekStr = [weekday objectAtIndex:components.weekday];
+    return weekStr;
+}
+
++ (NSDate *)dateWithStringMuitiform:(NSString *)str
+{
+    NSDate *time = nil;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    time = [dateFormatter dateFromString:str];
+    if (time == nil) {
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        time = [dateFormatter dateFromString:str];
+    }
+    if (time == nil) {
+        [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+        time = [dateFormatter dateFromString:str];
+    }
+    if (time == nil) {
+        [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+        time = [dateFormatter dateFromString:str];
+    }
+    if (time == nil) {
+        [dateFormatter setDateFormat:@"yyyyMMdd HH:mm:ss"];
+        time = [dateFormatter dateFromString:str];
+    }
+    if (time == nil) {
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+        time = [dateFormatter dateFromString:str];
+    }
+    if (time == nil) {
+        [dateFormatter setDateFormat:@"MMdd"];
+        time = [dateFormatter dateFromString:str];
+    }
+    return time;
+}
+
++(NSString *)dateToSpecialTime:(NSDate *)time{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
+    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    
+    NSDate *nowDate = [NSDate date];
+    
+    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init] ;
+    [inputFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [inputFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [inputFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    
+    NSDateComponents *nowCom = [calendar components:unitFlags fromDate:nowDate];
+    NSDateComponents *comCom = [calendar components:unitFlags fromDate:time];
+    
+    NSString *returnStr =@"";
+    
+    //如果为同一天
+    if (([nowCom day] == [comCom day]) && ([nowCom month] == [comCom month]) && ([nowCom year]  == [comCom year])) {
+        [inputFormatter setDateFormat:@"HH:mm"];
+        returnStr = [inputFormatter stringFromDate:time];
+    }else if(([nowCom year]  == [comCom year]) && ([nowCom day] == [comCom day] -1) && ([nowCom month] == [comCom month])){
+        [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        returnStr = [inputFormatter stringFromDate:time];
+    }else if(([nowCom year]  == [comCom year])){
+        [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        returnStr = [inputFormatter stringFromDate:time];
+    }else{
+        [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        returnStr = [inputFormatter stringFromDate:time];
+        
+    }
+    return returnStr;
+}
+
++ (NSString *)timeWithSec:(int)totalSeconds format:(NSString*)format{
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    int hours = totalSeconds / 3600;
+    
+    if (format.length == 0) {
+        return @"00:00:00";
+    }else{
+        if ([format isEqualToString:@"HH:mm:ss"]) {
+            return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
+        }else if ([format isEqualToString:@"mm:ss"]){
+            return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+        }
+    }
+    return @"00:00:00";
+}
+
++ (NSString *) compareCurrentTime:(NSTimeInterval)time
+{
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:time];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //    [dateFormatter setDateFormat:formating];
+    //
+    //
+    //    //把字符串转为NSdate
+    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+    NSDate *timeDate = [dateFormatter dateFromString:[dateFormatter stringFromDate:date]];
+    
+    //得到与当前时间差
+    NSTimeInterval  timeInterval = [timeDate timeIntervalSinceNow];
+    timeInterval = -timeInterval;
+    //标准时间和北京时间差8个小时
+    timeInterval = timeInterval; //- 8*60*60;
+    long temp = 0;
+    NSString *result;
+    if (timeInterval < 60) {
+        result = [NSString stringWithFormat:@"刚刚"];
+    }
+    else if((temp = timeInterval/60) <60){
+        result = [NSString stringWithFormat:@"%ld分钟前",temp];
+    }
+    
+    else if((temp = temp/60) <24){
+        result = [NSString stringWithFormat:@"%ld小时前",temp];
+    }
+    
+    else if((temp = temp/24) <30){
+        result = [NSString stringWithFormat:@"%ld天前",temp];
+    }
+    
+    else if((temp = temp/30) <12){
+        result = [NSString stringWithFormat:@"%ld月前",temp];
+    }
+    else{
+        temp = temp/12;
+        result = [NSString stringWithFormat:@"%ld年前",temp];
+    }
+    
+    return  result;
+}
+
+
 @end

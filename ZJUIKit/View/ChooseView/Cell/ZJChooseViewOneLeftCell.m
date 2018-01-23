@@ -22,19 +22,31 @@
 -(void)setIsSelected:(BOOL)isSelected{
     _isSelected = isSelected;
     if (isSelected) {
-        self.arrowImgV.hidden = NO;
-        self.titleLab.textColor = [UIColor orangeColor];
+        self.arrowImgV.hidden = YES;
+        self.titleLab.font = kBoldFontWithSize(14);
+        self.titleLab.textColor = k16RGBColor(0xFF960C);
     }else{
         self.arrowImgV.hidden = YES;
-        self.titleLab.textColor = [UIColor lightGrayColor];
+        self.titleLab.font = kFontWithSize(14);
+        self.titleLab.textColor = kLightGrayColor;
     }
 }
 
+-(void)setThreeIsSelected:(BOOL)threeIsSelected{
+    _threeIsSelected = threeIsSelected;
+    if (threeIsSelected) {
+        self.titleLab.font = kBoldFontWithSize(14);
+        self.titleLab.textColor = k16RGBColor(0xFF960C);
+    }else{
+        self.titleLab.font = kFontWithSize(14);
+        self.titleLab.textColor = kLightGrayColor;
+    }
+}
 // 添加所子控件
 -(void)setUpAllView{
     self.titleLab = [[UILabel alloc]init];
-    _titleLab.font = [UIFont systemFontOfSize:14];
-    _titleLab.textColor = [UIColor lightGrayColor];
+    _titleLab.font = kFontWithSize(14);
+    _titleLab.textColor = kLightGrayColor;
     [self.contentView addSubview:self.titleLab];
     
     

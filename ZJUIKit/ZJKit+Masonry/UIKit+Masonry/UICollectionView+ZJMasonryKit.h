@@ -11,11 +11,9 @@
 @interface UICollectionView (ZJMasonryKit)
 
 /**
- *    Create a colellection view with flow layout, scroll horizontal or vertical,
- *  set item size, delegate, data source, item spacing and line spacing and so on.
+ *    创建一个带有流布局的colellection视图，滚动水平或垂直，设置项目大小、委托、数据源、项目间距和行间距等。
  *
- *  When super view is not nil, it will be automatically added constraints with edges of
- *  super view.
+ *    当父视图不是nil时，它将会自动添加约束。
  *
  *    @param delegate                                Delegate and data source.
  *    @param isHorizontal                            UICollectionViewScrollDirection
@@ -29,8 +27,8 @@
 
 /**
  *
- *    Create a colellection view with flow layout, scroll horizontal or vertical,
- *  set item size, delegate, data source, item spacing and line spacing and so on.
+ *    创建一个带有流布局的colellection视图，滚动水平或垂直。,
+ *  设置项目大小、委托、数据源、项目间距和行间距等。.
  *
  *  When super view is not nil, it will be automatically added constraints with edges of
  *  super view.
@@ -49,8 +47,8 @@
 
 /**
  *
- *    Create a colellection view with flow layout, scroll horizontal or vertical,
- *  set item size, delegate, data source, item spacing and line spacing and so on.
+ *    创建一个带有流布局的colellection视图，滚动水平或垂直,
+ *  设置项目大小、委托、数据源、项目间距和行间距等.
  *
  *  When super view is not nil, it will be automatically added constraints with edges of
  *  super view.
@@ -73,8 +71,8 @@
 
 /**
  *
- *    Create a colellection view with flow layout, scroll horizontal or vertical,
- *  set item size, delegate, data source, item spacing and line spacing and so on.
+ *    创建一个带有流布局的colellection视图，滚动水平或垂直,
+ *  设置项目大小、委托、数据源、项目间距和行间距等。.
  *
  *    @param delegate                                Delegate and data source.
  *    @param isHorizontal                            UICollectionViewScrollDirection

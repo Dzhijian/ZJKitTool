@@ -23,6 +23,7 @@
 @property(nonatomic ,weak) id<ZJChooseControlDelegate> delegate;
 // 按钮数组
 @property(nonatomic ,strong) NSMutableArray *btnArr;
+
 -(void)setUpAllViewWithTitleArr:(NSArray *)titleArr;
 
 @end

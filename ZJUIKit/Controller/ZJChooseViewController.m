@@ -20,10 +20,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(goBack)];
     self.title = @"ChooseView";
     [self setUpAllView];
+}
+
+-(void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)setUpAllView{

@@ -13,7 +13,11 @@
 @property(nonatomic ,strong) UILabel        *titleLab;
 @property(nonatomic ,strong) UIImageView    *arrowImgV;
 
+// oneView isSelected
 @property(nonatomic ,assign) BOOL isSelected;
+
+// threeView isSelected
+@property(nonatomic ,assign) BOOL threeIsSelected;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 

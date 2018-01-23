@@ -16,6 +16,10 @@
 #import "UIImage+ZJImage.h"
 #import "ZJChooseViewController.h"
 #import "ZJUIMasonsyKit.h"
+#import "ZJKitNaigationController.h"
+
+#import "ZJCommitViewController.h"
+
 @interface ViewController ()
 
 @property(nonatomic ,strong) UIButton *btn;
@@ -35,7 +39,21 @@
     UIButton *chooseBtn = [UIButton zj_buttonWithFrame:CGRectMake(50, 60, 100, 40) title:@"筛选" titleColor:[UIColor whiteColor] imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:4 traget:self action:@selector(goToChooseViewController)];
     [self.view addSubview:chooseBtn];
     
+    kWeakObject(self);
+    [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor backColor:kOrangeColor fontSize:16 isBold:YES cornerRadius:3 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(chooseBtn.mas_centerY);
+        make.left.equalTo(chooseBtn.mas_right).offset(50);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(40);
+    } touchUp:^(id sender) {
+        NSLog(@"123456");
+        ZJCommitViewController *commmit = [[ZJCommitViewController alloc]init];
+        [weakObject.navigationController pushViewController:commmit animated:YES];
+    }];
+    
     [self zj_UIKitAndMasonry];
+    
+    
     
     
 }
@@ -71,7 +89,7 @@
     }];
     
     
-    UITextView *textView = [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请输入" superView:self.view constraints:^(MASConstraintMaker *make) {
+   [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请输入..." superView:self.view constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.bottom.mas_equalTo(-100);
@@ -84,8 +102,7 @@
 -(void)goToChooseViewController{
     
     ZJChooseViewController *choose = [[ZJChooseViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:choose];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:choose animated:YES];
 }
 
 

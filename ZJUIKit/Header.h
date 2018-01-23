@@ -23,5 +23,5 @@
 #define SINGLE_LINE_WIDTH           (1 / [UIScreen mainScreen].scale)
 
 
-
+#import "UIImageView+WebCache.h"
 #import "ZJHelperKit.h"

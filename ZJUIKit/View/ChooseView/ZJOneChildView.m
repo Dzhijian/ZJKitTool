@@ -10,11 +10,11 @@
 #import "ZJChooseViewOneLeftCell.h"
 #import "ZJChooseOneRightCell.h"
 
-
 @interface ZJOneChildView ()<UITableViewDelegate,UITableViewDataSource>
 
 // 选中的cell
 @property(nonatomic ,assign) NSInteger leftSeleIndex;
+@property(nonatomic ,assign) NSInteger rightSeleIndex;
 
 @end
 
@@ -25,6 +25,7 @@
         [self setUpAllView];
         // 默认第一个cell
         self.leftSeleIndex  = 0;
+        self.rightSeleIndex = 0;
     }
     return self;
 }
@@ -34,32 +35,60 @@
     [self addSubview:self.rightTable];
 }
 
+// 设置左边的tableview 数据
+-(void)setLeftDataArray:(NSArray *)leftDataArray{
 
+    _leftDataArray = leftDataArray;
+
+    [self.leftTable reloadData];
+    [self.rightTable reloadData];
+
+}
+
+// 设置右边的tableview 数据
+-(void)setRightDataArray:(NSArray *)rightDataArray{
+
+    _rightDataArray = rightDataArray;
+    [self.rightTable reloadData];
+
+}
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    if (tableView == self.leftTable) {
+        return  15;
+//        return self.leftDataArray.count;
+    }else{
+        return 10;
+//        return self.rightDataArray.count;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.leftTable) {
         ZJChooseViewOneLeftCell *cell = [ZJChooseViewOneLeftCell cellWithTableView:tableView];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLab.text = [NSString stringWithFormat:@"leftView第%ld行",indexPath.row];
+        // 标题
+        cell.titleLab.text = [NSString stringWithFormat:@"第%ld行",indexPath.row];
+        
         if (indexPath.row == self.leftSeleIndex) {
+            cell.isSelected = YES;
+        }else{
+            cell.isSelected = NO;
+        }
+        
+        return cell;
+    }else{
+        
+        ZJChooseOneRightCell *cell = [ZJChooseOneRightCell cellWithTableView:tableView];
+        cell.titleLab.text = [NSString stringWithFormat:@"第%ld组%ld行",self.leftSeleIndex,indexPath.row];
+        if (indexPath.row == self.rightSeleIndex) {
             cell.isSelected = YES;
             
         }else{
             cell.isSelected = NO;
             
         }
-        return cell;
-    }else{
-        ZJChooseOneRightCell *cell = [ZJChooseOneRightCell cellWithTableView:tableView];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLab.text = [NSString stringWithFormat:@"rightView"];
-        cell.detailLab.text = [NSString stringWithFormat:@"(%ld)",indexPath.row];
-
         return cell;
     }
     
@@ -74,11 +103,26 @@
     NSLog(@"%ld",indexPath.row);
     
     if (tableView == self.leftTable) {
-        [self.leftTable deselectRowAtIndexPath:indexPath animated:YES];
+        
         self.leftSeleIndex = indexPath.row;
         [self.leftTable reloadData];
+        self.leftSeleIndex = indexPath.row;
+        
+        self.rightSeleIndex = 0;
+        [self.rightTable reloadData];
+        
+//        if ([self.delegate respondsToSelector:@selector(oneViewLeftTableviewDidSelectedWithIndex:)]) {
+//            [self.delegate oneViewLeftTableviewDidSelectedWithIndex:indexPath.row];
+//        }
+        
     }else{
         
+        self.rightSeleIndex = indexPath.row;
+        [self.rightTable reloadData];
+        [self.rightTable deselectRowAtIndexPath:indexPath animated:YES];
+        if ([self.delegate respondsToSelector:@selector(oneViewRightTableviewDidSelectedWithLeftIndex:rightIndex:)]) {
+            [self.delegate oneViewRightTableviewDidSelectedWithLeftIndex:self.leftSeleIndex rightIndex:indexPath.row];
+        }
         
     }
     
@@ -89,7 +133,7 @@
 
 -(UITableView *)leftTable{
     if (!_leftTable) {
-        _leftTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth/2 - 15, 0) style:UITableViewStylePlain];
+        _leftTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/2 - 15, 0) style:UITableViewStylePlain];
         _leftTable.delegate = self;
         _leftTable.dataSource = self;
         _leftTable.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -99,7 +143,7 @@
 }
 -(UITableView *)rightTable{
     if (!_rightTable) {
-        _rightTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth/2+15, 0) style:UITableViewStylePlain];
+        _rightTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/2+15, 0) style:UITableViewStylePlain];
         _rightTable.delegate = self;
         _rightTable.dataSource = self;
         _rightTable.separatorStyle = UITableViewCellSeparatorStyleNone;

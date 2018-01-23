@@ -11,7 +11,7 @@
 #import "ZJTwoChildView.h"
 #import "ZJThreeChildView.h"
 #import "ZJFourChildView.h"
-
+#import "ZJChooseModel.h"
 typedef enum : NSUInteger {
     ChooseViewShowOne,
     ChooseViewShowTwo,
@@ -19,7 +19,7 @@ typedef enum : NSUInteger {
     ChooseViewShowFour
 } ChooseViewShow;
 
-@interface ZJChooseShowView()
+@interface ZJChooseShowView()<ZJOneChildViewDelegate,ZJTwoChildViewDelegate,ZJThreeChildViewDelegate,ZJFourChildViewDelegate>
 
 @property(nonatomic ,strong) ZJOneChildView         *oneView;
 @property(nonatomic ,strong) ZJTwoChildView         *twoView;
@@ -30,6 +30,9 @@ typedef enum : NSUInteger {
 @property(nonatomic ,assign) ChooseViewShow         chooseView;
 @property(nonatomic ,strong) UIButton               *seleBtn;
 
+//@property(nonatomic ,strong) NSArray                *twoTitleArr;
+@property(nonatomic ,strong) NSArray                *threeTitleArr;
+
 
 @end
 
@@ -37,17 +40,110 @@ typedef enum : NSUInteger {
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.0];
-        self.viewArray = @[self.oneView,self.twoView,self.threeView,self.fourView];
-        [self addSubview:self.hiddenView];
-        UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideAction:)];
-        [self.hiddenView addGestureRecognizer:tap];
+        
+        
+        [self setUpAllView];
         
     }
     return self;
 }
 
--(void)hideAction:(UITapGestureRecognizer *)gesture{
+-(void)setUpAllView{
+    self.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.0];
+    
+    self.threeTitleArr = @[@"智能排序",@"离我最近",@"星级最高",@"人气最高",@"价格最低",@"价格最高"];
+    self.viewArray = @[self.oneView,self.twoView,self.threeView,self.fourView];
+    [self addSubview:self.hiddenView];
+    UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideViewAction:)];
+    [self.hiddenView addGestureRecognizer:tap];
+}
+
+
+
+// oneView data
+-(void)setAllMerAreaArr:(NSArray *)allMerAreaArr{
+    _allMerAreaArr = allMerAreaArr;
+    self.oneView.leftDataArray = allMerAreaArr;
+
+}
+
+-(void)setChildMerArr:(NSArray *)childMerArr{
+    _childMerArr = childMerArr;
+    self.oneView.rightDataArray = childMerArr;
+}
+
+// twoView Data
+-(void)setMerCateArray:(NSArray *)merCateArray{
+    
+    _merCateArray = merCateArray;
+    self.twoView.dataArray = (NSMutableArray *)merCateArray;
+}
+
+-(void)setTwoLeftIndex:(NSInteger)twoLeftIndex{
+    _twoLeftIndex = twoLeftIndex;
+    self.twoView.leftSeleIndex = twoLeftIndex + 1;
+}
+
+-(void)setTwoRightIndex:(NSInteger)twoRightIndex{
+    _twoRightIndex = twoRightIndex;
+    if (twoRightIndex>0) {
+        self.twoView.rightSeleIndex = twoRightIndex;
+    }else{
+        self.twoView.rightSeleIndex = 0;
+    }
+}
+
+#pragma mark - 子视图的回调
+-(void)oneViewLeftTableviewDidSelectedWithLeftIndex:(NSInteger)leftIndex rightIndex:(NSInteger)rightIndex{
+
+}
+
+-(void)oneViewRightTableviewDidSelectedWithLeftIndex:(NSInteger)leftIndex rightIndex:(NSInteger)rightIndex{
+    
+    [self hideViewAction:nil];
+    if ([self.delegate respondsToSelector:@selector(chooseOneViewWithTableLeftIndex:rightIndex:)]) {
+        [self.delegate chooseOneViewWithTableLeftIndex:leftIndex rightIndex:rightIndex];
+    }
+}
+
+-(void)twoViewLeftTableDidSelectedWithIndex:(NSInteger)index{
+
+    
+}
+
+-(void)twoViewRightTableDidSelectedWithLeftIndex:(NSInteger)LeftIndex rightIndex:(NSInteger)rightIndex mcid:(NSString *)mc_id{
+
+    if (rightIndex == 0) {
+        [self.seleBtn setTitle:@"" forState:UIControlStateNormal];
+    }else{
+        [self.seleBtn setTitle:@"" forState:UIControlStateNormal];
+    }
+    [self hideViewAction:nil];
+    if ([self.delegate respondsToSelector:@selector(chooseTwoViewCellDidSelectedWithLeftIndex:rightIndex:mcid:)]) {
+        [self.delegate chooseTwoViewCellDidSelectedWithLeftIndex:LeftIndex rightIndex:rightIndex mcid:mc_id];
+    }
+}
+
+
+-(void)threeViewTableviewDidSelectedWithIndex:(NSInteger)index{
+    [self.seleBtn setTitle:self.threeTitleArr[index] forState:UIControlStateNormal];
+    [self hideViewAction:nil];
+    if ([self.delegate respondsToSelector:@selector(chooseThreeViewCellDidSelectedWithIndex:)]) {
+        [self.delegate chooseThreeViewCellDidSelectedWithIndex:index];
+    }
+}
+
+-(void)fourViewBtnSelectedWithIsProm:(BOOL)isprom isVer:(BOOL)isVer{
+    [self hideViewAction:nil];
+    
+    if ([self.delegate respondsToSelector:@selector(chooseFourViewBtnResultWithIsProm:isVer:)]) {
+        [self.delegate chooseFourViewBtnResultWithIsProm:isprom isVer:isVer];
+    }
+}
+
+
+#pragma mark - 隐藏当前视图
+-(void)hideViewAction:(UITapGestureRecognizer *)gesture{
     
     // 改变按钮的状态
     self.seleBtn.selected = !self.seleBtn.isSelected;
@@ -79,6 +175,7 @@ typedef enum : NSUInteger {
         if (btn.tag == sender.tag) {
             
         }else{
+            
             btn.selected = NO;
         }
     }
@@ -134,9 +231,9 @@ typedef enum : NSUInteger {
             
         }else{
             childView.hidden = YES;
-            childView.frame = CGRectMake(0, 0, ScreenWidth, 0);
+            childView.frame = CGRectMake(0, 0, kScreenWidth, 0);
             for (UITableView *tabView in childView.subviews) {
-                tabView.frame = CGRectMake(0, 0, ScreenWidth, 0);
+                tabView.frame = CGRectMake(0, 0, kScreenWidth, 0);
             }
         }
     }
@@ -149,16 +246,16 @@ typedef enum : NSUInteger {
     [super layoutSubviews];
     if (self.oneView.isHidden) {
         CGFloat hiddY = CGRectGetMaxY(self.oneView.frame);
-        self.hiddenView.frame = CGRectMake(0, hiddY, ScreenWidth, ScreenHeight - hiddY);
+        self.hiddenView.frame = CGRectMake(0, hiddY, kScreenWidth, kScreenHeight - hiddY);
     }else if (self.twoView.isHidden){
         CGFloat hiddY = CGRectGetMaxY(self.twoView.frame);
-        self.hiddenView.frame = CGRectMake(0, hiddY, ScreenWidth, ScreenHeight - hiddY);
+        self.hiddenView.frame = CGRectMake(0, hiddY, kScreenWidth, kScreenHeight - hiddY);
     }else if (self.threeView.isHidden){
         CGFloat hiddY = CGRectGetMaxY(self.threeView.frame);
-        self.hiddenView.frame = CGRectMake(0, hiddY, ScreenWidth, ScreenHeight - hiddY);
+        self.hiddenView.frame = CGRectMake(0, hiddY, kScreenWidth, kScreenHeight - hiddY);
     }else if (self.fourView.isHidden){
         CGFloat hiddY = CGRectGetMaxY(self.fourView.frame);
-        self.hiddenView.frame = CGRectMake(0, hiddY, ScreenWidth, ScreenHeight - hiddY);
+        self.hiddenView.frame = CGRectMake(0, hiddY, kScreenWidth, kScreenHeight - hiddY);
     }
 }
 
@@ -169,9 +266,9 @@ typedef enum : NSUInteger {
     [self addSubview:self.oneView];
     _oneView.hidden = NO;
     [UIView animateWithDuration:0.25 animations:^{
-        self.oneView.frame = CGRectMake(0, 0, ScreenWidth, 400);
-        self.oneView.leftTable.frame = CGRectMake(0, 0, ScreenWidth/2, 400);
-        self.oneView.rightTable.frame = CGRectMake(ScreenWidth/2, 0, ScreenWidth/2, 400);
+        self.oneView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight * 0.55);
+        self.oneView.leftTable.frame = CGRectMake(0, 0, kScreenWidth/2, kScreenHeight * 0.55);
+        self.oneView.rightTable.frame = CGRectMake(kScreenWidth/2, 0, kScreenWidth/2, kScreenHeight * 0.55);
         self.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.3];
     } completion:^(BOOL finished) {
         
@@ -181,9 +278,9 @@ typedef enum : NSUInteger {
 -(void)hideOneView{
     self.backgroundColor = [UIColor clearColor];
     [UIView animateWithDuration:0.25 animations:^{
-        self.oneView.frame = CGRectMake(0, 0, ScreenWidth, 0);
-        self.oneView.leftTable.frame = CGRectMake(0, 0, ScreenWidth/2, 0);
-        self.oneView.rightTable.frame = CGRectMake(ScreenWidth/2, 0, ScreenWidth/2, 0);
+        self.oneView.frame = CGRectMake(0, 0, kScreenWidth, 0);
+        self.oneView.leftTable.frame = CGRectMake(0, 0, kScreenWidth/2, 0);
+        self.oneView.rightTable.frame = CGRectMake(kScreenWidth/2, 0, kScreenWidth/2, 0);
     } completion:^(BOOL finished) {
         self.oneView.hidden = YES;
         self.hidden = YES;
@@ -196,9 +293,10 @@ typedef enum : NSUInteger {
     [self addSubview:self.twoView];
     _twoView.hidden = NO;
     [UIView animateWithDuration:0.25 animations:^{
-        _twoView.frame = CGRectMake(0, 0, ScreenWidth, 500);
-        _twoView.leftTable.frame = CGRectMake(0, 0, ScreenWidth/2, 500);
-        _twoView.rightTable.frame = CGRectMake(ScreenWidth/2, 0, ScreenWidth/2, 500);
+        _twoView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight * 0.5);
+        _twoView.leftTable.frame = CGRectMake(0, 0, kScreenWidth/2, kScreenHeight * 0.5);
+        _twoView.rightTable.frame = CGRectMake(kScreenWidth/2, 0, kScreenWidth/2, kScreenHeight * 0.5);
+        
         self.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.3];
     } completion:^(BOOL finished) {
         
@@ -208,9 +306,10 @@ typedef enum : NSUInteger {
 -(void)hideTwoView{
     self.backgroundColor = [UIColor clearColor];
     [UIView animateWithDuration:0.25 animations:^{
-        _twoView.frame = CGRectMake(0, 0, ScreenWidth, 0);
-        _twoView.leftTable.frame = CGRectMake(0, 0, ScreenWidth/2, 0);
-        _twoView.rightTable.frame = CGRectMake(ScreenWidth/2, 0, ScreenWidth/2, 0);
+        _twoView.frame = CGRectMake(0, 0, kScreenWidth, 0);
+        _twoView.leftTable.frame = CGRectMake(0, 0, kScreenWidth/2, 0);
+        _twoView.rightTable.frame = CGRectMake(kScreenWidth/2, 0, kScreenWidth/2, 0);
+        
     } completion:^(BOOL finished) {
         _twoView.hidden = YES;
         self.hidden = YES;
@@ -224,8 +323,8 @@ typedef enum : NSUInteger {
     [self addSubview:self.threeView];
     _threeView.hidden = NO;
     [UIView animateWithDuration:0.25 animations:^{
-        _threeView.frame = CGRectMake(0, 0, ScreenWidth, 300);
-       
+        _threeView.frame = CGRectMake(0, 0, kScreenWidth, 280);
+        _threeView.mainTable.frame = CGRectMake(0, 0, kScreenWidth, 280);
         self.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.3];
     } completion:^(BOOL finished) {
         
@@ -235,8 +334,8 @@ typedef enum : NSUInteger {
 -(void)hideThreeView{
     self.backgroundColor = [UIColor clearColor];
     [UIView animateWithDuration:0.25 animations:^{
-        _threeView.frame = CGRectMake(0, 0, ScreenWidth, 0);
-       
+        _threeView.frame = CGRectMake(0, 0, kScreenWidth, 0);
+        _threeView.mainTable.frame = CGRectMake(0, 0, kScreenWidth, 0);
     } completion:^(BOOL finished) {
         _threeView.hidden = YES;
         self.hidden = YES;
@@ -250,19 +349,23 @@ typedef enum : NSUInteger {
     [self addSubview:self.fourView];
     _fourView.hidden = NO;
     [UIView animateWithDuration:0.25 animations:^{
-        _fourView.frame = CGRectMake(0, 0, ScreenWidth, 450);
+        _fourView.frame = CGRectMake(0, 0, kScreenWidth, 145);
         
         self.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.3];
     } completion:^(BOOL finished) {
-        
+        for (UIView *view in self.fourView.subviews) {
+            view.hidden = NO;
+        }
     }];
 }
 
 -(void)hideFourView{
     self.backgroundColor = [UIColor clearColor];
     [UIView animateWithDuration:0.25 animations:^{
-        _fourView.frame = CGRectMake(0, 0, ScreenWidth, 0);
-        
+        _fourView.frame = CGRectMake(0, 0, kScreenWidth, 0);
+        for (UIView *view in self.fourView.subviews) {
+            view.hidden = YES;
+        }
     } completion:^(BOOL finished) {
         _fourView.hidden = YES;
         self.hidden = YES;
@@ -272,36 +375,42 @@ typedef enum : NSUInteger {
 
 -(ZJOneChildView *)oneView{
     if (!_oneView) {
-        _oneView = [[ZJOneChildView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0)];
+        _oneView = [[ZJOneChildView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
         _oneView.hidden = YES;
-        _oneView.backgroundColor = [UIColor orangeColor];
+        _oneView.backgroundColor = kWhiteColor;
+        _oneView.delegate = self;
     }
     return _oneView;
 }
 
 -(ZJTwoChildView *)twoView{
     if (!_twoView) {
-        _twoView = [[ZJTwoChildView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0)];
+        _twoView = [[ZJTwoChildView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
         _twoView.hidden = YES;
-        _twoView.backgroundColor = [UIColor redColor];
+        _twoView.delegate = self;
+        _twoView.backgroundColor = kWhiteColor;
     }
     return _twoView;
 }
 
 -(ZJThreeChildView *)threeView{
     if (!_threeView) {
-        _threeView = [[ZJThreeChildView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0)];
+        _threeView = [[ZJThreeChildView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
         _threeView.hidden = YES;
-        _threeView.backgroundColor = [UIColor greenColor];
+        _threeView.delegate = self;
+        _threeView.titleArray = self.threeTitleArr;
+        _threeView.backgroundColor = kWhiteColor;
+        
     }
     return _threeView;
 }
 
 -(ZJFourChildView *)fourView{
     if (!_fourView) {
-        _fourView = [[ZJFourChildView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0)];
+        _fourView = [[ZJFourChildView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
         _fourView.hidden = YES;
-        _fourView.backgroundColor = [UIColor blueColor];
+        _fourView.delegate = self;
+        _fourView.backgroundColor = kWhiteColor;
     }
     return _fourView;
 }

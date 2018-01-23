@@ -1,20 +1,37 @@
 PODS:
+  - KSPhotoBrowser (0.1.3):
+    - YYWebImage (~> 1.0.5)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.13)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
+  - KSPhotoBrowser
   - Masonry (~> 1.0.2)
   - MBProgressHUD
+  - MJRefresh
   - SDWebImage (~> 4.0.0)
 
 SPEC CHECKSUMS:
+  KSPhotoBrowser: 2c7a58cce183556e86dce863748e41133310345b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: 56a28aa628c9895e97a518dabaecf70b18f92f32
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 63c6ea5663a4c3cfb661375a9f4928e63c53777d
+PODFILE CHECKSUM: 389f10c0352f34cb9e08959002d04bc38c717fe5
 
 COCOAPODS: 1.2.0
