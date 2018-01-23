@@ -403,7 +403,7 @@
 			children = (
 				045C44E8200F22D200A4AD42 /* ZJKit+Masonry */,
 				04C7482D1FD7C70700A749E3 /* Controller */,
-				04DA13382016DFB800C619E5 /* MVVM(评论列表) */,
+				04DA13382016DFB800C619E5 /* Commit */,
 				04C7481C1FD6500900A749E3 /* View */,
 				0475BEE51FD12E8A00617353 /* AppDelegate.h */,
 				0475BEE61FD12E8A00617353 /* AppDelegate.m */,
@@ -539,7 +539,7 @@
 			path = ControllerKit;
 			sourceTree = "<group>";
 		};
-		04DA13382016DFB800C619E5 /* MVVM(评论列表) */ = {
+		04DA13382016DFB800C619E5 /* Commit */ = {
 			isa = PBXGroup;
 			children = (
 				04DA13572017036500C619E5 /* CommitsData.json */,
@@ -547,7 +547,7 @@
 				04DA133A2016E00C00C619E5 /* View */,
 				04DA13392016E00500C619E5 /* Controller */,
 			);
-			path = "MVVM(评论列表)";
+			path = Commit;
 			sourceTree = "<group>";
 		};
 		04DA13392016E00500C619E5 /* Controller */ = {

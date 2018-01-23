@@ -60,30 +60,32 @@ typedef enum : NSUInteger {
 
 
 
-// oneView data
+// set oneView leftdata
 -(void)setAllMerAreaArr:(NSArray *)allMerAreaArr{
     _allMerAreaArr = allMerAreaArr;
     self.oneView.leftDataArray = allMerAreaArr;
 
 }
-
+// set oneView rightData
 -(void)setChildMerArr:(NSArray *)childMerArr{
     _childMerArr = childMerArr;
     self.oneView.rightDataArray = childMerArr;
 }
 
-// twoView Data
+// set twoView leftData
 -(void)setMerCateArray:(NSArray *)merCateArray{
     
     _merCateArray = merCateArray;
     self.twoView.dataArray = (NSMutableArray *)merCateArray;
 }
 
+// set twoView rightData
 -(void)setTwoLeftIndex:(NSInteger)twoLeftIndex{
     _twoLeftIndex = twoLeftIndex;
     self.twoView.leftSeleIndex = twoLeftIndex + 1;
 }
 
+// set twoView Selected Index
 -(void)setTwoRightIndex:(NSInteger)twoRightIndex{
     _twoRightIndex = twoRightIndex;
     if (twoRightIndex>0) {
