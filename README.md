@@ -1,6 +1,6 @@
 # ZJUIKitTool
 MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。
-
+请各位大神多多指教，多多支持点个Star。
 //比如快速创建一个按钮，并实现点击事件：
 
     [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor backColor:kOrangeColor fontSize:16 isBold:YES cornerRadius:3 supView:self.view constraints:^(MASConstraintMaker *make) {
@@ -23,5 +23,12 @@ MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视�
     }];
 
 
+ 在评论列表中浏览图片推荐使用 KSPhotoBrowser 第三方库浏览
+ /*
+  * 使用 KSPhotoBrowser 浏览图片
+  * 使用cocoaPods 导入
+  *
+  * pod 'KSPhotoBrowser'
+  *
+  */ 
 
-请各位大神多多指教，多多支持点个Star。
