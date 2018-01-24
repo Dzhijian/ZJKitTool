@@ -6,6 +6,14 @@
 //  Copyright © 2017年 邓志坚. All rights reserved.
 //
 
+/**
+ *  ZJUIKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
+ */
+
 #import "ZJCommitPhotoView.h"
 #import <KSPhotoBrowser/KSPhotoBrowser.h>
 #import "YYWebImage.h"
@@ -37,7 +45,21 @@
     }
 }
 
-// 图片点击事件
+#pragma mark - 设置图片数据
+-(void)setPic_urls:(NSArray *)pic_urls{
+    _pic_urls = pic_urls;
+    NSInteger count = self.subviews.count;
+    for (int i = 0; i<count; i++) {
+        UIImageView *imageV = self.subviews[i];
+        if (i<pic_urls.count) {
+            [imageV yy_setImageWithURL:[NSURL URLWithString:pic_urls[i]] options:YYWebImageOptionShowNetworkActivity];
+            imageV.hidden = NO;
+        }else{
+            imageV.hidden = YES;
+        }
+    }
+}
+#pragma mark -  图片点击事件
 -(void)imgVClick:(UITapGestureRecognizer *)sender{
     NSLog(@"点击了第%ld个图片",sender.view.tag + 1);
     
@@ -50,7 +72,7 @@
         [items addObject:item];
     }
     
-    
+    // 使用 KSPhotoBrowser 浏览图片
     KSPhotoBrowser *browser = [KSPhotoBrowser browserWithPhotoItems:items selectedIndex:sender.view.tag];
     browser.delegate = self;
     browser.dismissalStyle = KSPhotoBrowserInteractiveDismissalStyleRotation;
@@ -65,20 +87,7 @@
     NSLog(@"----------===>%ld",index);
 }
 
-// 设置图片
--(void)setPic_urls:(NSArray *)pic_urls{
-    _pic_urls = pic_urls;
-    NSInteger count = self.subviews.count;
-    for (int i = 0; i<count; i++) {
-        UIImageView *imageV = self.subviews[i];
-        if (i<pic_urls.count) {
-            [imageV yy_setImageWithURL:[NSURL URLWithString:pic_urls[i]] options:YYWebImageOptionShowNetworkActivity];
-            imageV.hidden = NO;
-        }else{
-            imageV.hidden = YES;
-        }
-    }
-}
+
 
 
 // 计算尺寸

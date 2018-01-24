@@ -6,6 +6,14 @@
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 
+/**
+ *  ZJUIKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
+ */
+
 #import "ZJCommitCell.h"
 #import "ZJCommitFrame.h"
 #import "ZJCommitPhotoView.h"
@@ -14,16 +22,21 @@
 #import "ZJButton.h"
 #import "ZJImgLeftBtn.h"
 @interface ZJCommitCell()
-
+// 头像
 @property(nonatomic, weak) UIImageView          *iconView;
+// 昵称
 @property(nonatomic, weak) UILabel              *nameLab;
+// 时间
 @property(nonatomic, weak) UILabel              *timeLab;
+// 内容
 @property(nonatomic, weak) UILabel              *contentLab;
-@property(nonatomic ,weak) UIButton           *deleteBtn;
-
-@property(nonatomic,weak) ZJCommitPhotoView     *photosView;
-@property(nonatomic,weak) ZJStarsView           *starView;
-
+// 删除按钮
+@property(nonatomic, weak) UIButton             *deleteBtn;
+// 图片视图
+@property(nonatomic, weak) ZJCommitPhotoView    *photosView;
+// 星级视图
+@property(nonatomic, weak) ZJStarsView          *starView;
+// 模型
 @property(nonatomic, strong) ZJCommit           *commit;
 
 @end
@@ -42,6 +55,7 @@
 -(void)setCommitFrame:(ZJCommitFrame *)commitFrame{
     _commitFrame = commitFrame;
     
+    // 设置控件的Frame
     _iconView.frame = commitFrame.iconFrame;
     _nameLab.frame = commitFrame.nameFrame;
     _timeLab.frame = commitFrame.timeFrame;
@@ -52,8 +66,7 @@
     _deleteBtn.frame = commitFrame.deleteFrame;
     
     
-    _photosView.selfVc = self.selfVc;
-    
+    // 设置控件的数据
     ZJCommit *commit = commitFrame.commit;
     [_iconView sd_setImageWithURL:[NSURL URLWithString:commit.avatar] placeholderImage:kImageName(@"new_default")];
     _nameLab.text = commit.nickname;
@@ -62,7 +75,7 @@
     _timeLab.text = [NSDate dateWithTimeInterval:time format:@"MM月dd日"];
     [_likeBtn setTitle:[NSString stringWithFormat:@"%@",commit.like_count] forState:UIControlStateNormal];
     [_disLikeBtn setTitle:[NSString stringWithFormat:@"%@",commit.unlike_count] forState:UIControlStateNormal];
-
+    // 星级分数
     self.starView.starCount = [NSString stringWithFormat:@"%@",commit.rating];
     
     if ( commit.like_id == nil) {
@@ -91,9 +104,10 @@
 //    }
     
     
-    
+    // 先设置图片的数据，再确定Frame
     _photosView.pic_urls = commit.pic_urls;
     _photosView.frame = commitFrame.photosFrame;
+    _photosView.selfVc = self.selfVc;
 }
 
 -(void)likeBtnClick:(ZJImgLeftBtn *)sender{
@@ -124,6 +138,8 @@
     _disLikeBtn.tag = tag;
     
 }
+
+#pragma maek - 添加所有控件
 -(void)setUpAllView{
     UIImageView *iconView = [[UIImageView alloc]init];
     [self.contentView addSubview:iconView];

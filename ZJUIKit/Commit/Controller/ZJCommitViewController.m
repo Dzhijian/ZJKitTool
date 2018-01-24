@@ -7,10 +7,11 @@
 
 /**
  *  ZJUIKitTool
+ *
  *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
  *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
  */
-
 #import "ZJCommitViewController.h"
 #import "ZJCommitFrame.h"
 #import "ZJCommitCell.h"
@@ -29,11 +30,7 @@
 
 @implementation ZJCommitViewController
 
-/**
- *  ZJUIKitTool
- *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
- *
- */
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,7 +68,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
+#pragma mark - 获取数据
 - (void)getCommitsData {
     [self.mainTable.mj_header endRefreshing];
     [self.mainTable.mj_footer endRefreshing];

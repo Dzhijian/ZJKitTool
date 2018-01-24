@@ -9,9 +9,12 @@
 
 /**
  *  ZJUIKitTool
+ *
  *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
  *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
  */
+
 
 #import "ZJChooseViewController.h"
 #import "ZJChooseControlView.h"
@@ -61,6 +64,7 @@
     return _showView;
 }
 
+#pragma mark - 选中的按钮事件
 -(void)chooseControlWithBtnArray:(NSArray *)array button:(UIButton *)sender{
     
     [self.view addSubview:self.showView];

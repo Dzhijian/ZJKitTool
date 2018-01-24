@@ -5,7 +5,13 @@
 //  Created by 邓志坚 on 2017/12/10.
 //  Copyright © 2017年 邓志坚. All rights reserved.
 //
-
+/**
+ *  ZJUIKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
+ */
 #import "ZJCommit.h"
 
 @implementation ZJCommit
@@ -26,17 +32,6 @@
             // 解析错误
             return nil;
         }
-        
-//        NSString *imgArrStr = [NSJSONSerialization JSONObjectWithData:jsonData
-//
-//                                                              options:NSJSONReadingMutableContainers
-//
-//                                                                error:&err];
-//
-//        NSLog(@"评论图片数组字符串---> %@",imgArrStr);
-//        NSArray *array = [imgArrStr componentsSeparatedByString:@","];
-//        NSLog(@"评论图片数组字符串---> %@ ----> 一共 %ld 张",imgArrStr,array.count);
-//        _pic_urls = array;
     }
      return _pic_urls;
     

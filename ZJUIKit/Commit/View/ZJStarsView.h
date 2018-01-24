@@ -10,6 +10,7 @@
 
 @interface ZJStarsView : UIView
 
+// 星级分数
 @property(nonatomic, copy) NSString *starCount;
 
 @end
