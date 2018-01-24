@@ -72,7 +72,14 @@
         [items addObject:item];
     }
     
-    // 使用 KSPhotoBrowser 浏览图片
+    /**
+     * 使用 KSPhotoBrowser 浏览图片
+     * 使用cocoaPods 导入
+     *
+     * pod 'KSPhotoBrowser'
+     *
+     */
+    
     KSPhotoBrowser *browser = [KSPhotoBrowser browserWithPhotoItems:items selectedIndex:sender.view.tag];
     browser.delegate = self;
     browser.dismissalStyle = KSPhotoBrowserInteractiveDismissalStyleRotation;

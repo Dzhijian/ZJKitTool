@@ -33,16 +33,17 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(goBack)];
+    // 设置返回按钮
+    kWeakObject(self);
+    [self zj_setNavLeftImage:kImageName(@"new_goback") block:^(id sender) {
+        [weakObject.navigationController popViewControllerAnimated:YES];
+    }];
     self.title = @"ChooseView";
     [self setUpAllView];
 }
 
 
 
--(void)goBack{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 -(void)setUpAllView{
     NSArray *array = @[@"全部商区",@"外语培训",@"智能排序",@"筛选"];

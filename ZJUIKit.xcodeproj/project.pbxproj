@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
+		042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */; };
+		042190C720186CEB009056E2 /* ZJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C620186CEB009056E2 /* ZJBaseTableViewCell.m */; };
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
 		045C44EE200F26D600A4AD42 /* ZJCommonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C44ED200F26D600A4AD42 /* ZJCommonKit.m */; };
 		045C44F1200F2B9600A4AD42 /* UILabel+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C44F0200F2B9600A4AD42 /* UILabel+ZJMasonryKit.m */; };
@@ -104,6 +106,10 @@
 /* Begin PBXFileReference section */
 		042190BE20186182009056E2 /* ZJMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMainViewController.h; sourceTree = "<group>"; };
 		042190BF20186182009056E2 /* ZJMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMainViewController.m; sourceTree = "<group>"; };
+		042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJKitAndMasonryViewController.h; sourceTree = "<group>"; };
+		042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitAndMasonryViewController.m; sourceTree = "<group>"; };
+		042190C520186CEB009056E2 /* ZJBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseTableViewCell.h; sourceTree = "<group>"; };
+		042190C620186CEB009056E2 /* ZJBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseTableViewCell.m; sourceTree = "<group>"; };
 		04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseViewController.h; sourceTree = "<group>"; };
 		04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseViewController.m; sourceTree = "<group>"; };
 		045C44EC200F26D600A4AD42 /* ZJCommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommonKit.h; sourceTree = "<group>"; };
@@ -287,6 +293,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042190C420186CD7009056E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				042190C520186CEB009056E2 /* ZJBaseTableViewCell.h */,
+				042190C620186CEB009056E2 /* ZJBaseTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		045C44E8200F22D200A4AD42 /* ZJKit+Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +310,7 @@
 				045C45122010517900A4AD42 /* UIKit+Masonry */,
 				045C451120104D2900A4AD42 /* HelperKit */,
 				04CD60352011CDCD00FEACE3 /* ControllerKit */,
+				042190C420186CD7009056E2 /* View */,
 			);
 			path = "ZJKit+Masonry";
 			sourceTree = "<group>";
@@ -403,7 +419,6 @@
 			children = (
 				045C44E8200F22D200A4AD42 /* ZJKit+Masonry */,
 				04C7482D1FD7C70700A749E3 /* Controller */,
-				04DA13382016DFB800C619E5 /* Commit */,
 				04C7481C1FD6500900A749E3 /* View */,
 				0475BEE51FD12E8A00617353 /* AppDelegate.h */,
 				0475BEE61FD12E8A00617353 /* AppDelegate.m */,
@@ -512,6 +527,7 @@
 		04C7481C1FD6500900A749E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04DA13382016DFB800C619E5 /* Commit */,
 				048E8A16201728C600486470 /* ChooseView */,
 			);
 			path = View;
@@ -520,10 +536,14 @@
 		04C7482D1FD7C70700A749E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
-				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
 				042190BE20186182009056E2 /* ZJMainViewController.h */,
 				042190BF20186182009056E2 /* ZJMainViewController.m */,
+				042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */,
+				042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */,
+				04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */,
+				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
+				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
+				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -545,18 +565,8 @@
 				04DA13572017036500C619E5 /* CommitsData.json */,
 				04DA133B2016E01400C619E5 /* ViewModel */,
 				04DA133A2016E00C00C619E5 /* View */,
-				04DA13392016E00500C619E5 /* Controller */,
 			);
 			path = Commit;
-			sourceTree = "<group>";
-		};
-		04DA13392016E00500C619E5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */,
-				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		04DA133A2016E00C00C619E5 /* View */ = {
@@ -914,6 +924,7 @@
 				04CD60482011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m in Sources */,
 				04C7481F1FD66FB400A749E3 /* ZJButton.m in Sources */,
 				04DA13302015E1C800C619E5 /* UIView+ZJHUDHelperKit.m in Sources */,
+				042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				045C450D20104A4900A4AD42 /* UIView+ZJMasonryKit.m in Sources */,
 				04C747FE1FD62AAC00A749E3 /* UIDevice+ZJDivice.m in Sources */,
@@ -939,6 +950,7 @@
 				048E8A2C201728C600486470 /* ZJFourChildView.m in Sources */,
 				04DA13342015E73800C619E5 /* UITextView+ZJHelperKit.m in Sources */,
 				04CD601F2011C5C300FEACE3 /* NSMutableArray+ZJHelperKit.m in Sources */,
+				042190C720186CEB009056E2 /* ZJBaseTableViewCell.m in Sources */,
 				045C44FE200F4B3C00A4AD42 /* UITextField+ZJMasonryKit.m in Sources */,
 				048E8A29201728C600486470 /* ZJChooseViewOneLeftCell.m in Sources */,
 				04CD602E2011CBD600FEACE3 /* NSUserDefaults+ZJHelperKit.m in Sources */,

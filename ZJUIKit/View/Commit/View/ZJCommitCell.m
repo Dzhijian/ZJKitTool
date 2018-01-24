@@ -107,7 +107,8 @@
     // 先设置图片的数据，再确定Frame
     _photosView.pic_urls = commit.pic_urls;
     _photosView.frame = commitFrame.photosFrame;
-    _photosView.selfVc = self.selfVc;
+    kWeakObject(self);
+    _photosView.selfVc = weakObject.selfVc;
 }
 
 -(void)likeBtnClick:(ZJImgLeftBtn *)sender{
@@ -192,7 +193,7 @@
     [disLikeBtn addTarget:self action:@selector(disLikeBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     ZJCommitPhotoView *photosView = [[ZJCommitPhotoView alloc]init];
     [self.contentView addSubview:photosView];
-    photosView.selfVc = self.selfVc;
+//    photosView.selfVc = self.selfVc;
     _photosView = photosView;
     
 }

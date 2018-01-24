@@ -35,25 +35,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
-    self.title = @"评论";
+    self.title = @"评论列表";
     self.pageNum = 1;
     [self setUpAllView];
     [self getCommitsData];
-    // 返回
-    [self zj_setNavLeftButtonTitle:@"返回" onCliked:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    
 
 }
 
 -(void)setUpAllView{
+
+    // 返回按钮
+    [self zj_setNavLeftImage:kImageName(@"new_goback") block:^(id sender) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+
 
     _mainTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     _mainTable.delegate = self;
     _mainTable.dataSource = self;
     _mainTable.backgroundColor = kWhiteColor;
     _mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:_mainTable];
+    [self.view addSubview:self.mainTable];
     
 //    kWeakObject(self);
 //    self.mainTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -72,7 +75,7 @@
     [self.mainTable.mj_header endRefreshing];
     [self.mainTable.mj_footer endRefreshing];
     
-    
+    // 从CommitsData 文件加载数据
     NSString *path = [[NSBundle mainBundle] pathForResource:@"CommitsData" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];

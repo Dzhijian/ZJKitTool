@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ZJChooseViewController : UIViewController
+#import "ZJKitBaseController.h"
+@interface ZJChooseViewController : ZJKitBaseController
 
 @end
