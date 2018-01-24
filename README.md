@@ -24,6 +24,7 @@ MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视�
 
 
  在评论列表中浏览图片推荐使用 KSPhotoBrowser 第三方库浏览
+ 
  /*
   * 使用 KSPhotoBrowser 浏览图片
   * 使用cocoaPods 导入
