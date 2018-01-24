@@ -19,6 +19,7 @@
 
 #import "ZJCommonKit.h"
 #import "ZJUIMasonsyKit.h"
+#import "ZJKitHelper.h"
 
 #import "UIControl+ZJHelperBlockKit.h"
 #import "UIView+ZJHelperKitUIkit.h"

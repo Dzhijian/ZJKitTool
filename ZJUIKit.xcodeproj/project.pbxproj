@@ -110,6 +110,7 @@
 		042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitAndMasonryViewController.m; sourceTree = "<group>"; };
 		042190C520186CEB009056E2 /* ZJBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseTableViewCell.h; sourceTree = "<group>"; };
 		042190C620186CEB009056E2 /* ZJBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseTableViewCell.m; sourceTree = "<group>"; };
+		042190C8201891BF009056E2 /* ZJKitHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJKitHelper.h; sourceTree = "<group>"; };
 		04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseViewController.h; sourceTree = "<group>"; };
 		04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseViewController.m; sourceTree = "<group>"; };
 		045C44EC200F26D600A4AD42 /* ZJCommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommonKit.h; sourceTree = "<group>"; };
@@ -453,6 +454,7 @@
 		0475BF171FD12FBD00617353 /* ZJKit */ = {
 			isa = PBXGroup;
 			children = (
+				042190C8201891BF009056E2 /* ZJKitHelper.h */,
 				0475BF181FD1300600617353 /* UIButton+ZJButton.h */,
 				0475BF191FD1300600617353 /* UIButton+ZJButton.m */,
 				0475BF1B1FD1459C00617353 /* UILabel+ZJLabel.h */,

@@ -40,7 +40,6 @@
     [self setUpAllView];
     [self getCommitsData];
     
-
 }
 
 -(void)setUpAllView{
@@ -97,9 +96,6 @@
     
 }
 
--(void)leftBackAction:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 
 
@@ -163,10 +159,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)dealloc{
-  
-    NSLog(@"销毁ZJCommitViewController");
-}
+
 /*
 #pragma mark - Navigation
 
