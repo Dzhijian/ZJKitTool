@@ -32,6 +32,11 @@
 
 @implementation ViewController
 
+/**
+ *  ZJUIKitTool
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +46,7 @@
     [self.view addSubview:chooseBtn];
     
     kWeakObject(self);
+    
     [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor backColor:kOrangeColor fontSize:16 isBold:YES cornerRadius:3 supView:self.view constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(chooseBtn.mas_centerY);
         make.left.equalTo(chooseBtn.mas_right).offset(50);
@@ -88,6 +94,7 @@
         
         [weakObject.view zj_showBusyHUD];
     }];
+    
     
     
    [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请输入..." superView:self.view constraints:^(MASConstraintMaker *make) {

@@ -8,6 +8,13 @@
 //
 
 
+/**
+ *  ZJUIKitTool
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ */
+
+
 #import "ZJCommonKit.h"
 #import "ZJUIMasonsyKit.h"
 
@@ -34,6 +41,7 @@
 #import "UIActionSheet+ZJHelperKit.h"
 #import "UIView+ZJHUDHelperKit.h"
 #import "UITextView+ZJHelperKit.h"
+// 高效切圆角
 #import "UIImageView+ZJCornerRadiusHelperKit.h"
 
 

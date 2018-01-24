@@ -36,7 +36,7 @@ const char kProcessedImage;
 }
 
 /**
- * @brief init the UIImageView with cornerRadius, no off-screen-rendered
+ * @简单的初始化UIImageView的角半径
  */
 - (instancetype)initWithCornerRadiusAdvance:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType {
     self = [super init];
@@ -47,7 +47,7 @@ const char kProcessedImage;
 }
 
 /**
- * @brief attach border for UIImageView with width & color
+ * @在UIImageView的边框上加上宽度和颜色。
  */
 - (void)zj_attachBorderWidth:(CGFloat)width color:(UIColor *)color {
     self.zjBorderWidth = width;
@@ -56,7 +56,7 @@ const char kProcessedImage;
 
 #pragma mark - Kernel
 /**
- * @brief clip the cornerRadius with image, UIImageView must be setFrame before, no off-screen-rendered
+ * @ 使用图像的转角半径，UIImageView必须是之前的setFrame，不要在屏幕外显示。
  */
 - (void)zj_cornerRadiusWithImage:(UIImage *)image cornerRadius:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType {
     CGSize size = self.bounds.size;
@@ -81,7 +81,7 @@ const char kProcessedImage;
 }
 
 /**
- * @brief clip the cornerRadius with image, draw the backgroundColor you want, UIImageView must be setFrame before, no off-screen-rendered, no Color Blended layers
+ * @用图像来简单的截取角半径，画出你想要的背景色，UIImageView必须是之前的setFrame，没有屏幕外渲染，没有颜色混合层。
  */
 - (void)zj_cornerRadiusWithImage:(UIImage *)image cornerRadius:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType backgroundColor:(UIColor *)backgroundColor {
     CGSize size = self.bounds.size;
@@ -109,7 +109,7 @@ const char kProcessedImage;
 }
 
 /**
- * @brief set cornerRadius for UIImageView, no off-screen-rendered
+ * @为UIImageView做一个简短的设置角半径，不显示屏幕外。
  */
 - (void)zj_cornerRadiusAdvance:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType {
     self.zjRadius = cornerRadius;
@@ -125,7 +125,7 @@ const char kProcessedImage;
 }
 
 /**
- * @brief become Rounding UIImageView, no off-screen-rendered
+ * @简写为UIImageView，没有屏幕外渲染。
  */
 - (void)zj_cornerRadiusRoundingRect {
     self.zjIsRounding = YES;

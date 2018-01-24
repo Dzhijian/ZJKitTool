@@ -7,6 +7,12 @@
 //  Copyright © 2017年 kapokcloud. All rights reserved.
 //
 
+/**
+ *  ZJUIKitTool
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ */
+
 #import "ZJChooseViewController.h"
 #import "ZJChooseControlView.h"
 #import "ZJChooseShowView.h"
@@ -18,6 +24,7 @@
 
 @implementation ZJChooseViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,6 +34,8 @@
     self.title = @"ChooseView";
     [self setUpAllView];
 }
+
+
 
 -(void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
