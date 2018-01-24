@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
 		045C44EE200F26D600A4AD42 /* ZJCommonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C44ED200F26D600A4AD42 /* ZJCommonKit.m */; };
 		045C44F1200F2B9600A4AD42 /* UILabel+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C44F0200F2B9600A4AD42 /* UILabel+ZJMasonryKit.m */; };
@@ -21,7 +22,6 @@
 		045C450D20104A4900A4AD42 /* UIView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C450C20104A4900A4AD42 /* UIView+ZJMasonryKit.m */; };
 		045C451020104BCA00A4AD42 /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C450F20104BCA00A4AD42 /* UIGestureRecognizer+ZJHelperBlockKit.m */; };
 		0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEE61FD12E8A00617353 /* AppDelegate.m */; };
-		0475BEEA1FD12E8A00617353 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEE91FD12E8A00617353 /* ViewController.m */; };
 		0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEB1FD12E8A00617353 /* Main.storyboard */; };
 		0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEE1FD12E8A00617353 /* Assets.xcassets */; };
 		0475BEF21FD12E8A00617353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEF01FD12E8A00617353 /* LaunchScreen.storyboard */; };
@@ -102,6 +102,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042190BE20186182009056E2 /* ZJMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMainViewController.h; sourceTree = "<group>"; };
+		042190BF20186182009056E2 /* ZJMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMainViewController.m; sourceTree = "<group>"; };
 		04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseViewController.h; sourceTree = "<group>"; };
 		04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseViewController.m; sourceTree = "<group>"; };
 		045C44EC200F26D600A4AD42 /* ZJCommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommonKit.h; sourceTree = "<group>"; };
@@ -132,8 +134,6 @@
 		0475BEE21FD12E8A00617353 /* ZJUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0475BEE51FD12E8A00617353 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0475BEE61FD12E8A00617353 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0475BEE81FD12E8A00617353 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0475BEE91FD12E8A00617353 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0475BEEC1FD12E8A00617353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0475BEEE1FD12E8A00617353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0475BEF11FD12E8A00617353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -520,10 +520,10 @@
 		04C7482D1FD7C70700A749E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0475BEE81FD12E8A00617353 /* ViewController.h */,
-				0475BEE91FD12E8A00617353 /* ViewController.m */,
 				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
 				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
+				042190BE20186182009056E2 /* ZJMainViewController.h */,
+				042190BF20186182009056E2 /* ZJMainViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -913,7 +913,6 @@
 				045C451020104BCA00A4AD42 /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */,
 				04CD60482011E6B300FEACE3 /* UIActionSheet+ZJHelperKit.m in Sources */,
 				04C7481F1FD66FB400A749E3 /* ZJButton.m in Sources */,
-				0475BEEA1FD12E8A00617353 /* ViewController.m in Sources */,
 				04DA13302015E1C800C619E5 /* UIView+ZJHUDHelperKit.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				045C450D20104A4900A4AD42 /* UIView+ZJMasonryKit.m in Sources */,
@@ -951,6 +950,7 @@
 				04CD60252011C7C900FEACE3 /* NSObject+ZJHelperKit.m in Sources */,
 				04CD602B2011CAAD00FEACE3 /* NSTimer+ZJHelperKit.m in Sources */,
 				045C44F1200F2B9600A4AD42 /* UILabel+ZJMasonryKit.m in Sources */,
+				042190C020186182009056E2 /* ZJMainViewController.m in Sources */,
 				04C747E91FD4DA6200A749E3 /* UIAlertController+ZJAlert.m in Sources */,
 				04CD60422011E52500FEACE3 /* UIDevice+ZJHelperKitUIKit.m in Sources */,
 				045C4501200F4C5300A4AD42 /* UIView+ZJHelperKitUIkit.m in Sources */,

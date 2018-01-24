@@ -39,10 +39,15 @@
     self.pageNum = 1;
     [self setUpAllView];
     [self getCommitsData];
+    // 返回
+    [self zj_setNavLeftButtonTitle:@"返回" onCliked:^(id sender) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+
 }
 
 -(void)setUpAllView{
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBackAction:)];
+
     _mainTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     _mainTable.delegate = self;
     _mainTable.dataSource = self;
@@ -50,22 +55,16 @@
     _mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_mainTable];
     
-    kWeakObject(self);
-    self.mainTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        weakObject.pageNum = 1;
-        [weakObject getCommitsData];
-    }];
-    
-    self.mainTable.mj_footer = [MJRefreshBackStateFooter footerWithRefreshingBlock:^{
-        weakObject.pageNum += 1;
-        [weakObject getCommitsData];
-    }];
-}
-
-
-
--(void)leftBackAction:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
+//    kWeakObject(self);
+//    self.mainTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        weakObject.pageNum = 1;
+//        [weakObject getCommitsData];
+//    }];
+//
+//    self.mainTable.mj_footer = [MJRefreshBackStateFooter footerWithRefreshingBlock:^{
+//        weakObject.pageNum += 1;
+//        [weakObject getCommitsData];
+//    }];
 }
 
 #pragma mark - 获取数据
@@ -73,14 +72,15 @@
     [self.mainTable.mj_header endRefreshing];
     [self.mainTable.mj_footer endRefreshing];
     
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CommitsData" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    NSArray *commitsList = [rootDict objectForKey:@"comments_list"];
+    NSMutableArray *arrM = [NSMutableArray array];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"CommitsData" ofType:@"json"];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        
-        NSArray *commitsList = [rootDict objectForKey:@"comments_list"];
-        NSMutableArray *arrM = [NSMutableArray array];
-        
         for (NSDictionary *dictDict in commitsList) {
             ZJCommitFrame *cFrame = [[ZJCommitFrame alloc]init];
             cFrame.commit = [ZJCommit commitWithDict:dictDict];
@@ -93,6 +93,12 @@
     });
     
 }
+
+-(void)leftBackAction:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 #pragma mark - ZJCommitCellDelegate
 // 点赞
@@ -155,8 +161,7 @@
 }
 
 -(void)dealloc{
-    [self.dataArray removeAllObjects];
-    self.dataArray = nil;
+  
     NSLog(@"销毁ZJCommitViewController");
 }
 /*

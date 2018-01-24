@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ZJKitNaigationController.h"
-#import "ViewController.h"
+
+#import "ZJMainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    ViewController *vc = [[ViewController alloc]init];
+    ZJMainViewController *vc = [[ZJMainViewController alloc]init];
     ZJKitNaigationController *nav = [[ZJKitNaigationController alloc]initWithRootViewController:vc];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = kWhiteColor;

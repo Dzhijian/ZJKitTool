@@ -1,13 +1,20 @@
 //
-//  ViewController.m
+//  ZJMainViewController.m
 //  ZJUIKit
 //
-//  Created by dzj on 2017/12/1.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2018/1/24.
+//  Copyright © 2018年 kapokcloud. All rights reserved.
 //
+/**
+ *  ZJUIKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
+ */
 
 
-#import "ViewController.h"
+#import "ZJMainViewController.h"
 #import "UIButton+ZJButton.h"
 #import "UILabel+ZJLabel.h"
 #import "UIColor+ZJColor.h"
@@ -19,31 +26,28 @@
 #import "ZJUIMasonsyKit.h"
 #import "ZJKitNaigationController.h"
 #import "ZJCommitViewController.h"
+#import "ZJCommitFrame.h"
+#import "ZJCommit.h"
 
-@interface ViewController ()
-
+@interface ZJMainViewController ()
 @property(nonatomic ,strong) UIButton *btn;
 @property(nonatomic ,strong) UIButton *button;
 @property(nonatomic ,strong) UILabel *label;
-
-
-
 @end
 
-@implementation ViewController
-
-/**
- *  ZJUIKitTool
- *
- *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
- *
- *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
- */
-
+@implementation ZJMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKit";
+    
+    
+    [self zj_UIKitAndMasonry];
+
+}
+
+#pragma mark - 快速创建控件 + marsonry 布局
+-(void)zj_UIKitAndMasonry{
     
     UIButton *chooseBtn = [UIButton zj_buttonWithFrame:CGRectMake(50, 60, 100, 40) title:@"筛选" titleColor:[UIColor whiteColor] imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:4 traget:self action:@selector(goToChooseViewController)];
     [self.view addSubview:chooseBtn];
@@ -61,23 +65,13 @@
         [weakObject.navigationController pushViewController:commmit animated:YES];
     }];
     
-    [self zj_UIKitAndMasonry];
-    
-    
-    
-    
-}
-
-#pragma mark - 快速创建控件 + marsonry 布局
--(void)zj_UIKitAndMasonry{
-    
     [UILabel zj_labelWithFont:14 lines:1 text:@"哈哈哈哈哈" textColor:kRedColor superView:self.view constraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(150);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.height.mas_equalTo(20);
     }];
-
+    
     
     UILabel *lab = [UILabel zj_labelWithFont:16 text:@"666666666"];
     [self.view addSubview:lab];
@@ -88,7 +82,6 @@
         make.height.mas_equalTo(20);
     }];
     
-    kWeakObject(self);
     [UIView zj_viewWithBackColor:kRedColor supView:self.view constraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.centerY.mas_equalTo(-60);
@@ -100,7 +93,7 @@
     
     
     
-   [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请输入..." superView:self.view constraints:^(MASConstraintMaker *make) {
+    [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请输入..." superView:self.view constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.bottom.mas_equalTo(-100);
@@ -108,6 +101,8 @@
     }];
     
 }
+
+
 
 
 -(void)goToChooseViewController{
@@ -189,7 +184,7 @@
     
     __weak typeof(self)weakSelf = self;
     [self.btn zj_startTime:10 waitBlock:^(NSInteger remainTime) {
-       
+        
     } finishBlock:^{
         [weakSelf.btn zj_hideIndicator];
     }];
@@ -214,11 +209,19 @@
     [self.view addSubview:self.btn];
     [self.view addSubview:self.button];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

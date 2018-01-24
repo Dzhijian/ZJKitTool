@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZJKitBaseController.h"
+@interface ZJCommitViewController : ZJKitBaseController
 
-@interface ZJCommitViewController : UIViewController
 
 @end
