@@ -1,0 +1,1 @@
+../../../KSPhotoBrowser/KSPhotoBrowser/KSYYImageManager.h
