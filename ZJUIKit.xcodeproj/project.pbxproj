@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0403A0012019842000D4DF1B /* ZJTimeCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0002019842000D4DF1B /* ZJTimeCountDown.m */; };
+		0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */; };
+		0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */; };
 		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
 		042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */; };
 		042190C720186CEB009056E2 /* ZJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C620186CEB009056E2 /* ZJBaseTableViewCell.m */; };
@@ -104,6 +107,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04039FFF2019842000D4DF1B /* ZJTimeCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDown.h; sourceTree = "<group>"; };
+		0403A0002019842000D4DF1B /* ZJTimeCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDown.m; sourceTree = "<group>"; };
+		0403A0022019A9B200D4DF1B /* ZJTimeCountDownViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDownViewController.h; sourceTree = "<group>"; };
+		0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDownViewController.m; sourceTree = "<group>"; };
+		0403A0062019B1D600D4DF1B /* ZJTimeCountDownCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDownCell.h; sourceTree = "<group>"; };
+		0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDownCell.m; sourceTree = "<group>"; };
 		042190BE20186182009056E2 /* ZJMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMainViewController.h; sourceTree = "<group>"; };
 		042190BF20186182009056E2 /* ZJMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMainViewController.m; sourceTree = "<group>"; };
 		042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJKitAndMasonryViewController.h; sourceTree = "<group>"; };
@@ -294,6 +303,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0403A0052019B1AD00D4DF1B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0403A0062019B1D600D4DF1B /* ZJTimeCountDownCell.h */,
+				0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		042190C420186CD7009056E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +381,8 @@
 				04DA13332015E73800C619E5 /* UITextView+ZJHelperKit.m */,
 				04DA13512016E5B600C619E5 /* UIImageView+ZJCornerRadiusHelperKit.h */,
 				04DA13522016E5B600C619E5 /* UIImageView+ZJCornerRadiusHelperKit.m */,
+				04039FFF2019842000D4DF1B /* ZJTimeCountDown.h */,
+				0403A0002019842000D4DF1B /* ZJTimeCountDown.m */,
 			);
 			path = HelperKit;
 			sourceTree = "<group>";
@@ -529,6 +549,7 @@
 		04C7481C1FD6500900A749E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0403A0052019B1AD00D4DF1B /* Cell */,
 				04DA13382016DFB800C619E5 /* Commit */,
 				048E8A16201728C600486470 /* ChooseView */,
 			);
@@ -546,6 +567,8 @@
 				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
 				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
 				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
+				0403A0022019A9B200D4DF1B /* ZJTimeCountDownViewController.h */,
+				0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -962,14 +985,17 @@
 				045C44F8200F487100A4AD42 /* UICollectionView+ZJMasonryKit.m in Sources */,
 				04C748041FD62F3000A749E3 /* UIImage+ZJImage.m in Sources */,
 				04CD60252011C7C900FEACE3 /* NSObject+ZJHelperKit.m in Sources */,
+				0403A0012019842000D4DF1B /* ZJTimeCountDown.m in Sources */,
 				04CD602B2011CAAD00FEACE3 /* NSTimer+ZJHelperKit.m in Sources */,
 				045C44F1200F2B9600A4AD42 /* UILabel+ZJMasonryKit.m in Sources */,
 				042190C020186182009056E2 /* ZJMainViewController.m in Sources */,
+				0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */,
 				04C747E91FD4DA6200A749E3 /* UIAlertController+ZJAlert.m in Sources */,
 				04CD60422011E52500FEACE3 /* UIDevice+ZJHelperKitUIKit.m in Sources */,
 				045C4501200F4C5300A4AD42 /* UIView+ZJHelperKitUIkit.m in Sources */,
 				04C747F51FD4E30800A749E3 /* UITextField+ZJTextField.m in Sources */,
 				04CD603C2011D54200FEACE3 /* ZJKitNaigationController.m in Sources */,
+				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

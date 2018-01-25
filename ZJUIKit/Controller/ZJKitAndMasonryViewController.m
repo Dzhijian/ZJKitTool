@@ -23,15 +23,21 @@
 @property(nonatomic ,strong) UIButton *button;
 @property(nonatomic ,strong) UILabel *label;
 
+// 测试字段
+@property(nonatomic ,assign) NSInteger testNum;
+// 倒计时
+@property(nonatomic ,strong) ZJTimeCountDown *timeDown;
+
 @end
 
 @implementation ZJKitAndMasonryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.testNum = 1;
     [self setUpAllView];
-    
 }
+
 -(void)setUpAllView{
     kWeakObject(self);
     // 设置返回按钮
@@ -40,21 +46,47 @@
     }];
     // 设置标题
     [self zj_setNavTitle:@"ZJUIKit+Masonry"];
-    
+    // 快速创建控件 + marsonry 布局
     [self zj_UIKitAndMasonry];
+    
+    // 倒计时test
+    [self timeCountDownTest];
+
 }
+
+#pragma mark - 倒计时Test
+-(void)timeCountDownTest{
+    
+    UILabel *timeLabel = [UILabel zj_labelWithFont:14 lines:1 text:nil textColor:kOrangeColor superView:self.view constraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(100);
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.height.mas_equalTo(30);
+    }];
+    
+    // 单个倒计时最好使用 alloc init 创建，不要使用单例，避免退出页面时，倒计时没有及时销毁
+    self.timeDown = [[ZJTimeCountDown alloc]init];
+    [_timeDown zj_timeCountDownWithSecondTime:300 completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+        timeLabel.text = [NSString stringWithFormat:@"还剩%ld天%ld小时%ld分钟%ld秒开始",day,hour,minute,second];
+    }];
+    
+}
+
+
 #pragma mark - 快速创建控件 + marsonry 布局
 -(void)zj_UIKitAndMasonry{
     
-    UIButton *chooseBtn = [UIButton zj_buttonWithFrame:CGRectMake(50, 20, 100, 40) title:@"筛选" titleColor:[UIColor whiteColor] imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:4 traget:self action:@selector(goToChooseViewController)];
+    // 筛选视图
+    UIButton *chooseBtn = [UIButton zj_buttonWithFrame:CGRectMake(20, 20, 80, 40) title:@"筛选" titleColor:[UIColor whiteColor] imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:4 traget:self action:@selector(goToChooseViewController)];
     [self.view addSubview:chooseBtn];
     
     kWeakObject(self);
     
-    [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor backColor:kOrangeColor fontSize:16 isBold:YES cornerRadius:3 supView:self.view constraints:^(MASConstraintMaker *make) {
+    // 评论列表
+    UIButton *comBtn = [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor backColor:kOrangeColor fontSize:15 isBold:NO cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(chooseBtn.mas_centerY);
-        make.left.equalTo(chooseBtn.mas_right).offset(50);
-        make.width.mas_equalTo(100);
+        make.left.equalTo(chooseBtn.mas_right).offset(30);
+        make.width.mas_equalTo(80);
         make.height.mas_equalTo(40);
     } touchUp:^(id sender) {
         NSLog(@"123456");
@@ -62,23 +94,29 @@
         [weakObject.navigationController pushViewController:commmit animated:YES];
     }];
     
+    // alertView
+    UIButton *alertBtn = [UIButton  zj_buttonWithTitle:@"AlertView" titleColor:kWhiteColor backColor:kOrangeColor fontSize:16 isBold:NO cornerRadius:3 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(comBtn.mas_centerY);
+        make.left.equalTo(comBtn.mas_right).offset(30);
+        make.width.mas_equalTo(80);
+        make.height.mas_equalTo(40);
+    } touchUp:^(id sender) {
+
+        [weakObject alertTest];
+    }];
+    
+    
+    
+    
     [UILabel zj_labelWithFont:14 lines:1 text:@"哈哈哈哈哈" textColor:kRedColor superView:self.view constraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(100);
+        make.top.equalTo(alertBtn.mas_bottom).offset(10);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.height.mas_equalTo(20);
     }];
     
     
-    UILabel *lab = [UILabel zj_labelWithFont:16 text:@"666666666"];
-    [self.view addSubview:lab];
-    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(100);
-        make.left.mas_equalTo(180);
-        make.right.mas_equalTo(-20);
-        make.height.mas_equalTo(20);
-    }];
-    
+
     [UIView zj_viewWithBackColor:kRedColor supView:self.view constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.centerY.mas_equalTo(-90);
@@ -143,19 +181,22 @@
 
 -(void)alertTest{
     
-    UITextField *field = [UITextField zj_textFieldWithFrame:CGRectMake(30, 50, ScreenWidth - 60, 50) textColor:[UIColor blackColor] fontSize:15 placeText:@"haha" placeColor:[UIColor redColor] borderStyle:UITextBorderStyleRoundedRect];
-    [self.view addSubview:field];
-    
-    
-    UIAlertController *alert = [UIAlertController zj_alertControllerWithTitle:@"qwe" message:nil optionStyle:OptionStyleStyleOK_Cancel OkTitle:@"确定" cancelTitle:@"取消" okBlock:^{
-        NSLog(@"123");
+    UIAlertController *alert = [UIAlertController zj_alertControllerWithTitle:@"这是一个Alert" message:nil optionStyle:OptionStyleStyleOK_Cancel OkTitle:@"确定" cancelTitle:@"取消" okBlock:^{
+        self.testNum = 2;
+        [self.view zj_showWarning:[NSString stringWithFormat:@"%ld",self.testNum]];
+        NSLog(@"确定");
     } cancelBlock:^{
-        NSLog(@"456");
+        NSLog(@"取消");
     }];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+
+-(void)textfieldTest{
+    UITextField *field = [UITextField zj_textFieldWithFrame:CGRectMake(30, 50, ScreenWidth - 60, 50) textColor:[UIColor blackColor] fontSize:15 placeText:@"haha" placeColor:[UIColor redColor] borderStyle:UITextBorderStyleRoundedRect];
+    [self.view addSubview:field];
+}
 
 
 -(void)labelTest{
@@ -190,6 +231,13 @@
     }];
     [self.view addSubview:self.btn];
     [self.view addSubview:self.button];
+    
+    
+    dispatch_block_t block = dispatch_block_create(0, ^{
+        self.testNum = 2;
+        NSLog(@"这是一个block-->%ld",self.testNum);
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
 }
 
 -(UIButton *)button{
@@ -205,7 +253,10 @@
     [self.view addSubview:self.button];
 }
 
-
+-(void)dealloc{
+    // 销毁计时器
+    [_timeDown zj_timeDestoryTimer];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

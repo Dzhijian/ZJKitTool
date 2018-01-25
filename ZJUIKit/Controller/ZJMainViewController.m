@@ -24,6 +24,7 @@
 #import "ZJCommit.h"
 #import "ZJBaseTableViewCell.h"
 #import "ZJKitAndMasonryViewController.h"
+#import "ZJTimeCountDownViewController.h"
 
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -38,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图"];
+    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell"];
     [self setUpAllView];
 
 
@@ -85,6 +86,11 @@
         {
             ZJChooseViewController *choose = [[ZJChooseViewController alloc]init];
             [self.navigationController pushViewController:choose animated:YES];
+            break;
+        }case 3:
+        {
+            ZJTimeCountDownViewController *timedown = [[ZJTimeCountDownViewController alloc]init];
+            [self.navigationController pushViewController:timedown animated:YES];
             break;
         }
             
