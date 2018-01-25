@@ -165,7 +165,10 @@
     UILabel *contentLab = [[UILabel alloc]init];
     [self addOneLabelWithLab:contentLab TextColor:kBlackColor fontSize:14 isBold:NO];
     contentLab.numberOfLines = 0;
+    contentLab.userInteractionEnabled = YES;
+    
     _contentLab = contentLab;
+    
     
     ZJImgLeftBtn *likeBtn = [[ZJImgLeftBtn alloc]init];
     [likeBtn setImage:kImageName(@"new_organize_dislike") forState:UIControlStateNormal];
@@ -210,9 +213,6 @@
     [self.contentView addSubview:label];
     
 }
-
-
-
 
 
 +(instancetype)cellWithTableView:(UITableView *)tableView{

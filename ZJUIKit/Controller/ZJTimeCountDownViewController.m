@@ -65,8 +65,10 @@
     for (ZJTimeCountDownCell *cell in cells) {
         cell.detailLab.text =[NSString stringWithFormat:@"还剩%@开始",[_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[cell.tag]]];
         if ([[_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[cell.tag]] isEqualToString:@"倒计时已经结束！"]) {
+            cell.detailLab.text = [_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[cell.tag]];
             cell.detailLab.textColor = kPurpleColor;
         }else{
+            
             cell.detailLab.textColor = kOrangeColor;
         }
     }
@@ -83,8 +85,10 @@
     cell.titleLab.text = [NSString stringWithFormat:@"抢购开始时间为:%@",self.endTimeArray[indexPath.row]];
     cell.detailLab.text =[NSString stringWithFormat:@"还剩%@开始",[_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[cell.tag]]];
     if ([[_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[cell.tag]] isEqualToString:@"倒计时已经结束！"]) {
+        cell.detailLab.text = [_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[indexPath.row]];
         cell.detailLab.textColor = kPurpleColor;
     }else{
+        
         cell.detailLab.textColor = kOrangeColor;
     }
     return cell;

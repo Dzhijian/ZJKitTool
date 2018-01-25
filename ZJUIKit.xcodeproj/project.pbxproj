@@ -312,6 +312,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		0403A0092019C6F300D4DF1B /* ZJTool */ = {
+			isa = PBXGroup;
+			children = (
+				04039FFF2019842000D4DF1B /* ZJTimeCountDown.h */,
+				0403A0002019842000D4DF1B /* ZJTimeCountDown.m */,
+			);
+			path = ZJTool;
+			sourceTree = "<group>";
+		};
 		042190C420186CD7009056E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +336,7 @@
 				04CD60392011D0C200FEACE3 /* ZJHelperKit.h */,
 				0475BF171FD12FBD00617353 /* ZJKit */,
 				045C45122010517900A4AD42 /* UIKit+Masonry */,
+				0403A0092019C6F300D4DF1B /* ZJTool */,
 				045C451120104D2900A4AD42 /* HelperKit */,
 				04CD60352011CDCD00FEACE3 /* ControllerKit */,
 				042190C420186CD7009056E2 /* View */,
@@ -381,8 +391,6 @@
 				04DA13332015E73800C619E5 /* UITextView+ZJHelperKit.m */,
 				04DA13512016E5B600C619E5 /* UIImageView+ZJCornerRadiusHelperKit.h */,
 				04DA13522016E5B600C619E5 /* UIImageView+ZJCornerRadiusHelperKit.m */,
-				04039FFF2019842000D4DF1B /* ZJTimeCountDown.h */,
-				0403A0002019842000D4DF1B /* ZJTimeCountDown.m */,
 			);
 			path = HelperKit;
 			sourceTree = "<group>";
@@ -1160,6 +1168,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J5M6M3U5ZY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ZJUIKit/Header.h;
 				INFOPLIST_FILE = ZJUIKit/Info.plist;
@@ -1177,6 +1186,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J5M6M3U5ZY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ZJUIKit/Header.h;
 				INFOPLIST_FILE = ZJUIKit/Info.plist;

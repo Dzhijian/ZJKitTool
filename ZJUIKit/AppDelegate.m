@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "ZJKitNaigationController.h"
-
 #import "ZJMainViewController.h"
+#import "JPFPSStatus.h"
+#import "GDPerformanceMonitor.h"
 @interface AppDelegate ()
 
 @end
@@ -19,11 +20,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+
+    
+    
     ZJMainViewController *vc = [[ZJMainViewController alloc]init];
     ZJKitNaigationController *nav = [[ZJKitNaigationController alloc]initWithRootViewController:vc];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = kWhiteColor;
     self.window.rootViewController = nav;
+    
+//    [[JPFPSStatus sharedInstance] open];
+#ifdef DEBUG
+    [[GDPerformanceMonitor sharedInstance] startMonitoring];
+    [[GDPerformanceMonitor sharedInstance] configureWithConfiguration:^(UILabel *textLabel) {
+        [textLabel setBackgroundColor:[UIColor blackColor]];
+        [textLabel setTextColor:[UIColor whiteColor]];
+        [textLabel.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    }];
+#endif
+  
     [self.window makeKeyAndVisible];
     
     return YES;

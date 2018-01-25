@@ -11,7 +11,9 @@ target 'ZJUIKit' do
   pod 'MBProgressHUD'
   pod 'KSPhotoBrowser'
   pod 'MJRefresh'
-
+  pod 'JPFPSStatus'
+  pod 'GDPerformanceView'
+  
   target 'ZJUIKitTests' do
     inherit! :search_paths
     # Pods for testing
