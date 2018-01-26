@@ -23,10 +23,11 @@
 
 
 +(instancetype)zj_labelWithFont:(CGFloat)font
+                      textColor:(UIColor *)textColor
                       superView:(UIView *)superView
                     constraints:(ZJConstrainMaker)constraints
 {
-    return [self zj_labelWithFont:font text:nil superView:superView constraints:constraints];
+    return [self zj_labelWithFont:font lines:1 text:nil textColor:textColor superView:superView constraints:constraints];
 }
 
 

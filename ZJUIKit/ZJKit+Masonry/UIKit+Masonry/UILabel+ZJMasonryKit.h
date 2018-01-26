@@ -34,6 +34,7 @@
  @return label
  */
 +(instancetype)zj_labelWithFont:(CGFloat)font
+                      textColor:(UIColor *)textColor
                       superView:(UIView *)superView
                     constraints:(ZJConstrainMaker)constraints;
 

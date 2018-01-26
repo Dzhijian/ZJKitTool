@@ -9,6 +9,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - UITableView+FDTemplateLayoutCell (1.6)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - SDWebImage (~> 4.0.0)
+  - UITableView+FDTemplateLayoutCell
 
 SPEC CHECKSUMS:
   GDPerformanceView: d70d646bf7022a3dfd64222e4966f403bfffef19
@@ -34,10 +36,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 56a28aa628c9895e97a518dabaecf70b18f92f32
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: c8f262177538df491d4bc1158d5803fff55b1bb1
+PODFILE CHECKSUM: 8d585ee139b78e22e5ef6ad189630f8f68d46f74
 
 COCOAPODS: 1.2.0

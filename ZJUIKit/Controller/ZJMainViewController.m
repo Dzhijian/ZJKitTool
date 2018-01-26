@@ -25,7 +25,7 @@
 #import "ZJBaseTableViewCell.h"
 #import "ZJKitAndMasonryViewController.h"
 #import "ZJTimeCountDownViewController.h"
-
+#import "ZJMasonryAutolayoutCellViewController.h"
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell"];
+    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)"];
     [self setUpAllView];
 
 
@@ -91,6 +91,11 @@
         {
             ZJTimeCountDownViewController *timedown = [[ZJTimeCountDownViewController alloc]init];
             [self.navigationController pushViewController:timedown animated:YES];
+            break;
+        }case 4:
+        {
+            ZJMasonryAutolayoutCellViewController *masonryCell = [[ZJMasonryAutolayoutCellViewController alloc]init];
+            [self.navigationController pushViewController:masonryCell animated:YES];
             break;
         }
             

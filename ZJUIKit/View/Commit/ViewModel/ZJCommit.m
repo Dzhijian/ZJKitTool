@@ -48,6 +48,8 @@
         self.unlike_count = dict[@"unlike_count"];
         self.add_time = dict[@"add_time"];
         self.rating = dict[@"rating"];
+        
+        _identifier = [self uniqueIdentifier];
     }
     return self;
 }
@@ -56,5 +58,10 @@
     return [[self alloc]initWithDict:dict];
 }
 
+- (NSString *)uniqueIdentifier
+{
+    static NSInteger counter = 0;
+    return [NSString stringWithFormat:@"unique-id-%@", @(counter++)];
+}
 
 @end

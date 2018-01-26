@@ -1,6 +1,6 @@
 CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/MBProgressHUD
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/MBProgressHUD" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GDPerformanceView" "${PODS_ROOT}/Headers/Public/JPFPSStatus" "${PODS_ROOT}/Headers/Public/KSPhotoBrowser" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/YYCache" "${PODS_ROOT}/Headers/Public/YYImage" "${PODS_ROOT}/Headers/Public/YYWebImage"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/MBProgressHUD" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GDPerformanceView" "${PODS_ROOT}/Headers/Public/JPFPSStatus" "${PODS_ROOT}/Headers/Public/KSPhotoBrowser" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell" "${PODS_ROOT}/Headers/Public/YYCache" "${PODS_ROOT}/Headers/Public/YYImage" "${PODS_ROOT}/Headers/Public/YYWebImage"
 OTHER_LDFLAGS = -framework "CoreGraphics" -framework "QuartzCore"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

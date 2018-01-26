@@ -26,7 +26,10 @@
 @property(nonatomic, copy) NSString     *is_show;
 @property(nonatomic, copy) NSString     *img_data;
 @property(nonatomic, copy) NSString     *like_type;
+
 @property(nonatomic, strong) NSArray    *pic_urls;
+
+@property(nonatomic ,copy) NSString     *identifier;
 
 -(instancetype)initWithDict:(NSDictionary *)dict;
 +(instancetype)commitWithDict:(NSDictionary *)dict;

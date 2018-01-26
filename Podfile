@@ -13,6 +13,7 @@ target 'ZJUIKit' do
   pod 'MJRefresh'
   pod 'JPFPSStatus'
   pod 'GDPerformanceView'
+  pod 'UITableView+FDTemplateLayoutCell'
   
   target 'ZJUIKitTests' do
     inherit! :search_paths
