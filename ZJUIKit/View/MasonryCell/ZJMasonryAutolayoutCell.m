@@ -5,7 +5,13 @@
 //  Created by dzj on 2018/1/26.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
-
+/**
+ *  ZJUIKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
+ */
 #import "ZJMasonryAutolayoutCell.h"
 #import "ZJCommit.h"
 #import "ZJCommitPhotoView.h"
@@ -101,8 +107,6 @@
         make.width.height.mas_equalTo(40);
     }];
     
-    
-    
     // 昵称
     self.nameLab = [UILabel zj_labelWithFont:15 textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_avatar.mas_centerY);
@@ -110,6 +114,7 @@
         make.right.mas_equalTo(-100);
         make.height.mas_equalTo(20);
     }];
+    
     // 时间
     self.timeLab = [UILabel zj_labelWithFont:12 textColor:kLightGrayColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_avatar.mas_centerY);
@@ -165,14 +170,6 @@
 //    return CGSizeMake(size.width, cellHeight);
 //}
 
-+(instancetype)cellWithTableView:(UITableView *)tableView{
-    static NSString *ID = @"ZJMasonryAutolayoutCell";
-    id cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[self alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    return cell;
-}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

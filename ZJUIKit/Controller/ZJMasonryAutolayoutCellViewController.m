@@ -38,6 +38,7 @@
  *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
  *
  *  这个案例是利用 Masonry + UITableView+FDTemplateLayoutCell 写的类似朋友圈的自适应布局，功能有待完善与添加，希望能帮助到你
+ *  核心部分是 UITableView+FDTemplateLayoutCell
  */
 #pragma mark - 获取数据
 - (void)getCommitsData {
