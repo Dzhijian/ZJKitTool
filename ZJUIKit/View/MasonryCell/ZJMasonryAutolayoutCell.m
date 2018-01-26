@@ -52,7 +52,7 @@
    
     if (count > 0 ) {
         _photosView.pic_urls = model.pic_urls;
-        
+        _photosView.selfVc = _weakSelf;
         // 有图片重新更新约束
         CGFloat oneheight = (kScreenWidth - _nameLab.zj_originX - 15 -20)/3;
         // 三目运算符 小于或等于3张 显示一行的高度 ,大于3张小于或等于6行，显示2行的高度 ，大于6行，显示3行的高度

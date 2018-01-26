@@ -15,5 +15,6 @@
 @property(nonatomic ,strong) ZJCommit *model;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
+@property(nonatomic ,weak) UIViewController      *weakSelf;
 
 @end
