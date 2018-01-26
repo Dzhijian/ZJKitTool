@@ -49,6 +49,7 @@
     self.contentLab.text = model.content;
     
     NSInteger count = model.pic_urls.count;
+   
     if (count > 0 ) {
         _photosView.pic_urls = model.pic_urls;
         
@@ -57,7 +58,7 @@
         // 三目运算符 小于或等于3张 显示一行的高度 ,大于3张小于或等于6行，显示2行的高度 ，大于6行，显示3行的高度
         CGFloat photoHeight = count<=3 ? oneheight : (count<=6 ? 2*oneheight+10 : oneheight *3+20);
 
-        [_photosView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [_photosView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_contentLab.mas_bottom).offset(10);
             make.left.equalTo(_nameLab.mas_left);
             make.right.mas_equalTo(-15);
@@ -70,22 +71,23 @@
             make.height.mas_equalTo(0.5);
             make.bottom.mas_equalTo(0); // 这句很重要！！！
         }];
-
+        _photosView.hidden = NO;
     }else{
-        [_photosView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [_photosView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_contentLab.mas_bottom).offset(10);
             make.left.equalTo(_nameLab.mas_left);
             make.right.mas_equalTo(-15);
             make.height.mas_equalTo(0.001);
         }];
         [_line mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_photosView.mas_bottom).offset(5);
+//            make.top.equalTo(_photosView.mas_bottom).offset(0);
             make.left.mas_equalTo(15);
             make.right.mas_equalTo(0);
             make.height.mas_equalTo(0.5);
             make.bottom.mas_equalTo(0); // 这句很重要！！！
         }];
-//
+    
+        _photosView.hidden = YES;
     }
     
 }
@@ -95,8 +97,8 @@
     // 头像
     self.avatar = [UIImageView zj_imageViewWithImageName:@"" SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
-        make.top.mas_equalTo(10);
-        make.width.height.mas_equalTo(50);
+        make.top.mas_equalTo(15);
+        make.width.height.mas_equalTo(40);
     }];
     
     
@@ -123,6 +125,7 @@
         make.top.equalTo(_avatar.mas_bottom).offset(10);
         make.left.equalTo(_nameLab.mas_left);
         make.right.mas_equalTo(-15);
+        make.height.mas_lessThanOrEqualTo(16);
     }];
     
     // 图片
@@ -132,7 +135,9 @@
         make.top.equalTo(_contentLab.mas_bottom).offset(10);
         make.left.equalTo(_nameLab.mas_left);
         make.right.mas_equalTo(-15);
+        make.height.mas_equalTo(0.001);
     }];
+    
 #warning 注意  不管你的布局是怎样的 ，一定要有一个(最好是最底部的控件)相对 contentView.bottom的约束，否则计算cell的高度的时候会不正确！
     self.line = [UIView zj_viewWithBackColor:kLightGrayColor supView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_photosView.mas_bottom).offset(15);
