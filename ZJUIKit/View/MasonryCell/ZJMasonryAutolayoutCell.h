@@ -12,7 +12,7 @@
 
 @interface ZJMasonryAutolayoutCell : UITableViewCell
 
-@property(nonatomic ,strong) ZJCommit *model;
+@property(nonatomic ,strong) ZJCommit           *model;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 

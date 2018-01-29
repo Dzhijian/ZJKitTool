@@ -63,6 +63,7 @@
 		044EE1C2201B133200ACFC0A /* ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE18F201B133200ACFC0A /* ZJButton.m */; };
 		044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE193201B133200ACFC0A /* ZJTimeCountDown.m */; };
 		044EE1C5201B23CE00ACFC0A /* MasonryCellData.json in Resources */ = {isa = PBXBuildFile; fileRef = 044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */; };
+		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
 		0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEE61FD12E8A00617353 /* AppDelegate.m */; };
 		0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEB1FD12E8A00617353 /* Main.storyboard */; };
 		0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEE1FD12E8A00617353 /* Assets.xcassets */; };
@@ -224,6 +225,8 @@
 		044EE192201B133200ACFC0A /* ZJTimeCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDown.h; sourceTree = "<group>"; };
 		044EE193201B133200ACFC0A /* ZJTimeCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDown.m; sourceTree = "<group>"; };
 		044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MasonryCellData.json; path = ZJUIKit/View/Commit/MasonryCellData.json; sourceTree = SOURCE_ROOT; };
+		044EE1D5201EF16D00ACFC0A /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		0475BEE21FD12E8A00617353 /* ZJUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0475BEE51FD12E8A00617353 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0475BEE61FD12E8A00617353 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -484,6 +487,31 @@
 			path = ZJTool;
 			sourceTree = "<group>";
 		};
+		044EE1D2201ED24F00ACFC0A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				044EE1D3201EF11800ACFC0A /* New Group */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		044EE1D3201EF11800ACFC0A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				044EE1D4201EF16D00ACFC0A /* YYFPSLabel(刷新率) */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		044EE1D4201EF16D00ACFC0A /* YYFPSLabel(刷新率) */ = {
+			isa = PBXGroup;
+			children = (
+				044EE1D5201EF16D00ACFC0A /* YYFPSLabel.h */,
+				044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */,
+			);
+			path = "YYFPSLabel(刷新率)";
+			sourceTree = "<group>";
+		};
 		0475BED91FD12E8A00617353 = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +540,7 @@
 				044EE12A201B133200ACFC0A /* ZJKit+Masonry */,
 				04C7482D1FD7C70700A749E3 /* Controller */,
 				04C7481C1FD6500900A749E3 /* View */,
+				044EE1D2201ED24F00ACFC0A /* Other */,
 				0475BEE51FD12E8A00617353 /* AppDelegate.h */,
 				0475BEE61FD12E8A00617353 /* AppDelegate.m */,
 				0475BEEB1FD12E8A00617353 /* Main.storyboard */,
@@ -991,6 +1020,7 @@
 				044EE1AE201B133200ACFC0A /* UIImageView+ZJMasonryKit.m in Sources */,
 				048E8A2B201728C600486470 /* ZJChooseShowView.m in Sources */,
 				044EE1A0201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.m in Sources */,
+				044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */,
 				04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */,
 				044EE1B6201B133200ACFC0A /* NSString+ZJString.m in Sources */,
 				04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */,

@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 #import "ZJKitNaigationController.h"
 #import "ZJMainViewController.h"
-#import "JPFPSStatus.h"
-#import "GDPerformanceMonitor.h"
+//#import "JPFPSStatus.h"
+//#import "GDPerformanceMonitor.h"
+#import "YYFPSLabel.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,23 +23,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-
+    
     
     
     ZJMainViewController *vc = [[ZJMainViewController alloc]init];
     ZJKitNaigationController *nav = [[ZJKitNaigationController alloc]initWithRootViewController:vc];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = kWhiteColor;
+    // 屏幕刷新率
+    [self.window addSubview:[[YYFPSLabel alloc] initWithFrame:CGRectMake(20, 70, 40, 20)]];
+    
     self.window.rootViewController = nav;
     
-//    [[JPFPSStatus sharedInstance] open];
+    
+    
 #ifdef DEBUG
-    [[GDPerformanceMonitor sharedInstance] startMonitoring];
-    [[GDPerformanceMonitor sharedInstance] configureWithConfiguration:^(UILabel *textLabel) {
-        [textLabel setBackgroundColor:[UIColor blackColor]];
-        [textLabel setTextColor:[UIColor whiteColor]];
-        [textLabel.layer setBorderColor:[[UIColor blackColor] CGColor]];
-    }];
+//    [[GDPerformanceMonitor sharedInstance] startMonitoring];
+//    [[GDPerformanceMonitor sharedInstance] configureWithConfiguration:^(UILabel *textLabel) {
+//        [textLabel setBackgroundColor:[UIColor blackColor]];
+//        [textLabel setTextColor:[UIColor whiteColor]];
+//        [textLabel.layer setBorderColor:[[UIColor blackColor] CGColor]];
+//    }];
 #endif
   
     [self.window makeKeyAndVisible];

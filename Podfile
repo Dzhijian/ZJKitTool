@@ -15,6 +15,12 @@ target 'ZJUIKit' do
   pod 'GDPerformanceView'
   pod 'UITableView+FDTemplateLayoutCell'
   
+  
+  pod 'YYImage'
+  pod 'YYText'
+  pod 'YYAsyncLayer'
+  pod 'YYCategories'
+  
   target 'ZJUIKitTests' do
     inherit! :search_paths
     # Pods for testing
