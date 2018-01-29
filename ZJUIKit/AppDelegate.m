@@ -11,14 +11,24 @@
 #import "ZJMainViewController.h"
 //#import "JPFPSStatus.h"
 //#import "GDPerformanceMonitor.h"
-#import "YYFPSLabel.h"
+
 
 @interface AppDelegate ()
+// 屏幕刷新检测label
+@property(nonatomic ,strong) YYFPSLabel *fpsLabel;
 
 @end
 
 @implementation AppDelegate
 
+-(YYFPSLabel *)fpsLabel{
+    if (!_fpsLabel) {
+        _fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(70, 5, 0, 0)];
+        [_fpsLabel sizeToFit];
+        _fpsLabel.alpha = 1;
+    }
+    return _fpsLabel;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -30,11 +40,12 @@
     ZJKitNaigationController *nav = [[ZJKitNaigationController alloc]initWithRootViewController:vc];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = kWhiteColor;
-    // 屏幕刷新率
-    [self.window addSubview:[[YYFPSLabel alloc] initWithFrame:CGRectMake(20, 70, 40, 20)]];
-    
     self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     
+    
+    // 检测屏幕刷新率
+    [self.window addSubview:self.fpsLabel];
     
     
 #ifdef DEBUG
@@ -46,7 +57,7 @@
 //    }];
 #endif
   
-    [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

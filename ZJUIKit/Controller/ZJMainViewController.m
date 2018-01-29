@@ -41,7 +41,10 @@
     self.title = @"ZJUIKitTool";
     self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)"];
     [self setUpAllView];
-
+//    YYFPSLabel *fps = [[YYFPSLabel alloc] init];
+//    [fps sizeToFit];
+//    fps.alpha = 1;
+//    [self.view addSubview:fps];
 
 }
 

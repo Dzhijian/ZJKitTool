@@ -28,3 +28,5 @@
 #import <YYText.h>
 #import <YYCategories.h>
 #import <YYAsyncLayer.h>
+
+#import "YYFPSLabel.h"
