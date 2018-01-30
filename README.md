@@ -31,4 +31,8 @@ MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视�
   * pod 'KSPhotoBrowser'
   
   */ 
+  
+  ## 瀑布流
+  ![Image text](https://raw.githubusercontent.com/Dzhijian/ZJUIKitTool/master/img-folder/collectionViewVertacal.jpg)
+  ![Image text](https://github.com/Dzhijian/ZJUIKitTool/blob/master/img-folder/collectionViewhorizontal.jpg)
 
