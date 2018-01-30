@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)"];
+    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)"];
     [self setUpAllView];
 
 
