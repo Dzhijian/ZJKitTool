@@ -32,7 +32,16 @@ MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视�
   
   */ 
   
-  ## 瀑布流
+  评论列表(MVVM)
+  ![Image text](https://raw.githubusercontent.com/Dzhijian/ZJUIKitTool/master/img-folder/commitMVVM.jpg)
+  
+  Masonry自动布局简单朋友圈
+  ![Image text](https://github.com/Dzhijian/ZJUIKitTool/blob/master/img-folder/commmitsMasonry.jpg)
+  
+  倒计时列表，可以单个
+  ![Image text](https://github.com/Dzhijian/ZJUIKitTool/blob/master/img-folder/countDown.jpg)
+ 
+  瀑布流
   ![Image text](https://raw.githubusercontent.com/Dzhijian/ZJUIKitTool/master/img-folder/collectionViewVertacal.jpg)
   ![Image text](https://github.com/Dzhijian/ZJUIKitTool/blob/master/img-folder/collectionViewhorizontal.jpg)
 
