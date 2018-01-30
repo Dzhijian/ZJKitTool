@@ -75,7 +75,7 @@
  @param                 constraints masonry布局
  @return                label
  */
-+(instancetype)zj_labelWithFont:(CGFloat)fontsize
++(instancetype)zj_labelWithFontSize:(CGFloat)fontsize
                           lines:(NSInteger)lines
                            text:(NSString *)text
                       superView:(UIView *)superView
