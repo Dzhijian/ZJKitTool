@@ -31,7 +31,7 @@
         make.height.mas_equalTo(20);
     }];
     
-    self.detailLab = [UILabel zj_labelWithFont:15 lines:1 text:@"还剩多少小时" textColor:kOrangeColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.detailLab = [UILabel zj_labelWithFontSize:15 lines:1 text:@"还剩多少小时" textColor:kOrangeColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_titleLab.mas_bottom).offset(10);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);

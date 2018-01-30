@@ -64,6 +64,8 @@
 		044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE193201B133200ACFC0A /* ZJTimeCountDown.m */; };
 		044EE1C5201B23CE00ACFC0A /* MasonryCellData.json in Resources */ = {isa = PBXBuildFile; fileRef = 044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
+		044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1DA201F130A00ACFC0A /* ZJBaseCollectionViewController.m */; };
+		044EE1E1201F173100ACFC0A /* ZJElementsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1E0201F173100ACFC0A /* ZJElementsFlowLayout.m */; };
 		0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEE61FD12E8A00617353 /* AppDelegate.m */; };
 		0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEB1FD12E8A00617353 /* Main.storyboard */; };
 		0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEE1FD12E8A00617353 /* Assets.xcassets */; };
@@ -80,6 +82,14 @@
 		048E8A2E201728C600486470 /* ZJThreeChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A25201728C600486470 /* ZJThreeChildView.m */; };
 		048E8A2F201728C600486470 /* ZJTwoChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A27201728C600486470 /* ZJTwoChildView.m */; };
 		048E8A3320172E9300486470 /* ZJChooseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A3220172E9300486470 /* ZJChooseModel.m */; };
+		04C5175F201FFDE400AC15F1 /* ZJVerticalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5175E201FFDE400AC15F1 /* ZJVerticalFlowLayout.m */; };
+		04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517612020045200AC15F1 /* ZJHorizontalFlowLayout.m */; };
+		04C517662020120800AC15F1 /* ZJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517652020120800AC15F1 /* ZJCollectionViewController.m */; };
+		04C517692020153200AC15F1 /* ZJElementsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */; };
+		04C5176C20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */; };
+		04C5176F20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */; };
+		04C517772020224D00AC15F1 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517762020224D00AC15F1 /* ZJCollectionViewCell.m */; };
+		04C51782202059AB00AC15F1 /* ZJImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C51780202059AB00AC15F1 /* ZJImageModel.m */; };
 		04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */; };
 		04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13412016E07D00C619E5 /* ZJCommitFrame.m */; };
 		04DA13472016E0C900C619E5 /* ZJCommitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13462016E0C900C619E5 /* ZJCommitCell.m */; };
@@ -227,6 +237,10 @@
 		044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MasonryCellData.json; path = ZJUIKit/View/Commit/MasonryCellData.json; sourceTree = SOURCE_ROOT; };
 		044EE1D5201EF16D00ACFC0A /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		044EE1D9201F130A00ACFC0A /* ZJBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseCollectionViewController.h; sourceTree = "<group>"; };
+		044EE1DA201F130A00ACFC0A /* ZJBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseCollectionViewController.m; sourceTree = "<group>"; };
+		044EE1DF201F173100ACFC0A /* ZJElementsFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJElementsFlowLayout.h; sourceTree = "<group>"; };
+		044EE1E0201F173100ACFC0A /* ZJElementsFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJElementsFlowLayout.m; sourceTree = "<group>"; };
 		0475BEE21FD12E8A00617353 /* ZJUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0475BEE51FD12E8A00617353 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0475BEE61FD12E8A00617353 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -259,6 +273,22 @@
 		048E8A27201728C600486470 /* ZJTwoChildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTwoChildView.m; sourceTree = "<group>"; };
 		048E8A3120172E9300486470 /* ZJChooseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseModel.h; sourceTree = "<group>"; };
 		048E8A3220172E9300486470 /* ZJChooseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseModel.m; sourceTree = "<group>"; };
+		04C5175D201FFDE400AC15F1 /* ZJVerticalFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJVerticalFlowLayout.h; sourceTree = "<group>"; };
+		04C5175E201FFDE400AC15F1 /* ZJVerticalFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJVerticalFlowLayout.m; sourceTree = "<group>"; };
+		04C517602020045200AC15F1 /* ZJHorizontalFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJHorizontalFlowLayout.h; sourceTree = "<group>"; };
+		04C517612020045200AC15F1 /* ZJHorizontalFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJHorizontalFlowLayout.m; sourceTree = "<group>"; };
+		04C517642020120800AC15F1 /* ZJCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewController.h; sourceTree = "<group>"; };
+		04C517652020120800AC15F1 /* ZJCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewController.m; sourceTree = "<group>"; };
+		04C517672020153200AC15F1 /* ZJElementsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJElementsCollectionViewController.h; sourceTree = "<group>"; };
+		04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJElementsCollectionViewController.m; sourceTree = "<group>"; };
+		04C5176A20201BA700AC15F1 /* ZJVerticalWaterFallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJVerticalWaterFallViewController.h; sourceTree = "<group>"; };
+		04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJVerticalWaterFallViewController.m; sourceTree = "<group>"; };
+		04C5176D20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJHorizontalWaterFallViewController.h; sourceTree = "<group>"; };
+		04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJHorizontalWaterFallViewController.m; sourceTree = "<group>"; };
+		04C517752020224D00AC15F1 /* ZJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewCell.h; sourceTree = "<group>"; };
+		04C517762020224D00AC15F1 /* ZJCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewCell.m; sourceTree = "<group>"; };
+		04C51780202059AB00AC15F1 /* ZJImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJImageModel.m; sourceTree = "<group>"; };
+		04C51781202059AB00AC15F1 /* ZJImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJImageModel.h; sourceTree = "<group>"; };
 		04C748081FD6476C00A749E3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommitViewController.h; sourceTree = "<group>"; };
 		04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCommitViewController.m; sourceTree = "<group>"; };
@@ -337,6 +367,8 @@
 			isa = PBXGroup;
 			children = (
 				044EE174201B133200ACFC0A /* ZJHelperKit.h */,
+				044EE15B201B133200ACFC0A /* ZJCommonKit.h */,
+				044EE15C201B133200ACFC0A /* ZJCommonKit.m */,
 				044EE12B201B133200ACFC0A /* ControllerKit */,
 				044EE130201B133200ACFC0A /* HelperKit */,
 				044EE15D201B133200ACFC0A /* UIKit+Masonry */,
@@ -403,8 +435,6 @@
 				044EE158201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m */,
 				044EE159201B133200ACFC0A /* UIView+ZJHUDHelperKit.h */,
 				044EE15A201B133200ACFC0A /* UIView+ZJHUDHelperKit.m */,
-				044EE15B201B133200ACFC0A /* ZJCommonKit.h */,
-				044EE15C201B133200ACFC0A /* ZJCommonKit.m */,
 			);
 			path = HelperKit;
 			sourceTree = "<group>";
@@ -512,6 +542,22 @@
 			path = "YYFPSLabel(刷新率)";
 			sourceTree = "<group>";
 		};
+		044EE1D8201F12AB00ACFC0A /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				04C517782020454400AC15F1 /* Model */,
+				04C517742020223600AC15F1 /* View */,
+				04C51770202021DD00AC15F1 /* ZJCollectionView */,
+				04C517672020153200AC15F1 /* ZJElementsCollectionViewController.h */,
+				04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */,
+				04C5176A20201BA700AC15F1 /* ZJVerticalWaterFallViewController.h */,
+				04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */,
+				04C5176D20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.h */,
+				04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		0475BED91FD12E8A00617353 = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +658,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04C51770202021DD00AC15F1 /* ZJCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				044EE1D9201F130A00ACFC0A /* ZJBaseCollectionViewController.h */,
+				044EE1DA201F130A00ACFC0A /* ZJBaseCollectionViewController.m */,
+				044EE1DF201F173100ACFC0A /* ZJElementsFlowLayout.h */,
+				044EE1E0201F173100ACFC0A /* ZJElementsFlowLayout.m */,
+				04C5175D201FFDE400AC15F1 /* ZJVerticalFlowLayout.h */,
+				04C5175E201FFDE400AC15F1 /* ZJVerticalFlowLayout.m */,
+				04C517602020045200AC15F1 /* ZJHorizontalFlowLayout.h */,
+				04C517612020045200AC15F1 /* ZJHorizontalFlowLayout.m */,
+			);
+			path = ZJCollectionView;
+			sourceTree = "<group>";
+		};
+		04C517742020223600AC15F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04C517752020224D00AC15F1 /* ZJCollectionViewCell.h */,
+				04C517762020224D00AC15F1 /* ZJCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04C517782020454400AC15F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C51781202059AB00AC15F1 /* ZJImageModel.h */,
+				04C51780202059AB00AC15F1 /* ZJImageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		04C7481C1FD6500900A749E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +705,7 @@
 		04C7482D1FD7C70700A749E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				044EE1D8201F12AB00ACFC0A /* CollectionView */,
 				042190BE20186182009056E2 /* ZJMainViewController.h */,
 				042190BF20186182009056E2 /* ZJMainViewController.m */,
 				042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */,
@@ -638,6 +718,8 @@
 				0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */,
 				044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */,
 				044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */,
+				04C517642020120800AC15F1 /* ZJCollectionViewController.h */,
+				04C517652020120800AC15F1 /* ZJCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -989,16 +1071,20 @@
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
 				044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */,
 				044EE1A1201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m in Sources */,
+				04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */,
 				044EE1A8201B133200ACFC0A /* UITextView+ZJHelperKit.m in Sources */,
 				044EE1C2201B133200ACFC0A /* ZJButton.m in Sources */,
 				044EE197201B133200ACFC0A /* NSDate+ZJHelperKit.m in Sources */,
 				044EE1A5201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m in Sources */,
 				044EE1A9201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m in Sources */,
+				044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */,
 				044EE1BF201B133200ACFC0A /* UITextField+ZJTextField.m in Sources */,
 				044EE195201B133200ACFC0A /* ZJKitNaigationController.m in Sources */,
 				04DA134A2016E13500C619E5 /* ZJImgLeftBtn.m in Sources */,
 				044EE1A7201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m in Sources */,
+				04C5175F201FFDE400AC15F1 /* ZJVerticalFlowLayout.m in Sources */,
 				04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */,
+				04C517662020120800AC15F1 /* ZJCollectionViewController.m in Sources */,
 				044EE1B4201B133200ACFC0A /* UIWebView+ZJMasonryKit.m in Sources */,
 				044EE1B3201B133200ACFC0A /* UIView+ZJMasonryKit.m in Sources */,
 				044EE1C0201B133200ACFC0A /* UITextView+ZJTextView.m in Sources */,
@@ -1007,6 +1093,7 @@
 				044EE1B5201B133200ACFC0A /* ZJBaseTableViewCell.m in Sources */,
 				04DA136120170CE400C619E5 /* ZJCommit.m in Sources */,
 				048E8A2E201728C600486470 /* ZJThreeChildView.m in Sources */,
+				04C517692020153200AC15F1 /* ZJElementsCollectionViewController.m in Sources */,
 				048E8A28201728C600486470 /* ZJChooseOneRightCell.m in Sources */,
 				044EE198201B133200ACFC0A /* NSDictionary+ZJHelperKit.m in Sources */,
 				048E8A2D201728C600486470 /* ZJOneChildView.m in Sources */,
@@ -1026,9 +1113,12 @@
 				04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */,
 				04DA134D2016E14400C619E5 /* ZJStarsView.m in Sources */,
 				044EE1A3201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.m in Sources */,
+				04C5176C20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m in Sources */,
 				044EE19F201B133200ACFC0A /* NSTimer+ZJHelperKit.m in Sources */,
 				044EE1B9201B133200ACFC0A /* UIColor+ZJColor.m in Sources */,
 				0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */,
+				04C517772020224D00AC15F1 /* ZJCollectionViewCell.m in Sources */,
+				04C5176F20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m in Sources */,
 				044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */,
 				044EE196201B133200ACFC0A /* NSArray+ZJHelperKit.m in Sources */,
 				048E8A2C201728C600486470 /* ZJFourChildView.m in Sources */,
@@ -1045,8 +1135,10 @@
 				044EE1B1201B133200ACFC0A /* UITextField+ZJMasonryKit.m in Sources */,
 				044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */,
 				044EE1BD201B133200ACFC0A /* UILabel+ZJLabel.m in Sources */,
+				04C51782202059AB00AC15F1 /* ZJImageModel.m in Sources */,
 				044EE1C1201B133200ACFC0A /* UIViewController+ZJViewController.m in Sources */,
 				044EE1AF201B133200ACFC0A /* UILabel+ZJMasonryKit.m in Sources */,
+				044EE1E1201F173100ACFC0A /* ZJElementsFlowLayout.m in Sources */,
 				044EE19B201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.m in Sources */,
 				04DA13472016E0C900C619E5 /* ZJCommitCell.m in Sources */,
 				044EE1AB201B133200ACFC0A /* ZJCommonKit.m in Sources */,

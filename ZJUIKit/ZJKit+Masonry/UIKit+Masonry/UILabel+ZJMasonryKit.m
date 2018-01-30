@@ -12,53 +12,81 @@
 @implementation UILabel (ZJMasonryKit)
 
 
-+(instancetype)zj_labelWithFont:(CGFloat)font{
-    return [self zj_labelWithFont:font text:nil];
++(instancetype)zj_labelWithFontSize:(CGFloat)fontSize{
+    return [self zj_labelWithFontSize:fontSize text:nil];
 }
 
 
-+(instancetype)zj_labelWithFont:(CGFloat)font text:(NSString *)text{
-    return [self zj_labelWithFont:font text:text superView:nil constraints:nil];
++(instancetype)zj_labelWithFontSize:(CGFloat)fontSize text:(NSString *)text{
+    return [self zj_labelWithFontSize:fontSize text:text superView:nil constraints:nil];
 }
 
 
-+(instancetype)zj_labelWithFont:(CGFloat)font
++(instancetype)zj_labelWithFontSize:(CGFloat)fontSize
                       textColor:(UIColor *)textColor
                       superView:(UIView *)superView
                     constraints:(ZJConstrainMaker)constraints
 {
-    return [self zj_labelWithFont:font lines:1 text:nil textColor:textColor superView:superView constraints:constraints];
+    return [self zj_labelWithFontSize:fontSize lines:1 text:nil textColor:textColor superView:superView constraints:constraints];
 }
 
 
-+(instancetype)zj_labelWithFont:(CGFloat)font
++(instancetype)zj_labelWithFontSize:(CGFloat)fontSize
                            text:(NSString *)text
                       superView:(UIView *)superView
                     constraints:(ZJConstrainMaker)constraints
 {
-    return [self zj_labelWithFont:font lines:1 text:text superView:superView constraints:constraints];
+    return [self zj_labelWithFontSize:fontSize lines:1 text:text superView:superView constraints:constraints];
 }
 
-+(instancetype)zj_labelWithFont:(CGFloat)font
++(instancetype)zj_labelWithFontSize:(CGFloat)fontSize
                           lines:(NSInteger)lines
                            text:(NSString *)text
                       superView:(UIView *)superView
                     constraints:(ZJConstrainMaker)constraints
 {
-    return [self zj_labelWithFont:font lines:lines text:text textColor:nil superView:superView constraints:constraints];
+    return [self zj_labelWithFontSize:fontSize lines:lines text:text textColor:nil superView:superView constraints:constraints];
 }
 
-+(instancetype)zj_labelWithFont:(CGFloat)font
++(instancetype)zj_labelWithFont:(UIFont *)font
                           lines:(NSInteger)lines
                            text:(NSString *)text
                       textColor:(UIColor *)textColor
                       superView:(UIView *)superView
                     constraints:(ZJConstrainMaker)constraints
 {
+    return [self zj_initLabelWithFont:font fontSize:0 lines:lines text:text textColor:textColor superView:superView constraints:constraints];
+}
+
++(instancetype)zj_labelWithFontSize:(CGFloat)fontsize
+                          lines:(NSInteger)lines
+                           text:(NSString *)text
+                      textColor:(UIColor *)textColor
+                      superView:(UIView *)superView
+                    constraints:(ZJConstrainMaker)constraints
+{
+    return [self zj_initLabelWithFont:nil fontSize:fontsize lines:lines text:text textColor:textColor superView:superView constraints:constraints];
+    
+}
+
++(instancetype)zj_initLabelWithFont:(UIFont *)font
+                   fontSize:(CGFloat)fontSize
+                      lines:(NSInteger)lines
+                       text:(NSString *)text
+                  textColor:(UIColor *)textColor
+                  superView:(UIView *)superView
+                constraints:(ZJConstrainMaker)constraints{
     
     UILabel *label = [[UILabel alloc]init];
     label.text = text;
-    label.font = kFontWithSize(font);
+    if (fontSize!=0) {
+        label.font = kFontWithSize(fontSize);
+    }
+    
+    if (font != nil) {
+        label.font = font;
+    }
+    
     label.textAlignment = NSTextAlignmentLeft;
     if (textColor != nil) {
         label.textColor = textColor;

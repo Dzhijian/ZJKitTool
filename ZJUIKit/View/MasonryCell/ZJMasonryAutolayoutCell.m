@@ -108,7 +108,7 @@
     }];
     
     // 昵称
-    self.nameLab = [UILabel zj_labelWithFont:15 textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.nameLab = [UILabel zj_labelWithFontSize:15 textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_avatar.mas_centerY);
         make.left.equalTo(_avatar.mas_right).offset(15);
         make.right.mas_equalTo(-100);
@@ -116,7 +116,7 @@
     }];
     
     // 时间
-    self.timeLab = [UILabel zj_labelWithFont:12 textColor:kLightGrayColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.timeLab = [UILabel zj_labelWithFontSize:12 textColor:kLightGrayColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_avatar.mas_centerY);
         make.right.mas_equalTo(-15);
         make.width.mas_equalTo(80);
@@ -126,7 +126,7 @@
     self.timeLab.textAlignment = NSTextAlignmentRight;
     
     // 内容
-    self.contentLab = [UILabel zj_labelWithFont:14 lines:0 text:nil textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.contentLab = [UILabel zj_labelWithFontSize:14 lines:0 text:nil textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_avatar.mas_bottom).offset(10);
         make.left.equalTo(_nameLab.mas_left);
         make.right.mas_equalTo(-15);

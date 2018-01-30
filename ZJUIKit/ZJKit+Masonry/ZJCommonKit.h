@@ -56,6 +56,14 @@
 // 获取屏幕的 bounds
 #define kScreenBounds ([UIScreen mainScreen].bounds)
 
+// 不同屏幕尺寸字体适配
+#define kScreenWidthRatio  (kScreenWidth / 375.0)
+#define kScreenHeightRatio (kScreenHeight / 667.0)
+#define AdaptedWidth(x)  ceilf((x) * kScreenWidthRatio)
+#define AdaptedHeight(x) ceilf((x) * kScreenHeightRatio)
+// 字体适配
+#define AdaptedFontSize(R)     [UIFont systemFontOfSize:AdaptedWidth(R)]
+
 
 
 #pragma mark - Generate Color 颜色

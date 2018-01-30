@@ -27,6 +27,9 @@
 @property(nonatomic ,assign) NSInteger testNum;
 // 倒计时
 @property(nonatomic ,strong) ZJTimeCountDown *timeDown;
+@property(nonatomic ,strong) UILabel *timeLabel;
+// 字体大小适配Label
+@property(nonatomic ,strong) UILabel *adaptLabel;
 
 @end
 
@@ -46,18 +49,19 @@
     }];
     // 设置标题
     [self zj_setNavTitle:@"ZJUIKit+Masonry"];
+    // 倒计时test
+    [self timeCountDownTest];
     // 快速创建控件 + marsonry 布局
     [self zj_UIKitAndMasonry];
     
-    // 倒计时test
-    [self timeCountDownTest];
+   
 
 }
 
 #pragma mark - 倒计时Test
 -(void)timeCountDownTest{
     
-    UILabel *timeLabel = [UILabel zj_labelWithFont:14 lines:1 text:nil textColor:kOrangeColor superView:self.view constraints:^(MASConstraintMaker *make) {
+    self.timeLabel = [UILabel zj_labelWithFontSize:14 lines:1 text:nil textColor:kOrangeColor superView:self.view constraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(100);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
@@ -66,8 +70,9 @@
     
     // 单个倒计时最好使用 alloc init 创建，不要使用单例，避免退出页面时，倒计时没有及时销毁
     self.timeDown = [[ZJTimeCountDown alloc]init];
+    kWeakObject(self);
     [_timeDown zj_timeCountDownWithSecondTime:300 completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
-        timeLabel.text = [NSString stringWithFormat:@"还剩%ld天%ld小时%ld分钟%ld秒开始",day,hour,minute,second];
+        weakObject.timeLabel.text = [NSString stringWithFormat:@"还剩%ld天%ld小时%ld分钟%ld秒开始",day,hour,minute,second];
     }];
     
 }
@@ -108,7 +113,7 @@
     
     
     
-    [UILabel zj_labelWithFont:14 lines:1 text:@"哈哈哈哈哈" textColor:kRedColor superView:self.view constraints:^(MASConstraintMaker *make) {
+      [UILabel zj_labelWithFontSize:14 lines:1 text:@"哈哈哈哈哈" textColor:kRedColor superView:self.view constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(alertBtn.mas_bottom).offset(10);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
@@ -116,25 +121,38 @@
     }];
     
     
+    
+    
 
-    [UIView zj_viewWithBackColor:kRedColor supView:self.view constraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(20);
+    UIView *redView = [UIView zj_viewWithBackColor:kRedColor supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
         make.centerY.mas_equalTo(-90);
-        make.width.height.mas_equalTo(100);
+        make.width.height.mas_equalTo(80);
     } onTap:^(UITapGestureRecognizer *gesture) {
         // 显示加载视图
         [weakObject.view zj_showBusyHUD];
     }];
     
+    self.adaptLabel = [UILabel  zj_labelWithFont:AdaptedFontSize(15) lines:0 text:@"湾桃园一炼油厂突然发生爆炸，顿时火光烈焰冲天，方圆5公里内住户都被巨大爆炸声响震醒。据《中时电子报》消息，爆炸位置发生在“中油”公司在桃园市龟山区民生北路的炼油厂，桃园市消防局已接获大量报案电话，先遣芦竹消防分队入厂查看，发现起火点约在3、4层楼高位置，火势猛烈有蔓延之势，初步了解并无伤亡。" textColor:kLightGrayColor superView:self.view constraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.right.equalTo(redView.mas_left).offset(-10);
+        make.top.equalTo(_timeLabel.mas_bottom).offset(10);
+    }];
     
     
+    
+}
+
+
+
+-(void)textViewTest{
+    // 创建UITextView 并设置 placeText
     [UITextView zj_textViewWithFontSize:16 textColor:[UIColor orangeColor] borderColor:k16RGBColor(0xCCCCCC) borderWidth:0.5 cornerRadiu:4 placeColor:k16RGBColor(0xBBBBBB) placeText:@"请在这里输入..." superView:self.view constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
-        make.bottom.mas_equalTo(-180);
+        make.top.equalTo(_adaptLabel.mas_bottom).offset(10);
         make.height.mas_equalTo(140);
     }];
-    
 }
 
 

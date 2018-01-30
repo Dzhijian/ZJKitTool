@@ -26,6 +26,8 @@
 #import "ZJKitAndMasonryViewController.h"
 #import "ZJTimeCountDownViewController.h"
 #import "ZJMasonryAutolayoutCellViewController.h"
+#import "ZJCollectionViewController.h"
+
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
@@ -39,12 +41,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)"];
+    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)"];
     [self setUpAllView];
-//    YYFPSLabel *fps = [[YYFPSLabel alloc] init];
-//    [fps sizeToFit];
-//    fps.alpha = 1;
-//    [self.view addSubview:fps];
+
 
 }
 
@@ -99,6 +98,11 @@
         {
             ZJMasonryAutolayoutCellViewController *masonryCell = [[ZJMasonryAutolayoutCellViewController alloc]init];
             [self.navigationController pushViewController:masonryCell animated:YES];
+            break;
+        }case 5:
+        {
+            ZJCollectionViewController *collectionView = [[ZJCollectionViewController alloc]init];
+            [self.navigationController pushViewController:collectionView animated:YES];
             break;
         }
             
