@@ -27,6 +27,8 @@
 #import "ZJTimeCountDownViewController.h"
 #import "ZJMasonryAutolayoutCellViewController.h"
 #import "ZJCollectionViewController.h"
+#import "ZJWebViewController.h"
+#import "ZJNavBarShadeViewController.h"
 
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -38,12 +40,16 @@
 
 @implementation ZJMainViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)"];
+    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",@"导航栏渐变"];
     [self setUpAllView];
-
 
 }
 
@@ -103,6 +109,16 @@
         {
             ZJCollectionViewController *collectionView = [[ZJCollectionViewController alloc]init];
             [self.navigationController pushViewController:collectionView animated:YES];
+            break;
+        }case 6:
+        {
+            ZJWebViewController *webView = [[ZJWebViewController alloc]init];
+            [self.navigationController pushViewController:webView animated:YES];
+            break;
+        }case 7:
+        {
+            ZJNavBarShadeViewController *navBar = [[ZJNavBarShadeViewController alloc]init];
+            [self.navigationController pushViewController:navBar animated:YES];
             break;
         }
             

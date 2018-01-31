@@ -90,6 +90,12 @@
 		04C5176F20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */; };
 		04C517772020224D00AC15F1 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517762020224D00AC15F1 /* ZJCollectionViewCell.m */; };
 		04C51782202059AB00AC15F1 /* ZJImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C51780202059AB00AC15F1 /* ZJImageModel.m */; };
+		04C517852021951C00AC15F1 /* ZJBaseWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517842021951C00AC15F1 /* ZJBaseWKWebViewController.m */; };
+		04C5178820219A6300AC15F1 /* ZJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178720219A6300AC15F1 /* ZJWebViewController.m */; };
+		04C5178A20219AB800AC15F1 /* ZJWebViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 04C5178920219AB800AC15F1 /* ZJWebViewController.html */; };
+		04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */; };
+		04C517902021AC5E00AC15F1 /* ZJExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */; };
+		04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517922021B83500AC15F1 /* ZJNavigationBar.m */; };
 		04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */; };
 		04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13412016E07D00C619E5 /* ZJCommitFrame.m */; };
 		04DA13472016E0C900C619E5 /* ZJCommitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13462016E0C900C619E5 /* ZJCommitCell.m */; };
@@ -289,6 +295,17 @@
 		04C517762020224D00AC15F1 /* ZJCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewCell.m; sourceTree = "<group>"; };
 		04C51780202059AB00AC15F1 /* ZJImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJImageModel.m; sourceTree = "<group>"; };
 		04C51781202059AB00AC15F1 /* ZJImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJImageModel.h; sourceTree = "<group>"; };
+		04C517832021951C00AC15F1 /* ZJBaseWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseWKWebViewController.h; sourceTree = "<group>"; };
+		04C517842021951C00AC15F1 /* ZJBaseWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseWKWebViewController.m; sourceTree = "<group>"; };
+		04C5178620219A6300AC15F1 /* ZJWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJWebViewController.h; sourceTree = "<group>"; };
+		04C5178720219A6300AC15F1 /* ZJWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJWebViewController.m; sourceTree = "<group>"; };
+		04C5178920219AB800AC15F1 /* ZJWebViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ZJWebViewController.html; sourceTree = "<group>"; };
+		04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavBarShadeViewController.h; sourceTree = "<group>"; };
+		04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavBarShadeViewController.m; sourceTree = "<group>"; };
+		04C5178E2021AC5E00AC15F1 /* ZJExpandHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJExpandHeader.h; sourceTree = "<group>"; };
+		04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJExpandHeader.m; sourceTree = "<group>"; };
+		04C517912021B83500AC15F1 /* ZJNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavigationBar.h; sourceTree = "<group>"; };
+		04C517922021B83500AC15F1 /* ZJNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavigationBar.m; sourceTree = "<group>"; };
 		04C748081FD6476C00A749E3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommitViewController.h; sourceTree = "<group>"; };
 		04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCommitViewController.m; sourceTree = "<group>"; };
@@ -386,6 +403,8 @@
 				044EE12D201B133200ACFC0A /* ZJKitBaseController.m */,
 				044EE12E201B133200ACFC0A /* ZJKitNaigationController.h */,
 				044EE12F201B133200ACFC0A /* ZJKitNaigationController.m */,
+				04C517832021951C00AC15F1 /* ZJBaseWKWebViewController.h */,
+				04C517842021951C00AC15F1 /* ZJBaseWKWebViewController.m */,
 			);
 			path = ControllerKit;
 			sourceTree = "<group>";
@@ -520,6 +539,7 @@
 		044EE1D2201ED24F00ACFC0A /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				04C5178920219AB800AC15F1 /* ZJWebViewController.html */,
 				044EE1D3201EF11800ACFC0A /* New Group */,
 			);
 			path = Other;
@@ -691,9 +711,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04C517942021C52700AC15F1 /* NavigationBarView */ = {
+			isa = PBXGroup;
+			children = (
+				04C5178E2021AC5E00AC15F1 /* ZJExpandHeader.h */,
+				04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */,
+				04C517912021B83500AC15F1 /* ZJNavigationBar.h */,
+				04C517922021B83500AC15F1 /* ZJNavigationBar.m */,
+			);
+			path = NavigationBarView;
+			sourceTree = "<group>";
+		};
 		04C7481C1FD6500900A749E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04C517942021C52700AC15F1 /* NavigationBarView */,
 				044EE086201AD13A00ACFC0A /* MasonryCell */,
 				0403A0052019B1AD00D4DF1B /* Cell */,
 				04DA13382016DFB800C619E5 /* Commit */,
@@ -720,6 +752,10 @@
 				044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */,
 				04C517642020120800AC15F1 /* ZJCollectionViewController.h */,
 				04C517652020120800AC15F1 /* ZJCollectionViewController.m */,
+				04C5178620219A6300AC15F1 /* ZJWebViewController.h */,
+				04C5178720219A6300AC15F1 /* ZJWebViewController.m */,
+				04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */,
+				04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -901,6 +937,7 @@
 			files = (
 				0475BEF21FD12E8A00617353 /* LaunchScreen.storyboard in Resources */,
 				0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */,
+				04C5178A20219AB800AC15F1 /* ZJWebViewController.html in Resources */,
 				04DA13582017036500C619E5 /* CommitsData.json in Resources */,
 				044EE1C5201B23CE00ACFC0A /* MasonryCellData.json in Resources */,
 				0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */,
@@ -1068,11 +1105,13 @@
 			files = (
 				044EE1A6201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */,
 				044EE199201B133200ACFC0A /* NSFileManager+ZJHelperKit.m in Sources */,
+				04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */,
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
 				044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */,
 				044EE1A1201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m in Sources */,
 				04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */,
 				044EE1A8201B133200ACFC0A /* UITextView+ZJHelperKit.m in Sources */,
+				04C517852021951C00AC15F1 /* ZJBaseWKWebViewController.m in Sources */,
 				044EE1C2201B133200ACFC0A /* ZJButton.m in Sources */,
 				044EE197201B133200ACFC0A /* NSDate+ZJHelperKit.m in Sources */,
 				044EE1A5201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m in Sources */,
@@ -1080,6 +1119,7 @@
 				044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */,
 				044EE1BF201B133200ACFC0A /* UITextField+ZJTextField.m in Sources */,
 				044EE195201B133200ACFC0A /* ZJKitNaigationController.m in Sources */,
+				04C5178820219A6300AC15F1 /* ZJWebViewController.m in Sources */,
 				04DA134A2016E13500C619E5 /* ZJImgLeftBtn.m in Sources */,
 				044EE1A7201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m in Sources */,
 				04C5175F201FFDE400AC15F1 /* ZJVerticalFlowLayout.m in Sources */,
@@ -1128,6 +1168,7 @@
 				044EE1B0201B133200ACFC0A /* UITableView+ZJMarsonryKit.m in Sources */,
 				044EE194201B133200ACFC0A /* ZJKitBaseController.m in Sources */,
 				044EE1BB201B133200ACFC0A /* UIImage+ZJImage.m in Sources */,
+				04C517902021AC5E00AC15F1 /* ZJExpandHeader.m in Sources */,
 				048E8A29201728C600486470 /* ZJChooseViewOneLeftCell.m in Sources */,
 				044EE1A4201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m in Sources */,
 				044EE1BE201B133200ACFC0A /* UIScrollView+ZJScrollView.m in Sources */,
@@ -1148,6 +1189,7 @@
 				044EE1B7201B133200ACFC0A /* UIAlertController+ZJAlert.m in Sources */,
 				042190C020186182009056E2 /* ZJMainViewController.m in Sources */,
 				0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */,
+				04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */,
 				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,
 				044EE1BA201B133200ACFC0A /* UIDevice+ZJDivice.m in Sources */,
 			);
