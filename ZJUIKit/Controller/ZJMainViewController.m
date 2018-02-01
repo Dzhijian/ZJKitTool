@@ -29,6 +29,7 @@
 #import "ZJCollectionViewController.h"
 #import "ZJWebViewController.h"
 #import "ZJNavBarShadeViewController.h"
+#import "ZJSphereTagCloudViewController.h"
 
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -48,7 +49,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJUIKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",@"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",@"导航栏渐变"];
+    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",
+                        @"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",
+                        @"导航栏渐变",@"球形TagView"];
     [self setUpAllView];
 
 }
@@ -121,7 +124,12 @@
             [self.navigationController pushViewController:navBar animated:YES];
             break;
         }
-            
+        case 8:
+        {
+            ZJSphereTagCloudViewController *sphere = [[ZJSphereTagCloudViewController alloc]init];
+            [self.navigationController pushViewController:sphere animated:YES];
+            break;
+        }
         default:
             break;
     }

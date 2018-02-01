@@ -11,14 +11,14 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>JPFPSStatus.xcscheme</key>
+		<key>KSPhotoBrowser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>KSPhotoBrowser.xcscheme</key>
+		<key>LBXScan.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -122,6 +122,13 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
+		</dict>
+		<key>ZBarSDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>17</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

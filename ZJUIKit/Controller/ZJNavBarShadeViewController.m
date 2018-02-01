@@ -30,8 +30,9 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
 
 
@@ -53,6 +54,7 @@
 
 }
 
+// 对滚动事件做处理，状态栏颜色要现在info.plist文件里面添加一个 "View controller-based status bar appearance" 值设为 NO。
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat kNaviBarHeight =  -self.zj_navigationBar.height;
     CGPoint contentOffset = scrollView.contentOffset;
@@ -76,7 +78,6 @@
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }else if (contentOffset.y >= 0){
         
-
         [self.zj_navigationBar zj_setNavBarTint:kBlackColor navBackColor:kWhiteColor];
         _zj_navigationBar.lineView.hidden = NO;
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;

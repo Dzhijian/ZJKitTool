@@ -96,6 +96,8 @@
 		04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */; };
 		04C517902021AC5E00AC15F1 /* ZJExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */; };
 		04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517922021B83500AC15F1 /* ZJNavigationBar.m */; };
+		04C5179B2022BD8800AC15F1 /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179A2022BD8800AC15F1 /* DBSphereView.m */; };
+		04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */; };
 		04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */; };
 		04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13412016E07D00C619E5 /* ZJCommitFrame.m */; };
 		04DA13472016E0C900C619E5 /* ZJCommitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13462016E0C900C619E5 /* ZJCommitCell.m */; };
@@ -306,6 +308,12 @@
 		04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJExpandHeader.m; sourceTree = "<group>"; };
 		04C517912021B83500AC15F1 /* ZJNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavigationBar.h; sourceTree = "<group>"; };
 		04C517922021B83500AC15F1 /* ZJNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavigationBar.m; sourceTree = "<group>"; };
+		04C517972022BD8800AC15F1 /* DBMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMatrix.h; sourceTree = "<group>"; };
+		04C517982022BD8800AC15F1 /* DBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPoint.h; sourceTree = "<group>"; };
+		04C517992022BD8800AC15F1 /* DBSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSphereView.h; sourceTree = "<group>"; };
+		04C5179A2022BD8800AC15F1 /* DBSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSphereView.m; sourceTree = "<group>"; };
+		04C5179C2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSphereTagCloudViewController.h; sourceTree = "<group>"; };
+		04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSphereTagCloudViewController.m; sourceTree = "<group>"; };
 		04C748081FD6476C00A749E3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommitViewController.h; sourceTree = "<group>"; };
 		04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCommitViewController.m; sourceTree = "<group>"; };
@@ -606,6 +614,7 @@
 				044EE12A201B133200ACFC0A /* ZJKit+Masonry */,
 				04C7482D1FD7C70700A749E3 /* Controller */,
 				04C7481C1FD6500900A749E3 /* View */,
+				04C517952022BD3200AC15F1 /* Libs */,
 				044EE1D2201ED24F00ACFC0A /* Other */,
 				0475BEE51FD12E8A00617353 /* AppDelegate.h */,
 				0475BEE61FD12E8A00617353 /* AppDelegate.m */,
@@ -722,6 +731,25 @@
 			path = NavigationBarView;
 			sourceTree = "<group>";
 		};
+		04C517952022BD3200AC15F1 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				04C517962022BD8800AC15F1 /* DBSphereTagCloud */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		04C517962022BD8800AC15F1 /* DBSphereTagCloud */ = {
+			isa = PBXGroup;
+			children = (
+				04C517972022BD8800AC15F1 /* DBMatrix.h */,
+				04C517982022BD8800AC15F1 /* DBPoint.h */,
+				04C517992022BD8800AC15F1 /* DBSphereView.h */,
+				04C5179A2022BD8800AC15F1 /* DBSphereView.m */,
+			);
+			path = DBSphereTagCloud;
+			sourceTree = "<group>";
+		};
 		04C7481C1FD6500900A749E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,6 +784,8 @@
 				04C5178720219A6300AC15F1 /* ZJWebViewController.m */,
 				04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */,
 				04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */,
+				04C5179C2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.h */,
+				04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1104,6 +1134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044EE1A6201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */,
+				04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */,
 				044EE199201B133200ACFC0A /* NSFileManager+ZJHelperKit.m in Sources */,
 				04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */,
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
@@ -1172,6 +1203,7 @@
 				048E8A29201728C600486470 /* ZJChooseViewOneLeftCell.m in Sources */,
 				044EE1A4201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m in Sources */,
 				044EE1BE201B133200ACFC0A /* UIScrollView+ZJScrollView.m in Sources */,
+				04C5179B2022BD8800AC15F1 /* DBSphereView.m in Sources */,
 				044EE1A2201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.m in Sources */,
 				044EE1B1201B133200ACFC0A /* UITextField+ZJMasonryKit.m in Sources */,
 				044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */,
