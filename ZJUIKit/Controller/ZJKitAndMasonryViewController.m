@@ -55,7 +55,7 @@
     [self zj_UIKitAndMasonry];
     
    
-
+    [self svaimgPhotiTest];
 }
 
 #pragma mark - 倒计时Test
@@ -178,18 +178,20 @@
 }
 
 -(void)svaimgPhotiTest{
-    UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(100, 300, 80, 40) title:@"截图" titleColor:[UIColor redColor] imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:6 traget:self action:@selector(btnTestClick:)];
+    UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(100, 350, 100, 40) title:@"截取屏幕图片" titleColor:kWhiteColor imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:6 traget:self action:@selector(btnTestClick:)];
     [self.view addSubview:btn];
 }
 
 -(void)btnTestClick:(UIButton *)sender{
+    //获取截取屏幕的图片
+    
     UIImage *image = [UIImage zj_snapshotCurrentcreen];
     if (image) {
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSaving:contextInfo:), (__bridge void * _Nullable)(self));
     }
 }
 
-
+// 完成截图回调
 -(void)image:(UIImage *)image didFinishSaving:(NSError *)error contextInfo:(void *)contextInfo{
     NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
 }
@@ -229,7 +231,7 @@
     
 }
 -(void)buttonTest{
-    self.btn = [UIButton zj_buttonWithFrame:CGRectMake(50, 50, 100, 40) title:@"dzj" titleColor:[UIColor blueColor] imageName:@"" backColor:[UIColor orangeColor] fontSize:16 cornerRadius:5 traget:nil action:nil];
+    self.btn = [UIButton zj_buttonWithFrame:CGRectMake(50, 50, 100, 40) title:@"dzj" titleColor:[UIColor blueColor] imageName:nil backColor:[UIColor orangeColor] fontSize:16 cornerRadius:5 traget:nil action:nil];
     
     [self.btn zj_addBtnActionHandler:^{
         NSLog(@"1234");
