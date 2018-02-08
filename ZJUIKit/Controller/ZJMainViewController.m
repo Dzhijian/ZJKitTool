@@ -31,6 +31,8 @@
 #import "ZJNavBarShadeViewController.h"
 #import "ZJSphereTagCloudViewController.h"
 
+
+
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
@@ -130,6 +132,7 @@
             [self.navigationController pushViewController:sphere animated:YES];
             break;
         }
+        
         default:
             break;
     }

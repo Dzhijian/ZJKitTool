@@ -19,17 +19,18 @@
 #import "ZJCommitViewController.h"
 @interface ZJKitAndMasonryViewController ()
 
-@property(nonatomic ,strong) UIButton *btn;
-@property(nonatomic ,strong) UIButton *button;
-@property(nonatomic ,strong) UILabel *label;
+@property(nonatomic ,strong) UIButton           *btn;
+@property(nonatomic ,strong) UIButton           *button;
+@property(nonatomic ,strong) UILabel            *label;
 
 // 测试字段
-@property(nonatomic ,assign) NSInteger testNum;
+@property(nonatomic ,assign) NSInteger          testNum;
 // 倒计时
-@property(nonatomic ,strong) ZJTimeCountDown *timeDown;
-@property(nonatomic ,strong) UILabel *timeLabel;
+@property(nonatomic ,strong) ZJTimeCountDown    *timeDown;
+@property(nonatomic ,strong) UILabel            *timeLabel;
 // 字体大小适配Label
-@property(nonatomic ,strong) UILabel *adaptLabel;
+@property(nonatomic ,strong) UILabel            *adaptLabel;
+@property(nonatomic ,strong) UIImageView        *imgView;
 
 @end
 
@@ -178,7 +179,7 @@
 }
 
 -(void)svaimgPhotiTest{
-    UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(100, 350, 100, 40) title:@"截取屏幕图片" titleColor:kWhiteColor imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:6 traget:self action:@selector(btnTestClick:)];
+    UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(100, 330, 100, 40) title:@"截取屏幕图片" titleColor:kWhiteColor imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:6 traget:self action:@selector(btnTestClick:)];
     [self.view addSubview:btn];
 }
 
@@ -187,7 +188,11 @@
     
     UIImage *image = [UIImage zj_snapshotCurrentcreen];
     if (image) {
+        
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSaving:contextInfo:), (__bridge void * _Nullable)(self));
+        
+        [self.view addSubview:self.imgView];
+        self.imgView.image = image;
     }
 }
 
@@ -267,6 +272,16 @@
     return _button;
 }
 
+-(UIImageView *)imgView{
+    if (!_imgView) {
+        _imgView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 400, 120, 180)];
+        _imgView.contentMode = UIViewContentModeScaleAspectFill;
+        _imgView.clipsToBounds = YES;
+        _imgView.layer.borderColor = kLightGrayColor.CGColor;
+        _imgView.layer.borderWidth = 0.5;
+    }
+    return _imgView;
+}
 -(void)btnClick:(UIButton *)sender{
     NSLog(@"%@",sender);
     [self.view addSubview:self.btn];
