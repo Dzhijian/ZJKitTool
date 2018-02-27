@@ -30,6 +30,7 @@
 #import "ZJWebViewController.h"
 #import "ZJNavBarShadeViewController.h"
 #import "ZJSphereTagCloudViewController.h"
+#import "ZJPlayerListViewController.h"
 
 
 
@@ -53,7 +54,7 @@
     self.title = @"ZJUIKitTool";
     self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",
                         @"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",
-                        @"导航栏渐变",@"球形TagView"];
+                        @"导航栏渐变",@"球形TagView",@"视频列表"];
     [self setUpAllView];
 
 }
@@ -132,7 +133,12 @@
             [self.navigationController pushViewController:sphere animated:YES];
             break;
         }
-        
+        case 9:
+        {
+            ZJPlayerListViewController *player = [[ZJPlayerListViewController alloc]init];
+            [self.navigationController pushViewController:player animated:YES];
+            break;
+        }
         default:
             break;
     }
