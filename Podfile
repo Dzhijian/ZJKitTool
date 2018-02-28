@@ -25,6 +25,9 @@ target 'ZJUIKit' do
   pod 'YYAsyncLayer'
   pod 'YYCategories'
   
+  # 文件下载
+  pod 'ZFDownload'
+  
   target 'ZJUIKitTests' do
     inherit! :search_paths
     # Pods for testing
