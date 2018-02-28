@@ -26,6 +26,12 @@
 
 @implementation ZJPlayerListViewController
 
+// 页面消失时候
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.playerView resetPlayer];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self zj_setNavTitle:@"视频列表"];
