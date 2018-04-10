@@ -58,6 +58,7 @@
             imageV.hidden = YES;
         }
     }
+    [self setNeedsLayout];
 }
 #pragma mark -  图片点击事件
 -(void)imgVClick:(UITapGestureRecognizer *)sender{
