@@ -429,6 +429,89 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		04191E4D2088890E004A24C6 /* 朋友圈列表 */ = {
+			isa = PBXGroup;
+			children = (
+				044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */,
+				044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */,
+			);
+			path = "朋友圈列表";
+			sourceTree = "<group>";
+		};
+		04191E4E20888935004A24C6 /* 评论列表 */ = {
+			isa = PBXGroup;
+			children = (
+				04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */,
+				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
+			);
+			path = "评论列表";
+			sourceTree = "<group>";
+		};
+		04191E4F20888946004A24C6 /* 筛选视图 */ = {
+			isa = PBXGroup;
+			children = (
+				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
+				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
+			);
+			path = "筛选视图";
+			sourceTree = "<group>";
+		};
+		04191E5020888967004A24C6 /* 瀑布流 */ = {
+			isa = PBXGroup;
+			children = (
+				04C517642020120800AC15F1 /* ZJCollectionViewController.h */,
+				04C517652020120800AC15F1 /* ZJCollectionViewController.m */,
+				04C517672020153200AC15F1 /* ZJElementsCollectionViewController.h */,
+				04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */,
+				04C5176A20201BA700AC15F1 /* ZJVerticalWaterFallViewController.h */,
+				04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */,
+				04C5176D20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.h */,
+				04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */,
+				044EE1D8201F12AB00ACFC0A /* CollectionView */,
+			);
+			path = "瀑布流";
+			sourceTree = "<group>";
+		};
+		04191E5120888974004A24C6 /* 倒计时 */ = {
+			isa = PBXGroup;
+			children = (
+				0403A0022019A9B200D4DF1B /* ZJTimeCountDownViewController.h */,
+				0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */,
+			);
+			path = "倒计时";
+			sourceTree = "<group>";
+		};
+		04191E5220888988004A24C6 /* 视频列表 */ = {
+			isa = PBXGroup;
+			children = (
+				04BE94C12045403200DF6779 /* ZJPlayerListViewController.h */,
+				04BE94C22045403200DF6779 /* ZJPlayerListViewController.m */,
+			);
+			path = "视频列表";
+			sourceTree = "<group>";
+		};
+		04191E53208889C2004A24C6 /* WKWebView与 JS交互 */ = {
+			isa = PBXGroup;
+			children = (
+				04C5178620219A6300AC15F1 /* ZJWebViewController.h */,
+				04C5178720219A6300AC15F1 /* ZJWebViewController.m */,
+			);
+			path = "WKWebView与 JS交互";
+			sourceTree = "<group>";
+		};
+		04191E54208889F9004A24C6 /* 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */,
+				042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */,
+				04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */,
+				04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */,
+				04C5179C2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.h */,
+				04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */,
+			);
+			path = "其他";
+			sourceTree = "<group>";
+		};
 		044EE086201AD13A00ACFC0A /* MasonryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,12 +701,6 @@
 				04C517782020454400AC15F1 /* Model */,
 				04C517742020223600AC15F1 /* View */,
 				04C51770202021DD00AC15F1 /* ZJCollectionView */,
-				04C517672020153200AC15F1 /* ZJElementsCollectionViewController.h */,
-				04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */,
-				04C5176A20201BA700AC15F1 /* ZJVerticalWaterFallViewController.h */,
-				04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */,
-				04C5176D20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.h */,
-				04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -880,29 +957,16 @@
 		04C7482D1FD7C70700A749E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				044EE1D8201F12AB00ACFC0A /* CollectionView */,
 				042190BE20186182009056E2 /* ZJMainViewController.h */,
 				042190BF20186182009056E2 /* ZJMainViewController.m */,
-				042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */,
-				042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */,
-				04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */,
-				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
-				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
-				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
-				0403A0022019A9B200D4DF1B /* ZJTimeCountDownViewController.h */,
-				0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */,
-				044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */,
-				044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */,
-				04C517642020120800AC15F1 /* ZJCollectionViewController.h */,
-				04C517652020120800AC15F1 /* ZJCollectionViewController.m */,
-				04C5178620219A6300AC15F1 /* ZJWebViewController.h */,
-				04C5178720219A6300AC15F1 /* ZJWebViewController.m */,
-				04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */,
-				04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */,
-				04C5179C2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.h */,
-				04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */,
-				04BE94C12045403200DF6779 /* ZJPlayerListViewController.h */,
-				04BE94C22045403200DF6779 /* ZJPlayerListViewController.m */,
+				04191E53208889C2004A24C6 /* WKWebView与 JS交互 */,
+				04191E5220888988004A24C6 /* 视频列表 */,
+				04191E5120888974004A24C6 /* 倒计时 */,
+				04191E5020888967004A24C6 /* 瀑布流 */,
+				04191E4F20888946004A24C6 /* 筛选视图 */,
+				04191E4E20888935004A24C6 /* 评论列表 */,
+				04191E4D2088890E004A24C6 /* 朋友圈列表 */,
+				04191E54208889F9004A24C6 /* 其他 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
