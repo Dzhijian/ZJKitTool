@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */; };
 		0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */; };
+		04191E5720888DB1004A24C6 /* ZJReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04191E5620888DB1004A24C6 /* ZJReplyCell.m */; };
+		04191E6420889883004A24C6 /* MasonryCellData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04191E6320889883004A24C6 /* MasonryCellData.json */; };
 		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
 		042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */; };
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
@@ -62,7 +64,6 @@
 		044EE1C1201B133200ACFC0A /* UIViewController+ZJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE18D201B133200ACFC0A /* UIViewController+ZJViewController.m */; };
 		044EE1C2201B133200ACFC0A /* ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE18F201B133200ACFC0A /* ZJButton.m */; };
 		044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE193201B133200ACFC0A /* ZJTimeCountDown.m */; };
-		044EE1C5201B23CE00ACFC0A /* MasonryCellData.json in Resources */ = {isa = PBXBuildFile; fileRef = 044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
 		044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1DA201F130A00ACFC0A /* ZJBaseCollectionViewController.m */; };
 		044EE1E1201F173100ACFC0A /* ZJElementsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1E0201F173100ACFC0A /* ZJElementsFlowLayout.m */; };
@@ -150,6 +151,9 @@
 		0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDownViewController.m; sourceTree = "<group>"; };
 		0403A0062019B1D600D4DF1B /* ZJTimeCountDownCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDownCell.h; sourceTree = "<group>"; };
 		0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDownCell.m; sourceTree = "<group>"; };
+		04191E5520888DB1004A24C6 /* ZJReplyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJReplyCell.h; sourceTree = "<group>"; };
+		04191E5620888DB1004A24C6 /* ZJReplyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJReplyCell.m; sourceTree = "<group>"; };
+		04191E6320889883004A24C6 /* MasonryCellData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MasonryCellData.json; sourceTree = "<group>"; };
 		042190BE20186182009056E2 /* ZJMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMainViewController.h; sourceTree = "<group>"; };
 		042190BF20186182009056E2 /* ZJMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMainViewController.m; sourceTree = "<group>"; };
 		042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJKitAndMasonryViewController.h; sourceTree = "<group>"; };
@@ -259,7 +263,6 @@
 		044EE190201B133200ACFC0A /* ZJKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJKitHelper.h; sourceTree = "<group>"; };
 		044EE192201B133200ACFC0A /* ZJTimeCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDown.h; sourceTree = "<group>"; };
 		044EE193201B133200ACFC0A /* ZJTimeCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDown.m; sourceTree = "<group>"; };
-		044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MasonryCellData.json; path = ZJUIKit/View/Commit/MasonryCellData.json; sourceTree = SOURCE_ROOT; };
 		044EE1D5201EF16D00ACFC0A /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		044EE1D9201F130A00ACFC0A /* ZJBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseCollectionViewController.h; sourceTree = "<group>"; };
@@ -432,8 +435,8 @@
 		04191E4D2088890E004A24C6 /* 朋友圈列表 */ = {
 			isa = PBXGroup;
 			children = (
-				044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */,
-				044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */,
+				044EE086201AD13A00ACFC0A /* MasonryCell */,
+				04191E5F20889704004A24C6 /* Controller */,
 			);
 			path = "朋友圈列表";
 			sourceTree = "<group>";
@@ -441,8 +444,8 @@
 		04191E4E20888935004A24C6 /* 评论列表 */ = {
 			isa = PBXGroup;
 			children = (
-				04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */,
-				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
+				04DA13382016DFB800C619E5 /* Commit */,
+				04191E5E208896F7004A24C6 /* Controller */,
 			);
 			path = "评论列表";
 			sourceTree = "<group>";
@@ -450,8 +453,8 @@
 		04191E4F20888946004A24C6 /* 筛选视图 */ = {
 			isa = PBXGroup;
 			children = (
-				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
-				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
+				048E8A16201728C600486470 /* ChooseView */,
+				04191E5D208896EC004A24C6 /* Controller */,
 			);
 			path = "筛选视图";
 			sourceTree = "<group>";
@@ -459,14 +462,7 @@
 		04191E5020888967004A24C6 /* 瀑布流 */ = {
 			isa = PBXGroup;
 			children = (
-				04C517642020120800AC15F1 /* ZJCollectionViewController.h */,
-				04C517652020120800AC15F1 /* ZJCollectionViewController.m */,
-				04C517672020153200AC15F1 /* ZJElementsCollectionViewController.h */,
-				04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */,
-				04C5176A20201BA700AC15F1 /* ZJVerticalWaterFallViewController.h */,
-				04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */,
-				04C5176D20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.h */,
-				04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */,
+				04191E5C208896DA004A24C6 /* Controller */,
 				044EE1D8201F12AB00ACFC0A /* CollectionView */,
 			);
 			path = "瀑布流";
@@ -475,8 +471,8 @@
 		04191E5120888974004A24C6 /* 倒计时 */ = {
 			isa = PBXGroup;
 			children = (
-				0403A0022019A9B200D4DF1B /* ZJTimeCountDownViewController.h */,
-				0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */,
+				0403A0052019B1AD00D4DF1B /* Cell */,
+				04191E5B208896C6004A24C6 /* Controller */,
 			);
 			path = "倒计时";
 			sourceTree = "<group>";
@@ -484,8 +480,8 @@
 		04191E5220888988004A24C6 /* 视频列表 */ = {
 			isa = PBXGroup;
 			children = (
-				04BE94C12045403200DF6779 /* ZJPlayerListViewController.h */,
-				04BE94C22045403200DF6779 /* ZJPlayerListViewController.m */,
+				04191E5A208896BC004A24C6 /* Controller */,
+				04BE94C4204542CD00DF6779 /* PlayerView */,
 			);
 			path = "视频列表";
 			sourceTree = "<group>";
@@ -493,8 +489,7 @@
 		04191E53208889C2004A24C6 /* WKWebView与 JS交互 */ = {
 			isa = PBXGroup;
 			children = (
-				04C5178620219A6300AC15F1 /* ZJWebViewController.h */,
-				04C5178720219A6300AC15F1 /* ZJWebViewController.m */,
+				04191E59208896AB004A24C6 /* Controller */,
 			);
 			path = "WKWebView与 JS交互";
 			sourceTree = "<group>";
@@ -502,6 +497,7 @@
 		04191E54208889F9004A24C6 /* 其他 */ = {
 			isa = PBXGroup;
 			children = (
+				04C517942021C52700AC15F1 /* NavigationBarView */,
 				042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */,
 				042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */,
 				04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */,
@@ -512,10 +508,104 @@
 			path = "其他";
 			sourceTree = "<group>";
 		};
+		04191E5820889687004A24C6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04191E6020889751004A24C6 /* Main */,
+				04191E53208889C2004A24C6 /* WKWebView与 JS交互 */,
+				04191E5220888988004A24C6 /* 视频列表 */,
+				04191E5120888974004A24C6 /* 倒计时 */,
+				04191E5020888967004A24C6 /* 瀑布流 */,
+				04191E4F20888946004A24C6 /* 筛选视图 */,
+				04191E4E20888935004A24C6 /* 评论列表 */,
+				04191E4D2088890E004A24C6 /* 朋友圈列表 */,
+				04191E54208889F9004A24C6 /* 其他 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04191E59208896AB004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C5178620219A6300AC15F1 /* ZJWebViewController.h */,
+				04C5178720219A6300AC15F1 /* ZJWebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E5A208896BC004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04BE94C12045403200DF6779 /* ZJPlayerListViewController.h */,
+				04BE94C22045403200DF6779 /* ZJPlayerListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E5B208896C6004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0403A0022019A9B200D4DF1B /* ZJTimeCountDownViewController.h */,
+				0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E5C208896DA004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C517642020120800AC15F1 /* ZJCollectionViewController.h */,
+				04C517652020120800AC15F1 /* ZJCollectionViewController.m */,
+				04C517672020153200AC15F1 /* ZJElementsCollectionViewController.h */,
+				04C517682020153200AC15F1 /* ZJElementsCollectionViewController.m */,
+				04C5176A20201BA700AC15F1 /* ZJVerticalWaterFallViewController.h */,
+				04C5176B20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m */,
+				04C5176D20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.h */,
+				04C5176E20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E5D208896EC004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */,
+				04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E5E208896F7004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */,
+				04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E5F20889704004A24C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */,
+				044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04191E6020889751004A24C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				042190BE20186182009056E2 /* ZJMainViewController.h */,
+				042190BF20186182009056E2 /* ZJMainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		044EE086201AD13A00ACFC0A /* MasonryCell */ = {
 			isa = PBXGroup;
 			children = (
-				044EE1C4201B23CE00ACFC0A /* MasonryCellData.json */,
+				04191E6320889883004A24C6 /* MasonryCellData.json */,
 				044EE083201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.h */,
 				044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */,
 			);
@@ -686,13 +776,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		044EE1D4201EF16D00ACFC0A /* YYFPSLabel(刷新率) */ = {
+		044EE1D4201EF16D00ACFC0A /* YYFPSLabel */ = {
 			isa = PBXGroup;
 			children = (
 				044EE1D5201EF16D00ACFC0A /* YYFPSLabel.h */,
 				044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */,
 			);
-			path = "YYFPSLabel(刷新率)";
+			path = YYFPSLabel;
 			sourceTree = "<group>";
 		};
 		044EE1D8201F12AB00ACFC0A /* CollectionView */ = {
@@ -731,8 +821,7 @@
 			isa = PBXGroup;
 			children = (
 				044EE12A201B133200ACFC0A /* ZJKitTool */,
-				04C7482D1FD7C70700A749E3 /* Controller */,
-				04C7481C1FD6500900A749E3 /* View */,
+				04191E5820889687004A24C6 /* Classes */,
 				04BE94C82045430900DF6779 /* Model */,
 				04C517952022BD3200AC15F1 /* Libs */,
 				044EE1D2201ED24F00ACFC0A /* Other */,
@@ -924,7 +1013,7 @@
 			isa = PBXGroup;
 			children = (
 				04BE949A20453FBC00DF6779 /* ZFPlayer */,
-				044EE1D4201EF16D00ACFC0A /* YYFPSLabel(刷新率) */,
+				044EE1D4201EF16D00ACFC0A /* YYFPSLabel */,
 				04C517962022BD8800AC15F1 /* DBSphereTagCloud */,
 			);
 			path = Libs;
@@ -941,42 +1030,14 @@
 			path = DBSphereTagCloud;
 			sourceTree = "<group>";
 		};
-		04C7481C1FD6500900A749E3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				04BE94C4204542CD00DF6779 /* PlayerView */,
-				04C517942021C52700AC15F1 /* NavigationBarView */,
-				044EE086201AD13A00ACFC0A /* MasonryCell */,
-				0403A0052019B1AD00D4DF1B /* Cell */,
-				04DA13382016DFB800C619E5 /* Commit */,
-				048E8A16201728C600486470 /* ChooseView */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		04C7482D1FD7C70700A749E3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				042190BE20186182009056E2 /* ZJMainViewController.h */,
-				042190BF20186182009056E2 /* ZJMainViewController.m */,
-				04191E53208889C2004A24C6 /* WKWebView与 JS交互 */,
-				04191E5220888988004A24C6 /* 视频列表 */,
-				04191E5120888974004A24C6 /* 倒计时 */,
-				04191E5020888967004A24C6 /* 瀑布流 */,
-				04191E4F20888946004A24C6 /* 筛选视图 */,
-				04191E4E20888935004A24C6 /* 评论列表 */,
-				04191E4D2088890E004A24C6 /* 朋友圈列表 */,
-				04191E54208889F9004A24C6 /* 其他 */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		04DA13382016DFB800C619E5 /* Commit */ = {
 			isa = PBXGroup;
 			children = (
 				04DA13572017036500C619E5 /* CommitsData.json */,
 				04DA133B2016E01400C619E5 /* ViewModel */,
 				04DA133A2016E00C00C619E5 /* View */,
+				04191E5520888DB1004A24C6 /* ZJReplyCell.h */,
+				04191E5620888DB1004A24C6 /* ZJReplyCell.m */,
 			);
 			path = Commit;
 			sourceTree = "<group>";
@@ -1151,9 +1212,9 @@
 				0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */,
 				04C5178A20219AB800AC15F1 /* ZJWebViewController.html in Resources */,
 				04DA13582017036500C619E5 /* CommitsData.json in Resources */,
-				044EE1C5201B23CE00ACFC0A /* MasonryCellData.json in Resources */,
 				0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */,
 				04BE94CB2045433100DF6779 /* videoData.json in Resources */,
+				04191E6420889883004A24C6 /* MasonryCellData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1431,7 @@
 				04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */,
 				04BE94BF20453FBC00DF6779 /* ZFPlayerModel.m in Sources */,
 				04BE94CE2045463400DF6779 /* ZJVideoModel.m in Sources */,
+				04191E5720888DB1004A24C6 /* ZJReplyCell.m in Sources */,
 				044EE1B6201B133200ACFC0A /* NSString+ZJString.m in Sources */,
 				04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */,
 				04DA134D2016E14400C619E5 /* ZJStarsView.m in Sources */,

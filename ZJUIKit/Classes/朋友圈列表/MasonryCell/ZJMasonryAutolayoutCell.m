@@ -15,9 +15,11 @@
 #import "ZJMasonryAutolayoutCell.h"
 #import "ZJCommit.h"
 #import "ZJCommitPhotoView.h"
+#import "ZJReplyCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#define ReplyCellKey @"ZJReplyCell"
 
-
-@interface ZJMasonryAutolayoutCell()
+@interface ZJMasonryAutolayoutCell() //<UITableViewDelegate,UITableViewDataSource>
 // 昵称
 @property(nonatomic ,strong) UILabel        *nameLab;
 // 头像
@@ -30,7 +32,8 @@
 @property(nonatomic ,strong) ZJCommitPhotoView *photosView;
 // 分割线
 @property(nonatomic ,strong) UIView         *line;
-
+// 评论列表
+//@property (nonatomic, strong) UITableView  *commentTable;
 @end
 
 @implementation ZJMasonryAutolayoutCell
@@ -143,6 +146,12 @@
         make.height.mas_equalTo(0.001);
     }];
     
+//    [self.contentView addSubview:self.commentTable];
+//    [self.commentTable mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(_contentLab.mas_left);
+//        make.right.equalTo(_contentLab.mas_right);
+//        make.top.equalTo(_contentLab.mas_bottom).offset(10);
+//    }];
 #warning 注意  不管你的布局是怎样的 ，一定要有一个(最好是最底部的控件)相对 contentView.bottom的约束，否则计算cell的高度的时候会不正确！
     self.line = [UIView zj_viewWithBackColor:kLightGrayColor supView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_photosView.mas_bottom).offset(15);
@@ -155,6 +164,44 @@
     
     
 }
+
+/*
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ZJReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:ReplyCellKey];
+    
+    
+    return cell;
+
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 计算缓存cell的高度
+    return [self.commentTable fd_heightForCellWithIdentifier:ReplyCellKey cacheByIndexPath:indexPath configuration:^(ZJReplyCell *cell) {
+        [cell configData];
+    }];
+}
+
+
+-(UITableView *)commentTable{
+    if (!_commentTable) {
+        _commentTable = [[UITableView alloc]init];
+        _commentTable.scrollEnabled = NO;
+        _commentTable.userInteractionEnabled = YES;
+        _commentTable.backgroundView.userInteractionEnabled = YES;
+        _commentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _commentTable.delegate =self;
+        _commentTable.dataSource = self;
+        [_commentTable registerClass:[ZJReplyCell class] forCellReuseIdentifier:ReplyCellKey];
+    }
+    return _commentTable;
+}
+ 
+ */
 
 // 如果你是自动布局子控件，就不需要实现此方法，如果是计算子控件frame的话就需要实现此方法
 //- (CGSize)sizeThatFits:(CGSize)size {
