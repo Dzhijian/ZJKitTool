@@ -58,6 +58,7 @@
             imageV.hidden = YES;
         }
     }
+    // 重新布局
     [self setNeedsLayout];
 }
 #pragma mark -  图片点击事件

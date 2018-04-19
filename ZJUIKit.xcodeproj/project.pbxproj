@@ -439,7 +439,7 @@
 			path = MasonryCell;
 			sourceTree = "<group>";
 		};
-		044EE12A201B133200ACFC0A /* ZJKit+Masonry */ = {
+		044EE12A201B133200ACFC0A /* ZJKitTool */ = {
 			isa = PBXGroup;
 			children = (
 				044EE174201B133200ACFC0A /* ZJHelperKit.h */,
@@ -452,7 +452,7 @@
 				044EE175201B133200ACFC0A /* ZJKit */,
 				044EE191201B133200ACFC0A /* ZJTool */,
 			);
-			path = "ZJKit+Masonry";
+			path = ZJKitTool;
 			sourceTree = "<group>";
 		};
 		044EE12B201B133200ACFC0A /* ControllerKit */ = {
@@ -653,7 +653,7 @@
 		0475BEE41FD12E8A00617353 /* ZJUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				044EE12A201B133200ACFC0A /* ZJKit+Masonry */,
+				044EE12A201B133200ACFC0A /* ZJKitTool */,
 				04C7482D1FD7C70700A749E3 /* Controller */,
 				04C7481C1FD6500900A749E3 /* View */,
 				04BE94C82045430900DF6779 /* Model */,
