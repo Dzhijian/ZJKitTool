@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ZJKitNaigationController.h"
 #import "ZJMainViewController.h"
-
+#import <GDPerformanceMonitor.h>
 //#import "GDPerformanceMonitor.h"
 
 
@@ -49,12 +49,12 @@
     
     
 #ifdef DEBUG
-//    [[GDPerformanceMonitor sharedInstance] startMonitoring];
-//    [[GDPerformanceMonitor sharedInstance] configureWithConfiguration:^(UILabel *textLabel) {
-//        [textLabel setBackgroundColor:[UIColor blackColor]];
-//        [textLabel setTextColor:[UIColor whiteColor]];
-//        [textLabel.layer setBorderColor:[[UIColor blackColor] CGColor]];
-//    }];
+    [[GDPerformanceMonitor sharedInstance] startMonitoring];
+    [[GDPerformanceMonitor sharedInstance] configureWithConfiguration:^(UILabel *textLabel) {
+        [textLabel setBackgroundColor:[UIColor blackColor]];
+        [textLabel setTextColor:[UIColor whiteColor]];
+        [textLabel.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    }];
 #endif
   
     
