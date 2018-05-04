@@ -39,21 +39,24 @@ self.btn = [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor 
 
   
   
-| MVVM评论列表 | Masonry自动布局简单朋友圈 |
-| --- | --- |
-| ![commitMVVM](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-commitMVVM.jpg-style03)
- | ![commmitsMasonry](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-commmitsMasonry.jpg-style03) |
-
-
-  倒计时列表，支持单个倒计时
-  ![countDown](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-countDown.jpg-style03)
-
- 
-  瀑布流
-  
- ![collectionViewVertacal](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-collectionViewVertacal.jpg-style03)
+| MVVM评论列表 | Masonry自动布局简单朋友圈 | 倒计时列表|
+| --- | --- | --- |
+| ![commitMVVM](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-commitMVVM.jpg-style03)| ![commmitsMasonry](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-commmitsMasonry.jpg-style03) | ![countDown](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-countDown.jpg-style03) |
 
   
-  ![collectionViewhorizontal](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-collectionViewhorizontal.jpg-style03)
+
+ 
+ >  **瀑布流**
+  
+  
+| 横向布局 | 竖向布局 |
+| --- | --- |
+| ![collectionViewVertacal](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-collectionViewVertacal.jpg-style03) |![collectionViewhorizontal](http://p7l9kf5i4.bkt.clouddn.com/2018-05-05-collectionViewhorizontal.jpg-style03)  |
+
+  
+ 
+
+  
+  
 
 
