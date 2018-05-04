@@ -9,6 +9,7 @@
 #import "NSMutableArray+ZJHelperKit.h"
 
 @implementation NSMutableArray (ZJHelperKit)
+
 - (BOOL)zj_addObject:(id)object {
     BOOL ret = NO;
     if (object) {

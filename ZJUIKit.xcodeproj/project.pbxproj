@@ -18,27 +18,6 @@
 		044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */; };
 		044EE194201B133200ACFC0A /* ZJKitBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE12D201B133200ACFC0A /* ZJKitBaseController.m */; };
 		044EE195201B133200ACFC0A /* ZJKitNaigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE12F201B133200ACFC0A /* ZJKitNaigationController.m */; };
-		044EE196201B133200ACFC0A /* NSArray+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE132201B133200ACFC0A /* NSArray+ZJHelperKit.m */; };
-		044EE197201B133200ACFC0A /* NSDate+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE134201B133200ACFC0A /* NSDate+ZJHelperKit.m */; };
-		044EE198201B133200ACFC0A /* NSDictionary+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE136201B133200ACFC0A /* NSDictionary+ZJHelperKit.m */; };
-		044EE199201B133200ACFC0A /* NSFileManager+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE138201B133200ACFC0A /* NSFileManager+ZJHelperKit.m */; };
-		044EE19A201B133200ACFC0A /* NSMutableArray+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE13A201B133200ACFC0A /* NSMutableArray+ZJHelperKit.m */; };
-		044EE19B201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE13C201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.m */; };
-		044EE19C201B133200ACFC0A /* NSNumber+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE13E201B133200ACFC0A /* NSNumber+ZJHelperKit.m */; };
-		044EE19D201B133200ACFC0A /* NSObject+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE140201B133200ACFC0A /* NSObject+ZJHelperKit.m */; };
-		044EE19E201B133200ACFC0A /* NSString+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE142201B133200ACFC0A /* NSString+ZJHelperKit.m */; };
-		044EE19F201B133200ACFC0A /* NSTimer+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE144201B133200ACFC0A /* NSTimer+ZJHelperKit.m */; };
-		044EE1A0201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE146201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.m */; };
-		044EE1A1201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE148201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m */; };
-		044EE1A2201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE14A201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.m */; };
-		044EE1A3201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE14C201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.m */; };
-		044EE1A4201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE14E201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m */; };
-		044EE1A5201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE150201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m */; };
-		044EE1A6201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE152201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m */; };
-		044EE1A7201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE154201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m */; };
-		044EE1A8201B133200ACFC0A /* UITextView+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE156201B133200ACFC0A /* UITextView+ZJHelperKit.m */; };
-		044EE1A9201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE158201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m */; };
-		044EE1AA201B133200ACFC0A /* UIView+ZJHUDHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE15A201B133200ACFC0A /* UIView+ZJHUDHelperKit.m */; };
 		044EE1AB201B133200ACFC0A /* ZJCommonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE15C201B133200ACFC0A /* ZJCommonKit.m */; };
 		044EE1AC201B133200ACFC0A /* UIButton+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE15F201B133200ACFC0A /* UIButton+ZJMasonryKit.m */; };
 		044EE1AD201B133200ACFC0A /* UICollectionView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE161201B133200ACFC0A /* UICollectionView+ZJMasonryKit.m */; };
@@ -50,19 +29,6 @@
 		044EE1B3201B133200ACFC0A /* UIView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE16D201B133200ACFC0A /* UIView+ZJMasonryKit.m */; };
 		044EE1B4201B133200ACFC0A /* UIWebView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE16F201B133200ACFC0A /* UIWebView+ZJMasonryKit.m */; };
 		044EE1B5201B133200ACFC0A /* ZJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE173201B133200ACFC0A /* ZJBaseTableViewCell.m */; };
-		044EE1B6201B133200ACFC0A /* NSString+ZJString.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE177201B133200ACFC0A /* NSString+ZJString.m */; };
-		044EE1B7201B133200ACFC0A /* UIAlertController+ZJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE179201B133200ACFC0A /* UIAlertController+ZJAlert.m */; };
-		044EE1B8201B133200ACFC0A /* UIButton+ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE17B201B133200ACFC0A /* UIButton+ZJButton.m */; };
-		044EE1B9201B133200ACFC0A /* UIColor+ZJColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE17D201B133200ACFC0A /* UIColor+ZJColor.m */; };
-		044EE1BA201B133200ACFC0A /* UIDevice+ZJDivice.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE17F201B133200ACFC0A /* UIDevice+ZJDivice.m */; };
-		044EE1BB201B133200ACFC0A /* UIImage+ZJImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE181201B133200ACFC0A /* UIImage+ZJImage.m */; };
-		044EE1BC201B133200ACFC0A /* UIImageView+ZJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE183201B133200ACFC0A /* UIImageView+ZJImageView.m */; };
-		044EE1BD201B133200ACFC0A /* UILabel+ZJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE185201B133200ACFC0A /* UILabel+ZJLabel.m */; };
-		044EE1BE201B133200ACFC0A /* UIScrollView+ZJScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE187201B133200ACFC0A /* UIScrollView+ZJScrollView.m */; };
-		044EE1BF201B133200ACFC0A /* UITextField+ZJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE189201B133200ACFC0A /* UITextField+ZJTextField.m */; };
-		044EE1C0201B133200ACFC0A /* UITextView+ZJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE18B201B133200ACFC0A /* UITextView+ZJTextView.m */; };
-		044EE1C1201B133200ACFC0A /* UIViewController+ZJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE18D201B133200ACFC0A /* UIViewController+ZJViewController.m */; };
-		044EE1C2201B133200ACFC0A /* ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE18F201B133200ACFC0A /* ZJButton.m */; };
 		044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE193201B133200ACFC0A /* ZJTimeCountDown.m */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
 		044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1DA201F130A00ACFC0A /* ZJBaseCollectionViewController.m */; };
@@ -83,6 +49,41 @@
 		048E8A2E201728C600486470 /* ZJThreeChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A25201728C600486470 /* ZJThreeChildView.m */; };
 		048E8A2F201728C600486470 /* ZJTwoChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A27201728C600486470 /* ZJTwoChildView.m */; };
 		048E8A3320172E9300486470 /* ZJChooseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A3220172E9300486470 /* ZJChooseModel.m */; };
+		04B097BB209CCC8D00E66CA2 /* UITextView+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0978D209CCC8D00E66CA2 /* UITextView+ZJHelperKit.m */; };
+		04B097BC209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0978E209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.m */; };
+		04B097BD209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09791209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.m */; };
+		04B097BE209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09792209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */; };
+		04B097BF209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09795209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.m */; };
+		04B097C0209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09797209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m */; };
+		04B097C1209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0979A209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.m */; };
+		04B097C2209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0979C209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.m */; };
+		04B097C3209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0979D209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.m */; };
+		04B097C4209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0979E209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m */; };
+		04B097C5209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097A1209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.m */; };
+		04B097C6209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097A3209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m */; };
+		04B097C7209CCC8D00E66CA2 /* NSString+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097A7209CCC8D00E66CA2 /* NSString+ZJHelperKit.m */; };
+		04B097C8209CCC8D00E66CA2 /* NSArray+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097A8209CCC8D00E66CA2 /* NSArray+ZJHelperKit.m */; };
+		04B097C9209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097A9209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.m */; };
+		04B097CA209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097AA209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.m */; };
+		04B097CB209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097AB209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.m */; };
+		04B097CC209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097AD209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.m */; };
+		04B097CD209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097AE209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.m */; };
+		04B097CE209CCC8D00E66CA2 /* NSObject+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097AF209CCC8D00E66CA2 /* NSObject+ZJHelperKit.m */; };
+		04B097CF209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097B0209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.m */; };
+		04B097D0209CCC8D00E66CA2 /* NSDate+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097B1209CCC8D00E66CA2 /* NSDate+ZJHelperKit.m */; };
+		04B097D1209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097B5209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.m */; };
+		04B097EA209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097D3209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.m */; };
+		04B097EB209CCCCE00E66CA2 /* UIColor+ZJColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097D8209CCCCE00E66CA2 /* UIColor+ZJColor.m */; };
+		04B097EC209CCCCE00E66CA2 /* UIViewController+ZJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097DA209CCCCE00E66CA2 /* UIViewController+ZJViewController.m */; };
+		04B097ED209CCCCE00E66CA2 /* UITextField+ZJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097DB209CCCCE00E66CA2 /* UITextField+ZJTextField.m */; };
+		04B097EE209CCCCE00E66CA2 /* UIImage+ZJImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097DC209CCCCE00E66CA2 /* UIImage+ZJImage.m */; };
+		04B097EF209CCCCE00E66CA2 /* UITextView+ZJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097DD209CCCCE00E66CA2 /* UITextView+ZJTextView.m */; };
+		04B097F0209CCCCE00E66CA2 /* UIButton+ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097E0209CCCCE00E66CA2 /* UIButton+ZJButton.m */; };
+		04B097F1209CCCCE00E66CA2 /* UIImageView+ZJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097E1209CCCCE00E66CA2 /* UIImageView+ZJImageView.m */; };
+		04B097F2209CCCCE00E66CA2 /* UILabel+ZJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097E2209CCCCE00E66CA2 /* UILabel+ZJLabel.m */; };
+		04B097F3209CCCCE00E66CA2 /* UIAlertController+ZJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097E5209CCCCE00E66CA2 /* UIAlertController+ZJAlert.m */; };
+		04B097F4209CCCCE00E66CA2 /* UIDevice+ZJDivice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097E7209CCCCE00E66CA2 /* UIDevice+ZJDivice.m */; };
+		04B097F7209CCE7E00E66CA2 /* ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097F5209CCE7D00E66CA2 /* ZJButton.m */; };
 		04BE94B520453FBC00DF6779 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE949C20453FBC00DF6779 /* ASValuePopUpView.m */; };
 		04BE94B620453FBC00DF6779 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE949E20453FBC00DF6779 /* ASValueTrackingSlider.m */; };
 		04BE94B720453FBC00DF6779 /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE94A120453FBC00DF6779 /* UIImageView+ZFCache.m */; };
@@ -168,48 +169,6 @@
 		044EE12D201B133200ACFC0A /* ZJKitBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJKitBaseController.m; sourceTree = "<group>"; };
 		044EE12E201B133200ACFC0A /* ZJKitNaigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJKitNaigationController.h; sourceTree = "<group>"; };
 		044EE12F201B133200ACFC0A /* ZJKitNaigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJKitNaigationController.m; sourceTree = "<group>"; };
-		044EE131201B133200ACFC0A /* NSArray+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE132201B133200ACFC0A /* NSArray+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE133201B133200ACFC0A /* NSDate+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE134201B133200ACFC0A /* NSDate+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE135201B133200ACFC0A /* NSDictionary+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE136201B133200ACFC0A /* NSDictionary+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE137201B133200ACFC0A /* NSFileManager+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE138201B133200ACFC0A /* NSFileManager+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE139201B133200ACFC0A /* NSMutableArray+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE13A201B133200ACFC0A /* NSMutableArray+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE13B201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE13C201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE13D201B133200ACFC0A /* NSNumber+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE13E201B133200ACFC0A /* NSNumber+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE13F201B133200ACFC0A /* NSObject+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE140201B133200ACFC0A /* NSObject+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE141201B133200ACFC0A /* NSString+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE142201B133200ACFC0A /* NSString+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE143201B133200ACFC0A /* NSTimer+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE144201B133200ACFC0A /* NSTimer+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE145201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE146201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE147201B133200ACFC0A /* UIActionSheet+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE148201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE149201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+ZJHelperKitUIKit.h"; sourceTree = "<group>"; };
-		044EE14A201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+ZJHelperKitUIKit.m"; sourceTree = "<group>"; };
-		044EE14B201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZJHelperKitUIkit.h"; sourceTree = "<group>"; };
-		044EE14C201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZJHelperKitUIkit.m"; sourceTree = "<group>"; };
-		044EE14D201B133200ACFC0A /* UIControl+ZJHelperBlockKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ZJHelperBlockKit.h"; sourceTree = "<group>"; };
-		044EE14E201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ZJHelperBlockKit.m"; sourceTree = "<group>"; };
-		044EE14F201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ZJHelperKitUIKit.h"; sourceTree = "<group>"; };
-		044EE150201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ZJHelperKitUIKit.m"; sourceTree = "<group>"; };
-		044EE151201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+ZJHelperBlockKit.h"; sourceTree = "<group>"; };
-		044EE152201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+ZJHelperBlockKit.m"; sourceTree = "<group>"; };
-		044EE153201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZJCornerRadiusHelperKit.h"; sourceTree = "<group>"; };
-		044EE154201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZJCornerRadiusHelperKit.m"; sourceTree = "<group>"; };
-		044EE155201B133200ACFC0A /* UITextView+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJHelperKit.h"; sourceTree = "<group>"; };
-		044EE156201B133200ACFC0A /* UITextView+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJHelperKit.m"; sourceTree = "<group>"; };
-		044EE157201B133200ACFC0A /* UIView+ZJHelperKitUIkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJHelperKitUIkit.h"; sourceTree = "<group>"; };
-		044EE158201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJHelperKitUIkit.m"; sourceTree = "<group>"; };
-		044EE159201B133200ACFC0A /* UIView+ZJHUDHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJHUDHelperKit.h"; sourceTree = "<group>"; };
-		044EE15A201B133200ACFC0A /* UIView+ZJHUDHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJHUDHelperKit.m"; sourceTree = "<group>"; };
 		044EE15B201B133200ACFC0A /* ZJCommonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCommonKit.h; sourceTree = "<group>"; };
 		044EE15C201B133200ACFC0A /* ZJCommonKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCommonKit.m; sourceTree = "<group>"; };
 		044EE15E201B133200ACFC0A /* UIButton+ZJMasonryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZJMasonryKit.h"; sourceTree = "<group>"; };
@@ -234,33 +193,6 @@
 		044EE172201B133200ACFC0A /* ZJBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJBaseTableViewCell.h; sourceTree = "<group>"; };
 		044EE173201B133200ACFC0A /* ZJBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJBaseTableViewCell.m; sourceTree = "<group>"; };
 		044EE174201B133200ACFC0A /* ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJHelperKit.h; sourceTree = "<group>"; };
-		044EE176201B133200ACFC0A /* NSString+ZJString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZJString.h"; sourceTree = "<group>"; };
-		044EE177201B133200ACFC0A /* NSString+ZJString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZJString.m"; sourceTree = "<group>"; };
-		044EE178201B133200ACFC0A /* UIAlertController+ZJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+ZJAlert.h"; sourceTree = "<group>"; };
-		044EE179201B133200ACFC0A /* UIAlertController+ZJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+ZJAlert.m"; sourceTree = "<group>"; };
-		044EE17A201B133200ACFC0A /* UIButton+ZJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZJButton.h"; sourceTree = "<group>"; };
-		044EE17B201B133200ACFC0A /* UIButton+ZJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZJButton.m"; sourceTree = "<group>"; };
-		044EE17C201B133200ACFC0A /* UIColor+ZJColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZJColor.h"; sourceTree = "<group>"; };
-		044EE17D201B133200ACFC0A /* UIColor+ZJColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZJColor.m"; sourceTree = "<group>"; };
-		044EE17E201B133200ACFC0A /* UIDevice+ZJDivice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ZJDivice.h"; sourceTree = "<group>"; };
-		044EE17F201B133200ACFC0A /* UIDevice+ZJDivice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ZJDivice.m"; sourceTree = "<group>"; };
-		044EE180201B133200ACFC0A /* UIImage+ZJImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZJImage.h"; sourceTree = "<group>"; };
-		044EE181201B133200ACFC0A /* UIImage+ZJImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZJImage.m"; sourceTree = "<group>"; };
-		044EE182201B133200ACFC0A /* UIImageView+ZJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZJImageView.h"; sourceTree = "<group>"; };
-		044EE183201B133200ACFC0A /* UIImageView+ZJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZJImageView.m"; sourceTree = "<group>"; };
-		044EE184201B133200ACFC0A /* UILabel+ZJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZJLabel.h"; sourceTree = "<group>"; };
-		044EE185201B133200ACFC0A /* UILabel+ZJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJLabel.m"; sourceTree = "<group>"; };
-		044EE186201B133200ACFC0A /* UIScrollView+ZJScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZJScrollView.h"; sourceTree = "<group>"; };
-		044EE187201B133200ACFC0A /* UIScrollView+ZJScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZJScrollView.m"; sourceTree = "<group>"; };
-		044EE188201B133200ACFC0A /* UITextField+ZJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZJTextField.h"; sourceTree = "<group>"; };
-		044EE189201B133200ACFC0A /* UITextField+ZJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZJTextField.m"; sourceTree = "<group>"; };
-		044EE18A201B133200ACFC0A /* UITextView+ZJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJTextView.h"; sourceTree = "<group>"; };
-		044EE18B201B133200ACFC0A /* UITextView+ZJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJTextView.m"; sourceTree = "<group>"; };
-		044EE18C201B133200ACFC0A /* UIViewController+ZJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZJViewController.h"; sourceTree = "<group>"; };
-		044EE18D201B133200ACFC0A /* UIViewController+ZJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZJViewController.m"; sourceTree = "<group>"; };
-		044EE18E201B133200ACFC0A /* ZJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJButton.h; sourceTree = "<group>"; };
-		044EE18F201B133200ACFC0A /* ZJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJButton.m; sourceTree = "<group>"; };
-		044EE190201B133200ACFC0A /* ZJKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJKitHelper.h; sourceTree = "<group>"; };
 		044EE192201B133200ACFC0A /* ZJTimeCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDown.h; sourceTree = "<group>"; };
 		044EE193201B133200ACFC0A /* ZJTimeCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDown.m; sourceTree = "<group>"; };
 		044EE1D5201EF16D00ACFC0A /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
@@ -301,6 +233,78 @@
 		048E8A27201728C600486470 /* ZJTwoChildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTwoChildView.m; sourceTree = "<group>"; };
 		048E8A3120172E9300486470 /* ZJChooseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseModel.h; sourceTree = "<group>"; };
 		048E8A3220172E9300486470 /* ZJChooseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseModel.m; sourceTree = "<group>"; };
+		04B0978A209CCC8D00E66CA2 /* ZJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCategory.h; sourceTree = "<group>"; };
+		04B0978C209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJHUDHelperKit.h"; sourceTree = "<group>"; };
+		04B0978D209CCC8D00E66CA2 /* UITextView+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B0978E209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZJHelperKitUIkit.m"; sourceTree = "<group>"; };
+		04B0978F209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ZJBaseFunctions.h"; sourceTree = "<group>"; };
+		04B09790209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B09791209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ZJHelperBlockKit.m"; sourceTree = "<group>"; };
+		04B09792209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+ZJHelperBlockKit.m"; sourceTree = "<group>"; };
+		04B09793209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+ZJHelperKitUIKit.h"; sourceTree = "<group>"; };
+		04B09794209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZJCornerRadiusHelperKit.h"; sourceTree = "<group>"; };
+		04B09795209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJHelperKitUIkit.m"; sourceTree = "<group>"; };
+		04B09796209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ZJHelperKitUIKit.h"; sourceTree = "<group>"; };
+		04B09797209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ZJBaseFunctions.m"; sourceTree = "<group>"; };
+		04B09798209CCC8D00E66CA2 /* UITextView+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B09799209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZJHelperKitUIkit.h"; sourceTree = "<group>"; };
+		04B0979A209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJHUDHelperKit.m"; sourceTree = "<group>"; };
+		04B0979B209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ZJHelperBlockKit.h"; sourceTree = "<group>"; };
+		04B0979C209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B0979D209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ZJBaseFunctions.m"; sourceTree = "<group>"; };
+		04B0979E209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+ZJHelperKitUIKit.m"; sourceTree = "<group>"; };
+		04B0979F209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+ZJHelperBlockKit.h"; sourceTree = "<group>"; };
+		04B097A0209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+ZJBaseFunctions.h"; sourceTree = "<group>"; };
+		04B097A1209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ZJHelperKitUIKit.m"; sourceTree = "<group>"; };
+		04B097A2209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJHelperKitUIkit.h"; sourceTree = "<group>"; };
+		04B097A3209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZJCornerRadiusHelperKit.m"; sourceTree = "<group>"; };
+		04B097A5209CCC8D00E66CA2 /* NSDate+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097A6209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097A7209CCC8D00E66CA2 /* NSString+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097A8209CCC8D00E66CA2 /* NSArray+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097A9209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097AA209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097AB209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097AC209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097AD209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097AE209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097AF209CCC8D00E66CA2 /* NSObject+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097B0209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097B1209CCC8D00E66CA2 /* NSDate+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097B2209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097B3209CCC8D00E66CA2 /* NSArray+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097B4209CCC8D00E66CA2 /* NSString+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097B5209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ZJHelperKit.m"; sourceTree = "<group>"; };
+		04B097B6209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097B7209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097B8209CCC8D00E66CA2 /* NSObject+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097B9209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097BA209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZJHelperKit.h"; sourceTree = "<group>"; };
+		04B097D3209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZJScrollView.m"; sourceTree = "<group>"; };
+		04B097D4209CCCCE00E66CA2 /* UILabel+ZJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZJLabel.h"; sourceTree = "<group>"; };
+		04B097D5209CCCCE00E66CA2 /* UIImageView+ZJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZJImageView.h"; sourceTree = "<group>"; };
+		04B097D6209CCCCE00E66CA2 /* ZJKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJKitHelper.h; sourceTree = "<group>"; };
+		04B097D7209CCCCE00E66CA2 /* UIButton+ZJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZJButton.h"; sourceTree = "<group>"; };
+		04B097D8209CCCCE00E66CA2 /* UIColor+ZJColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZJColor.m"; sourceTree = "<group>"; };
+		04B097D9209CCCCE00E66CA2 /* UIAlertController+ZJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+ZJAlert.h"; sourceTree = "<group>"; };
+		04B097DA209CCCCE00E66CA2 /* UIViewController+ZJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZJViewController.m"; sourceTree = "<group>"; };
+		04B097DB209CCCCE00E66CA2 /* UITextField+ZJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZJTextField.m"; sourceTree = "<group>"; };
+		04B097DC209CCCCE00E66CA2 /* UIImage+ZJImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZJImage.m"; sourceTree = "<group>"; };
+		04B097DD209CCCCE00E66CA2 /* UITextView+ZJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJTextView.m"; sourceTree = "<group>"; };
+		04B097DE209CCCCE00E66CA2 /* UIDevice+ZJDivice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ZJDivice.h"; sourceTree = "<group>"; };
+		04B097DF209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZJScrollView.h"; sourceTree = "<group>"; };
+		04B097E0209CCCCE00E66CA2 /* UIButton+ZJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZJButton.m"; sourceTree = "<group>"; };
+		04B097E1209CCCCE00E66CA2 /* UIImageView+ZJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZJImageView.m"; sourceTree = "<group>"; };
+		04B097E2209CCCCE00E66CA2 /* UILabel+ZJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJLabel.m"; sourceTree = "<group>"; };
+		04B097E3209CCCCE00E66CA2 /* UITextField+ZJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZJTextField.h"; sourceTree = "<group>"; };
+		04B097E4209CCCCE00E66CA2 /* UIViewController+ZJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZJViewController.h"; sourceTree = "<group>"; };
+		04B097E5209CCCCE00E66CA2 /* UIAlertController+ZJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+ZJAlert.m"; sourceTree = "<group>"; };
+		04B097E6209CCCCE00E66CA2 /* UIColor+ZJColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZJColor.h"; sourceTree = "<group>"; };
+		04B097E7209CCCCE00E66CA2 /* UIDevice+ZJDivice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ZJDivice.m"; sourceTree = "<group>"; };
+		04B097E8209CCCCE00E66CA2 /* UITextView+ZJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJTextView.h"; sourceTree = "<group>"; };
+		04B097E9209CCCCE00E66CA2 /* UIImage+ZJImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZJImage.h"; sourceTree = "<group>"; };
+		04B097F5209CCE7D00E66CA2 /* ZJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJButton.m; sourceTree = "<group>"; };
+		04B097F6209CCE7E00E66CA2 /* ZJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJButton.h; sourceTree = "<group>"; };
 		04BE949B20453FBC00DF6779 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		04BE949C20453FBC00DF6779 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
 		04BE949D20453FBC00DF6779 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
@@ -619,10 +623,10 @@
 				044EE15B201B133200ACFC0A /* ZJCommonKit.h */,
 				044EE15C201B133200ACFC0A /* ZJCommonKit.m */,
 				044EE12B201B133200ACFC0A /* ControllerKit */,
-				044EE130201B133200ACFC0A /* HelperKit */,
 				044EE15D201B133200ACFC0A /* UIKit+Masonry */,
+				04B097D2209CCCCE00E66CA2 /* ZJKit */,
 				044EE171201B133200ACFC0A /* View */,
-				044EE175201B133200ACFC0A /* ZJKit */,
+				04B09789209CCC8D00E66CA2 /* ZJCategory */,
 				044EE191201B133200ACFC0A /* ZJTool */,
 			);
 			path = ZJKitTool;
@@ -639,55 +643,6 @@
 				04C517842021951C00AC15F1 /* ZJBaseWKWebViewController.m */,
 			);
 			path = ControllerKit;
-			sourceTree = "<group>";
-		};
-		044EE130201B133200ACFC0A /* HelperKit */ = {
-			isa = PBXGroup;
-			children = (
-				044EE131201B133200ACFC0A /* NSArray+ZJHelperKit.h */,
-				044EE132201B133200ACFC0A /* NSArray+ZJHelperKit.m */,
-				044EE133201B133200ACFC0A /* NSDate+ZJHelperKit.h */,
-				044EE134201B133200ACFC0A /* NSDate+ZJHelperKit.m */,
-				044EE135201B133200ACFC0A /* NSDictionary+ZJHelperKit.h */,
-				044EE136201B133200ACFC0A /* NSDictionary+ZJHelperKit.m */,
-				044EE137201B133200ACFC0A /* NSFileManager+ZJHelperKit.h */,
-				044EE138201B133200ACFC0A /* NSFileManager+ZJHelperKit.m */,
-				044EE139201B133200ACFC0A /* NSMutableArray+ZJHelperKit.h */,
-				044EE13A201B133200ACFC0A /* NSMutableArray+ZJHelperKit.m */,
-				044EE13B201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.h */,
-				044EE13C201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.m */,
-				044EE13D201B133200ACFC0A /* NSNumber+ZJHelperKit.h */,
-				044EE13E201B133200ACFC0A /* NSNumber+ZJHelperKit.m */,
-				044EE13F201B133200ACFC0A /* NSObject+ZJHelperKit.h */,
-				044EE140201B133200ACFC0A /* NSObject+ZJHelperKit.m */,
-				044EE141201B133200ACFC0A /* NSString+ZJHelperKit.h */,
-				044EE142201B133200ACFC0A /* NSString+ZJHelperKit.m */,
-				044EE143201B133200ACFC0A /* NSTimer+ZJHelperKit.h */,
-				044EE144201B133200ACFC0A /* NSTimer+ZJHelperKit.m */,
-				044EE145201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.h */,
-				044EE146201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.m */,
-				044EE147201B133200ACFC0A /* UIActionSheet+ZJHelperKit.h */,
-				044EE148201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m */,
-				044EE149201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.h */,
-				044EE14A201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.m */,
-				044EE14B201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.h */,
-				044EE14C201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.m */,
-				044EE14D201B133200ACFC0A /* UIControl+ZJHelperBlockKit.h */,
-				044EE14E201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m */,
-				044EE14F201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.h */,
-				044EE150201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m */,
-				044EE151201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.h */,
-				044EE152201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m */,
-				044EE153201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.h */,
-				044EE154201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m */,
-				044EE155201B133200ACFC0A /* UITextView+ZJHelperKit.h */,
-				044EE156201B133200ACFC0A /* UITextView+ZJHelperKit.m */,
-				044EE157201B133200ACFC0A /* UIView+ZJHelperKitUIkit.h */,
-				044EE158201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m */,
-				044EE159201B133200ACFC0A /* UIView+ZJHUDHelperKit.h */,
-				044EE15A201B133200ACFC0A /* UIView+ZJHUDHelperKit.m */,
-			);
-			path = HelperKit;
 			sourceTree = "<group>";
 		};
 		044EE15D201B133200ACFC0A /* UIKit+Masonry */ = {
@@ -723,40 +678,6 @@
 				044EE173201B133200ACFC0A /* ZJBaseTableViewCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		044EE175201B133200ACFC0A /* ZJKit */ = {
-			isa = PBXGroup;
-			children = (
-				044EE176201B133200ACFC0A /* NSString+ZJString.h */,
-				044EE177201B133200ACFC0A /* NSString+ZJString.m */,
-				044EE178201B133200ACFC0A /* UIAlertController+ZJAlert.h */,
-				044EE179201B133200ACFC0A /* UIAlertController+ZJAlert.m */,
-				044EE17A201B133200ACFC0A /* UIButton+ZJButton.h */,
-				044EE17B201B133200ACFC0A /* UIButton+ZJButton.m */,
-				044EE17C201B133200ACFC0A /* UIColor+ZJColor.h */,
-				044EE17D201B133200ACFC0A /* UIColor+ZJColor.m */,
-				044EE17E201B133200ACFC0A /* UIDevice+ZJDivice.h */,
-				044EE17F201B133200ACFC0A /* UIDevice+ZJDivice.m */,
-				044EE180201B133200ACFC0A /* UIImage+ZJImage.h */,
-				044EE181201B133200ACFC0A /* UIImage+ZJImage.m */,
-				044EE182201B133200ACFC0A /* UIImageView+ZJImageView.h */,
-				044EE183201B133200ACFC0A /* UIImageView+ZJImageView.m */,
-				044EE184201B133200ACFC0A /* UILabel+ZJLabel.h */,
-				044EE185201B133200ACFC0A /* UILabel+ZJLabel.m */,
-				044EE186201B133200ACFC0A /* UIScrollView+ZJScrollView.h */,
-				044EE187201B133200ACFC0A /* UIScrollView+ZJScrollView.m */,
-				044EE188201B133200ACFC0A /* UITextField+ZJTextField.h */,
-				044EE189201B133200ACFC0A /* UITextField+ZJTextField.m */,
-				044EE18A201B133200ACFC0A /* UITextView+ZJTextView.h */,
-				044EE18B201B133200ACFC0A /* UITextView+ZJTextView.m */,
-				044EE18C201B133200ACFC0A /* UIViewController+ZJViewController.h */,
-				044EE18D201B133200ACFC0A /* UIViewController+ZJViewController.m */,
-				044EE18E201B133200ACFC0A /* ZJButton.h */,
-				044EE18F201B133200ACFC0A /* ZJButton.m */,
-				044EE190201B133200ACFC0A /* ZJKitHelper.h */,
-			);
-			path = ZJKit;
 			sourceTree = "<group>";
 		};
 		044EE191201B133200ACFC0A /* ZJTool */ = {
@@ -872,6 +793,8 @@
 				048E8A25201728C600486470 /* ZJThreeChildView.m */,
 				048E8A20201728C600486470 /* ZJFourChildView.h */,
 				048E8A21201728C600486470 /* ZJFourChildView.m */,
+				04B097F6209CCE7E00E66CA2 /* ZJButton.h */,
+				04B097F5209CCE7D00E66CA2 /* ZJButton.m */,
 			);
 			path = ChooseView;
 			sourceTree = "<group>";
@@ -894,6 +817,107 @@
 				048E8A3220172E9300486470 /* ZJChooseModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04B09789209CCC8D00E66CA2 /* ZJCategory */ = {
+			isa = PBXGroup;
+			children = (
+				04B0978A209CCC8D00E66CA2 /* ZJCategory.h */,
+				04B0978B209CCC8D00E66CA2 /* UIkit */,
+				04B097A4209CCC8D00E66CA2 /* Object */,
+			);
+			path = ZJCategory;
+			sourceTree = "<group>";
+		};
+		04B0978B209CCC8D00E66CA2 /* UIkit */ = {
+			isa = PBXGroup;
+			children = (
+				04B097A2209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.h */,
+				04B09795209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.m */,
+				04B09798209CCC8D00E66CA2 /* UITextView+ZJHelperKit.h */,
+				04B0978D209CCC8D00E66CA2 /* UITextView+ZJHelperKit.m */,
+				04B09799209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.h */,
+				04B0978E209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.m */,
+				04B0978C209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.h */,
+				04B0979A209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.m */,
+				04B0979B209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.h */,
+				04B09791209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.m */,
+				04B09790209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.h */,
+				04B0979C209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.m */,
+				04B09793209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.h */,
+				04B0979E209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m */,
+				04B0979F209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.h */,
+				04B09792209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */,
+				04B09796209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.h */,
+				04B097A1209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.m */,
+				04B09794209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.h */,
+				04B097A3209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m */,
+				04B0978F209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.h */,
+				04B0979D209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.m */,
+				04B097A0209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.h */,
+				04B09797209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m */,
+			);
+			path = UIkit;
+			sourceTree = "<group>";
+		};
+		04B097A4209CCC8D00E66CA2 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				04B097A5209CCC8D00E66CA2 /* NSDate+ZJHelperKit.h */,
+				04B097B1209CCC8D00E66CA2 /* NSDate+ZJHelperKit.m */,
+				04B097A6209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.h */,
+				04B097B0209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.m */,
+				04B097B2209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.h */,
+				04B097A9209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.m */,
+				04B097B3209CCC8D00E66CA2 /* NSArray+ZJHelperKit.h */,
+				04B097A8209CCC8D00E66CA2 /* NSArray+ZJHelperKit.m */,
+				04B097B4209CCC8D00E66CA2 /* NSString+ZJHelperKit.h */,
+				04B097A7209CCC8D00E66CA2 /* NSString+ZJHelperKit.m */,
+				04B097AC209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.h */,
+				04B097B5209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.m */,
+				04B097B6209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.h */,
+				04B097AB209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.m */,
+				04B097B7209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.h */,
+				04B097AA209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.m */,
+				04B097B8209CCC8D00E66CA2 /* NSObject+ZJHelperKit.h */,
+				04B097AF209CCC8D00E66CA2 /* NSObject+ZJHelperKit.m */,
+				04B097B9209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.h */,
+				04B097AE209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.m */,
+				04B097BA209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.h */,
+				04B097AD209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.m */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		04B097D2209CCCCE00E66CA2 /* ZJKit */ = {
+			isa = PBXGroup;
+			children = (
+				04B097D6209CCCCE00E66CA2 /* ZJKitHelper.h */,
+				04B097DF209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.h */,
+				04B097D3209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.m */,
+				04B097D7209CCCCE00E66CA2 /* UIButton+ZJButton.h */,
+				04B097E0209CCCCE00E66CA2 /* UIButton+ZJButton.m */,
+				04B097D5209CCCCE00E66CA2 /* UIImageView+ZJImageView.h */,
+				04B097E1209CCCCE00E66CA2 /* UIImageView+ZJImageView.m */,
+				04B097D4209CCCCE00E66CA2 /* UILabel+ZJLabel.h */,
+				04B097E2209CCCCE00E66CA2 /* UILabel+ZJLabel.m */,
+				04B097E3209CCCCE00E66CA2 /* UITextField+ZJTextField.h */,
+				04B097DB209CCCCE00E66CA2 /* UITextField+ZJTextField.m */,
+				04B097E4209CCCCE00E66CA2 /* UIViewController+ZJViewController.h */,
+				04B097DA209CCCCE00E66CA2 /* UIViewController+ZJViewController.m */,
+				04B097D9209CCCCE00E66CA2 /* UIAlertController+ZJAlert.h */,
+				04B097E5209CCCCE00E66CA2 /* UIAlertController+ZJAlert.m */,
+				04B097E6209CCCCE00E66CA2 /* UIColor+ZJColor.h */,
+				04B097D8209CCCCE00E66CA2 /* UIColor+ZJColor.m */,
+				04B097DE209CCCCE00E66CA2 /* UIDevice+ZJDivice.h */,
+				04B097E7209CCCCE00E66CA2 /* UIDevice+ZJDivice.m */,
+				04B097E8209CCCCE00E66CA2 /* UITextView+ZJTextView.h */,
+				04B097DD209CCCCE00E66CA2 /* UITextView+ZJTextView.m */,
+				04B097E9209CCCCE00E66CA2 /* UIImage+ZJImage.h */,
+				04B097DC209CCCCE00E66CA2 /* UIImage+ZJImage.m */,
+			);
+			name = ZJKit;
+			path = "../../../Community_Pharmacy/Community_Pharmacy/vender(第三方)/ZJKitTool/ZJKit";
 			sourceTree = "<group>";
 		};
 		04BE949A20453FBC00DF6779 /* ZFPlayer */ = {
@@ -1377,113 +1401,114 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044EE1A6201B133200ACFC0A /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */,
+				04B097CF209CCC8D00E66CA2 /* NSTimer+ZJHelperKit.m in Sources */,
 				04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */,
-				044EE199201B133200ACFC0A /* NSFileManager+ZJHelperKit.m in Sources */,
 				04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */,
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
 				044EE1C3201B133200ACFC0A /* ZJTimeCountDown.m in Sources */,
-				044EE1A1201B133200ACFC0A /* UIActionSheet+ZJHelperKit.m in Sources */,
 				04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */,
-				044EE1A8201B133200ACFC0A /* UITextView+ZJHelperKit.m in Sources */,
+				04B097C5209CCC8D00E66CA2 /* UIDevice+ZJHelperKitUIKit.m in Sources */,
 				04C517852021951C00AC15F1 /* ZJBaseWKWebViewController.m in Sources */,
-				044EE1C2201B133200ACFC0A /* ZJButton.m in Sources */,
-				044EE197201B133200ACFC0A /* NSDate+ZJHelperKit.m in Sources */,
-				044EE1A5201B133200ACFC0A /* UIDevice+ZJHelperKitUIKit.m in Sources */,
-				044EE1A9201B133200ACFC0A /* UIView+ZJHelperKitUIkit.m in Sources */,
+				04B097C2209CCC8D00E66CA2 /* UIActionSheet+ZJHelperKit.m in Sources */,
 				044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */,
-				044EE1BF201B133200ACFC0A /* UITextField+ZJTextField.m in Sources */,
 				044EE195201B133200ACFC0A /* ZJKitNaigationController.m in Sources */,
 				04BE94B720453FBC00DF6779 /* UIImageView+ZFCache.m in Sources */,
 				04C5178820219A6300AC15F1 /* ZJWebViewController.m in Sources */,
 				04DA134A2016E13500C619E5 /* ZJImgLeftBtn.m in Sources */,
-				044EE1A7201B133200ACFC0A /* UIImageView+ZJCornerRadiusHelperKit.m in Sources */,
 				04C5175F201FFDE400AC15F1 /* ZJVerticalFlowLayout.m in Sources */,
+				04B097C1209CCC8D00E66CA2 /* UIView+ZJHUDHelperKit.m in Sources */,
 				04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */,
+				04B097BC209CCC8D00E66CA2 /* UIColor+ZJHelperKitUIkit.m in Sources */,
 				04BE94B820453FBC00DF6779 /* UIView+CustomControlView.m in Sources */,
 				04C517662020120800AC15F1 /* ZJCollectionViewController.m in Sources */,
 				044EE1B4201B133200ACFC0A /* UIWebView+ZJMasonryKit.m in Sources */,
 				04BE94C7204542F100DF6779 /* ZJPlayerListCell.m in Sources */,
 				044EE1B3201B133200ACFC0A /* UIView+ZJMasonryKit.m in Sources */,
-				044EE1C0201B133200ACFC0A /* UITextView+ZJTextView.m in Sources */,
+				04B097EB209CCCCE00E66CA2 /* UIColor+ZJColor.m in Sources */,
 				048E8A2F201728C600486470 /* ZJTwoChildView.m in Sources */,
-				044EE1BC201B133200ACFC0A /* UIImageView+ZJImageView.m in Sources */,
 				044EE1B5201B133200ACFC0A /* ZJBaseTableViewCell.m in Sources */,
 				04DA136120170CE400C619E5 /* ZJCommit.m in Sources */,
+				04B097D1209CCC8D00E66CA2 /* NSMutableDictionary+ZJHelperKit.m in Sources */,
 				048E8A2E201728C600486470 /* ZJThreeChildView.m in Sources */,
+				04B097F3209CCCCE00E66CA2 /* UIAlertController+ZJAlert.m in Sources */,
 				04C517692020153200AC15F1 /* ZJElementsCollectionViewController.m in Sources */,
+				04B097BF209CCC8D00E66CA2 /* UIView+ZJHelperKitUIkit.m in Sources */,
+				04B097ED209CCCCE00E66CA2 /* UITextField+ZJTextField.m in Sources */,
 				04BE94B620453FBC00DF6779 /* ASValueTrackingSlider.m in Sources */,
 				048E8A28201728C600486470 /* ZJChooseOneRightCell.m in Sources */,
 				04BE94BC20453FBC00DF6779 /* ZFBrightnessView.m in Sources */,
-				044EE198201B133200ACFC0A /* NSDictionary+ZJHelperKit.m in Sources */,
 				048E8A2D201728C600486470 /* ZJOneChildView.m in Sources */,
-				044EE19E201B133200ACFC0A /* NSString+ZJHelperKit.m in Sources */,
+				04B097CE209CCC8D00E66CA2 /* NSObject+ZJHelperKit.m in Sources */,
 				048E8A3320172E9300486470 /* ZJChooseModel.m in Sources */,
 				044EE1AD201B133200ACFC0A /* UICollectionView+ZJMasonryKit.m in Sources */,
+				04B097BD209CCC8D00E66CA2 /* UIControl+ZJHelperBlockKit.m in Sources */,
+				04B097F7209CCE7E00E66CA2 /* ZJButton.m in Sources */,
 				048E8A2A201728C600486470 /* ZJChooseControlView.m in Sources */,
+				04B097C4209CCC8D00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m in Sources */,
 				042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */,
 				044EE1AC201B133200ACFC0A /* UIButton+ZJMasonryKit.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				044EE1AE201B133200ACFC0A /* UIImageView+ZJMasonryKit.m in Sources */,
 				048E8A2B201728C600486470 /* ZJChooseShowView.m in Sources */,
-				044EE1A0201B133200ACFC0A /* NSUserDefaults+ZJHelperKit.m in Sources */,
+				04B097EC209CCCCE00E66CA2 /* UIViewController+ZJViewController.m in Sources */,
+				04B097F0209CCCCE00E66CA2 /* UIButton+ZJButton.m in Sources */,
 				044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */,
+				04B097CD209CCC8D00E66CA2 /* NSMutableArray+ZJHelperKit.m in Sources */,
 				04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */,
 				04BE94BF20453FBC00DF6779 /* ZFPlayerModel.m in Sources */,
 				04BE94CE2045463400DF6779 /* ZJVideoModel.m in Sources */,
 				04191E5720888DB1004A24C6 /* ZJReplyCell.m in Sources */,
-				044EE1B6201B133200ACFC0A /* NSString+ZJString.m in Sources */,
 				04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */,
 				04DA134D2016E14400C619E5 /* ZJStarsView.m in Sources */,
-				044EE1A3201B133200ACFC0A /* UIColor+ZJHelperKitUIkit.m in Sources */,
 				04C5176C20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m in Sources */,
-				044EE19F201B133200ACFC0A /* NSTimer+ZJHelperKit.m in Sources */,
+				04B097C9209CCC8D00E66CA2 /* NSUserDefaults+ZJHelperKit.m in Sources */,
+				04B097C3209CCC8D00E66CA2 /* UITableViewCell+ZJBaseFunctions.m in Sources */,
 				04BE94B520453FBC00DF6779 /* ASValuePopUpView.m in Sources */,
-				044EE1B9201B133200ACFC0A /* UIColor+ZJColor.m in Sources */,
+				04B097F1209CCCCE00E66CA2 /* UIImageView+ZJImageView.m in Sources */,
+				04B097F4209CCCCE00E66CA2 /* UIDevice+ZJDivice.m in Sources */,
 				0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */,
 				04C517772020224D00AC15F1 /* ZJCollectionViewCell.m in Sources */,
 				04C5176F20201CC900AC15F1 /* ZJHorizontalWaterFallViewController.m in Sources */,
 				044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */,
-				044EE196201B133200ACFC0A /* NSArray+ZJHelperKit.m in Sources */,
 				048E8A2C201728C600486470 /* ZJFourChildView.m in Sources */,
-				044EE19A201B133200ACFC0A /* NSMutableArray+ZJHelperKit.m in Sources */,
-				044EE1AA201B133200ACFC0A /* UIView+ZJHUDHelperKit.m in Sources */,
-				044EE1B8201B133200ACFC0A /* UIButton+ZJButton.m in Sources */,
 				044EE1B0201B133200ACFC0A /* UITableView+ZJMarsonryKit.m in Sources */,
+				04B097CB209CCC8D00E66CA2 /* NSNumber+ZJHelperKit.m in Sources */,
 				044EE194201B133200ACFC0A /* ZJKitBaseController.m in Sources */,
-				044EE1BB201B133200ACFC0A /* UIImage+ZJImage.m in Sources */,
+				04B097C7209CCC8D00E66CA2 /* NSString+ZJHelperKit.m in Sources */,
 				04BE94BA20453FBC00DF6779 /* UIWindow+CurrentViewController.m in Sources */,
 				04C517902021AC5E00AC15F1 /* ZJExpandHeader.m in Sources */,
 				048E8A29201728C600486470 /* ZJChooseViewOneLeftCell.m in Sources */,
-				044EE1A4201B133200ACFC0A /* UIControl+ZJHelperBlockKit.m in Sources */,
-				044EE1BE201B133200ACFC0A /* UIScrollView+ZJScrollView.m in Sources */,
+				04B097C8209CCC8D00E66CA2 /* NSArray+ZJHelperKit.m in Sources */,
+				04B097EA209CCCCE00E66CA2 /* UIScrollView+ZJScrollView.m in Sources */,
+				04B097BB209CCC8D00E66CA2 /* UITextView+ZJHelperKit.m in Sources */,
 				04C5179B2022BD8800AC15F1 /* DBSphereView.m in Sources */,
 				04BE94BE20453FBC00DF6779 /* ZFPlayerControlView.m in Sources */,
-				044EE1A2201B133200ACFC0A /* UIAlertView+ZJHelperKitUIKit.m in Sources */,
 				044EE1B1201B133200ACFC0A /* UITextField+ZJMasonryKit.m in Sources */,
+				04B097F2209CCCCE00E66CA2 /* UILabel+ZJLabel.m in Sources */,
 				044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */,
-				044EE1BD201B133200ACFC0A /* UILabel+ZJLabel.m in Sources */,
+				04B097CA209CCC8D00E66CA2 /* NSFileManager+ZJHelperKit.m in Sources */,
+				04B097BE209CCC8D00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m in Sources */,
 				04BE94C020453FBC00DF6779 /* ZFPlayerView.m in Sources */,
 				04C51782202059AB00AC15F1 /* ZJImageModel.m in Sources */,
-				044EE1C1201B133200ACFC0A /* UIViewController+ZJViewController.m in Sources */,
 				044EE1AF201B133200ACFC0A /* UILabel+ZJMasonryKit.m in Sources */,
+				04B097C0209CCC8D00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m in Sources */,
+				04B097EF209CCCCE00E66CA2 /* UITextView+ZJTextView.m in Sources */,
 				044EE1E1201F173100ACFC0A /* ZJElementsFlowLayout.m in Sources */,
-				044EE19B201B133200ACFC0A /* NSMutableDictionary+ZJHelperKit.m in Sources */,
 				04DA13472016E0C900C619E5 /* ZJCommitCell.m in Sources */,
+				04B097EE209CCCCE00E66CA2 /* UIImage+ZJImage.m in Sources */,
 				044EE1AB201B133200ACFC0A /* ZJCommonKit.m in Sources */,
 				044EE1B2201B133200ACFC0A /* UITextView+ZJMasonryKit.m in Sources */,
-				044EE19D201B133200ACFC0A /* NSObject+ZJHelperKit.m in Sources */,
 				04BE94D12045468500DF6779 /* ZJVideoResolution.m in Sources */,
-				044EE19C201B133200ACFC0A /* NSNumber+ZJHelperKit.m in Sources */,
-				044EE1B7201B133200ACFC0A /* UIAlertController+ZJAlert.m in Sources */,
+				04B097D0209CCC8D00E66CA2 /* NSDate+ZJHelperKit.m in Sources */,
 				042190C020186182009056E2 /* ZJMainViewController.m in Sources */,
+				04B097C6209CCC8D00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m in Sources */,
 				04BE94B920453FBC00DF6779 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */,
 				04BE94BB20453FBC00DF6779 /* MMMaterialDesignSpinner.m in Sources */,
+				04B097CC209CCC8D00E66CA2 /* NSDictionary+ZJHelperKit.m in Sources */,
 				04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */,
 				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,
 				04BE94C32045403200DF6779 /* ZJPlayerListViewController.m in Sources */,
-				044EE1BA201B133200ACFC0A /* UIDevice+ZJDivice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
