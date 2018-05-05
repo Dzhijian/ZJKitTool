@@ -39,17 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ZJUIKit.xcscheme</key>
+		<key>Pods-ZJKitTool.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ZJUIKitTests.xcscheme</key>
+		<key>Pods-ZJKitToolTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ZJUIKitUITests.xcscheme</key>
+		<key>Pods-ZJKitToolUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

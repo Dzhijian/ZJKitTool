@@ -125,8 +125,11 @@
 		04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA134F2016E15A00C619E5 /* ZJCommitPhotoView.m */; };
 		04DA13582017036500C619E5 /* CommitsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA13572017036500C619E5 /* CommitsData.json */; };
 		04DA136120170CE400C619E5 /* ZJCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA136020170CE400C619E5 /* ZJCommit.m */; };
+		0D74F236D2188E2B4B3CF3D8 /* libPods-ZJKitTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */; };
+		1E6D2B13EECFB62663C0E957 /* libPods-ZJKitToolUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF51DE641252257866B9DE2 /* libPods-ZJKitToolUITests.a */; };
 		2FC7844A5B01816D274CD513 /* libPods-ZJUIKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C669F0165B11D48267E18B /* libPods-ZJUIKitTests.a */; };
 		48D9CD8AAB600BE3862E37B5 /* libPods-ZJUIKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48E274147C054F714A648 /* libPods-ZJUIKitUITests.a */; };
+		C871073A8522A3DBBA9F3A9F /* libPods-ZJKitToolTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */; };
 		CC64667703DAB9FA6E5B5CDF /* libPods-ZJUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FF7541D9F6268AAE2A309E /* libPods-ZJUIKit.a */; };
 /* End PBXBuildFile section */
 
@@ -201,7 +204,7 @@
 		044EE1DA201F130A00ACFC0A /* ZJBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseCollectionViewController.m; sourceTree = "<group>"; };
 		044EE1DF201F173100ACFC0A /* ZJElementsFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJElementsFlowLayout.h; sourceTree = "<group>"; };
 		044EE1E0201F173100ACFC0A /* ZJElementsFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJElementsFlowLayout.m; sourceTree = "<group>"; };
-		0475BEE21FD12E8A00617353 /* ZJUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0475BEE21FD12E8A00617353 /* ZJKitTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJKitTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0475BEE51FD12E8A00617353 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0475BEE61FD12E8A00617353 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0475BEEC1FD12E8A00617353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,10 +212,10 @@
 		0475BEF11FD12E8A00617353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0475BEF31FD12E8A00617353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0475BEF41FD12E8A00617353 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0475BEFA1FD12E8A00617353 /* ZJUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0475BEFA1FD12E8A00617353 /* ZJKitToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJKitToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0475BEFE1FD12E8A00617353 /* ZJUIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJUIKitTests.m; sourceTree = "<group>"; };
 		0475BF001FD12E8A00617353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0475BF051FD12E8A00617353 /* ZJUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0475BF051FD12E8A00617353 /* ZJKitToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJKitToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0475BF091FD12E8A00617353 /* ZJUIKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJUIKitUITests.m; sourceTree = "<group>"; };
 		0475BF0B1FD12E8A00617353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048E8A18201728C600486470 /* ZJChooseOneRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJChooseOneRightCell.h; sourceTree = "<group>"; };
@@ -388,13 +391,22 @@
 		04DA13572017036500C619E5 /* CommitsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CommitsData.json; sourceTree = "<group>"; };
 		04DA135F20170CE400C619E5 /* ZJCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCommit.h; sourceTree = "<group>"; };
 		04DA136020170CE400C619E5 /* ZJCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCommit.m; sourceTree = "<group>"; };
+		0618E3214C33288FB31FB5EA /* Pods-ZJKitTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool.debug.xcconfig"; sourceTree = "<group>"; };
 		19C669F0165B11D48267E18B /* libPods-ZJUIKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJUIKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EBAE25D6B8273A0D70AF7E /* Pods-ZJUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKitTests/Pods-ZJUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F82386E604A58F261BD044 /* Pods-ZJKitToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolUITests/Pods-ZJKitToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BEEC7DD5B200A212A0DA94C /* Pods-ZJKitTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool.release.xcconfig"; sourceTree = "<group>"; };
 		75E48E274147C054F714A648 /* libPods-ZJUIKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJUIKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF8E0E7FECF7DA6DC8768B8 /* Pods-ZJUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKitTests/Pods-ZJUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DF51DE641252257866B9DE2 /* libPods-ZJKitToolUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C8ADF658247266B8E3BDD6 /* Pods-ZJKitToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolTests/Pods-ZJKitToolTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D414060AF62FAA3F46DC873 /* Pods-ZJUIKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKitUITests/Pods-ZJUIKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A489E547B7D3F30E6DCE41A0 /* Pods-ZJUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKit/Pods-ZJUIKit.debug.xcconfig"; sourceTree = "<group>"; };
+		B05632CA13EE063842614CFA /* Pods-ZJKitToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolUITests/Pods-ZJKitToolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D2CF9E53DB85CE69674E5B9B /* Pods-ZJUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKit/Pods-ZJUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		E0C265683481F63548DC1FC1 /* Pods-ZJKitToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolTests/Pods-ZJKitToolTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1A635A4506E10FFB42EB6B8 /* Pods-ZJUIKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJUIKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJUIKitUITests/Pods-ZJUIKitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F5FF7541D9F6268AAE2A309E /* libPods-ZJUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJUIKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -405,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC64667703DAB9FA6E5B5CDF /* libPods-ZJUIKit.a in Frameworks */,
+				0D74F236D2188E2B4B3CF3D8 /* libPods-ZJKitTool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FC7844A5B01816D274CD513 /* libPods-ZJUIKitTests.a in Frameworks */,
+				C871073A8522A3DBBA9F3A9F /* libPods-ZJKitToolTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D9CD8AAB600BE3862E37B5 /* libPods-ZJUIKitUITests.a in Frameworks */,
+				1E6D2B13EECFB62663C0E957 /* libPods-ZJKitToolUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,9 +734,9 @@
 		0475BED91FD12E8A00617353 = {
 			isa = PBXGroup;
 			children = (
-				0475BEE41FD12E8A00617353 /* ZJUIKit */,
-				0475BEFD1FD12E8A00617353 /* ZJUIKitTests */,
-				0475BF081FD12E8A00617353 /* ZJUIKitUITests */,
+				0475BEE41FD12E8A00617353 /* ZJKitTool */,
+				0475BEFD1FD12E8A00617353 /* ZJKitToolTests */,
+				0475BF081FD12E8A00617353 /* ZJKitToolUITests */,
 				0475BEE31FD12E8A00617353 /* Products */,
 				5D4D298972978F12A31C24E8 /* Pods */,
 				1275F06D8E1D11024C6119E8 /* Frameworks */,
@@ -731,14 +746,14 @@
 		0475BEE31FD12E8A00617353 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0475BEE21FD12E8A00617353 /* ZJUIKit.app */,
-				0475BEFA1FD12E8A00617353 /* ZJUIKitTests.xctest */,
-				0475BF051FD12E8A00617353 /* ZJUIKitUITests.xctest */,
+				0475BEE21FD12E8A00617353 /* ZJKitTool.app */,
+				0475BEFA1FD12E8A00617353 /* ZJKitToolTests.xctest */,
+				0475BF051FD12E8A00617353 /* ZJKitToolUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0475BEE41FD12E8A00617353 /* ZJUIKit */ = {
+		0475BEE41FD12E8A00617353 /* ZJKitTool */ = {
 			isa = PBXGroup;
 			children = (
 				044EE12A201B133200ACFC0A /* ZJKitTool */,
@@ -755,25 +770,25 @@
 				0475BEF41FD12E8A00617353 /* main.m */,
 				04C748081FD6476C00A749E3 /* Header.h */,
 			);
-			path = ZJUIKit;
+			path = ZJKitTool;
 			sourceTree = "<group>";
 		};
-		0475BEFD1FD12E8A00617353 /* ZJUIKitTests */ = {
+		0475BEFD1FD12E8A00617353 /* ZJKitToolTests */ = {
 			isa = PBXGroup;
 			children = (
 				0475BEFE1FD12E8A00617353 /* ZJUIKitTests.m */,
 				0475BF001FD12E8A00617353 /* Info.plist */,
 			);
-			path = ZJUIKitTests;
+			path = ZJKitToolTests;
 			sourceTree = "<group>";
 		};
-		0475BF081FD12E8A00617353 /* ZJUIKitUITests */ = {
+		0475BF081FD12E8A00617353 /* ZJKitToolUITests */ = {
 			isa = PBXGroup;
 			children = (
 				0475BF091FD12E8A00617353 /* ZJUIKitUITests.m */,
 				0475BF0B1FD12E8A00617353 /* Info.plist */,
 			);
-			path = ZJUIKitUITests;
+			path = ZJKitToolUITests;
 			sourceTree = "<group>";
 		};
 		048E8A16201728C600486470 /* ChooseView */ = {
@@ -1098,6 +1113,9 @@
 				F5FF7541D9F6268AAE2A309E /* libPods-ZJUIKit.a */,
 				19C669F0165B11D48267E18B /* libPods-ZJUIKitTests.a */,
 				75E48E274147C054F714A648 /* libPods-ZJUIKitUITests.a */,
+				63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */,
+				1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */,
+				7DF51DE641252257866B9DE2 /* libPods-ZJKitToolUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1111,6 +1129,12 @@
 				56EBAE25D6B8273A0D70AF7E /* Pods-ZJUIKitTests.release.xcconfig */,
 				9D414060AF62FAA3F46DC873 /* Pods-ZJUIKitUITests.debug.xcconfig */,
 				E1A635A4506E10FFB42EB6B8 /* Pods-ZJUIKitUITests.release.xcconfig */,
+				0618E3214C33288FB31FB5EA /* Pods-ZJKitTool.debug.xcconfig */,
+				6BEEC7DD5B200A212A0DA94C /* Pods-ZJKitTool.release.xcconfig */,
+				85C8ADF658247266B8E3BDD6 /* Pods-ZJKitToolTests.debug.xcconfig */,
+				E0C265683481F63548DC1FC1 /* Pods-ZJKitToolTests.release.xcconfig */,
+				65F82386E604A58F261BD044 /* Pods-ZJKitToolUITests.debug.xcconfig */,
+				B05632CA13EE063842614CFA /* Pods-ZJKitToolUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1118,9 +1142,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0475BEE11FD12E8A00617353 /* ZJUIKit */ = {
+		0475BEE11FD12E8A00617353 /* ZJKitTool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0475BF0E1FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJUIKit" */;
+			buildConfigurationList = 0475BF0E1FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJKitTool" */;
 			buildPhases = (
 				07F0587AFCFBCA59CAE59C6A /* [CP] Check Pods Manifest.lock */,
 				0475BEDE1FD12E8A00617353 /* Sources */,
@@ -1132,14 +1156,14 @@
 			);
 			dependencies = (
 			);
-			name = ZJUIKit;
+			name = ZJKitTool;
 			productName = ZJUIKit;
-			productReference = 0475BEE21FD12E8A00617353 /* ZJUIKit.app */;
+			productReference = 0475BEE21FD12E8A00617353 /* ZJKitTool.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0475BEF91FD12E8A00617353 /* ZJUIKitTests */ = {
+		0475BEF91FD12E8A00617353 /* ZJKitToolTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0475BF111FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJUIKitTests" */;
+			buildConfigurationList = 0475BF111FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJKitToolTests" */;
 			buildPhases = (
 				76C219CBBD65D52832048CCE /* [CP] Check Pods Manifest.lock */,
 				0475BEF61FD12E8A00617353 /* Sources */,
@@ -1151,14 +1175,14 @@
 			dependencies = (
 				0475BEFC1FD12E8A00617353 /* PBXTargetDependency */,
 			);
-			name = ZJUIKitTests;
+			name = ZJKitToolTests;
 			productName = ZJUIKitTests;
-			productReference = 0475BEFA1FD12E8A00617353 /* ZJUIKitTests.xctest */;
+			productReference = 0475BEFA1FD12E8A00617353 /* ZJKitToolTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0475BF041FD12E8A00617353 /* ZJUIKitUITests */ = {
+		0475BF041FD12E8A00617353 /* ZJKitToolUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0475BF141FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJUIKitUITests" */;
+			buildConfigurationList = 0475BF141FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJKitToolUITests" */;
 			buildPhases = (
 				0192E0B1CD70ED1C7B070DC1 /* [CP] Check Pods Manifest.lock */,
 				0475BF011FD12E8A00617353 /* Sources */,
@@ -1170,9 +1194,9 @@
 			dependencies = (
 				0475BF071FD12E8A00617353 /* PBXTargetDependency */,
 			);
-			name = ZJUIKitUITests;
+			name = ZJKitToolUITests;
 			productName = ZJUIKitUITests;
-			productReference = 0475BF051FD12E8A00617353 /* ZJUIKitUITests.xctest */;
+			productReference = 0475BF051FD12E8A00617353 /* ZJKitToolUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1201,7 +1225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0475BEDD1FD12E8A00617353 /* Build configuration list for PBXProject "ZJUIKit" */;
+			buildConfigurationList = 0475BEDD1FD12E8A00617353 /* Build configuration list for PBXProject "ZJKitTool" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1214,9 +1238,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0475BEE11FD12E8A00617353 /* ZJUIKit */,
-				0475BEF91FD12E8A00617353 /* ZJUIKitTests */,
-				0475BF041FD12E8A00617353 /* ZJUIKitUITests */,
+				0475BEE11FD12E8A00617353 /* ZJKitTool */,
+				0475BEF91FD12E8A00617353 /* ZJKitToolTests */,
+				0475BF041FD12E8A00617353 /* ZJKitToolUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1265,7 +1289,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZJUIKitUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ZJKitToolUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1283,7 +1307,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZJUIKit-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ZJKitTool-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1301,7 +1325,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZJUIKitTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ZJKitToolTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1314,7 +1338,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZJUIKit/Pods-ZJUIKit-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool-resources.sh",
 				"${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png",
@@ -1333,7 +1357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJUIKit/Pods-ZJUIKit-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1475,12 +1499,12 @@
 /* Begin PBXTargetDependency section */
 		0475BEFC1FD12E8A00617353 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0475BEE11FD12E8A00617353 /* ZJUIKit */;
+			target = 0475BEE11FD12E8A00617353 /* ZJKitTool */;
 			targetProxy = 0475BEFB1FD12E8A00617353 /* PBXContainerItemProxy */;
 		};
 		0475BF071FD12E8A00617353 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0475BEE11FD12E8A00617353 /* ZJUIKit */;
+			target = 0475BEE11FD12E8A00617353 /* ZJKitTool */;
 			targetProxy = 0475BF061FD12E8A00617353 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1611,17 +1635,17 @@
 		};
 		0475BF0F1FD12E8A00617353 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A489E547B7D3F30E6DCE41A0 /* Pods-ZJUIKit.debug.xcconfig */;
+			baseConfigurationReference = 0618E3214C33288FB31FB5EA /* Pods-ZJKitTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5M6M3U5ZY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ZJUIKit/Header.h;
-				INFOPLIST_FILE = ZJUIKit/Info.plist;
+				GCC_PREFIX_HEADER = ZJKitTool/Header.h;
+				INFOPLIST_FILE = "$(SRCROOT)/ZJKitTool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kapokcloud.ZJUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kapokcloud.ZJKitTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1629,17 +1653,17 @@
 		};
 		0475BF101FD12E8A00617353 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2CF9E53DB85CE69674E5B9B /* Pods-ZJUIKit.release.xcconfig */;
+			baseConfigurationReference = 6BEEC7DD5B200A212A0DA94C /* Pods-ZJKitTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5M6M3U5ZY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ZJUIKit/Header.h;
-				INFOPLIST_FILE = ZJUIKit/Info.plist;
+				GCC_PREFIX_HEADER = ZJKitTool/Header.h;
+				INFOPLIST_FILE = "$(SRCROOT)/ZJKitTool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kapokcloud.ZJUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kapokcloud.ZJKitTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1647,7 +1671,7 @@
 		};
 		0475BF121FD12E8A00617353 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BF8E0E7FECF7DA6DC8768B8 /* Pods-ZJUIKitTests.debug.xcconfig */;
+			baseConfigurationReference = 85C8ADF658247266B8E3BDD6 /* Pods-ZJKitToolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1656,13 +1680,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kapokcloud.ZJUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJUIKit.app/ZJUIKit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJKitTool.app/ZJKitTool";
 			};
 			name = Debug;
 		};
 		0475BF131FD12E8A00617353 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56EBAE25D6B8273A0D70AF7E /* Pods-ZJUIKitTests.release.xcconfig */;
+			baseConfigurationReference = E0C265683481F63548DC1FC1 /* Pods-ZJKitToolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1671,13 +1695,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kapokcloud.ZJUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJUIKit.app/ZJUIKit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJKitTool.app/ZJKitTool";
 			};
 			name = Release;
 		};
 		0475BF151FD12E8A00617353 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D414060AF62FAA3F46DC873 /* Pods-ZJUIKitUITests.debug.xcconfig */;
+			baseConfigurationReference = 65F82386E604A58F261BD044 /* Pods-ZJKitToolUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZJUIKitUITests/Info.plist;
@@ -1691,7 +1715,7 @@
 		};
 		0475BF161FD12E8A00617353 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1A635A4506E10FFB42EB6B8 /* Pods-ZJUIKitUITests.release.xcconfig */;
+			baseConfigurationReference = B05632CA13EE063842614CFA /* Pods-ZJKitToolUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZJUIKitUITests/Info.plist;
@@ -1706,7 +1730,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0475BEDD1FD12E8A00617353 /* Build configuration list for PBXProject "ZJUIKit" */ = {
+		0475BEDD1FD12E8A00617353 /* Build configuration list for PBXProject "ZJKitTool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0475BF0C1FD12E8A00617353 /* Debug */,
@@ -1715,7 +1739,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0475BF0E1FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJUIKit" */ = {
+		0475BF0E1FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJKitTool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0475BF0F1FD12E8A00617353 /* Debug */,
@@ -1724,7 +1748,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0475BF111FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJUIKitTests" */ = {
+		0475BF111FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJKitToolTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0475BF121FD12E8A00617353 /* Debug */,
@@ -1733,7 +1757,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0475BF141FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJUIKitUITests" */ = {
+		0475BF141FD12E8A00617353 /* Build configuration list for PBXNativeTarget "ZJKitToolUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0475BF151FD12E8A00617353 /* Debug */,
