@@ -17,15 +17,14 @@ Pod::Spec.new do |s|
 
   s.name         = "ZJKitTool"
   s.version      = "0.0.1"
-  s.summary      = "A short description of ZJKitTool."
+  s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类"
 
   s.homepage     = "https://github.com/Dzhijian/ZJKitTool"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -38,7 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -52,7 +51,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "CodeDeng" => "dengzj@canplay.com.cn" }
+  s.author             = { "CoderDeng" => "dengzj@canplay.com.cn" }
   # Or just: s.author    = "CodeDeng"
   # s.authors            = { "CodeDeng" => "dengzj@canplay.com.cn" }
   # s.social_media_url   = "http://twitter.com/CodeDeng"
@@ -63,8 +62,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
