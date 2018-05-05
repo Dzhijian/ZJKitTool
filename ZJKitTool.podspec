@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
+   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  # s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -88,13 +88,68 @@ Pod::Spec.new do |s|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
+  s.requires_arc = true # 是否启用ARC
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "ZJKitTool", "**/*.{h,m}"
+
+  s.public_header_files = 'ZJKitTool/ZJHelperKit.h'
+  
+
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
+  s.subspec 'ZJGenneralMacros' do |ss|
 
+    ss.source_files = 'ZJKitTool/ZJGenneralMacros'
+
+  end
+
+  # 控制器
+  s.subspec 'ZJControllerKit' do |ss|
+
+    ss.source_files = 'ZJKitTool/ZJControllerKit'
+
+  end
+
+  # UIkit
+  s.subspec 'ZJKit' do |ss|
+
+    ss.source_files = 'ZJKitTool/ZJKit'
+
+  end
+
+  # UIkit + Masonry
+  s.subspec 'ZJKitMasonry' do |ss|
+
+    ss.source_files = 'ZJKitTool/ZJKitMasonry'
+
+    ss.dependency 'Masonry', '~> 1.0.2'
+
+  end
+
+  #类目
+  s.subspec 'ZJCategory' do |ss|
+    
+    ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
+
+    #编码
+    ss.subspec 'Unicode' do |sss|
+      sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
+
+      #编码
+    ss.subspec 'Unicode' do |sss|
+      sss.source_files = 'ZJKitTool/ZJCategory/Object'
+    end
+
+  end
+
+    # UIkit + Masonry
+  s.subspec 'ZJTool' do |ss|
+
+    ss.source_files = 'ZJKitTool/ZJTool'
+
+  end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the

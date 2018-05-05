@@ -600,6 +600,7 @@
 		04191E6020889751004A24C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				04B09A2F209DB7BD00E66CA2 /* ZJView */,
 				042190BE20186182009056E2 /* ZJMainViewController.h */,
 				042190BF20186182009056E2 /* ZJMainViewController.m */,
 			);
@@ -749,20 +750,18 @@
 		04B099F7209DB7BD00E66CA2 /* ZJKitTool */ = {
 			isa = PBXGroup;
 			children = (
-				04B099F8209DB7BD00E66CA2 /* UIKit+Masonry */,
-				04B09A0C209DB7BD00E66CA2 /* ControllerKit */,
-				04B09A13209DB7BD00E66CA2 /* ZJCommonKit.h */,
+				04B09A32209DB7BD00E66CA2 /* ZJHelperKit.h */,
+				04B09A97209E083100E66CA2 /* ZJGenneralMacros */,
+				04B099F8209DB7BD00E66CA2 /* ZJKitMasonry */,
+				04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */,
 				04B09A14209DB7BD00E66CA2 /* ZJKit */,
 				04B09A2C209DB7BD00E66CA2 /* ZJTool */,
-				04B09A2F209DB7BD00E66CA2 /* View */,
-				04B09A32209DB7BD00E66CA2 /* ZJHelperKit.h */,
 				04B09A33209DB7BD00E66CA2 /* ZJCategory */,
-				04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */,
 			);
 			path = ZJKitTool;
 			sourceTree = SOURCE_ROOT;
 		};
-		04B099F8209DB7BD00E66CA2 /* UIKit+Masonry */ = {
+		04B099F8209DB7BD00E66CA2 /* ZJKitMasonry */ = {
 			isa = PBXGroup;
 			children = (
 				04B099F9209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m */,
@@ -785,10 +784,10 @@
 				04B09A0A209DB7BD00E66CA2 /* UITableView+ZJMarsonryKit.h */,
 				04B09A0B209DB7BD00E66CA2 /* UITextField+ZJMasonryKit.h */,
 			);
-			path = "UIKit+Masonry";
+			path = ZJKitMasonry;
 			sourceTree = "<group>";
 		};
-		04B09A0C209DB7BD00E66CA2 /* ControllerKit */ = {
+		04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */ = {
 			isa = PBXGroup;
 			children = (
 				04B09A0D209DB7BD00E66CA2 /* ZJKitBaseController.h */,
@@ -798,7 +797,7 @@
 				04B09A11209DB7BD00E66CA2 /* ZJKitBaseController.m */,
 				04B09A12209DB7BD00E66CA2 /* ZJKitNaigationController.m */,
 			);
-			path = ControllerKit;
+			path = ZJControllerKit;
 			sourceTree = "<group>";
 		};
 		04B09A14209DB7BD00E66CA2 /* ZJKit */ = {
@@ -840,26 +839,26 @@
 			path = ZJTool;
 			sourceTree = "<group>";
 		};
-		04B09A2F209DB7BD00E66CA2 /* View */ = {
+		04B09A2F209DB7BD00E66CA2 /* ZJView */ = {
 			isa = PBXGroup;
 			children = (
 				04B09A30209DB7BD00E66CA2 /* ZJBaseTableViewCell.h */,
 				04B09A31209DB7BD00E66CA2 /* ZJBaseTableViewCell.m */,
 			);
-			path = View;
+			path = ZJView;
 			sourceTree = "<group>";
 		};
 		04B09A33209DB7BD00E66CA2 /* ZJCategory */ = {
 			isa = PBXGroup;
 			children = (
 				04B09A34209DB7BD00E66CA2 /* ZJCategory.h */,
-				04B09A35209DB7BD00E66CA2 /* UIkit */,
+				04B09A35209DB7BD00E66CA2 /* UIKit */,
 				04B09A4E209DB7BD00E66CA2 /* Object */,
 			);
 			path = ZJCategory;
 			sourceTree = "<group>";
 		};
-		04B09A35209DB7BD00E66CA2 /* UIkit */ = {
+		04B09A35209DB7BD00E66CA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				04B09A36209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.h */,
@@ -887,7 +886,7 @@
 				04B09A4C209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.h */,
 				04B09A4D209DB7BD00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m */,
 			);
-			path = UIkit;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		04B09A4E209DB7BD00E66CA2 /* Object */ = {
@@ -917,6 +916,15 @@
 				04B09A64209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.h */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		04B09A97209E083100E66CA2 /* ZJGenneralMacros */ = {
+			isa = PBXGroup;
+			children = (
+				04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */,
+				04B09A13209DB7BD00E66CA2 /* ZJCommonKit.h */,
+			);
+			path = ZJGenneralMacros;
 			sourceTree = "<group>";
 		};
 		04BE949A20453FBC00DF6779 /* ZFPlayer */ = {
