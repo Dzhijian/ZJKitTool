@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  # s.platform     = :ios, "8.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -88,70 +88,76 @@ Pod::Spec.new do |s|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
+  #所需要支持的框架
+  s.frameworks   = 'UIKit' 
+
   s.requires_arc = true # 是否启用ARC
 
-  # s.source_files  = "ZJKitTool", "**/*.{h,m}"
-  s.source_files = 'ZJKitTool/ZJHelperKit.h'
+  s.source_files  = "ZJKitTool", "ZJKitTool/**/*.{h,m}"
+  # s.source_files = 'ZJKitTool/ZJHelperKit.h'
+  
+
   
   s.public_header_files = 'ZJKitTool/ZJHelperKit.h'
   
+  s.dependency 'Masonry', '~> 1.0.2'
 
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
-  s.subspec 'ZJGenneralMacros' do |ss|
+  # s.subspec 'ZJGenneralMacros' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJGenneralMacros'
+  #   ss.source_files = 'ZJKitTool/ZJGenneralMacros'
 
-  end
+  # end
 
-  # 控制器
-  s.subspec 'ZJControllerKit' do |ss|
+  # # 控制器
+  # s.subspec 'ZJControllerKit' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJControllerKit'
+  #   ss.source_files = 'ZJKitTool/ZJControllerKit'
 
-  end
+  # end
 
-  # UIkit
-  s.subspec 'ZJKit' do |ss|
+  # # UIkit
+  # s.subspec 'ZJKit' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJKit'
+  #   ss.source_files = 'ZJKitTool/ZJKit'
 
-  end
+  # end
 
-  # UIkit + Masonry
-  s.subspec 'ZJKitMasonry' do |ss|
+  # # UIkit + Masonry
+  # s.subspec 'ZJKitMasonry' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJKitMasonry'
+  #   ss.source_files = 'ZJKitTool/ZJKitMasonry'
 
-    ss.dependency 'Masonry', '~> 1.0.2'
+  #   ss.dependency 'Masonry', '~> 1.0.2'
 
-  end
+  # end
 
-  #类目
-  s.subspec 'ZJCategory' do |ss|
+  # #类目
+  # s.subspec 'ZJCategory' do |ss|
     
-    ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
+  #   ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
 
-    #编码
-    ss.subspec 'Unicode' do |sss|
-      sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
-    end
+  #   #编码
+  #   ss.subspec 'Unicode' do |sss|
+  #     sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
+  #   end
 
-      #编码
-    ss.subspec 'Unicode' do |sss|
-      sss.source_files = 'ZJKitTool/ZJCategory/Object'
-    end
+  #     #编码
+  #   ss.subspec 'Unicode' do |sss|
+  #     sss.source_files = 'ZJKitTool/ZJCategory/Object'
+  #   end
 
-  end
+  # end
 
-    # UIkit + Masonry
-  s.subspec 'ZJTool' do |ss|
+  #   # UIkit + Masonry
+  # s.subspec 'ZJTool' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJTool'
+  #   ss.source_files = 'ZJKitTool/ZJTool'
 
-  end
+  # end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the

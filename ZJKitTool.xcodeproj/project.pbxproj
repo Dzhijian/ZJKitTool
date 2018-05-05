@@ -921,8 +921,8 @@
 		04B09A97209E083100E66CA2 /* ZJGenneralMacros */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */,
 				04B09A13209DB7BD00E66CA2 /* ZJCommonKit.h */,
+				04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */,
 			);
 			path = ZJGenneralMacros;
 			sourceTree = "<group>";
