@@ -8,7 +8,9 @@
 
 #import "ZJKitBaseController.h"
 #import <WebKit/WebKit.h>
-
+#import "ZJHelperKit.h"
+#import "ZJKitHelper.h"
+#import <UIKit/UIKit.h>
 @class ZJBaseWKWebViewController;
 @protocol ZJWebViewControllerDelegate <NSObject>
 

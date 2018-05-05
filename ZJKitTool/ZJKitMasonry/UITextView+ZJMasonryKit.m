@@ -7,7 +7,7 @@
 //
 
 #import "UITextView+ZJMasonryKit.h"
-
+#import "UITextView+ZJHelperKit.h"
 @implementation UITextView (ZJMasonryKit)
 
 +(instancetype)zj_textViewWithFontSize:(CGFloat)fontSize

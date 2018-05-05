@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ZJCommonKit.h"
 @interface UITextView (ZJMasonryKit)
 /**
  * 快速创建一个UItextView,设置字体大小，字体颜色，placeText,placeColor，masonry布局

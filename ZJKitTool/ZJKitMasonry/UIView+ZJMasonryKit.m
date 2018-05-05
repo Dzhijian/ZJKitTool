@@ -8,6 +8,7 @@
 
 #import "UIView+ZJMasonryKit.h"
 #import <objc/runtime.h>
+#import "UIGestureRecognizer+ZJHelperBlockKit.h"
 
 static const void *s_zj_tapGestureKey = "s_zj_tapGestureKey";
 static const void *s_zj_longGestureKey = "s_zj_longGestureKey";

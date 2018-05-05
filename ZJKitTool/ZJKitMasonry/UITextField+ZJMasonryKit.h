@@ -8,6 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "ZJCommonKit.h"
 
 @interface UITextField (ZJMasonryKit)
 

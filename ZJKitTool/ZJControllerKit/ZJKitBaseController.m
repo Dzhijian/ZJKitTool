@@ -18,7 +18,7 @@
 #import "ZJKitBaseController.h"
 #import <objc/runtime.h>
 #import "ZJHelperKit.h"
-
+#import "ZJKitHelper.h"
 
 
 @interface ZJKitBaseController ()

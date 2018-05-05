@@ -7,7 +7,7 @@
 //
 
 #import "UIButton+ZJMasonryKit.h"
-
+#import "UIControl+ZJHelperBlockKit.h"
 @implementation UIButton (ZJMasonryKit)
 
 
@@ -187,14 +187,14 @@
     
     UIImage *normalImage = nil;
     if ([norImage isKindOfClass:[NSString class]]) {
-        normalImage = kImageName(norImage);
+        normalImage = [UIImage imageNamed:norImage];
     }else if([norImage isKindOfClass:[UIImage class]]){
         normalImage = norImage;
     }
     
     UIImage *seleImage = nil;
     if ([selectImage isKindOfClass:[NSString class]]) {
-        seleImage = kImageName(selectImage);
+        seleImage = [UIImage imageNamed:selectImage];
     }else if([selectImage isKindOfClass:[UIImage class]]){
         seleImage = selectImage;
     }
@@ -209,9 +209,9 @@
     
     if (fontSize > 0) {
         if (isBold) {
-            button.titleLabel.font = kBoldFontWithSize(fontSize);
+            button.titleLabel.font = [UIFont boldSystemFontOfSize:fontSize];
         }else{
-            button.titleLabel.font = kFontWithSize(fontSize);
+            button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
         }
     }
     

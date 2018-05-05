@@ -7,7 +7,8 @@
 //
 
 
-
+#import <UIKit/UIKit.h>
+#import "ZJCommonKit.h"
 @interface UITableView (ZJMarsonryKit)
 
 /**

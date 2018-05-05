@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-
+#import <Masonry/Masonry.h>
 // 获得弱引用对象
 #define kWeakObject(object) __weak __typeof(object) weakObject = object;
 
@@ -238,5 +238,7 @@ typedef void(^ZJLongGestureBlock)(UILongPressGestureRecognizer *gesture);
 typedef void(^ZJConstrainMaker)(MASConstraintMaker *make);
 
 @interface ZJCommonKit : NSObject
+
+@property (nonatomic, copy) ZJConstrainMaker masonryblock;
 
 @end
