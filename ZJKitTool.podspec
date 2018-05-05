@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "0.0.1"
+  s.version      = "2.0.0"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Dzhijian/ZJKitTool.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git@github.com:Dzhijian/ZJKitTool.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,8 +90,9 @@ Pod::Spec.new do |s|
   #
   s.requires_arc = true # 是否启用ARC
 
-  s.source_files  = "ZJKitTool", "**/*.{h,m}"
-
+  # s.source_files  = "ZJKitTool", "**/*.{h,m}"
+  s.source_files = 'ZJKitTool/ZJHelperKit.h'
+  
   s.public_header_files = 'ZJKitTool/ZJHelperKit.h'
   
 
@@ -136,6 +137,7 @@ Pod::Spec.new do |s|
     #编码
     ss.subspec 'Unicode' do |sss|
       sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
+    end
 
       #编码
     ss.subspec 'Unicode' do |sss|
