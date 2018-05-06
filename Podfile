@@ -7,7 +7,7 @@ target 'ZJKitTool' do
 
   # Pods for ZJKitTool
   pod 'SDWebImage', '~> 4.0.0'
-  pod 'Masonry', '~> 1.0.2'
+  pod 'Masonry'
   pod 'MBProgressHUD'
   pod 'KSPhotoBrowser'
   pod 'MJRefresh'

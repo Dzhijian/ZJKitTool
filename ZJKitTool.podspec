@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.1.1"
+  s.version      = "2.1.2"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -100,7 +100,7 @@ Pod::Spec.new do |s|
   
   s.public_header_files = 'ZJKitTool/ZJHelperKit.h'
   
-  s.dependency 'Masonry', '~> 1.0.2'
+  s.dependency 'Masonry'
 
   s.dependency 'MBProgressHUD'
   
@@ -118,7 +118,7 @@ Pod::Spec.new do |s|
   # 控制器
   s.subspec 'ZJControllerKit' do |ss|
 
-    ss.dependency 'Masonry', '~> 1.0.2'
+    ss.dependency 'Masonry'
 
     ss.source_files = 'ZJKitTool/ZJControllerKit/*.{h,m}'
 
@@ -135,7 +135,7 @@ Pod::Spec.new do |s|
   # UIkit + Masonry
   s.subspec 'ZJKitMasonry' do |ss|
 
-    ss.dependency 'Masonry', '~> 1.0.2'
+    ss.dependency 'Masonry'
 
     ss.source_files = 'ZJKitTool/ZJKitMasonry/*.{h,m}'
 
