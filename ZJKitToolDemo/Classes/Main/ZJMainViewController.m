@@ -6,9 +6,9 @@
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 /**
- *  ZJUIKitTool
+ *  ZJKitTool
  *
- *  GitHub地址：https://github.com/Dzhijian/ZJUIKitTool
+ *  GitHub地址：https://github.com/Dzhijian/ZJKitTool
  *
  *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
  */
@@ -53,7 +53,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"ZJUIKitTool";
+    self.title = @"ZJKitTool";
     self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",
                         @"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",
                         @"导航栏渐变",@"球形TagView",@"视频列表"];
