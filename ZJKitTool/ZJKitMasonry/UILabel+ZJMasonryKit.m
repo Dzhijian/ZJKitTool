@@ -80,7 +80,7 @@
     UILabel *label = [[UILabel alloc]init];
     label.text = text;
     if (fontSize!=0) {
-        label.font = kFontWithSize(fontSize);
+        label.font = [UIFont systemFontOfSize:fontSize];
     }
     
     if (font != nil) {
@@ -91,7 +91,7 @@
     if (textColor != nil) {
         label.textColor = textColor;
     }else{
-        label.textColor = kBlackColor;
+        label.textColor = [UIColor blackColor];
     }
     label.numberOfLines = lines;
     

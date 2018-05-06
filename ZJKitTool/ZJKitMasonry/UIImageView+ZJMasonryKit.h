@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZJCommonKit.h"
+
+#import "ZJKitMasonryTool.h"
 
 @interface UIImageView (ZJMasonryKit)
 

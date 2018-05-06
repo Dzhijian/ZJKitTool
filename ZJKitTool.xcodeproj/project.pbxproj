@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */; };
 		0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */; };
+		0408D23E209EED8D00097E14 /* UIControl+ZJActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408D23D209EED8D00097E14 /* UIControl+ZJActionBlock.m */; };
+		0408D241209EF24D00097E14 /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408D240209EF24D00097E14 /* UIView+ZJFrame.m */; };
+		0408D244209EF58E00097E14 /* ZJKitMasonryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408D243209EF58E00097E14 /* ZJKitMasonryTool.m */; };
+		0408D247209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408D246209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m */; };
+		0408D24A209EF90900097E14 /* UIView+ZJMasonryFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408D249209EF90900097E14 /* UIView+ZJMasonryFrame.m */; };
 		04191E5720888DB1004A24C6 /* ZJReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04191E5620888DB1004A24C6 /* ZJReplyCell.m */; };
 		04191E6420889883004A24C6 /* MasonryCellData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04191E6320889883004A24C6 /* MasonryCellData.json */; };
 		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
@@ -152,6 +157,16 @@
 		0403A0032019A9B200D4DF1B /* ZJTimeCountDownViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDownViewController.m; sourceTree = "<group>"; };
 		0403A0062019B1D600D4DF1B /* ZJTimeCountDownCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDownCell.h; sourceTree = "<group>"; };
 		0403A0072019B1D600D4DF1B /* ZJTimeCountDownCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTimeCountDownCell.m; sourceTree = "<group>"; };
+		0408D23C209EED8D00097E14 /* UIControl+ZJActionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+ZJActionBlock.h"; sourceTree = "<group>"; };
+		0408D23D209EED8D00097E14 /* UIControl+ZJActionBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ZJActionBlock.m"; sourceTree = "<group>"; };
+		0408D23F209EF24D00097E14 /* UIView+ZJFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJFrame.h"; sourceTree = "<group>"; };
+		0408D240209EF24D00097E14 /* UIView+ZJFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJFrame.m"; sourceTree = "<group>"; };
+		0408D242209EF58E00097E14 /* ZJKitMasonryTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJKitMasonryTool.h; sourceTree = "<group>"; };
+		0408D243209EF58E00097E14 /* ZJKitMasonryTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitMasonryTool.m; sourceTree = "<group>"; };
+		0408D245209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+ZJActionBlock.h"; sourceTree = "<group>"; };
+		0408D246209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+ZJActionBlock.m"; sourceTree = "<group>"; };
+		0408D248209EF90900097E14 /* UIView+ZJMasonryFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJMasonryFrame.h"; sourceTree = "<group>"; };
+		0408D249209EF90900097E14 /* UIView+ZJMasonryFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJMasonryFrame.m"; sourceTree = "<group>"; };
 		04191E5520888DB1004A24C6 /* ZJReplyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJReplyCell.h; sourceTree = "<group>"; };
 		04191E5620888DB1004A24C6 /* ZJReplyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJReplyCell.m; sourceTree = "<group>"; };
 		04191E6320889883004A24C6 /* MasonryCellData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MasonryCellData.json; sourceTree = "<group>"; };
@@ -764,25 +779,31 @@
 		04B099F8209DB7BD00E66CA2 /* ZJKitMasonry */ = {
 			isa = PBXGroup;
 			children = (
+				04B09A05209DB7BD00E66CA2 /* ZJUIMasonsyKit.h */,
+				0408D242209EF58E00097E14 /* ZJKitMasonryTool.h */,
+				0408D243209EF58E00097E14 /* ZJKitMasonryTool.m */,
+				04B09A04209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.h */,
 				04B099F9209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m */,
 				04B099FA209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.h */,
-				04B099FB209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m */,
-				04B099FC209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m */,
-				04B099FD209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.m */,
-				04B099FE209DB7BD00E66CA2 /* UIView+ZJMasonryKit.m */,
-				04B099FF209DB7BD00E66CA2 /* UITextField+ZJMasonryKit.m */,
-				04B09A00209DB7BD00E66CA2 /* UITableView+ZJMarsonryKit.m */,
-				04B09A01209DB7BD00E66CA2 /* UILabel+ZJMasonryKit.m */,
-				04B09A02209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.h */,
 				04B09A03209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.m */,
-				04B09A04209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.h */,
-				04B09A05209DB7BD00E66CA2 /* ZJUIMasonsyKit.h */,
+				04B09A02209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.h */,
+				04B099FB209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m */,
 				04B09A06209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.h */,
+				04B099FD209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.m */,
 				04B09A07209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.h */,
+				04B099FC209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m */,
 				04B09A08209DB7BD00E66CA2 /* UIView+ZJMasonryKit.h */,
+				04B099FE209DB7BD00E66CA2 /* UIView+ZJMasonryKit.m */,
 				04B09A09209DB7BD00E66CA2 /* UILabel+ZJMasonryKit.h */,
+				04B09A01209DB7BD00E66CA2 /* UILabel+ZJMasonryKit.m */,
 				04B09A0A209DB7BD00E66CA2 /* UITableView+ZJMarsonryKit.h */,
+				04B09A00209DB7BD00E66CA2 /* UITableView+ZJMarsonryKit.m */,
 				04B09A0B209DB7BD00E66CA2 /* UITextField+ZJMasonryKit.h */,
+				04B099FF209DB7BD00E66CA2 /* UITextField+ZJMasonryKit.m */,
+				0408D245209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.h */,
+				0408D246209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m */,
+				0408D248209EF90900097E14 /* UIView+ZJMasonryFrame.h */,
+				0408D249209EF90900097E14 /* UIView+ZJMasonryFrame.m */,
 			);
 			path = ZJKitMasonry;
 			sourceTree = "<group>";
@@ -791,11 +812,15 @@
 			isa = PBXGroup;
 			children = (
 				04B09A0D209DB7BD00E66CA2 /* ZJKitBaseController.h */,
-				04B09A0E209DB7BD00E66CA2 /* ZJBaseWKWebViewController.h */,
-				04B09A0F209DB7BD00E66CA2 /* ZJKitNaigationController.h */,
-				04B09A10209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m */,
 				04B09A11209DB7BD00E66CA2 /* ZJKitBaseController.m */,
+				04B09A0E209DB7BD00E66CA2 /* ZJBaseWKWebViewController.h */,
+				04B09A10209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m */,
+				04B09A0F209DB7BD00E66CA2 /* ZJKitNaigationController.h */,
 				04B09A12209DB7BD00E66CA2 /* ZJKitNaigationController.m */,
+				0408D23C209EED8D00097E14 /* UIControl+ZJActionBlock.h */,
+				0408D23D209EED8D00097E14 /* UIControl+ZJActionBlock.m */,
+				0408D23F209EF24D00097E14 /* UIView+ZJFrame.h */,
+				0408D240209EF24D00097E14 /* UIView+ZJFrame.m */,
 			);
 			path = ZJControllerKit;
 			sourceTree = "<group>";
@@ -833,8 +858,8 @@
 		04B09A2C209DB7BD00E66CA2 /* ZJTool */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A2D209DB7BD00E66CA2 /* ZJTimeCountDown.m */,
 				04B09A2E209DB7BD00E66CA2 /* ZJTimeCountDown.h */,
+				04B09A2D209DB7BD00E66CA2 /* ZJTimeCountDown.m */,
 			);
 			path = ZJTool;
 			sourceTree = "<group>";
@@ -861,29 +886,29 @@
 		04B09A35209DB7BD00E66CA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A36209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.h */,
-				04B09A37209DB7BD00E66CA2 /* UITextView+ZJHelperKit.m */,
-				04B09A38209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.m */,
-				04B09A39209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.h */,
-				04B09A3A209DB7BD00E66CA2 /* UIActionSheet+ZJHelperKit.h */,
-				04B09A3B209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.m */,
-				04B09A3C209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */,
-				04B09A3D209DB7BD00E66CA2 /* UIAlertView+ZJHelperKitUIKit.h */,
-				04B09A3E209DB7BD00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.h */,
-				04B09A3F209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.m */,
-				04B09A40209DB7BD00E66CA2 /* UIDevice+ZJHelperKitUIKit.h */,
-				04B09A41209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m */,
 				04B09A42209DB7BD00E66CA2 /* UITextView+ZJHelperKit.h */,
+				04B09A37209DB7BD00E66CA2 /* UITextView+ZJHelperKit.m */,
 				04B09A43209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.h */,
+				04B09A38209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.m */,
+				04B09A36209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.h */,
 				04B09A44209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.m */,
 				04B09A45209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.h */,
+				04B09A3B209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.m */,
+				04B09A3A209DB7BD00E66CA2 /* UIActionSheet+ZJHelperKit.h */,
 				04B09A46209DB7BD00E66CA2 /* UIActionSheet+ZJHelperKit.m */,
+				04B09A39209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.h */,
 				04B09A47209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.m */,
+				04B09A3D209DB7BD00E66CA2 /* UIAlertView+ZJHelperKitUIKit.h */,
 				04B09A48209DB7BD00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m */,
 				04B09A49209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.h */,
+				04B09A3C209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */,
 				04B09A4A209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.h */,
+				04B09A41209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m */,
+				04B09A40209DB7BD00E66CA2 /* UIDevice+ZJHelperKitUIKit.h */,
 				04B09A4B209DB7BD00E66CA2 /* UIDevice+ZJHelperKitUIKit.m */,
 				04B09A4C209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.h */,
+				04B09A3F209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.m */,
+				04B09A3E209DB7BD00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.h */,
 				04B09A4D209DB7BD00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m */,
 			);
 			path = UIKit;
@@ -892,28 +917,28 @@
 		04B09A4E209DB7BD00E66CA2 /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A4F209DB7BD00E66CA2 /* NSDate+ZJHelperKit.h */,
 				04B09A50209DB7BD00E66CA2 /* NSTimer+ZJHelperKit.h */,
-				04B09A51209DB7BD00E66CA2 /* NSString+ZJHelperKit.m */,
-				04B09A52209DB7BD00E66CA2 /* NSArray+ZJHelperKit.m */,
-				04B09A53209DB7BD00E66CA2 /* NSUserDefaults+ZJHelperKit.m */,
-				04B09A54209DB7BD00E66CA2 /* NSFileManager+ZJHelperKit.m */,
-				04B09A55209DB7BD00E66CA2 /* NSNumber+ZJHelperKit.m */,
-				04B09A56209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.h */,
-				04B09A57209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.m */,
-				04B09A58209DB7BD00E66CA2 /* NSMutableArray+ZJHelperKit.m */,
-				04B09A59209DB7BD00E66CA2 /* NSObject+ZJHelperKit.m */,
 				04B09A5A209DB7BD00E66CA2 /* NSTimer+ZJHelperKit.m */,
+				04B09A4F209DB7BD00E66CA2 /* NSDate+ZJHelperKit.h */,
 				04B09A5B209DB7BD00E66CA2 /* NSDate+ZJHelperKit.m */,
 				04B09A5C209DB7BD00E66CA2 /* NSUserDefaults+ZJHelperKit.h */,
+				04B09A53209DB7BD00E66CA2 /* NSUserDefaults+ZJHelperKit.m */,
 				04B09A5D209DB7BD00E66CA2 /* NSArray+ZJHelperKit.h */,
+				04B09A52209DB7BD00E66CA2 /* NSArray+ZJHelperKit.m */,
 				04B09A5E209DB7BD00E66CA2 /* NSString+ZJHelperKit.h */,
+				04B09A51209DB7BD00E66CA2 /* NSString+ZJHelperKit.m */,
+				04B09A56209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.h */,
 				04B09A5F209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.m */,
 				04B09A60209DB7BD00E66CA2 /* NSNumber+ZJHelperKit.h */,
+				04B09A55209DB7BD00E66CA2 /* NSNumber+ZJHelperKit.m */,
 				04B09A61209DB7BD00E66CA2 /* NSFileManager+ZJHelperKit.h */,
+				04B09A54209DB7BD00E66CA2 /* NSFileManager+ZJHelperKit.m */,
 				04B09A62209DB7BD00E66CA2 /* NSObject+ZJHelperKit.h */,
+				04B09A59209DB7BD00E66CA2 /* NSObject+ZJHelperKit.m */,
 				04B09A63209DB7BD00E66CA2 /* NSMutableArray+ZJHelperKit.h */,
+				04B09A58209DB7BD00E66CA2 /* NSMutableArray+ZJHelperKit.m */,
 				04B09A64209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.h */,
+				04B09A57209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -1368,6 +1393,7 @@
 				04B09A71209DB7BD00E66CA2 /* ZJKitNaigationController.m in Sources */,
 				04BE94B820453FBC00DF6779 /* UIView+CustomControlView.m in Sources */,
 				04C517662020120800AC15F1 /* ZJCollectionViewController.m in Sources */,
+				0408D244209EF58E00097E14 /* ZJKitMasonryTool.m in Sources */,
 				04BE94C7204542F100DF6779 /* ZJPlayerListCell.m in Sources */,
 				048E8A2F201728C600486470 /* ZJTwoChildView.m in Sources */,
 				04DA136120170CE400C619E5 /* ZJCommit.m in Sources */,
@@ -1390,6 +1416,7 @@
 				04B09A96209DB7BD00E66CA2 /* ZJCommonKit.m in Sources */,
 				04B09A8E209DB7BD00E66CA2 /* NSFileManager+ZJHelperKit.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
+				0408D241209EF24D00097E14 /* UIView+ZJFrame.m in Sources */,
 				04B09A8B209DB7BD00E66CA2 /* NSString+ZJHelperKit.m in Sources */,
 				04B09A66209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m in Sources */,
 				04B09A7C209DB7BD00E66CA2 /* UIDevice+ZJDivice.m in Sources */,
@@ -1399,10 +1426,12 @@
 				04BE94BF20453FBC00DF6779 /* ZFPlayerModel.m in Sources */,
 				04BE94CE2045463400DF6779 /* ZJVideoModel.m in Sources */,
 				04B09A83209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.m in Sources */,
+				0408D247209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m in Sources */,
 				04191E5720888DB1004A24C6 /* ZJReplyCell.m in Sources */,
 				04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */,
 				04B09A91209DB7BD00E66CA2 /* NSMutableArray+ZJHelperKit.m in Sources */,
 				04B09A72209DB7BD00E66CA2 /* UIScrollView+ZJScrollView.m in Sources */,
+				0408D24A209EF90900097E14 /* UIView+ZJMasonryFrame.m in Sources */,
 				04B09A90209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.m in Sources */,
 				04DA134D2016E14400C619E5 /* ZJStarsView.m in Sources */,
 				04C5176C20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m in Sources */,
@@ -1454,6 +1483,7 @@
 				04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */,
 				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,
 				04B09A95209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.m in Sources */,
+				0408D23E209EED8D00097E14 /* UIControl+ZJActionBlock.m in Sources */,
 				04B09A78209DB7BD00E66CA2 /* UIButton+ZJButton.m in Sources */,
 				04B09A68209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m in Sources */,
 				04BE94C32045403200DF6779 /* ZJPlayerListViewController.m in Sources */,

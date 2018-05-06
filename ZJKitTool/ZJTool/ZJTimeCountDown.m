@@ -47,19 +47,19 @@
 }
 // 倒计时 参数用NSDate
 -(void)zj_timeCountDownWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completeBlock:(ZJTimeDownCompleteBlock)completeBlock{
-    if (_timer == nil) {
+    if (self.timer == nil) {
         NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:startDate];
         __block int timeOut = timeInterval; // 倒计时
         if (timeOut!= 0) {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+            self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
             dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC, 0);// 每秒执行
             
-            dispatch_source_set_event_handler(_timer, ^{
+            dispatch_source_set_event_handler(self.timer, ^{
                 if (timeOut<=0) {
                     // 倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    _timer = nil;
+                    dispatch_source_cancel(self.timer);
+                    self.timer = nil;
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completeBlock(0,0,0,0);
                     });
@@ -75,28 +75,28 @@
                     timeOut--;
                 }
             });
-            dispatch_resume(_timer);
+            dispatch_resume(self.timer);
         }
     }
 }
 
 // 倒计时 参数用时间戳
 -(void)zj_timeCountDownWithStartTimeStamp:(long long)startTimeStamp endTimeStamp:(long long)endTimeStamp completeBlock:(ZJTimeDownCompleteBlock)completeBlock{
-    if (_timer == nil) {
+    if (self.timer == nil) {
         NSDate *finishDate = [self zj_timeDateWithLongLong:endTimeStamp];
         NSDate *startDate  = [self zj_timeDateWithLongLong:startTimeStamp];
         NSTimeInterval timeInterval =[finishDate timeIntervalSinceDate:startDate];
         __block int timeOut = timeInterval; // 倒计时
         if (timeOut!= 0) {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+            self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
             dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC, 0);// 每秒执行
             
-            dispatch_source_set_event_handler(_timer, ^{
+            dispatch_source_set_event_handler(self.timer, ^{
                 if (timeOut<=0) {
                     // 倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    _timer = nil;
+                    dispatch_source_cancel(self.timer);
+                    self.timer = nil;
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completeBlock(0,0,0,0);
                     });
@@ -112,26 +112,26 @@
                     timeOut--;
                 }
             });
-            dispatch_resume(_timer);
+            dispatch_resume(self.timer);
         }
     }
 }
 
 // 倒计时 参数用秒
 -(void)zj_timeCountDownWithSecondTime:(long long)secondTime completeBlock:(ZJTimeDownCompleteBlock)completeBlock{
-    if (_timer == nil) {
+    if (self.timer == nil) {
         NSTimeInterval timeInterval = secondTime;
         __block int timeOut = timeInterval; // 倒计时
         if (timeOut!= 0) {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+            self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
             dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC, 0);// 每秒执行
             
-            dispatch_source_set_event_handler(_timer, ^{
+            dispatch_source_set_event_handler(self.timer, ^{
                 if (timeOut<=0) {
                     // 倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    _timer = nil;
+                    dispatch_source_cancel(self.timer);
+                    self.timer = nil;
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completeBlock(0,0,0,0);
                     });
@@ -147,23 +147,23 @@
                     timeOut--;
                 }
             });
-            dispatch_resume(_timer);
+            dispatch_resume(self.timer);
         }
     }
 }
 
 // 倒计时每秒执行一次
 -(void)zj_timeCountDownWithPER_SECBlock:(void (^)(void))PER_SECBlock{
-    if (_timer==nil) {
+    if (self.timer==nil) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-        dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-        dispatch_source_set_event_handler(_timer, ^{
+        self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+        dispatch_source_set_timer(self.timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+        dispatch_source_set_event_handler(self.timer, ^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 PER_SECBlock();
             });
         });
-        dispatch_resume(_timer);
+        dispatch_resume(self.timer);
     }
 }
 
@@ -231,9 +231,9 @@
  * 主动销毁定时器
  */
 -(void)zj_timeDestoryTimer{
-    if (_timer) {
-        dispatch_source_cancel(_timer);
-        _timer = nil;
+    if (self.timer) {
+        dispatch_source_cancel(self.timer);
+        self.timer = nil;
     }
 }
 

@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZJCommonKit.h"
+#import "UIControl+ZJActionBlock.h"
+#import <Masonry/Masonry.h>
+/**
+ * For notification block.
+ */
+typedef void (^ZJNotificationBlock)(NSNotification *sender);
+/**
+ * Masonry Block
+ *
+ */
+typedef void(^ZJConstrainMaker)(MASConstraintMaker *make);
+/**
+ * Button点击事件Block
+ *
+ * @param index  索引.
+ * @param sender The responder.
+ */
+typedef void(^ZJButtonActionIndexBlock)(NSUInteger index, UIButton *sender);
+
 @interface ZJKitBaseController : UIViewController
 
 /**
@@ -66,7 +84,7 @@
  */
 - (void)zj_setNavTitle:(id)title
              rightTitle:(NSString *)rightTitle
-             rightBlock:(ZJButtonBlock)rightBlock;
+             rightBlock:(ZJButtonActionBlock)rightBlock;
 
 /**
  *
@@ -78,7 +96,7 @@
  */
 - (void)zj_setNavTitle:(id)title
             rightTitles:(NSArray<NSString *> *)rightTitles
-             rightBlock:(ZJButtonIndexBlock)rightBlock;
+             rightBlock:(ZJButtonActionIndexBlock)rightBlock;
 
 /**
  *
@@ -90,7 +108,7 @@
  */
 - (void)zj_setNavTitle:(id)title
             rightImages:(NSArray *)rightImages
-             rightBlock:(ZJButtonIndexBlock)rightBlock;
+             rightBlock:(ZJButtonActionIndexBlock)rightBlock;
 
 /**
  *
@@ -104,7 +122,7 @@
 - (void)zj_setNavTitle:(id)title
             rightImages:(NSArray *)rightImages
           rightHgImages:(NSArray *)rightHgImages
-             rightBlock:(ZJButtonIndexBlock)rightBlock;
+             rightBlock:(ZJButtonActionIndexBlock)rightBlock;
 
 /**
  *
@@ -113,7 +131,7 @@
  *    @param title    The title of left item button.
  *    @param block    The button touch up event callback.
  */
-- (void)zj_setNavLeftButtonTitle:(NSString *)title onCliked:(ZJButtonBlock)block;
+- (void)zj_setNavLeftButtonTitle:(NSString *)title onCliked:(ZJButtonActionBlock)block;
 
 /**
  *
@@ -122,7 +140,7 @@
  *    @param image    UIImage instance or an image name.
  *    @param block    The callback of item clicked.
  */
-- (void)zj_setNavLeftImage:(id)image block:(ZJButtonBlock)block;
+- (void)zj_setNavLeftImage:(id)image block:(ZJButtonActionBlock)block;
 
 #pragma mark - About indicator animating
 /**

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ZJCommonKit.h"
+#import "ZJKitMasonryTool.h"
+
 @interface UITextView (ZJMasonryKit)
 /**
  * 快速创建一个UItextView,设置字体大小，字体颜色，placeText,placeColor，masonry布局
@@ -52,4 +53,6 @@
                              placeText:(NSString *)placeText
                              superView:(UIView *)superView
                            constraints:(ZJConstrainMaker)constraints;
+
+- (void)zj_textViewsSetPlaceholderWithText:(NSString *)text Color:(UIColor *)color;
 @end

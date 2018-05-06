@@ -7,13 +7,18 @@
 //
 
 #import "ZJBaseWKWebViewController.h"
-#import "ZJHelperKit.h"
-#import "ZJKitHelper.h"
 #import "NSObject+YYAddForKVO.h"
+#import "UIView+ZJFrame.h"
+
 /**
  *  属性转字符串
  */
 #define ZJKeyPath(obj, key) @(((void)obj.key, #key))
+// 获得弱引用对象
+#define kWeakObject(object) __weak __typeof(object) weakObject = object;
+// 获取屏幕的宽度
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
 @interface ZJBaseWKWebViewController ()
 
 @property(nonatomic ,strong) UIProgressView *progressView;

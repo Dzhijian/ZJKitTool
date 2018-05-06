@@ -17,8 +17,12 @@
 
 #import "ZJKitBaseController.h"
 #import <objc/runtime.h>
-#import "ZJHelperKit.h"
-#import "ZJKitHelper.h"
+// 判断它是否是空字符串。
+#define kIsEmptyString(s) (s == nil || [s isKindOfClass:[NSNull class]] || ([s isKindOfClass:[NSString class]] && s.length == 0))
+// 获取系统版本号
+#define kIOSVersion ([UIDevice currentDevice].systemVersion.floatValue)
+// 判断它是否是一个有效的数组。
+#define kIsArray(objArray) (objArray != nil && [objArray isKindOfClass:[NSArray class]])
 
 
 @interface ZJKitBaseController ()
@@ -43,7 +47,7 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.view.backgroundColor = kWhiteColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
@@ -71,8 +75,23 @@
 }
 
 - (UIButton *)zj_leftButtonItem {
-    return [[self zj_leftButtonItems] zj_objectAtIndex:0];
+    
+    return [self zj_objecWtithArray:[self zj_leftButtonItems] AtIndex:0];
 }
+
+/**
+ * 返回安全的索引
+ 
+ @param index 索引
+ */
+-(id)zj_objecWtithArray:(NSArray *)array AtIndex:(NSInteger)index{
+    NSInteger count = [array count];
+    if (count > 0 && index < count) {
+        return  [array objectAtIndex:index];
+    }
+    return nil;
+}
+
 
 - (NSArray<UIButton *> *)zj_leftButtonItems {
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -90,7 +109,8 @@
 }
 
 - (UIButton *)zj_rightButtonItem {
-    return [[self zj_rightButtonItems] zj_objectAtIndex:0];
+    return [self zj_objecWtithArray:[self zj_rightButtonItems] AtIndex:0];
+
 }
 
 - (NSArray<UIButton *> *)zj_rightButtonItems {
@@ -126,7 +146,7 @@
 
 - (void)zj_setNavTitle:(id)title
              rightTitle:(NSString *)rightTitle
-             rightBlock:(ZJButtonBlock)rightBlock {
+             rightBlock:(ZJButtonActionBlock)rightBlock {
     if (kIsEmptyString(rightTitle)) {
         return [self zj_setNavTitle:title];
     }
@@ -140,7 +160,7 @@
 
 - (void)zj_setNavTitle:(id)title
             rightTitles:(NSArray<NSString *> *)rightTitles
-             rightBlock:(ZJButtonIndexBlock)rightBlock {
+            rightBlock:(ZJButtonActionIndexBlock)rightBlock {
     [self zj_setNavTitle:title];
     
     if (kIsArray(rightTitles) && rightTitles.count >= 1) {
@@ -149,13 +169,20 @@
         for (NSString *title in rightTitles) {
             
             
-            
-            UIButton *btn = [UIButton zj_buttonWithTitle:title superView:nil constraints:nil touchUp:^(UIButton *sender) {
-                if (rightBlock) {
-                    rightBlock(i, sender);
-                }
-            }];
-            
+            UIButton *btn = [self buttonWithTitle:title
+                                       titleColor:nil
+                                         norImage:nil
+                                     cornerRadius:0
+                                          supView:nil
+                                      constraints:nil
+                                          touchUp:^(id sender) {
+                                              
+                                              if (rightBlock) {
+                                                  
+                                                  rightBlock(i, sender);
+                                                  
+                                              }
+                                          }];
             
             
             [rightButtons addObject:btn];
@@ -168,36 +195,55 @@
 
 - (void)zj_setNavTitle:(id)title
             rightImages:(NSArray *)rightImages
-             rightBlock:(ZJButtonIndexBlock)rightBlock {
-    return [self zj_setNavTitle:title
+             rightBlock:(ZJButtonActionIndexBlock)rightBlock {
+    
+    return  [self zj_setNavTitle:title
                      rightImages:rightImages
                    rightHgImages:nil
                       rightBlock:rightBlock];
+    
 }
 
+
 - (void)zj_setNavTitle:(id)title
-            rightImages:(NSArray *)rightImages
-          rightHgImages:(NSArray *)rightHgImages
-             rightBlock:(ZJButtonIndexBlock)rightBlock {
+
+           rightImages:(NSArray *)rightImages
+
+         rightHgImages:(NSArray *)rightHgImages
+
+            rightBlock:(ZJButtonActionIndexBlock)rightBlock {
+
     [self zj_setNavTitle:title];
     
     if (kIsArray(rightImages) && rightHgImages.count >= 1) {
         NSUInteger i = 0;
+        
         NSMutableArray *rightButtons = [[NSMutableArray alloc] init];
+        
         for (NSString *imgName in rightImages) {
-            NSString *last = [rightHgImages zj_objectAtIndex:i];
             
-            UIButton *btn = [UIButton zj_buttonWithNorImage:imgName cornerRadius:0 supView:nil constraints:nil touchUp:^(UIButton *sender) {
-                if (rightBlock) {
-                    rightBlock(i, sender);
-                }
-            }];
+            NSString *last = [self zj_objecWtithArray:rightHgImages AtIndex:i]; 
+
+            UIButton *btn = [self buttonWithTitle:nil
+                                       titleColor:nil
+                                         norImage:imgName
+                                     cornerRadius:0
+                                          supView:nil
+                                      constraints:nil
+                                          touchUp:^(id sender) {
+                                              
+                                              if (rightBlock) {
+                                                  
+                                                  rightBlock(i, sender);
+                                                  
+                                              }
+                                          }];
             
             UIImage *hgImage = nil;
             if ([last isKindOfClass:[UIImage class]]) {
                 hgImage = (UIImage *)last;
             } else if ([last isKindOfClass:[NSString class]]) {
-                hgImage = kImageName(last);
+                hgImage = [UIImage imageNamed:last];
             }
             
             if (hgImage) {
@@ -210,28 +256,39 @@
         
         [self _zj_setNavItems:rightButtons isLeft:NO];
     }
+    
 }
 
-- (void)zj_setNavLeftButtonTitle:(NSString *)title onCliked:(ZJButtonBlock)block {
-    UIButton *btn = [UIButton zj_buttonWithTitle:title
-                                        superView:nil
-                                      constraints:nil
-                                          touchUp:block];
+- (void)zj_setNavLeftButtonTitle:(NSString *)title onCliked:(ZJButtonActionBlock)block {
+    
+
+    UIButton *btn = [self buttonWithTitle:title
+                               titleColor:nil
+                                 norImage:nil
+                             cornerRadius:0
+                                  supView:nil
+                              constraints:nil
+                                  touchUp:block];
     
     [self _zj_setNavItems:@[btn] isLeft:YES];
+
 }
 
-- (void)zj_setNavLeftImage:(id)image block:(ZJButtonBlock)block {
+- (void)zj_setNavLeftImage:(id)image block:(ZJButtonActionBlock)block {
     UIImage *normalImage = image;
     
     if ([normalImage isKindOfClass:[NSString class]]) {
-        normalImage = kImageName(image);
+        normalImage = [UIImage imageNamed:image];
     }
+
     
-    UIButton *btn = [UIButton zj_buttonWithNorImage:image
-                                       cornerRadius:0
-                                            supView:nil
-                                        constraints:nil touchUp:block];
+    UIButton *btn = [self buttonWithTitle:nil
+                               titleColor:nil
+                                 norImage:image
+                             cornerRadius:0
+                                  supView:nil
+                              constraints:nil
+                                  touchUp:block];
     
     [self _zj_setNavItems:@[btn] isLeft:YES];
 }
@@ -250,14 +307,14 @@
 
 #pragma mark - Notification
 - (void)zj_addObserverWithNotificationName:(NSString *)notificationName
-                                   callback:(ZJNotificationBlock)callback {
+                                   callback:(void (^)(NSNotification *sender))callback {
     if (kIsEmptyString(notificationName)) {
         return;
     }
     
     [self zj_addNotificationName:notificationName];
     
-    [kNotificationCenter addObserver:self
+    [[NSNotificationCenter defaultCenter] addObserver:self
                             selector:@selector(zj_onRecievedNotification:)
                                 name:notificationName
                               object:nil];
@@ -270,7 +327,7 @@
 - (void)zj_removeAllNotifications {
     // 移除监听
     for (NSString *name in self.zj_notificationNames) {
-        [kNotificationCenter removeObserver:self name:name object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:name object:nil];
         // 取消关联
         objc_setAssociatedObject(self,
                                  (__bridge const void *)(name),
@@ -278,7 +335,7 @@
                                  OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     
-    [kNotificationCenter removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)zj_removeAllNotificationWithName:(NSString *)nofiticationName {
@@ -289,7 +346,7 @@
     // 移除监听
     for (NSString *name in self.zj_notificationNames) {
         if ([name isEqualToString:nofiticationName]) {
-            [kNotificationCenter removeObserver:self name:name object:nil];
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:name object:nil];
             // 取消关联
             objc_setAssociatedObject(self,
                                      (__bridge const void *)(name),
@@ -309,7 +366,7 @@
         self.zj_loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:style];
         [self.view addSubview:self.zj_loadingView];
         
-        kWeakObject(self);
+        __weak __typeof(self) weakObject = self;
         if (self.navigationController && self.navigationController.navigationBarHidden == NO) {
             [self.zj_loadingView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.equalTo(weakObject.view);
@@ -350,7 +407,7 @@
     [items addObject:negativeSpacer];
     
     for (NSUInteger i = 0; i < buttons.count; ++i) {
-        UIButton *btn = [buttons zj_objectAtIndex:i];
+        UIButton *btn = [self zj_objecWtithArray:buttons AtIndex:i];
         [btn sizeToFit];
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
         [items addObject:item];
@@ -394,6 +451,65 @@
     
     return _zj_notificationNames;
 }
+
+/**
+ * 快速创建UIButton，设置：标题，标题颜色，默认图片，选中的图片，背景颜色，字体大小，是否加粗，边框宽度，边框颜色，圆角，父视图，Marsonry布局
+ 
+ @param title           标题
+ @param titleColor      标题颜色
+ @param norImage        默认图片
+ @param supView         父视图
+ @param constaints      Marsonry布局
+ @param touchUp         点击事件
+ @return                返回一个 button
+ */
+-(UIButton *)buttonWithTitle:(NSString *)title
+                       titleColor:(UIColor *)titleColor
+                         norImage:(id)norImage
+                     cornerRadius:(CGFloat)cornerRadius
+                          supView:(UIView *)supView
+                      constraints:(ZJConstrainMaker)constaints
+                          touchUp:(ZJButtonActionBlock)touchUp
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    button.zj_btnOnTouchUp = touchUp;
+    
+    if (!kIsEmptyString(title)) {
+        [button setTitle:title forState:UIControlStateNormal];
+    }
+    if (titleColor) {
+        [button setTitleColor:titleColor forState:UIControlStateNormal];
+    }else{
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
+    
+    UIImage *normalImage = nil;
+    if ([norImage isKindOfClass:[NSString class]]) {
+        normalImage = [UIImage imageNamed:norImage];
+    }else if([norImage isKindOfClass:[UIImage class]]){
+        normalImage = norImage;
+    }
+    
+    if (normalImage) {
+        [button setImage:normalImage forState:UIControlStateNormal];
+    }
+
+    
+    button.layer.cornerRadius = cornerRadius;
+
+    [supView addSubview:button];
+    
+    if (supView && constaints) {
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            constaints(make);
+        }];
+    }
+    
+    return button;
+}
+
 
 /*
 #pragma mark - Navigation

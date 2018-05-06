@@ -8,7 +8,6 @@
 
 #import "UIActionSheet+ZJHelperKit.h"
 #import <objc/runtime.h>
-#import "NSArray+ZJHelperKit.h"
 
 @interface UIApplication (HDFActionSheet) <UIActionSheetDelegate>
 
@@ -50,40 +49,50 @@ static const void *s_HdfActionSheetClickedButtonBlock = "s_HdfActionSheetClicked
                                            cancelButtonTitle:cancelTitle
                                       destructiveButtonTitle:destructiveTitle
                                            otherButtonTitles:
-                         [otherTitles zj_objectAtIndex:0],
-                         [otherTitles zj_objectAtIndex:1],
-                         [otherTitles zj_objectAtIndex:2],
-                         [otherTitles zj_objectAtIndex:3],
-                         [otherTitles zj_objectAtIndex:4],
-                         [otherTitles zj_objectAtIndex:5],
-                         [otherTitles zj_objectAtIndex:6],
-                         [otherTitles zj_objectAtIndex:7],
-                         [otherTitles zj_objectAtIndex:8],
-                         [otherTitles zj_objectAtIndex:9],
-                         [otherTitles zj_objectAtIndex:10],
-                         [otherTitles zj_objectAtIndex:11],
-                         [otherTitles zj_objectAtIndex:12],
-                         [otherTitles zj_objectAtIndex:13],
-                         [otherTitles zj_objectAtIndex:14],
-                         [otherTitles zj_objectAtIndex:15],
-                         [otherTitles zj_objectAtIndex:16],
-                         [otherTitles zj_objectAtIndex:17],
-                         [otherTitles zj_objectAtIndex:18],
-                         [otherTitles zj_objectAtIndex:19],
-                         [otherTitles zj_objectAtIndex:20],
-                         [otherTitles zj_objectAtIndex:21],
-                         [otherTitles zj_objectAtIndex:22],
-                         [otherTitles zj_objectAtIndex:23],
-                         [otherTitles zj_objectAtIndex:24],
-                         [otherTitles zj_objectAtIndex:25],
-                         [otherTitles zj_objectAtIndex:26],
-                         [otherTitles zj_objectAtIndex:27],
-                         [otherTitles zj_objectAtIndex:28],
-                         [otherTitles zj_objectAtIndex:29],nil];
+                         [self zj_objectWithArray:otherTitles atIndex:0],
+                         [self zj_objectWithArray:otherTitles atIndex:1],
+                         [self zj_objectWithArray:otherTitles atIndex:2],
+                         [self zj_objectWithArray:otherTitles atIndex:3],
+                         [self zj_objectWithArray:otherTitles atIndex:4],
+                         [self zj_objectWithArray:otherTitles atIndex:5],
+                         [self zj_objectWithArray:otherTitles atIndex:6],
+                         [self zj_objectWithArray:otherTitles atIndex:7],
+                         [self zj_objectWithArray:otherTitles atIndex:8],
+                         [self zj_objectWithArray:otherTitles atIndex:9],
+                         [self zj_objectWithArray:otherTitles atIndex:10],
+                         [self zj_objectWithArray:otherTitles atIndex:11],
+                         [self zj_objectWithArray:otherTitles atIndex:12],
+                         [self zj_objectWithArray:otherTitles atIndex:13],
+                         [self zj_objectWithArray:otherTitles atIndex:14],
+                         [self zj_objectWithArray:otherTitles atIndex:15],
+                         [self zj_objectWithArray:otherTitles atIndex:16],
+                         [self zj_objectWithArray:otherTitles atIndex:17],
+                         [self zj_objectWithArray:otherTitles atIndex:18],
+                         [self zj_objectWithArray:otherTitles atIndex:19],
+                         [self zj_objectWithArray:otherTitles atIndex:20],
+                         [self zj_objectWithArray:otherTitles atIndex:21],
+                         [self zj_objectWithArray:otherTitles atIndex:22],
+                         [self zj_objectWithArray:otherTitles atIndex:23],
+                         [self zj_objectWithArray:otherTitles atIndex:24],
+                         nil];
     as.zj_clickedButtonBlock = callback;
     
     [as showInView:inView];
     
     return as;
 }
+
+/**
+ * 返回安全的索引
+ 
+ @param index 索引
+ */
++(id)zj_objectWithArray:(NSArray *)array atIndex:(NSInteger)index{
+    NSInteger count = [array count];
+    if (count > 0 && index < count) {
+        return  [array objectAtIndex:index];
+    }
+    return nil;
+}
+
 @end

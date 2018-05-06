@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZJCommonKit.h"
+#import "ZJKitMasonryTool.h"
+
+/**
+ * Button点击事件Block
+ *
+ */
+typedef void(^ZJButtonActionBlock)(id sender);
+
 @interface UIButton (ZJMasonryKit)
+
+
+/**
+ *
+ *    Make it support block callback of touch up event.
+ */
+@property (nonatomic, copy) ZJButtonActionBlock zj_btnOnTouchUp;
 
 
 /**

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.0.4"
+  s.version      = "2.1.0"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -93,8 +93,8 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true # 是否启用ARC
 
-  s.source_files  = "ZJKitTool", "ZJKitTool/**/*.{h,m}"
-  # s.source_files = 'ZJKitTool/ZJHelperKit.h'
+  # s.source_files  = "ZJKitTool", "ZJKitTool/**/*.{h,m}"
+  s.source_files = 'ZJKitTool/ZJHelperKit.h'
   
 
   
@@ -109,30 +109,33 @@ Pod::Spec.new do |s|
 
   s.subspec 'ZJGenneralMacros' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJGenneralMacros'
+    ss.source_files = 'ZJKitTool/ZJGenneralMacros/*.{h,m}'
 
   end
 
   # 控制器
   s.subspec 'ZJControllerKit' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJControllerKit'
+    ss.dependency 'Masonry', '~> 1.0.2'
+
+    ss.source_files = 'ZJKitTool/ZJControllerKit/*.{h,m}'
+
 
   end
 
   # UIkit
   s.subspec 'ZJKit' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJKit'
+    ss.source_files = 'ZJKitTool/ZJKit/*.{h,m}'
 
   end
 
   # UIkit + Masonry
   s.subspec 'ZJKitMasonry' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJKitMasonry'
-
     ss.dependency 'Masonry', '~> 1.0.2'
+
+    ss.source_files = 'ZJKitTool/ZJKitMasonry/*.{h,m}'
 
   end
 
@@ -141,14 +144,18 @@ Pod::Spec.new do |s|
     
     ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
 
-    #编码
-    ss.subspec 'Unicode' do |sss|
-      sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
+    # UIKit
+    ss.subspec 'UIKit' do |sss|
+      
+      sss.dependency 'MBProgressHUD'
+
+      sss.source_files = 'ZJKitTool/ZJCategory/UIKit/*.{h,m}'
     end
 
-      #编码
-    ss.subspec 'Unicode' do |sss|
-      sss.source_files = 'ZJKitTool/ZJCategory/Object'
+      # NSObject
+    ss.subspec 'Object' do |sss|
+
+      sss.source_files = 'ZJKitTool/ZJCategory/Object/*.{h,m}'
     end
 
   end
@@ -156,7 +163,7 @@ Pod::Spec.new do |s|
     # UIkit + Masonry
   s.subspec 'ZJTool' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJTool'
+    ss.source_files = 'ZJKitTool/ZJTool/*.{h,m}'
 
   end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

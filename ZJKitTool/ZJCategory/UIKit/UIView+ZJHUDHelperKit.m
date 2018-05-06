@@ -7,7 +7,7 @@
 //
 
 #import "UIView+ZJHUDHelperKit.h"
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #define kWarningDuration   1.8
 #define kTimeOutDuration   30

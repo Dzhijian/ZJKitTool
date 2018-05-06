@@ -1,34 +1,14 @@
 //
-//  UIGestureRecognizer+ZJHelperBlockKit.h
-//  ZJUIKit
+//  UIGestureRecognizer+ZJActionBlock.h
+//  ZJKitTool
 //
-//  Created by dzj on 2018/1/18.
+//  Created by 邓志坚 on 2018/5/6.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-/**
- * gesture事件Block
- *
- */
-typedef void(^ZJGestureBlock)(UIGestureRecognizer *gesture);
-
-
-/**
- * Tap点击事件Block
- *
- */
-typedef void(^ZJTapGestureBlock)(UITapGestureRecognizer *gesture);
-
-/**
- * Tap长按事件Block
- *
- */
-typedef void(^ZJLongGestureBlock)(UILongPressGestureRecognizer *gesture);
-
-@interface UIGestureRecognizer (ZJHelperBlockKit)
-
+#import "ZJKitMasonryTool.h"
+@interface UIGestureRecognizer (ZJActionBlock)
 /**
  *
  *    Make all gestures support block callback.

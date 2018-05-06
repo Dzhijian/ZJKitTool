@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZJCommonKit.h"
+#import "ZJKitMasonryTool.h"
+#import "UIGestureRecognizer+ZJActionBlock.h"
+
 @interface UIView (ZJMasonryKit)
 
 /**

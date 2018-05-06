@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 typedef void (^ButtonTouchUpInsideBlock)(void);
 
 @interface UIButton (ZJButton)

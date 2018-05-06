@@ -54,7 +54,7 @@
 {
     
     UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = kImageName(imageName);
+    imageView.image = [UIImage imageNamed:imageName];
 
     imageView.contentMode = contentMode;
     [superView addSubview:imageView];

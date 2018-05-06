@@ -8,9 +8,9 @@
 
 #import "UIAlertView+ZJHelperKitUIKit.h"
 #import <objc/runtime.h>
-#import "ZJCommonKit.h"
-#import "NSArray+ZJHelperKit.h"
 
+// 判断它是否是一个有效的数组。
+#define kIsArray(objArray) (objArray != nil && [objArray isKindOfClass:[NSArray class]])
 static const void *s_privateAlertViewKey = "s_privateAlertViewKey";
 @interface UIApplication (HDFAlertView) <UIAlertViewDelegate>
 
@@ -47,7 +47,7 @@ static const void *s_privateAlertViewKey = "s_privateAlertViewKey";
                             block:(ZJAlertClickedButtonBlock)block {
     NSString *ok = nil;
     if (kIsArray(buttonTitles) && buttonTitles.count > 0) {
-        ok = [buttonTitles zj_objectAtIndex:0];
+        ok = [self zj_objectWithArray:buttonTitles atIndex:0]; 
     }
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
@@ -55,20 +55,18 @@ static const void *s_privateAlertViewKey = "s_privateAlertViewKey";
                                                        delegate:[UIApplication sharedApplication]
                                               cancelButtonTitle:ok
                                               otherButtonTitles:
-                              [buttonTitles zj_objectAtIndex:1],
-                              [buttonTitles zj_objectAtIndex:2],
-                              [buttonTitles zj_objectAtIndex:3],
-                              [buttonTitles zj_objectAtIndex:4],
-                              [buttonTitles zj_objectAtIndex:5],
-                              [buttonTitles zj_objectAtIndex:6],
-                              [buttonTitles zj_objectAtIndex:7],
-                              [buttonTitles zj_objectAtIndex:8],
-                              [buttonTitles zj_objectAtIndex:9],
-                              [buttonTitles zj_objectAtIndex:10],
-                              [buttonTitles zj_objectAtIndex:11],
-                              [buttonTitles zj_objectAtIndex:12],
-                              [buttonTitles zj_objectAtIndex:13],
-                              [buttonTitles zj_objectAtIndex:14],
+                              [self zj_objectWithArray:buttonTitles atIndex:0],
+                              [self zj_objectWithArray:buttonTitles atIndex:1],
+                              [self zj_objectWithArray:buttonTitles atIndex:2],
+                              [self zj_objectWithArray:buttonTitles atIndex:3],
+                              [self zj_objectWithArray:buttonTitles atIndex:4],
+                              [self zj_objectWithArray:buttonTitles atIndex:5],
+                              [self zj_objectWithArray:buttonTitles atIndex:6],
+                              [self zj_objectWithArray:buttonTitles atIndex:7],
+                              [self zj_objectWithArray:buttonTitles atIndex:8],
+                              [self zj_objectWithArray:buttonTitles atIndex:9],
+                              [self zj_objectWithArray:buttonTitles atIndex:10],
+                              
                               nil];
     alertView.zj_clickedButtonBlock = block;
     
@@ -76,4 +74,18 @@ static const void *s_privateAlertViewKey = "s_privateAlertViewKey";
     
     return alertView;
 }
+
+/**
+ * 返回安全的索引
+ 
+ @param index 索引
+ */
++(id)zj_objectWithArray:(NSArray *)array atIndex:(NSInteger)index{
+    NSInteger count = [array count];
+    if (count > 0 && index < count) {
+        return  [array objectAtIndex:index];
+    }
+    return nil;
+}
+
 @end

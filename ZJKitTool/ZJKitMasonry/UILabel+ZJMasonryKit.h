@@ -14,7 +14,8 @@
  *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
  */
 #import <UIKit/UIKit.h>
-#import "ZJCommonKit.h"
+#import "ZJKitMasonryTool.h"
+
 @interface UILabel (ZJMasonryKit)
 
 

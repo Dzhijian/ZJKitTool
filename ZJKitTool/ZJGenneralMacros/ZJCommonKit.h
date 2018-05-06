@@ -204,9 +204,9 @@ typedef void(^ZJChangeValueBlock)(id sender);
 typedef void(^ZJButtonBlock)(id sender);
 
 /**
- * For button array block.
+ * Button点击事件Block
  *
- * @param index  index in the array.
+ * @param index  索引.
  * @param sender The responder.
  */
 typedef void(^ZJButtonIndexBlock)(NSUInteger index, UIButton *sender);

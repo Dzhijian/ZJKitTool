@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ZJCommonKit.h"
+/**
+ * Button点击事件Block
+ *
+ */
+typedef void(^ZJButtonBlock)(id sender);
+/**
+ * 改变值Block
+ *
+ */
+typedef void(^ZJChangeValueBlock)(id sender);
+/**
+ * 编辑改变值block
+ * 例如： UITextField
+ */
+typedef void(^ZJEditChangeBlock)(id sender);
+
+
 @interface UIControl (ZJHelperBlockKit)
 
 /**
