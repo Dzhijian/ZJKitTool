@@ -26,7 +26,9 @@ pod 'ZJKitTool'
 
 ## Author
 
-coderDeng, 646724452@qq.com
+coderDeng, 
+Email:646724452@qq.com
+QQ:646724452
 
 ## Usage
 

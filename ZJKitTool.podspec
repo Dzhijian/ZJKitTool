@@ -101,7 +101,9 @@ Pod::Spec.new do |s|
   s.public_header_files = 'ZJKitTool/ZJHelperKit.h'
   
   s.dependency 'Masonry', '~> 1.0.2'
+
   s.dependency 'MBProgressHUD'
+  
   s.dependency 'YYCategories'
   # s.exclude_files = "Classes/Exclude"
 
@@ -123,7 +125,7 @@ Pod::Spec.new do |s|
 
   end
 
-  # UIkit
+  # ZJKit
   s.subspec 'ZJKit' do |ss|
 
     ss.source_files = 'ZJKitTool/ZJKit/*.{h,m}'
@@ -139,7 +141,7 @@ Pod::Spec.new do |s|
 
   end
 
-  #类目
+  # 工具类类
   s.subspec 'ZJCategory' do |ss|
     
     ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
@@ -150,6 +152,7 @@ Pod::Spec.new do |s|
       sss.dependency 'MBProgressHUD'
 
       sss.source_files = 'ZJKitTool/ZJCategory/UIKit/*.{h,m}'
+      
     end
 
       # NSObject
