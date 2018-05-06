@@ -10,7 +10,7 @@
 
 @implementation UICollectionViewCell (ZJBaseFunctions)
 #pragma mark - UI
-- (void)initWithAllView{
+- (void)zj_initWithAllView{
     
     self.contentView.clipsToBounds = YES;
     

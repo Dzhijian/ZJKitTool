@@ -59,5 +59,5 @@
 
 @interface UICollectionViewCell (ZJBaseFunctions)<ZJBaseCollectionCellClassProtocol,ZJBaseCollectionCellNotificationProtocol>
 
--(void)initWithAllView NS_REQUIRES_SUPER;
+-(void)zj_initWithAllView NS_REQUIRES_SUPER;
 @end
