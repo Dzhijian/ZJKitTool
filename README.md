@@ -1,4 +1,35 @@
 # ZJKitTool
+
+[![Version](https://img.shields.io/cocoapods/v/ZJKitTool.svg?style=flat)](https://cocoapods.org/pods/ZJKitTool)
+[![License](https://img.shields.io/cocoapods/l/ZJKitTool.svg?style=flat)](https://cocoapods.org/pods/ZJKitTool)
+[![Platform](https://img.shields.io/cocoapods/p/ZJKitTool.svg?style=flat)](https://cocoapods.org/pods/ZJKitTool)
+
+## Statement
+
+个人常用的框架
+
+## Installation
+
+ZJKitTool is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'ZJKitTool'
+```
+
+
+> 导入头文件
+
+```Objc
+#import <ZJHelperKit.h>
+```
+
+## Author
+
+coderDeng, 646724452@qq.com
+
+## Usage
+
 MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。
 请各位大神多多指教，多多支持点个Star。
 
@@ -64,6 +95,8 @@ self.btn = [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor 
 | ![](https://github.com/Dzhijian/ZJKitTool/blob/master/img-folder/collectionViewhorizontal.jpg?raw=true) | ![](https://github.com/Dzhijian/ZJKitTool/blob/master/img-folder/collectionViewVertacal.jpg?raw=true)|
 
 
+## License
+ZJKitTool is released under the MIT license. See LICENSE for details.
 
 
   
