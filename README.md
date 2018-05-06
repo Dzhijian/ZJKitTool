@@ -6,7 +6,7 @@
 
 ## Statement
 
-个人常用的框架
+ZJKitTool 开发快速添加UIKit控件,结合Masonry，以及其他工具类的简单使用,底层的封装.
 
 ## Installation
 
