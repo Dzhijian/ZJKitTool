@@ -293,6 +293,44 @@
     [self _zj_setNavItems:@[btn] isLeft:YES];
 }
 
+
+/**
+ *  设置导航栏右边的 baritem
+ *  @param title  标题文本
+ */
+- (void)zj_setNavRightButtonTitle:(NSString *)title onCliked:(ZJButtonActionBlock)block{
+    UIButton *btn = [self buttonWithTitle:title
+                               titleColor:nil
+                                 norImage:nil
+                             cornerRadius:0
+                                  supView:nil
+                              constraints:nil
+                                  touchUp:block];
+    
+    [self _zj_setNavItems:@[btn] isLeft:NO];
+}
+/**
+ *  设置导航栏右边的 baritem
+ *  @param image 图片 或 图片名称
+ */
+- (void)zj_setNavRightImage:(id)image block:(ZJButtonActionBlock)block{
+    UIImage *normalImage = image;
+    
+    if ([normalImage isKindOfClass:[NSString class]]) {
+        normalImage = [UIImage imageNamed:image];
+    }
+    
+    UIButton *btn = [self buttonWithTitle:nil
+                               titleColor:nil
+                                 norImage:normalImage
+                             cornerRadius:0
+                                  supView:nil
+                              constraints:nil
+                                  touchUp:block];
+    
+    [self _zj_setNavItems:@[btn] isLeft:NO];
+    
+}
 - (void)zj_setNavTitle:(id)title {
     if ([title isKindOfClass:[NSString class]]) {
         self.navigationItem.title = title;

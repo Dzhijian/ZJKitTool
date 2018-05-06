@@ -142,6 +142,17 @@ typedef void(^ZJButtonActionIndexBlock)(NSUInteger index, UIButton *sender);
  */
 - (void)zj_setNavLeftImage:(id)image block:(ZJButtonActionBlock)block;
 
+/**
+ *  设置导航栏右边的 baritem
+ *  @param title  标题文本
+ */
+- (void)zj_setNavRightButtonTitle:(NSString *)title onCliked:(ZJButtonActionBlock)block;
+/**
+ *  设置导航栏右边的 baritem
+ *  @param image 图片 或 图片名称
+ */
+- (void)zj_setNavRightImage:(id)image block:(ZJButtonActionBlock)block;
+
 #pragma mark - About indicator animating
 /**
  *
