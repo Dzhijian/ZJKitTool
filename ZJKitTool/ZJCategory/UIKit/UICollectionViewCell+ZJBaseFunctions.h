@@ -57,7 +57,7 @@
 - (void)removeNotification;
 @end
 
-@interface UICollectionViewCell (ZJBaseFunctions)
+@interface UICollectionViewCell (ZJBaseFunctions)<ZJBaseCollectionCellClassProtocol,ZJBaseCollectionCellNotificationProtocol>
 
 -(void)initWithAllView NS_REQUIRES_SUPER;
 @end
