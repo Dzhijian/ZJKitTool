@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.0.3"
+  s.version      = "2.0.4"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -107,58 +107,58 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = "Classes/**/*.h"
 
-  # s.subspec 'ZJGenneralMacros' do |ss|
+  s.subspec 'ZJGenneralMacros' do |ss|
 
-  #   ss.source_files = 'ZJKitTool/ZJGenneralMacros'
+    ss.source_files = 'ZJKitTool/ZJGenneralMacros'
 
-  # end
+  end
 
-  # # 控制器
-  # s.subspec 'ZJControllerKit' do |ss|
+  # 控制器
+  s.subspec 'ZJControllerKit' do |ss|
 
-  #   ss.source_files = 'ZJKitTool/ZJControllerKit'
+    ss.source_files = 'ZJKitTool/ZJControllerKit'
 
-  # end
+  end
 
-  # # UIkit
-  # s.subspec 'ZJKit' do |ss|
+  # UIkit
+  s.subspec 'ZJKit' do |ss|
 
-  #   ss.source_files = 'ZJKitTool/ZJKit'
+    ss.source_files = 'ZJKitTool/ZJKit'
 
-  # end
+  end
 
-  # # UIkit + Masonry
-  # s.subspec 'ZJKitMasonry' do |ss|
+  # UIkit + Masonry
+  s.subspec 'ZJKitMasonry' do |ss|
 
-  #   ss.source_files = 'ZJKitTool/ZJKitMasonry'
+    ss.source_files = 'ZJKitTool/ZJKitMasonry'
 
-  #   ss.dependency 'Masonry', '~> 1.0.2'
+    ss.dependency 'Masonry', '~> 1.0.2'
 
-  # end
+  end
 
-  # #类目
-  # s.subspec 'ZJCategory' do |ss|
+  #类目
+  s.subspec 'ZJCategory' do |ss|
     
-  #   ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
+    ss.source_files = 'ZJKitTool/ZJCategory/ZJCategory.h'
 
-  #   #编码
-  #   ss.subspec 'Unicode' do |sss|
-  #     sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
-  #   end
+    #编码
+    ss.subspec 'Unicode' do |sss|
+      sss.source_files = 'ZJKitTool/ZJCategory/UIKit'
+    end
 
-  #     #编码
-  #   ss.subspec 'Unicode' do |sss|
-  #     sss.source_files = 'ZJKitTool/ZJCategory/Object'
-  #   end
+      #编码
+    ss.subspec 'Unicode' do |sss|
+      sss.source_files = 'ZJKitTool/ZJCategory/Object'
+    end
 
-  # end
+  end
 
-  #   # UIkit + Masonry
-  # s.subspec 'ZJTool' do |ss|
+    # UIkit + Masonry
+  s.subspec 'ZJTool' do |ss|
 
-  #   ss.source_files = 'ZJKitTool/ZJTool'
+    ss.source_files = 'ZJKitTool/ZJTool'
 
-  # end
+  end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
