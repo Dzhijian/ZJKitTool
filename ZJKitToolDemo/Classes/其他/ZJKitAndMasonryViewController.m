@@ -48,6 +48,11 @@
     [self zj_setNavLeftImage:kImageName(@"new_goback") block:^(id sender) {
         [weakObject.navigationController popViewControllerAnimated:YES];
     }];
+    [self zj_setNavTitle:nil rightTitle:@"更多" rightBlock:^(id sender) {
+        [UIActionSheet zj_showInView:weakObject.view title:@"UIActionSheet" cancelTitle:@"取消" destructiveTitle:@"action1" otherTitles:@[@"action2"] callback:^(UIActionSheet *actionSheet, NSUInteger buttonIndex) {
+            
+        }];
+    }];
     // 设置标题
     [self zj_setNavTitle:@"ZJUIKit+Masonry"];
     // 倒计时test
@@ -237,13 +242,13 @@
 }
 -(void)buttonTest{
     self.btn = [UIButton zj_buttonWithFrame:CGRectMake(50, 50, 100, 40) title:@"dzj" titleColor:[UIColor blueColor] imageName:nil backColor:[UIColor orangeColor] fontSize:16 cornerRadius:5 traget:nil action:nil];
-    
+    __weak typeof(self)weakSelf = self;
     [self.btn zj_addBtnActionHandler:^{
         NSLog(@"1234");
-        [self.btn zj_showIndicator];
+        [weakSelf.btn zj_showIndicator];
     }];
     
-    __weak typeof(self)weakSelf = self;
+    
     [self.btn zj_startTime:10 waitBlock:^(NSInteger remainTime) {
         
     } finishBlock:^{
@@ -252,14 +257,14 @@
     
     [self.button zj_addBtnActionHandler:^{
         NSLog(@"wqerty");
-        [self.btn zj_hideIndicator];
+        [weakSelf.btn zj_hideIndicator];
     }];
     [self.view addSubview:self.btn];
     [self.view addSubview:self.button];
     
-    
+
     dispatch_block_t block = dispatch_block_create(0, ^{
-        self.testNum = 2;
+        weakSelf.testNum = 2;
         NSLog(@"这是一个block-->%ld",self.testNum);
     });
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);

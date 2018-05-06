@@ -45,8 +45,9 @@
 -(void)setUpAllView{
 
     // 返回按钮
+    kWeakObject(self);
     [self zj_setNavLeftImage:kImageName(@"new_goback") block:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [weakObject.navigationController popViewControllerAnimated:YES];
     }];
 
 

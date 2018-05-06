@@ -5,7 +5,16 @@
 //  Created by dzj on 2018/1/26.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
-
+/**
+ *  ZJKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
+ *
+ *  这个案例是利用 Masonry + UITableView+FDTemplateLayoutCell 写的类似朋友圈的自适应布局，功能有待完善与添加，希望能帮助到你
+ *  核心部分是 UITableView+FDTemplateLayoutCell
+ */
 #import "ZJMasonryAutolayoutCellViewController.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "ZJMasonryAutolayoutCell.h"
@@ -29,16 +38,7 @@
     [self getCommitsData];
 }
 
-/**
- *  ZJKitTool
- *
- *  GitHub地址：https://github.com/Dzhijian/ZJKitTool
- *
- *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
- *
- *  这个案例是利用 Masonry + UITableView+FDTemplateLayoutCell 写的类似朋友圈的自适应布局，功能有待完善与添加，希望能帮助到你
- *  核心部分是 UITableView+FDTemplateLayoutCell
- */
+
 #pragma mark - 获取数据
 - (void)getCommitsData {
     
@@ -66,9 +66,10 @@
 }
 
 -(void)setUpAllView{
+    kWeakObject(self);
     [self zj_setNavTitle:@"Masonry朋友圈"];
     [self zj_setNavLeftImage:@"new_goback" block:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [weakObject.navigationController popViewControllerAnimated:YES];
     }];
     
     self.mainTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];

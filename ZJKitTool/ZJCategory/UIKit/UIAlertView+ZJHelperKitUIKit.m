@@ -46,9 +46,9 @@ static const void *s_privateAlertViewKey = "s_privateAlertViewKey";
                      buttonTitles:(NSArray *)buttonTitles
                             block:(ZJAlertClickedButtonBlock)block {
     NSString *ok = nil;
-    if (kIsArray(buttonTitles) && buttonTitles.count > 0) {
-        ok = [self zj_objectWithArray:buttonTitles atIndex:0]; 
-    }
+//    if (kIsArray(buttonTitles) && buttonTitles.count > 0) {
+//        ok = [self zj_objectWithArray:buttonTitles atIndex:0];
+//    }
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:message
