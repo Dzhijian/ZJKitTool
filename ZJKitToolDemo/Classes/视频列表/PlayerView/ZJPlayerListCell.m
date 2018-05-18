@@ -43,7 +43,7 @@
 
 // 添加所子控件
 -(void)setUpAllView{
-    self.avatar = [UIImageView zj_imageViewWithImageName:@"001" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.avatar = [UIImageView zj_imageViewWithImage:@"001" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.top.mas_equalTo(10);
         make.width.height.mas_equalTo(44);
@@ -70,7 +70,7 @@
         make.top.equalTo(_avatar.mas_bottom).offset(10);
     }];
     
-    self.picImageV = [UIImageView zj_imageViewWithImageName:@"loading_bgView" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.picImageV = [UIImageView zj_imageViewWithImage:@"loading_bgView" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(_titleLab.mas_bottom).offset(10);
         make.height.mas_equalTo(kVideoHeight);

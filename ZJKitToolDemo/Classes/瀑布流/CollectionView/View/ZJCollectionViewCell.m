@@ -24,7 +24,7 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         // 添加一个UIImageView
-        self.imgView = [UIImageView zj_imageViewWithImageName:nil SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
+        self.imgView = [UIImageView zj_imageViewWithImage:nil SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(0);
         }];
     }

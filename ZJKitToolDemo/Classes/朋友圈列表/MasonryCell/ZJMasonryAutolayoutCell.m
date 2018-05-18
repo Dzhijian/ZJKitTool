@@ -104,7 +104,7 @@
 // 添加所子控件
 -(void)setUpAllView{
     // 头像
-    self.avatar = [UIImageView zj_imageViewWithImageName:@"" SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
+    self.avatar = [UIImageView zj_imageViewWithImage:@"" SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.top.mas_equalTo(15);
         make.width.height.mas_equalTo(40);

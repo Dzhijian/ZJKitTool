@@ -15,25 +15,25 @@
 
 +(instancetype)zj_imageView;
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName;
++(instancetype)zj_imageViewWithImage:(id)image;
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              constraints:(ZJConstrainMaker)constraints;
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              constraints:(ZJConstrainMaker)constraints
                               imgViewTap:(ZJTapGestureBlock)imgViewTap;
 
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              contentMode:(UIViewContentMode)contentMode
                                   isClip:(BOOL)isClip
                              constraints:(ZJConstrainMaker)constraints;
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              contentMode:(UIViewContentMode)contentMode
                                   isClip:(BOOL)isClip

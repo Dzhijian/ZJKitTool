@@ -9,6 +9,14 @@
 #import "UILabel+ZJMasonryKit.h"
 #import <CoreText/CoreText.h>
 
+// 获取屏幕的宽度
+#define kScreenWidthLabel ([UIScreen mainScreen].bounds.size.width)
+// 不同屏幕尺寸字体适配
+#define kScreenWidthRatioLabel  (kScreenWidthLabel / 375.0)
+#define AdaptedWidthLabel(x)  ceilf((x) * kScreenWidthRatioLabel)
+// 字体适配
+#define AdaptedFontSizeLabel(R)     [UIFont systemFontOfSize:AdaptedWidthLabel(R)]
+
 @implementation UILabel (ZJMasonryKit)
 
 
@@ -80,7 +88,7 @@
     UILabel *label = [[UILabel alloc]init];
     label.text = text;
     if (fontSize!=0) {
-        label.font = [UIFont systemFontOfSize:fontSize];
+        label.font = AdaptedFontSizeLabel(fontSize);
     }
     
     if (font != nil) {

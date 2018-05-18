@@ -12,40 +12,40 @@
 
 +(instancetype)zj_imageView
 {
-    return [self zj_imageViewWithImageName:nil];
+    return [self zj_imageViewWithImage:nil];
 }
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
 {
-    return [self zj_imageViewWithImageName:imageName SuperView:nil constraints:nil];
+    return [self zj_imageViewWithImage:image SuperView:nil constraints:nil];
 }
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              constraints:(ZJConstrainMaker)constraints
 {
-    return [self zj_imageViewWithImageName:imageName SuperView:superView constraints:constraints imgViewTap:nil];
+    return [self zj_imageViewWithImage:image SuperView:superView constraints:constraints imgViewTap:nil];
 }
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              constraints:(ZJConstrainMaker)constraints
                               imgViewTap:(ZJTapGestureBlock)imgViewTap
 {
-    return [self zj_imageViewWithImageName:imageName SuperView:superView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:constraints imgViewTap:imgViewTap];
+    return [self zj_imageViewWithImage:image SuperView:superView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:constraints imgViewTap:imgViewTap];
 }
 
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              contentMode:(UIViewContentMode)contentMode
                                   isClip:(BOOL)isClip
                              constraints:(ZJConstrainMaker)constraints
 {
-    return [self zj_imageViewWithImageName:imageName SuperView:superView contentMode:contentMode isClip:isClip constraints:constraints imgViewTap:nil];
+    return [self zj_imageViewWithImage:image SuperView:superView contentMode:contentMode isClip:isClip constraints:constraints imgViewTap:nil];
 }
 
-+(instancetype)zj_imageViewWithImageName:(NSString *)imageName
++(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              contentMode:(UIViewContentMode)contentMode
                                   isClip:(BOOL)isClip
@@ -54,7 +54,13 @@
 {
     
     UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = [UIImage imageNamed:imageName];
+    
+    if ([image isMemberOfClass:[NSString class]]) {
+        imageView.image = [UIImage imageNamed:image];
+    }else if ([image isMemberOfClass:[UIImage class]]){
+        imageView.image = image;
+    }
+    
 
     imageView.contentMode = contentMode;
     [superView addSubview:imageView];
