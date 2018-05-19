@@ -122,6 +122,7 @@
 		04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517922021B83500AC15F1 /* ZJNavigationBar.m */; };
 		04C5179B2022BD8800AC15F1 /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179A2022BD8800AC15F1 /* DBSphereView.m */; };
 		04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */; };
+		04C906B120AFFC3400B818D6 /* UIView+ZJBaseFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C906B020AFFC3400B818D6 /* UIView+ZJBaseFunctions.m */; };
 		04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */; };
 		04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13412016E07D00C619E5 /* ZJCommitFrame.m */; };
 		04DA13472016E0C900C619E5 /* ZJCommitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13462016E0C900C619E5 /* ZJCommitCell.m */; };
@@ -388,6 +389,8 @@
 		04C5179C2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSphereTagCloudViewController.h; sourceTree = "<group>"; };
 		04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSphereTagCloudViewController.m; sourceTree = "<group>"; };
 		04C748081FD6476C00A749E3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		04C906AF20AFFC3400B818D6 /* UIView+ZJBaseFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJBaseFunctions.h"; sourceTree = "<group>"; };
+		04C906B020AFFC3400B818D6 /* UIView+ZJBaseFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJBaseFunctions.m"; sourceTree = "<group>"; };
 		04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommitViewController.h; sourceTree = "<group>"; };
 		04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCommitViewController.m; sourceTree = "<group>"; };
 		04DA13402016E07D00C619E5 /* ZJCommitFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCommitFrame.h; sourceTree = "<group>"; };
@@ -811,16 +814,16 @@
 		04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A0D209DB7BD00E66CA2 /* ZJKitBaseController.h */,
-				04B09A11209DB7BD00E66CA2 /* ZJKitBaseController.m */,
-				04B09A0E209DB7BD00E66CA2 /* ZJBaseWKWebViewController.h */,
-				04B09A10209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m */,
-				04B09A0F209DB7BD00E66CA2 /* ZJKitNaigationController.h */,
-				04B09A12209DB7BD00E66CA2 /* ZJKitNaigationController.m */,
 				0408D23C209EED8D00097E14 /* UIControl+ZJActionBlock.h */,
 				0408D23D209EED8D00097E14 /* UIControl+ZJActionBlock.m */,
 				0408D23F209EF24D00097E14 /* UIView+ZJFrame.h */,
 				0408D240209EF24D00097E14 /* UIView+ZJFrame.m */,
+				04B09A0E209DB7BD00E66CA2 /* ZJBaseWKWebViewController.h */,
+				04B09A10209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m */,
+				04B09A0D209DB7BD00E66CA2 /* ZJKitBaseController.h */,
+				04B09A11209DB7BD00E66CA2 /* ZJKitBaseController.m */,
+				04B09A0F209DB7BD00E66CA2 /* ZJKitNaigationController.h */,
+				04B09A12209DB7BD00E66CA2 /* ZJKitNaigationController.m */,
 			);
 			path = ZJControllerKit;
 			sourceTree = "<group>";
@@ -828,29 +831,29 @@
 		04B09A14209DB7BD00E66CA2 /* ZJKit */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A15209DB7BD00E66CA2 /* UIScrollView+ZJScrollView.m */,
-				04B09A16209DB7BD00E66CA2 /* UILabel+ZJLabel.h */,
-				04B09A17209DB7BD00E66CA2 /* UIImageView+ZJImageView.h */,
-				04B09A18209DB7BD00E66CA2 /* ZJKitHelper.h */,
-				04B09A19209DB7BD00E66CA2 /* UIButton+ZJButton.h */,
-				04B09A1A209DB7BD00E66CA2 /* UIColor+ZJColor.m */,
 				04B09A1B209DB7BD00E66CA2 /* UIAlertController+ZJAlert.h */,
-				04B09A1C209DB7BD00E66CA2 /* UIViewController+ZJViewController.m */,
-				04B09A1D209DB7BD00E66CA2 /* UITextField+ZJTextField.m */,
-				04B09A1E209DB7BD00E66CA2 /* UIImage+ZJImage.m */,
-				04B09A1F209DB7BD00E66CA2 /* UITextView+ZJTextView.m */,
-				04B09A20209DB7BD00E66CA2 /* UIDevice+ZJDivice.h */,
-				04B09A21209DB7BD00E66CA2 /* UIScrollView+ZJScrollView.h */,
-				04B09A22209DB7BD00E66CA2 /* UIButton+ZJButton.m */,
-				04B09A23209DB7BD00E66CA2 /* UIImageView+ZJImageView.m */,
-				04B09A24209DB7BD00E66CA2 /* UILabel+ZJLabel.m */,
-				04B09A25209DB7BD00E66CA2 /* UITextField+ZJTextField.h */,
-				04B09A26209DB7BD00E66CA2 /* UIViewController+ZJViewController.h */,
 				04B09A27209DB7BD00E66CA2 /* UIAlertController+ZJAlert.m */,
+				04B09A19209DB7BD00E66CA2 /* UIButton+ZJButton.h */,
+				04B09A22209DB7BD00E66CA2 /* UIButton+ZJButton.m */,
 				04B09A28209DB7BD00E66CA2 /* UIColor+ZJColor.h */,
+				04B09A1A209DB7BD00E66CA2 /* UIColor+ZJColor.m */,
+				04B09A20209DB7BD00E66CA2 /* UIDevice+ZJDivice.h */,
 				04B09A29209DB7BD00E66CA2 /* UIDevice+ZJDivice.m */,
-				04B09A2A209DB7BD00E66CA2 /* UITextView+ZJTextView.h */,
 				04B09A2B209DB7BD00E66CA2 /* UIImage+ZJImage.h */,
+				04B09A1E209DB7BD00E66CA2 /* UIImage+ZJImage.m */,
+				04B09A17209DB7BD00E66CA2 /* UIImageView+ZJImageView.h */,
+				04B09A23209DB7BD00E66CA2 /* UIImageView+ZJImageView.m */,
+				04B09A16209DB7BD00E66CA2 /* UILabel+ZJLabel.h */,
+				04B09A24209DB7BD00E66CA2 /* UILabel+ZJLabel.m */,
+				04B09A21209DB7BD00E66CA2 /* UIScrollView+ZJScrollView.h */,
+				04B09A15209DB7BD00E66CA2 /* UIScrollView+ZJScrollView.m */,
+				04B09A25209DB7BD00E66CA2 /* UITextField+ZJTextField.h */,
+				04B09A1D209DB7BD00E66CA2 /* UITextField+ZJTextField.m */,
+				04B09A2A209DB7BD00E66CA2 /* UITextView+ZJTextView.h */,
+				04B09A1F209DB7BD00E66CA2 /* UITextView+ZJTextView.m */,
+				04B09A26209DB7BD00E66CA2 /* UIViewController+ZJViewController.h */,
+				04B09A1C209DB7BD00E66CA2 /* UIViewController+ZJViewController.m */,
+				04B09A18209DB7BD00E66CA2 /* ZJKitHelper.h */,
 			);
 			path = ZJKit;
 			sourceTree = "<group>";
@@ -886,30 +889,32 @@
 		04B09A35209DB7BD00E66CA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A42209DB7BD00E66CA2 /* UITextView+ZJHelperKit.h */,
-				04B09A37209DB7BD00E66CA2 /* UITextView+ZJHelperKit.m */,
-				04B09A43209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.h */,
-				04B09A38209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.m */,
-				04B09A36209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.h */,
-				04B09A44209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.m */,
-				04B09A45209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.h */,
-				04B09A3B209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.m */,
 				04B09A3A209DB7BD00E66CA2 /* UIActionSheet+ZJHelperKit.h */,
 				04B09A46209DB7BD00E66CA2 /* UIActionSheet+ZJHelperKit.m */,
-				04B09A39209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.h */,
-				04B09A47209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.m */,
 				04B09A3D209DB7BD00E66CA2 /* UIAlertView+ZJHelperKitUIKit.h */,
 				04B09A48209DB7BD00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m */,
-				04B09A49209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.h */,
-				04B09A3C209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */,
 				04B09A4A209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.h */,
 				04B09A41209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m */,
+				04B09A43209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.h */,
+				04B09A38209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.m */,
+				04B09A45209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.h */,
+				04B09A3B209DB7BD00E66CA2 /* UIControl+ZJHelperBlockKit.m */,
 				04B09A40209DB7BD00E66CA2 /* UIDevice+ZJHelperKitUIKit.h */,
 				04B09A4B209DB7BD00E66CA2 /* UIDevice+ZJHelperKitUIKit.m */,
-				04B09A4C209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.h */,
-				04B09A3F209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.m */,
+				04B09A49209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.h */,
+				04B09A3C209DB7BD00E66CA2 /* UIGestureRecognizer+ZJHelperBlockKit.m */,
 				04B09A3E209DB7BD00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.h */,
 				04B09A4D209DB7BD00E66CA2 /* UIImageView+ZJCornerRadiusHelperKit.m */,
+				04B09A39209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.h */,
+				04B09A47209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.m */,
+				04B09A42209DB7BD00E66CA2 /* UITextView+ZJHelperKit.h */,
+				04B09A37209DB7BD00E66CA2 /* UITextView+ZJHelperKit.m */,
+				04B09A4C209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.h */,
+				04B09A3F209DB7BD00E66CA2 /* UIView+ZJHelperKitUIkit.m */,
+				04B09A36209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.h */,
+				04B09A44209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.m */,
+				04C906AF20AFFC3400B818D6 /* UIView+ZJBaseFunctions.h */,
+				04C906B020AFFC3400B818D6 /* UIView+ZJBaseFunctions.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1402,6 +1407,7 @@
 				04C517692020153200AC15F1 /* ZJElementsCollectionViewController.m in Sources */,
 				04BE94B620453FBC00DF6779 /* ASValueTrackingSlider.m in Sources */,
 				048E8A28201728C600486470 /* ZJChooseOneRightCell.m in Sources */,
+				04C906B120AFFC3400B818D6 /* UIView+ZJBaseFunctions.m in Sources */,
 				04B09A79209DB7BD00E66CA2 /* UIImageView+ZJImageView.m in Sources */,
 				04BE94BC20453FBC00DF6779 /* ZFBrightnessView.m in Sources */,
 				04B09A7B209DB7BD00E66CA2 /* UIAlertController+ZJAlert.m in Sources */,

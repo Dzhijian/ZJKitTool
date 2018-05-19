@@ -24,6 +24,7 @@
 #import "UITextView+ZJHelperKit.h"
 #import "UITableViewCell+ZJBaseFunctions.h"
 #import "UICollectionViewCell+ZJBaseFunctions.h"
+#import "UIView+ZJBaseFunctions.h"
 // 高效切圆角
 #import "UIImageView+ZJCornerRadiusHelperKit.h"
 
