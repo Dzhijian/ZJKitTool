@@ -167,6 +167,7 @@
     }
 }
 
+
 // 用当前的时间与最后的时间作比较
 -(NSString *)zj_timeGetNowTimeWithString:(NSString *)timeString{
     NSDateFormatter* formater = [[NSDateFormatter alloc] init];
@@ -210,6 +211,30 @@
     return [NSString stringWithFormat:@"%@小时 %@分 %@秒",hoursStr , minutesStr,secondsStr];
 }
 
+-(void)zj_timeGetNowTimeWithEndString:(NSString *)timeString
+                        completeBlock:(ZJTimeDownCompleteBlock)completeBlock{
+    NSDateFormatter* formater = [[NSDateFormatter alloc] init];
+    [formater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    // 截止时间date格式
+    NSDate  *expireDate = [formater dateFromString:timeString];
+    NSDate  *nowDate = [NSDate date];
+    // 当前时间字符串格式
+    NSString *nowDateStr = [formater stringFromDate:nowDate];
+    // 当前时间date格式
+    nowDate = [formater dateFromString:nowDateStr];
+    
+    NSTimeInterval timeInterval =[expireDate timeIntervalSinceDate:nowDate];
+    
+    int days = (int)(timeInterval/(3600*24));
+    int hours = (int)((timeInterval-days*24*3600)/3600);
+    int minutes = (int)(timeInterval-days*24*3600-hours*3600)/60;
+    int seconds = timeInterval-days*24*3600-hours*3600-minutes*60;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        completeBlock(days,hours,minutes,seconds);
+    });
+    
+}
 /**
  * 根据传入的年份和月份获得该月份的天数
  *

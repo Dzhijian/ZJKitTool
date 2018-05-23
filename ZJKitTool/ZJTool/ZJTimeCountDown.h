@@ -79,7 +79,15 @@ typedef void(^ZJTimeDownCompleteBlock)(NSInteger day, NSInteger hour, NSInteger 
  */
 
 -(NSString *)zj_timeGetNowTimeWithString:(NSString *)timeString;
+/**
+ * 当前时间与结束时间的对比,返回天/时/分/秒
+ 
+ @param timeString 时间String
 
+ */
+
+-(void)zj_timeGetNowTimeWithEndString:(NSString *)timeString
+                        completeBlock:(ZJTimeDownCompleteBlock)completeBlock;
 
 
 /**
