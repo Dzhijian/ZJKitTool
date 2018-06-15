@@ -60,8 +60,17 @@
     // 快速创建控件 + marsonry 布局
     [self zj_UIKitAndMasonry];
     
-   
+    // 保存图片
     [self svaimgPhotiTest];
+    
+    
+        
+    [UIImageView zj_imageViewWithImage:kImageName(@"006") SuperView:self.view constraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-10);
+        make.right.mas_equalTo(-15);
+        make.height.mas_equalTo(150);
+        make.width.mas_equalTo(150);
+    }];
 }
 
 #pragma mark - 倒计时Test

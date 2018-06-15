@@ -19,27 +19,24 @@ typedef void(^ZJButtonActionBlock)(id sender);
 
 
 /**
- *
- *    Make it support block callback of touch up event.
+ *  按钮的block点击事件
  */
 @property (nonatomic, copy) ZJButtonActionBlock zj_btnOnTouchUp;
 
 
 /**
- * 快速创建UIButton，设置：父视图，Marsonry布局
- 
- @param touchUp         点击事件
- @return                返回一个button
+  快速创建UIButton
+  @param touchUp         点击事件
+  @return                返回一个button
  */
 +(instancetype)zj_buttonWithOnTouchUp:(ZJButtonBlock)touchUp;
 
 /**
- * 快速创建UIButton，设置：父视图，Marsonry布局
-
- @param supView         父视图
- @param constaints      Marsonry布局
- @param touchUp         点击事件
- @return                返回一个button
+ * 快速创建UIButton
+ * @param supView         父视图
+ * @param constaints      Marsonry布局
+ * @param touchUp         点击事件
+ * @return                返回一个button
  */
 +(instancetype)zj_buttonWithSupView:(UIView *)supView
                          constraints:(ZJConstrainMaker)constaints

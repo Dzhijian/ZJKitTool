@@ -16,24 +16,12 @@ static const void *s_ZJButtonTouchUpKey     = "s_ZJButtonTouchUpKey";
 @implementation UIButton (ZJMasonryKit)
 
 
-/**
- * 快速创建UIButton，设置：父视图，Marsonry布局
- 
- @param touchUp         点击事件
- @return                返回一个button
- */
+
 +(instancetype)zj_buttonWithOnTouchUp:(ZJButtonBlock)touchUp{
     return [self zj_buttonWithOnTouchUp:touchUp];
 }
 
-/**
- * 快速创建UIButton，设置：父视图，Marsonry布局
- 
- @param supView         父视图
- @param constaints      Marsonry布局
- @param touchUp         点击事件
- @return                返回一个button
- */
+
 +(instancetype)zj_buttonWithSupView:(UIView *)supView
                         constraints:(ZJConstrainMaker)constaints
                             touchUp:(ZJButtonBlock)touchUp{
@@ -41,15 +29,6 @@ static const void *s_ZJButtonTouchUpKey     = "s_ZJButtonTouchUpKey";
 }
 
 
-/**
- * 快速创建UIButton，设置：标题，父视图，Marsonry布局
- 
- @param title    圆角
- @param superView         父视图
- @param constraints      Marsonry布局
- @param touchUp         点击事件
- @return                返回一个button
- */
 + (instancetype)zj_buttonWithTitle:(NSString *)title
                           superView:(UIView *)superView
                         constraints:(ZJConstrainMaker)constraints
@@ -57,15 +36,7 @@ static const void *s_ZJButtonTouchUpKey     = "s_ZJButtonTouchUpKey";
 {
     return [self zj_buttonWithTitle:title titleColor:nil norImage:nil selectedImage:nil backColor:nil fontSize:0 isBold:NO cornerRadius:0 supView:superView constraints:constraints touchUp:touchUp];
 }
-/**
- * 快速创建UIButton，设置：默认图片，圆角，父视图，Marsonry布局
- 
- @param cornerRadius    圆角
- @param supView         父视图
- @param constaints      Marsonry布局
- @param touchUp         点击事件
- @return                返回一个button
- */
+
 +(instancetype)zj_buttonWithNorImage:(id)norImage
                         cornerRadius:(CGFloat)cornerRadius
                              supView:(UIView *)supView
@@ -219,8 +190,12 @@ static const void *s_ZJButtonTouchUpKey     = "s_ZJButtonTouchUpKey";
             button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
         }
     }
+
     
-    [button setBackgroundColor:backColor];
+    button.backgroundColor = backColor ? backColor : [UIColor whiteColor];
+    button.titleLabel.backgroundColor = [UIColor  whiteColor];
+    button.titleLabel.layer.masksToBounds = YES;
+    button.layer.masksToBounds = YES;
     
     button.layer.cornerRadius = cornerRadius;
     if (borderWidth) {

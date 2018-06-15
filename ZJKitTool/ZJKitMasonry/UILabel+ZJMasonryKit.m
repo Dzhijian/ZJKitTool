@@ -97,7 +97,7 @@
     
     label.textAlignment = NSTextAlignmentLeft;
     
-    // 避免离屏渲染
+    // 避免视图混合
     label.backgroundColor = [UIColor whiteColor];
     label.layer.masksToBounds = YES;
     

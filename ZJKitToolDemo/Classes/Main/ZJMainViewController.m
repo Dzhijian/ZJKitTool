@@ -78,6 +78,12 @@
     ZJBaseTableViewCell *cell = [ZJBaseTableViewCell cellWithTableView:tableView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = self.titleArray[indexPath.row];
+    cell.textLabel.backgroundColor = kWhiteColor;
+    cell.textLabel.layer.masksToBounds = YES;
+    cell.backgroundColor = kWhiteColor;
+    cell.layer.masksToBounds = YES;
+    cell.contentView.backgroundColor = kWhiteColor;
+    cell.contentView.layer.masksToBounds = YES;
     return cell;
 }
 

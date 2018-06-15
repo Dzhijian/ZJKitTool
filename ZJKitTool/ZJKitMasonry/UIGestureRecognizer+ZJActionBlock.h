@@ -10,21 +10,20 @@
 #import "ZJKitMasonryTool.h"
 @interface UIGestureRecognizer (ZJActionBlock)
 /**
- *
- *    Make all gestures support block callback.
- *  This will support all kinds of gestures.
+ *  所有手势都支持Block回调。
+ *  支持各种手势。
  */
 @property (nonatomic, copy) ZJGestureBlock zj_onGesture;
 
 /**
  *
- *    Make tap gesture support block callback.
+ *    tap手势支持Block回调。
  */
 @property (nonatomic, copy) ZJTapGestureBlock zj_onTaped;
 
 /**
  *
- *    Make long press gesture support block callback.
+ *    long手势支持Block回调。
  */
 @property (nonatomic, copy) ZJLongGestureBlock zj_onLongPressed;
 

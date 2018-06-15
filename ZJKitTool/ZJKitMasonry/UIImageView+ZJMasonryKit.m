@@ -56,8 +56,11 @@
     UIImageView *imageView = [[UIImageView alloc]init];
     
     if ([image isMemberOfClass:[NSString class]]) {
-        imageView.image = [UIImage imageNamed:image];
+        UIImage *img = [UIImage imageNamed:image];
+        imageView.image = img;
+        
     }else if ([image isMemberOfClass:[UIImage class]]){
+        
         imageView.image = image;
     }
     
@@ -78,4 +81,24 @@
     return imageView;
 }
 
+
+// 重新绘制图片,避免图层混合
++(UIImage *)zj_reDrawImage:(UIImage *)image size:(CGSize)size{
+    if (!image) {
+        return nil;
+    }
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+    
+    [image drawInRect:rect];
+    
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    // 关闭上下文
+    UIGraphicsEndImageContext();
+
+    return result;
+    
+}
 @end
