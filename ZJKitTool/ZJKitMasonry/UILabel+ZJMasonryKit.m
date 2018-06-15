@@ -96,6 +96,11 @@
     }
     
     label.textAlignment = NSTextAlignmentLeft;
+    
+    // 避免离屏渲染
+    label.backgroundColor = [UIColor whiteColor];
+    label.layer.masksToBounds = YES;
+    
     if (textColor != nil) {
         label.textColor = textColor;
     }else{
@@ -116,6 +121,7 @@
             constraints(make);
         }];
     }
+    
     return label;
 }
 
