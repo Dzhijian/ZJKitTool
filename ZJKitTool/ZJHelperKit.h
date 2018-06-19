@@ -17,7 +17,7 @@
  */
 
 #import <Masonry/Masonry.h>
-#import "ZJCommonKit.h"
+#import "ZJGeneraMacros.h"
 #import "ZJUIMasonsyKit.h"
 #import "ZJKitHelper.h"
 #import "ZJCategory.h"

@@ -89,7 +89,6 @@
 		04B09A93209DB7BD00E66CA2 /* NSTimer+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09A5A209DB7BD00E66CA2 /* NSTimer+ZJHelperKit.m */; };
 		04B09A94209DB7BD00E66CA2 /* NSDate+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09A5B209DB7BD00E66CA2 /* NSDate+ZJHelperKit.m */; };
 		04B09A95209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09A5F209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.m */; };
-		04B09A96209DB7BD00E66CA2 /* ZJCommonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */; };
 		04BE94B520453FBC00DF6779 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE949C20453FBC00DF6779 /* ASValuePopUpView.m */; };
 		04BE94B620453FBC00DF6779 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE949E20453FBC00DF6779 /* ASValueTrackingSlider.m */; };
 		04BE94B720453FBC00DF6779 /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE94A120453FBC00DF6779 /* UIImageView+ZFCache.m */; };
@@ -246,7 +245,6 @@
 		04B09A10209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJBaseWKWebViewController.m; sourceTree = "<group>"; };
 		04B09A11209DB7BD00E66CA2 /* ZJKitBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJKitBaseController.m; sourceTree = "<group>"; };
 		04B09A12209DB7BD00E66CA2 /* ZJKitNaigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJKitNaigationController.m; sourceTree = "<group>"; };
-		04B09A13209DB7BD00E66CA2 /* ZJCommonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCommonKit.h; sourceTree = "<group>"; };
 		04B09A15209DB7BD00E66CA2 /* UIScrollView+ZJScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZJScrollView.m"; sourceTree = "<group>"; };
 		04B09A16209DB7BD00E66CA2 /* UILabel+ZJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZJLabel.h"; sourceTree = "<group>"; };
 		04B09A17209DB7BD00E66CA2 /* UIImageView+ZJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZJImageView.h"; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 		04B09A62209DB7BD00E66CA2 /* NSObject+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZJHelperKit.h"; sourceTree = "<group>"; };
 		04B09A63209DB7BD00E66CA2 /* NSMutableArray+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ZJHelperKit.h"; sourceTree = "<group>"; };
 		04B09A64209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZJHelperKit.h"; sourceTree = "<group>"; };
-		04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCommonKit.m; sourceTree = "<group>"; };
 		04BE949B20453FBC00DF6779 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		04BE949C20453FBC00DF6779 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
 		04BE949D20453FBC00DF6779 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
@@ -406,6 +403,7 @@
 		04DA13572017036500C619E5 /* CommitsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CommitsData.json; sourceTree = "<group>"; };
 		04DA135F20170CE400C619E5 /* ZJCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCommit.h; sourceTree = "<group>"; };
 		04DA136020170CE400C619E5 /* ZJCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCommit.m; sourceTree = "<group>"; };
+		04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJGeneraMacros.h; sourceTree = "<group>"; };
 		0618E3214C33288FB31FB5EA /* Pods-ZJKitTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool.debug.xcconfig"; sourceTree = "<group>"; };
 		1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -951,8 +949,7 @@
 		04B09A97209E083100E66CA2 /* ZJGenneralMacros */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A13209DB7BD00E66CA2 /* ZJCommonKit.h */,
-				04B09A65209DB7BD00E66CA2 /* ZJCommonKit.m */,
+				04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */,
 			);
 			path = ZJGenneralMacros;
 			sourceTree = "<group>";
@@ -1419,7 +1416,6 @@
 				04B097F7209CCE7E00E66CA2 /* ZJButton.m in Sources */,
 				048E8A2A201728C600486470 /* ZJChooseControlView.m in Sources */,
 				042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */,
-				04B09A96209DB7BD00E66CA2 /* ZJCommonKit.m in Sources */,
 				04B09A8E209DB7BD00E66CA2 /* NSFileManager+ZJHelperKit.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				0408D241209EF24D00097E14 /* UIView+ZJFrame.m in Sources */,

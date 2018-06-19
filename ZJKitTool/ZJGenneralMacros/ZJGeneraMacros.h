@@ -1,11 +1,11 @@
+
 //
-//  ZJCommonKit.h
-//  ZJUIKit
+//  ZJGeneraMacros.h
+//  ZJKitTool
 //
-//  Created by dzj on 2018/1/17.
+//  Created by 邓志坚 on 2018/6/19.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
-
 /**
  *  ZJKitTool
  *
@@ -14,8 +14,9 @@
  *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下。😆
  */
 
-#import <Foundation/Foundation.h>
-#import <Masonry/Masonry.h>
+
+#ifndef ZJGeneraMacros_h
+#define ZJGeneraMacros_h
 // 获得弱引用对象
 #define kWeakObject(object) __weak __typeof(object) weakObject = object;
 
@@ -167,78 +168,4 @@ alpha:(a)])
 #define kBrownColor       [UIColor brownColor]
 #define kClearColor       [UIColor clearColor]
 
-
-#pragma mark - Blocks
-
-/**
- * For notification block.
- */
-typedef void (^ZJNotificationBlock)(NSNotification *sender);
-
-/**
- *    For return a bool block.
- */
-typedef void (^ZJBOOLBlock)(BOOL result);
-
-/**
- * For return a array block.
- */
-typedef void (^ZJArrayBlock)(NSArray *list);
-
-/**
- * 编辑改变值block
- * 例如： UITextField
- */
-typedef void(^ZJEditChangeBlock)(id sender);
-
-/**
- * 改变值Block
- *
- */
-typedef void(^ZJChangeValueBlock)(id sender);
-
-/**
- * Button点击事件Block
- *
- */
-typedef void(^ZJButtonBlock)(id sender);
-
-/**
- * Button点击事件Block
- *
- * @param index  索引.
- * @param sender The responder.
- */
-typedef void(^ZJButtonIndexBlock)(NSUInteger index, UIButton *sender);
-
-/**
- * gesture事件Block
- *
- */
-typedef void(^ZJGestureBlock)(UIGestureRecognizer *gesture);
-
-
-/**
- * Tap点击事件Block
- *
- */
-typedef void(^ZJTapGestureBlock)(UITapGestureRecognizer *gesture);
-
-/**
- * Tap长按事件Block
- *
- */
-typedef void(^ZJLongGestureBlock)(UILongPressGestureRecognizer *gesture);
-
-
-/**
- * Masonry Block
- *
- */
-typedef void(^ZJConstrainMaker)(MASConstraintMaker *make);
-
-@interface ZJCommonKit : NSObject
-
-@property (nonatomic, copy) ZJConstrainMaker masonryblock;
-
-@end
+#endif /* ZJGeneraMacros_h */

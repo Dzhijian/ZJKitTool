@@ -193,7 +193,7 @@ static const void *s_ZJButtonTouchUpKey     = "s_ZJButtonTouchUpKey";
 
     
     button.backgroundColor = backColor ? backColor : [UIColor whiteColor];
-    button.titleLabel.backgroundColor = [UIColor  whiteColor];
+    button.titleLabel.backgroundColor = button.backgroundColor;
     button.titleLabel.layer.masksToBounds = YES;
     button.layer.masksToBounds = YES;
     

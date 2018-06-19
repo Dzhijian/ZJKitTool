@@ -63,8 +63,7 @@
     // 保存图片
     [self svaimgPhotiTest];
     
-    
-        
+
     [UIImageView zj_imageViewWithImage:kImageName(@"006") SuperView:self.view constraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(-10);
         make.right.mas_equalTo(-15);
@@ -103,7 +102,13 @@
     kWeakObject(self);
     
     // 评论列表
-    UIButton *comBtn = [UIButton  zj_buttonWithTitle:@"评论列表" titleColor:kWhiteColor backColor:kOrangeColor fontSize:15 isBold:NO cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+    UIButton *comBtn = [UIButton  zj_buttonWithTitle:@"评论列表"
+                                          titleColor:kWhiteColor
+                                           backColor:kOrangeColor
+                                            fontSize:15 isBold:NO
+                                        cornerRadius:4
+                                             supView:self.view
+                                         constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(chooseBtn.mas_centerY);
         make.left.equalTo(chooseBtn.mas_right).offset(30);
         make.width.mas_equalTo(80);
@@ -113,6 +118,7 @@
         ZJCommitViewController *commmit = [[ZJCommitViewController alloc]init];
         [weakObject.navigationController pushViewController:commmit animated:YES];
     }];
+    
     
     // alertView
     UIButton *alertBtn = [UIButton  zj_buttonWithTitle:@"AlertView" titleColor:kWhiteColor backColor:kOrangeColor fontSize:16 isBold:NO cornerRadius:3 supView:self.view constraints:^(MASConstraintMaker *make) {
@@ -193,7 +199,15 @@
 }
 
 -(void)svaimgPhotiTest{
-    UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(100, 330, 100, 40) title:@"截取屏幕图片" titleColor:kWhiteColor imageName:nil backColor:[UIColor orangeColor] fontSize:15 cornerRadius:6 traget:self action:@selector(btnTestClick:)];
+    UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(100, 330, 100, 40)
+                                           title:@"截取屏幕图片"
+                                      titleColor:kWhiteColor
+                                       imageName:nil
+                                       backColor:[UIColor orangeColor]
+                                        fontSize:15
+                                    cornerRadius:6
+                                          traget:self
+                                          action:@selector(btnTestClick:)];
     [self.view addSubview:btn];
 }
 
@@ -221,8 +235,6 @@
 -(void)alertTest{
     
     UIAlertController *alert = [UIAlertController zj_alertControllerWithTitle:@"这是一个Alert" message:nil optionStyle:OptionStyleStyleOK_Cancel OkTitle:@"确定" cancelTitle:@"取消" okBlock:^{
-        self.testNum = 2;
-        [self.view zj_showWarning:[NSString stringWithFormat:@"%ld",self.testNum]];
         NSLog(@"确定");
     } cancelBlock:^{
         NSLog(@"取消");
@@ -233,7 +245,11 @@
 
 
 -(void)textfieldTest{
-    UITextField *field = [UITextField zj_textFieldWithFrame:CGRectMake(30, 50, ScreenWidth - 60, 50) textColor:[UIColor blackColor] fontSize:15 placeText:@"haha" placeColor:[UIColor redColor] borderStyle:UITextBorderStyleRoundedRect];
+    UITextField *field = [UITextField zj_textFieldWithFrame:CGRectMake(30, 50, ScreenWidth - 60, 50)
+                                                  textColor:[UIColor blackColor]
+                                                   fontSize:15
+                                                  placeText:@"haha"
+                                                 placeColor:[UIColor redColor] borderStyle:UITextBorderStyleRoundedRect];
     [self.view addSubview:field];
 }
 
