@@ -22,7 +22,6 @@
 @property(nonatomic ,strong) UIButton           *btn;
 @property(nonatomic ,strong) UIButton           *button;
 @property(nonatomic ,strong) UILabel            *label;
-
 // 测试字段
 @property(nonatomic ,assign) NSInteger          testNum;
 // 倒计时
@@ -37,12 +36,15 @@
 @implementation ZJKitAndMasonryViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.testNum = 1;
     [self setUpAllView];
+    
 }
 
 -(void)setUpAllView{
+    
     kWeakObject(self);
     // 设置返回按钮
     [self zj_setNavLeftImage:kImageName(@"new_goback") block:^(id sender) {
@@ -59,7 +61,6 @@
     [self timeCountDownTest];
     // 快速创建控件 + marsonry 布局
     [self zj_UIKitAndMasonry];
-    
     // 保存图片
     [self svaimgPhotiTest];
     
@@ -70,6 +71,8 @@
         make.height.mas_equalTo(150);
         make.width.mas_equalTo(150);
     }];
+    
+    
 }
 
 #pragma mark - 倒计时Test
