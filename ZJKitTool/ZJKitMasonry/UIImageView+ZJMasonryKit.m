@@ -64,7 +64,7 @@
         imageView.image = image;
     }
     
-
+    
     imageView.contentMode = contentMode;
     [superView addSubview:imageView];
     imageView.clipsToBounds = isClip;

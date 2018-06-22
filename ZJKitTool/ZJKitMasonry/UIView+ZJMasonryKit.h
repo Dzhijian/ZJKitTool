@@ -13,14 +13,13 @@
 @interface UIView (ZJMasonryKit)
 
 /**
- *
- *  The tap gesture getter. @see hyb_addTapGestureWithCallback
+ *  点击手势
  */
 @property (nonatomic, strong, readonly) UITapGestureRecognizer *zj_tapGesture;
 
 /**
  *
- *    The long press gesture getter, @see hyb_addLongGestureWithCallback
+ *    长按手势
  */
 @property (nonatomic, strong, readonly) UILongPressGestureRecognizer *zj_longGesure;
 
@@ -55,7 +54,7 @@
 
 /**
  *
- *    Add a tap gesture with callback. It will automatically open userInterface to YES.
+ *    在回调中添加一个tap手势。它将自动打开用户界面为YES。
  *
  *    @param onTaped    The callback block when taped.
  */
@@ -63,7 +62,7 @@
 
 /**
  *
- *    Add long press gesture with callback. It will automatically open userInterface to YES.
+ *    添加长按手势与回调。它将自动打开用户界面为YES。
  *
  *    @param onLongPressed    The long press callback when long pressed.
  */

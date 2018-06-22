@@ -15,34 +15,34 @@
 
 /**
  *
- *    Create a web view without layout.
+ *    创建一个没有布局的web视图。
  *
  *    @param delegate    UIWebViewDelegate
  *
- *    @return The instance of UIWebView.
+ *    @return UIWebView的实例
  */
 + (instancetype)zj_webViewWithDelegate:(id)delegate;
 
 /**
  *
- *    Create a web view with a super view and add edges as layout.
+ *    创建一个具有超视图的web视图，并添加边缘作为布局。
  *
  *    @param delegate    UIWebViewDelegate
  *    @param superView    The super view of web view.
  *
- *    @return The instance of UIWebView.
+ *    @return UIWebView的实例
  */
 + (instancetype)zj_webViewWithDelegate:(id)delegate superView:(UIView *)superView;
 
 /**
  *
- *    Create a web view with a super view and add edges as layout.
+ *    创建一个具有超视图的web视图，并添加边缘作为布局。
  *
  *    @param delegate    UIWebViewDelegate
  *    @param superView    The super view of web view.
  *    @param edges            The edges inset.
  *
- *    @return The instance of UIWebView.
+ *    @return UIWebView的实例
  */
 + (instancetype)zj_webViewWithDelegate:(id)delegate
                               superView:(UIView *)superView
@@ -50,13 +50,13 @@
 
 /**
  *
- *    Create a web view with a super view and specify layout.
+ *    使用超视图创建web视图并指定布局。
  *
  *    @param delegate    UIWebViewDelegate
  *    @param superView    The super view of web view.
  *    @param constraints    The constraints added to the web view.
  *
- *    @return The instance of UIWebView.
+ *    @return UIWebView的实例
  */
 + (instancetype)zj_webViewWithDelegate:(id)delegate
                               superView:(UIView *)superView

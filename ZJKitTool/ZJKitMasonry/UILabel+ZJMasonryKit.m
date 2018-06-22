@@ -108,6 +108,16 @@
     }
     label.numberOfLines = lines;
     
+    /*
+     typedef NS_ENUM(NSInteger, NSLineBreakMode) {
+     NSLineBreakByWordWrapping = 0,         // Wrap at word boundaries, default
+     NSLineBreakByCharWrapping,        // Wrap at character boundaries
+     NSLineBreakByClipping,        // Simply clip
+     NSLineBreakByTruncatingHead,    // Truncate at head of line: "...wxyz"
+     NSLineBreakByTruncatingTail,    // Truncate at tail of line: "abcd..."
+     NSLineBreakByTruncatingMiddle    // Truncate middle of line:  "ab...yz"
+     } NS_ENUM_AVAILABLE(10_0, 6_0);
+     */
     if (lines <= 0) {
         label.lineBreakMode = NSLineBreakByWordWrapping;
     } else {
