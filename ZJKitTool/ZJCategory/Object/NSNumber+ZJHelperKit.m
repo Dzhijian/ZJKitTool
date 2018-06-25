@@ -10,7 +10,7 @@
 
 @implementation NSNumber (ZJHelperKit)
 
-- (NSString *)hyb_toString {
+- (NSString *)zj_toString {
     return [NSString stringWithFormat:@"%@", self];
 }
 

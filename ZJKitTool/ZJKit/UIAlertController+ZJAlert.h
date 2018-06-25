@@ -25,7 +25,13 @@ typedef NS_ENUM(NSInteger, OptionStyle) {
  @param cancelBlock 左边选项选中后执行的代码
  @return UIAlertController
  */
-+ (UIAlertController *)zj_alertControllerWithTitle:(NSString *)title message:(NSString *)message optionStyle:(OptionStyle)optionStyle OkTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okBlock:(dispatch_block_t)okBlock cancelBlock:(dispatch_block_t)cancelBlock;
++ (UIAlertController *)zj_alertControllerWithTitle:(NSString *)title
+                                           message:(NSString *)message
+                                       optionStyle:(OptionStyle)optionStyle
+                                           OkTitle:(NSString *)okTitle
+                                       cancelTitle:(NSString *)cancelTitle
+                                           okBlock:(dispatch_block_t)okBlock
+                                       cancelBlock:(dispatch_block_t)cancelBlock;
 
 
 /**
@@ -40,6 +46,12 @@ typedef NS_ENUM(NSInteger, OptionStyle) {
  @param cancelBlock 下面选项选中后执行的代码
  @return UIAlertController
  */
-+ (UIAlertController *)zj_sheetAlertControllerWithTitle:(NSString *)title message:(NSString *)message optionStyle:(OptionStyle)optionStyle OkTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okBlock:(dispatch_block_t)okBlock cancelBlock:(dispatch_block_t)cancelBlock;
++ (UIAlertController *)zj_sheetAlertControllerWithTitle:(NSString *)title
+                                                message:(NSString *)message
+                                            optionStyle:(OptionStyle)optionStyle
+                                                OkTitle:(NSString *)okTitle
+                                            cancelTitle:(NSString *)cancelTitle
+                                                okBlock:(dispatch_block_t)okBlock
+                                            cancelBlock:(dispatch_block_t)cancelBlock;
 
 @end

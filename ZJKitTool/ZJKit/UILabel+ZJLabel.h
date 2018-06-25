@@ -10,7 +10,13 @@
 
 @interface UILabel (ZJLabel)
 /** 创建Label */
-+(instancetype)zj_labelWithFrame:(CGRect)frame text:(NSString *)text fontSize:(int)fontSize isBold:(BOOL)isBold textColor:(UIColor *)color textAligment:(NSTextAlignment)textAligment numLines:(int)numLines;
++(instancetype)zj_labelWithFrame:(CGRect)frame
+                             text:(NSString *)text
+                        fontSize:(int)fontSize
+                          isBold:(BOOL)isBold
+                       textColor:(UIColor *)color
+                    textAligment:(NSTextAlignment)textAligment
+                        numLines:(int)numLines;
 
 /**
 *  设置字间距

@@ -13,7 +13,15 @@ typedef void (^ButtonTouchUpInsideBlock)(void);
 @interface UIButton (ZJButton)
 
 // 创建UIButton
-+(instancetype)zj_buttonWithFrame:(CGRect)frame title:(NSString *)title titleColor:(UIColor *)titleColor imageName:(NSString *)imageName backColor:(UIColor *)backColor fontSize:(int)fontSize cornerRadius:(CGFloat)radius traget:(id)traget action:(SEL)action;
++(instancetype)zj_buttonWithFrame:(CGRect)frame
+                            title:(NSString *)title
+                       titleColor:(UIColor *)titleColor
+                        imageName:(NSString *)imageName
+                        backColor:(UIColor *)backColor
+                         fontSize:(int)fontSize
+                     cornerRadius:(CGFloat)radius
+                           traget:(id)traget
+                           action:(SEL)action;
 
 /** 多久之后开始执行 */
 - (void)zj_startTime:(NSInteger)timeout waitBlock:(void(^)(NSInteger remainTime))waitBlock finishBlock:(void(^)(void))finishBlock;

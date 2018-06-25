@@ -12,10 +12,10 @@
 
 /**
  *
- *    Convert NSNumber object to a string object.
+ *    将NSNumber对象转换为字符串对象。.
  *
  *    @return A string.
  */
-- (NSString *)hyb_toString;
+- (NSString *)zj_toString;
 
 @end

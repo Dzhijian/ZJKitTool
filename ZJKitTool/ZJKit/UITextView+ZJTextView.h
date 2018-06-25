@@ -11,7 +11,11 @@
 @interface UITextView (ZJTextView)
 
 /**   创建UITextView */
-+(instancetype)zj_textViewInitWithFrame:(CGRect)frame textColor:(UIColor *)textColor fontSize:(float)fontSize bgColor:(UIColor *)bgColor;
++(instancetype)zj_textViewInitWithFrame:(CGRect)frame
+                              textColor:(UIColor *)textColor
+                               fontSize:(float)fontSize
+
+                                bgColor:(UIColor *)bgColor;
 
     
 @end

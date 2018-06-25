@@ -10,7 +10,9 @@
 
 @interface UIImageView (ZJImageView)
 /** 创建UIImageView */
-+(instancetype)zj_imageViewWithFrame:(CGRect)frame imageName:(NSString *)imageName contentMode:(UIViewContentMode)contentMode;
++(instancetype)zj_imageViewWithFrame:(CGRect)frame
+                           imageName:(NSString *)imageName
+                         contentMode:(UIViewContentMode)contentMode;
 
 
 @end

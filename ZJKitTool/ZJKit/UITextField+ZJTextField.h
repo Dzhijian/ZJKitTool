@@ -11,6 +11,11 @@
 @interface UITextField (ZJTextField)
 
 /** 创建UITextField */
-+(instancetype)zj_textFieldWithFrame:(CGRect)frame textColor:(UIColor *)tColor fontSize:(float)fontSize placeText:(NSString *)placeText placeColor:(UIColor *)placeColor borderStyle:(UITextBorderStyle)borderStyle;
++(instancetype)zj_textFieldWithFrame:(CGRect)frame
+                           textColor:(UIColor *)tColor
+                            fontSize:(float)fontSize
+                           placeText:(NSString *)placeText
+                          placeColor:(UIColor *)placeColor
+                         borderStyle:(UITextBorderStyle)borderStyle;
 
 @end

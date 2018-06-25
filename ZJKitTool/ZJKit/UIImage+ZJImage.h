@@ -14,6 +14,7 @@
 +(instancetype)zj_snapshotCurrentcreen;
 
 /** 高效添加圆角 */
--(UIImage *)zj_imageAddCornerWithRadius:(CGFloat)radius andSize:(CGSize)size;
+-(UIImage *)zj_imageAddCornerWithRadius:(CGFloat)radius
+                                andSize:(CGSize)size;
 
 @end
