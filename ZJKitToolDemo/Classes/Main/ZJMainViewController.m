@@ -31,7 +31,7 @@
 #import "ZJNavBarShadeViewController.h"
 #import "ZJSphereTagCloudViewController.h"
 #import "ZJPlayerListViewController.h"
-
+#import "ZJPickerViewController.h"
 
 
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -56,7 +56,7 @@
     self.title = @"ZJKitTool";
     self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",
                         @"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",
-                        @"导航栏渐变",@"球形TagView",@"视频列表"];
+                        @"导航栏渐变",@"球形TagView",@"视频列表",@"ZJPickerView"];
     [self setUpAllView];
 
 }
@@ -145,6 +145,11 @@
         {
             ZJPlayerListViewController *player = [[ZJPlayerListViewController alloc]init];
             [self.navigationController pushViewController:player animated:YES];
+            break;
+        }case 10:
+        {
+            ZJPickerViewController *pickerView = [[ZJPickerViewController alloc]init];
+            [self.navigationController pushViewController:pickerView animated:YES];
             break;
         }
         default:

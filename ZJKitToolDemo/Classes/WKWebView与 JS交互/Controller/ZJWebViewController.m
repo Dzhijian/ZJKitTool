@@ -25,6 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    kWeakObject(self);
+    [self zj_setNavLeftImage:kImageName(@"new_goback") block:^(id sender) {
+        [weakObject.navigationController popViewControllerAnimated:YES];
+    }];
+    
     self.webView.configuration.userContentController = [[WKUserContentController alloc] init];
     
     // 获取设备 deviceID 并回显到 H5

@@ -19,6 +19,8 @@
 		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
 		042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */; };
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
+		0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85620E3868C00B8132F /* ZJPickBaseView.m */; };
+		0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85D20E396D100B8132F /* ZJPickerViewController.m */; };
 		044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */; };
 		044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
@@ -176,6 +178,12 @@
 		042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitAndMasonryViewController.m; sourceTree = "<group>"; };
 		04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseViewController.h; sourceTree = "<group>"; };
 		04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseViewController.m; sourceTree = "<group>"; };
+		0430B85520E3868C00B8132F /* ZJPickBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickBaseView.h; sourceTree = "<group>"; };
+		0430B85620E3868C00B8132F /* ZJPickBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickBaseView.m; sourceTree = "<group>"; };
+		0430B85920E38CFE00B8132F /* ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerView.h; sourceTree = "<group>"; };
+		0430B85A20E38D4A00B8132F /* ZJPickerViewMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerViewMacro.h; sourceTree = "<group>"; };
+		0430B85C20E396D100B8132F /* ZJPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerViewController.h; sourceTree = "<group>"; };
+		0430B85D20E396D100B8132F /* ZJPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickerViewController.m; sourceTree = "<group>"; };
 		044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCellViewController.h; sourceTree = "<group>"; };
 		044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMasonryAutolayoutCellViewController.m; sourceTree = "<group>"; };
 		044EE083201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCell.h; sourceTree = "<group>"; };
@@ -539,6 +547,7 @@
 				04191E4F20888946004A24C6 /* 筛选视图 */,
 				04191E4E20888935004A24C6 /* 评论列表 */,
 				04191E4D2088890E004A24C6 /* 朋友圈列表 */,
+				0430B85B20E3965F00B8132F /* 自定义弹窗视图 */,
 				04191E54208889F9004A24C6 /* 其他 */,
 			);
 			path = Classes;
@@ -621,6 +630,27 @@
 				042190BF20186182009056E2 /* ZJMainViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0430B85420E3866200B8132F /* ZJPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				0430B85920E38CFE00B8132F /* ZJPickerView.h */,
+				0430B85A20E38D4A00B8132F /* ZJPickerViewMacro.h */,
+				0430B85520E3868C00B8132F /* ZJPickBaseView.h */,
+				0430B85620E3868C00B8132F /* ZJPickBaseView.m */,
+			);
+			path = ZJPickerView;
+			sourceTree = "<group>";
+		};
+		0430B85B20E3965F00B8132F /* 自定义弹窗视图 */ = {
+			isa = PBXGroup;
+			children = (
+				0430B85420E3866200B8132F /* ZJPickerView */,
+				0430B85C20E396D100B8132F /* ZJPickerViewController.h */,
+				0430B85D20E396D100B8132F /* ZJPickerViewController.m */,
+			);
+			path = "自定义弹窗视图";
 			sourceTree = "<group>";
 		};
 		044EE086201AD13A00ACFC0A /* MasonryCell */ = {
@@ -1437,6 +1467,7 @@
 				04B09A90209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.m in Sources */,
 				04DA134D2016E14400C619E5 /* ZJStarsView.m in Sources */,
 				04C5176C20201BA700AC15F1 /* ZJVerticalWaterFallViewController.m in Sources */,
+				0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */,
 				04BE94B520453FBC00DF6779 /* ASValuePopUpView.m in Sources */,
 				0475BEE71FD12E8A00617353 /* AppDelegate.m in Sources */,
 				04C517772020224D00AC15F1 /* ZJCollectionViewCell.m in Sources */,
@@ -1465,6 +1496,7 @@
 				04BE94C020453FBC00DF6779 /* ZFPlayerView.m in Sources */,
 				04B09A8C209DB7BD00E66CA2 /* NSArray+ZJHelperKit.m in Sources */,
 				04B09A74209DB7BD00E66CA2 /* UIViewController+ZJViewController.m in Sources */,
+				0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */,
 				04C51782202059AB00AC15F1 /* ZJImageModel.m in Sources */,
 				044EE1E1201F173100ACFC0A /* ZJElementsFlowLayout.m in Sources */,
 				04B09A6F209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m in Sources */,

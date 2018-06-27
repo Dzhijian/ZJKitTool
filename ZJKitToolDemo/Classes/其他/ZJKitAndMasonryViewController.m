@@ -56,7 +56,7 @@
         }];
     }];
     // 设置标题
-    [self zj_setNavTitle:@"ZJUIKit+Masonry"];
+    [self zj_setNavTitle:@"ZJKit+Masonry"];
     // 倒计时test
     [self timeCountDownTest];
     // 快速创建控件 + marsonry 布局
