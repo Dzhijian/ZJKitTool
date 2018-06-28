@@ -8,6 +8,7 @@
 
 #import "ZJPickerViewController.h"
 #import "ZJPickBaseView.h"
+#import "ZJAddressPickerView.h"
 
 @interface ZJPickerViewController ()
 
@@ -18,9 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ZJPickBaseView *baseView  = [[ZJPickBaseView alloc]init];
-    [baseView initWithAllView];
-    [self.view addSubview:baseView];
+    
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [ZJAddressPickerView zj_showAddressPickerWithDefaultSelected:nil resuleBlock:^(ZJProvinceModel *province, ZJCityModel *city, ZJAreaModel *area) {
+        NSLog(@"%@,%@,%@",province.name,city.name,area.name);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -21,6 +21,9 @@
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
 		0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85620E3868C00B8132F /* ZJPickBaseView.m */; };
 		0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85D20E396D100B8132F /* ZJPickerViewController.m */; };
+		0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86020E4C61400B8132F /* ZJAddressPickerView.m */; };
+		0430B86420E4C70A00B8132F /* ZJAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86320E4C70A00B8132F /* ZJAddressModel.m */; };
+		0430B86620E4DAC200B8132F /* ZJAddress.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0430B86520E4DAC200B8132F /* ZJAddress.plist */; };
 		044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */; };
 		044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
@@ -184,6 +187,11 @@
 		0430B85A20E38D4A00B8132F /* ZJPickerViewMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerViewMacro.h; sourceTree = "<group>"; };
 		0430B85C20E396D100B8132F /* ZJPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerViewController.h; sourceTree = "<group>"; };
 		0430B85D20E396D100B8132F /* ZJPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickerViewController.m; sourceTree = "<group>"; };
+		0430B85F20E4C61400B8132F /* ZJAddressPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAddressPickerView.h; sourceTree = "<group>"; };
+		0430B86020E4C61400B8132F /* ZJAddressPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAddressPickerView.m; sourceTree = "<group>"; };
+		0430B86220E4C70A00B8132F /* ZJAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAddressModel.h; sourceTree = "<group>"; };
+		0430B86320E4C70A00B8132F /* ZJAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAddressModel.m; sourceTree = "<group>"; };
+		0430B86520E4DAC200B8132F /* ZJAddress.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZJAddress.plist; sourceTree = "<group>"; };
 		044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCellViewController.h; sourceTree = "<group>"; };
 		044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMasonryAutolayoutCellViewController.m; sourceTree = "<group>"; };
 		044EE083201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCell.h; sourceTree = "<group>"; };
@@ -635,10 +643,15 @@
 		0430B85420E3866200B8132F /* ZJPickerView */ = {
 			isa = PBXGroup;
 			children = (
+				0430B86520E4DAC200B8132F /* ZJAddress.plist */,
 				0430B85920E38CFE00B8132F /* ZJPickerView.h */,
 				0430B85A20E38D4A00B8132F /* ZJPickerViewMacro.h */,
 				0430B85520E3868C00B8132F /* ZJPickBaseView.h */,
 				0430B85620E3868C00B8132F /* ZJPickBaseView.m */,
+				0430B86220E4C70A00B8132F /* ZJAddressModel.h */,
+				0430B86320E4C70A00B8132F /* ZJAddressModel.m */,
+				0430B85F20E4C61400B8132F /* ZJAddressPickerView.h */,
+				0430B86020E4C61400B8132F /* ZJAddressPickerView.m */,
 			);
 			path = ZJPickerView;
 			sourceTree = "<group>";
@@ -1295,6 +1308,7 @@
 				0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */,
 				04C5178A20219AB800AC15F1 /* ZJWebViewController.html in Resources */,
 				04DA13582017036500C619E5 /* CommitsData.json in Resources */,
+				0430B86620E4DAC200B8132F /* ZJAddress.plist in Resources */,
 				0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */,
 				04BE94CB2045433100DF6779 /* videoData.json in Resources */,
 				04191E6420889883004A24C6 /* MasonryCellData.json in Resources */,
@@ -1509,11 +1523,13 @@
 				04BE94D12045468500DF6779 /* ZJVideoResolution.m in Sources */,
 				04B09A80209DB7BD00E66CA2 /* UIColor+ZJHelperKitUIkit.m in Sources */,
 				042190C020186182009056E2 /* ZJMainViewController.m in Sources */,
+				0430B86420E4C70A00B8132F /* ZJAddressModel.m in Sources */,
 				04BE94B920453FBC00DF6779 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */,
 				04B09A77209DB7BD00E66CA2 /* UITextView+ZJTextView.m in Sources */,
 				04B09A8F209DB7BD00E66CA2 /* NSNumber+ZJHelperKit.m in Sources */,
 				04BE94BB20453FBC00DF6779 /* MMMaterialDesignSpinner.m in Sources */,
+				0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */,
 				04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */,
 				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,
 				04B09A95209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.m in Sources */,
