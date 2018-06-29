@@ -52,8 +52,19 @@
     
 }
 
-
-
+#pragma mark - 修改按钮文本颜色
+-(void)setUpConfirmTitleColor:(UIColor *)confirmColor cancelColor:(UIColor *)cancelColor{
+    
+    if (confirmColor) {
+    
+        [self.rightBtn setTitleColor:confirmColor forState:(UIControlStateNormal)];
+    }
+    
+    if (cancelColor) {
+        
+        [self.leftBtn setTitleColor:cancelColor forState:(UIControlStateNormal)];
+    }
+}
 
 #pragma mark - Getter && Setter
 -(UIView *)backView{

@@ -45,12 +45,20 @@
  */
 -(void)initWithAllView;
 
-
-#pragma mark - 点击背景图
+/**
+ * 点击背景图
+ */
 -(void)backViewTapAction:(UITapGestureRecognizer *)gesture;
-#pragma mark - 点击左边的按钮
+/**
+ * 点击左边的按钮
+ */
 -(void)leftBtnClickAction:(UIButton *)sender;
-#pragma mark - 点击右边的按钮
+/**
+ * 点击右边的按钮
+ */
 -(void)rightBtnClickAction:(UIButton *)sender;
-
+/**
+ *  设置按钮的文本颜色
+ */
+-(void)setUpConfirmTitleColor:(UIColor *)confirmColor cancelColor:(UIColor *)cancelColor;
 @end

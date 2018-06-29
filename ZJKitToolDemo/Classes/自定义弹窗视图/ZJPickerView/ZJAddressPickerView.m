@@ -11,37 +11,45 @@
 
 @interface ZJAddressPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
+    UIView *_selectBackView;
     BOOL _isDataSourceValid;    // 数据源是否合法
     NSInteger _provinceIndex;   // 记录省选中的位置
     NSInteger _cityIndex;       // 记录市选中的位置
     NSInteger _areaIndex;       // 记录区选中的位置
-    
     NSArray * _defaultSelectedArr;
 }
 // 地址选择器
-@property (nonatomic, strong) UIPickerView *pickerView;
+@property (nonatomic, strong) UIPickerView          *pickerView;
 // 省模型数组
-@property (nonatomic, strong) NSArray *provinceArr;
+@property (nonatomic, strong) NSArray               *provinceArr;
 // 市模型数组
-@property (nonatomic, strong) NSArray *cityArr;
+@property (nonatomic, strong) NSArray               *cityArr;
 // 区模型数组
-@property (nonatomic, strong) NSArray *areaArr;
+@property (nonatomic, strong) NSArray               *areaArr;
 // 数据源
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSArray               *dataSource;
 // 选中的省
-@property(nonatomic, strong) ZJProvinceModel *selectProvinceModel;
+@property(nonatomic, strong) ZJProvinceModel        *selectProvinceModel;
 // 选中的市
-@property(nonatomic, strong) ZJCityModel *selectCityModel;
+@property(nonatomic, strong) ZJCityModel            *selectCityModel;
 // 选中的区
-@property(nonatomic, strong) ZJAreaModel *selectAreaModel;
+@property(nonatomic, strong) ZJAreaModel            *selectAreaModel;
 // 选中后的回调
-@property (nonatomic, copy) ZJAddressResultBlock resultBlock;
+@property (nonatomic, copy) ZJAddressResultBlock    resultBlock;
 // 取消选择的回调
-@property (nonatomic, copy) ZJAddressCancelBlock cancelBlock;
+@property (nonatomic, copy) ZJAddressCancelBlock    cancelBlock;
 // 展示类型
-@property (nonatomic, assign) ZJAddressPickerMode pickerViewMode;
+@property (nonatomic, assign) ZJAddressPickerMode   pickerViewMode;
 // 是否开启自动选择
-@property (nonatomic, assign) BOOL isAutoSelect;
+@property (nonatomic, assign) BOOL                  isAutoSelect;
+// 分割线的颜色
+@property (nonatomic, strong) UIColor               *lineColor;
+// 选中行文本的颜色
+@property (nonatomic, strong) UIColor               *selecteRowTextColor;
+// 选中行背景颜色
+@property (nonatomic, strong) UIColor               *selectRowBGColor;
+// 行高
+@property (nonatomic, assign) CGFloat               rowHeight;
 @end
 
 
@@ -50,22 +58,147 @@
 #pragma mark - 1.显示地址选择器
 +(void)zj_showAddressPickerWithDefaultSelected:(NSArray *)defaultSeleArr
                                    resuleBlock:(ZJAddressResultBlock)resultBlock{
-    ZJAddressPickerView *addressPickerView = [[ZJAddressPickerView alloc] initWithShowPickerViewMode:ZJAddressPickerModeArea dataSource:nil isAutoSelected:NO resultBlock:resultBlock cancelBlock:nil];
+    
+    [self zj_showAddressPickerWithDefaultSelected:defaultSeleArr
+                                     isAutoSelect:NO
+                                      resultBlock:resultBlock];
+    
+}
+
+
++ (void)zj_showAddressPickerWithDefaultSelected:(NSArray *)defaultSelectedArr
+                                   isAutoSelect:(BOOL)isAutoSelect
+                                    resultBlock:(ZJAddressResultBlock)resultBlock{
+    
+    [self zj_showAddressPickerWithShowType:ZJAddressPickerModeArea
+                           defaultSelected:defaultSelectedArr
+                              isAutoSelect:isAutoSelect
+                               resultBlock:resultBlock
+                               cancelBlock:nil];
+    
+}
++ (void)zj_showAddressPickerWithShowType:(ZJAddressPickerMode)pickerMode
+                         defaultSelected:(NSArray *)defaultSelectedArr
+                            isAutoSelect:(BOOL)isAutoSelect
+                             resultBlock:(ZJAddressResultBlock)resultBlock
+                             cancelBlock:(ZJAddressCancelBlock)cancelBlock{
+    
+    [self zj_showAddressPickerWithShowType:pickerMode
+                                dataSource:nil
+                           defaultSelected:defaultSelectedArr
+                              isAutoSelect:isAutoSelect
+                               resultBlock:resultBlock
+                               cancelBlock:cancelBlock];
+}
+
++ (void)zj_showAddressPickerWithShowType:(ZJAddressPickerMode)pickerMode
+                           dataSource:(NSArray *)dataSource
+                      defaultSelected:(NSArray *)defaultSelectedArr
+                         isAutoSelect:(BOOL)isAutoSelect
+                          resultBlock:(ZJAddressResultBlock)resultBlock
+                          cancelBlock:(ZJAddressCancelBlock)cancelBlock{
+    
+    [self zj_showAddressPickerWithShowType:pickerMode
+                                dataSource:dataSource
+                           defaultSelected:defaultSelectedArr
+                              isAutoSelect:isAutoSelect
+                                 lineColor:nil
+                        selectRowTextColor:nil
+                          selectRowBGColor:nil
+                      confirmBtnTitleColor:nil
+                       cancelBtnTitleColor:nil
+                                 rowHeight:0
+                               resultBlock:resultBlock
+                               cancelBlock:cancelBlock];
+    
+}
++ (void)zj_showAddressPickerWithShowType:(ZJAddressPickerMode)pickerMode
+                               dataSource:(NSArray *)dataSource
+                          defaultSelected:(NSArray *)defaultSelectedArr
+                             isAutoSelect:(BOOL)isAutoSelect
+                                lineColor:(UIColor *)lineColor
+                       selectRowTextColor:(UIColor *)selectRowTextColor
+                         selectRowBGColor:(UIColor *)selectRowBGColor
+                              resultBlock:(ZJAddressResultBlock)resultBlock
+                             cancelBlock:(ZJAddressCancelBlock)cancelBlock{
+    
+    [self zj_showAddressPickerWithShowType:pickerMode
+                                dataSource:dataSource
+                           defaultSelected:defaultSelectedArr
+                              isAutoSelect:isAutoSelect
+                                 lineColor:lineColor
+                        selectRowTextColor:selectRowTextColor
+                          selectRowBGColor:selectRowBGColor
+                      confirmBtnTitleColor:nil
+                       cancelBtnTitleColor:nil
+                                 rowHeight:0
+                               resultBlock:resultBlock
+                               cancelBlock:cancelBlock];
+}
+
++ (void)zj_showAddressPickerWithShowType:(ZJAddressPickerMode)pickerMode
+                              dataSource:(NSArray *)dataSource
+                         defaultSelected:(NSArray *)defaultSelectedArr
+                            isAutoSelect:(BOOL)isAutoSelect
+                               lineColor:(UIColor *)lineColor
+                      selectRowTextColor:(UIColor *)selectRowTextColor
+                        selectRowBGColor:(UIColor *)selectRowBGColor
+                    confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
+                     cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
+                               rowHeight:(CGFloat)rowHeight
+                             resultBlock:(ZJAddressResultBlock)resultBlock
+                             cancelBlock:(ZJAddressCancelBlock)cancelBlock{
+    
+    ZJAddressPickerView *addressPickerView = [[ZJAddressPickerView alloc]
+                                              initWithShowPickerViewMode:pickerMode
+                                              dataSource:dataSource
+                                              defaultSelected:defaultSelectedArr
+                                              isAutoSelected:isAutoSelect
+                                              lineColor:lineColor
+                                              selectRowTextColor:selectRowTextColor
+                                              selectRowBGColor:selectRowBGColor
+                                              confirmBtnTitleColor:confirmBtnTitleColor
+                                              cancelBtnTitleColor:cancelBtnTitleColor
+                                              rowHeight:rowHeight
+                                              resultBlock:resultBlock
+                                              cancelBlock:cancelBlock];
+    
     [addressPickerView showPickerViewWithAnimation:YES];
     
 }
+
+#pragma mark - 创建一个 pickerview
 -(instancetype)initWithShowPickerViewMode:(ZJAddressPickerMode)pickerViewMode
                                dataSource:(NSArray *)dataSource
-                           isAutoSelected:(BOOL)isAutoSelected
+                          defaultSelected:(NSArray *)defaultSelectedArr
+                           isAutoSelected:(BOOL)isAutoSelect
+                                lineColor:(UIColor *)lineColor
+                       selectRowTextColor:(UIColor *)selectRowTextColor
+                         selectRowBGColor:(UIColor *)selectRowBGColor
+                     confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
+                      cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
+                                rowHeight:(CGFloat)rowHeight
                               resultBlock:(ZJAddressResultBlock)resultBlock
                               cancelBlock:(ZJAddressCancelBlock)cancelBlock{
     
     if (self = [super init]) {
-        _isDataSourceValid = YES;
-        self.pickerViewMode = pickerViewMode;
-        self.dataSource = dataSource;
-        self.resultBlock = resultBlock;
-        self.cancelBlock = cancelBlock;
+        _isDataSourceValid          = YES;
+        self.pickerViewMode         = pickerViewMode;
+        _defaultSelectedArr         = defaultSelectedArr;
+        self.dataSource             = dataSource;
+        self.resultBlock            = resultBlock;
+        self.cancelBlock            = cancelBlock;
+        self.isAutoSelect           = isAutoSelect;
+        self.lineColor              = lineColor;
+        self.selecteRowTextColor    = selectRowTextColor;
+        self.selectRowBGColor       = selectRowBGColor;
+        self.rowHeight              = rowHeight ? rowHeight : 35.0f;
+        
+        
+        if (confirmBtnTitleColor || cancelBtnTitleColor) {
+            
+            [self setUpConfirmTitleColor:confirmBtnTitleColor cancelColor:cancelBtnTitleColor];
+        }
         
         [self loadAddressData];
         
@@ -352,8 +485,17 @@
 
 }
 
+
 // 配置 pickerView 的显示内容,在此方法中实现省份和城市间的联动
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    if (self.lineColor) {
+        // 设置分割线的颜色
+        ((UIView *)[pickerView.subviews objectAtIndex:1]).backgroundColor = self.lineColor;
+        ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
+    }
+    
+   
     
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.alertView.frame.size.width / 3, 35 * kScaleFit)];
     backView.backgroundColor = [UIColor clearColor];
@@ -366,15 +508,32 @@
     // 字体自适应属性
     label.minimumScaleFactor = 0.5f;
     
+    
+
     if (component == 0) {
         ZJProvinceModel *model = self.provinceArr[row];
         label.text = model.name;
-    }else if (component == 1){
+        
+        if (row == _provinceIndex && self.selecteRowTextColor) {
+            label.textColor = self.selecteRowTextColor;
+        }
+        
+    }else if (component == 1 ){
         ZJCityModel *model = self.cityArr[row];
         label.text = model.name;
-    }else if (component == 2){
+        
+        if (row == _cityIndex && self.selecteRowTextColor) {
+            label.textColor = self.selecteRowTextColor;
+        }
+        
+    }else if (component == 2 ){
         ZJAreaModel *model = self.areaArr[row];
         label.text = model.name;
+        
+        if (row == _areaIndex && self.selecteRowTextColor) {
+            label.textColor = self.selecteRowTextColor;
+        }
+
     }
     
     return backView;
@@ -382,7 +541,7 @@
 
 // 设置 pickerview 的行高
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 35.0f * kScaleFit;
+    return self.rowHeight * kScaleFit;
 }
 
 #pragma mark - pickerview 的选中回调
@@ -391,13 +550,13 @@
     if (component == 0) {
         // 保存选择的省份的索引
         _provinceIndex = row;
-        _provinceIndex = row;
         switch (self.pickerViewMode) {
             case ZJAddressPickerModeProvince:
             {
                 self.selectProvinceModel = self.provinceArr[_provinceIndex];
                 self.selectCityModel = nil;
                 self.selectAreaModel = nil;
+                
             }
                 break;
             case ZJAddressPickerModeCity:
@@ -408,6 +567,7 @@
                 self.selectProvinceModel = self.provinceArr[_provinceIndex];
                 self.selectCityModel = self.cityArr[0];
                 self.selectAreaModel = nil;
+                _cityIndex = 0;
             }
                 break;
             case ZJAddressPickerModeArea:
@@ -421,6 +581,8 @@
                 self.selectProvinceModel = self.provinceArr[_provinceIndex];
                 self.selectCityModel = self.cityArr[0];
                 self.selectAreaModel = self.areaArr[0];
+                _cityIndex = 0;
+                _areaIndex = 0;
             }
                 break;
             default:
@@ -436,6 +598,7 @@
             {
                 self.selectCityModel = self.cityArr[_cityIndex];
                 self.selectAreaModel = nil;
+                
             }
                 break;
             case ZJAddressPickerModeArea:
@@ -445,6 +608,7 @@
                 [self.pickerView selectRow:0 inComponent:2 animated:YES];
                 self.selectCityModel = self.cityArr[_cityIndex];
                 self.selectAreaModel = self.areaArr[0];
+                _areaIndex = 0;
             }
                 break;
             default:
@@ -465,6 +629,29 @@
             self.resultBlock(self.selectProvinceModel, self.selectCityModel, self.selectAreaModel);
         }
     }
+    
+    [pickerView reloadAllComponents];
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    if (self.subviews.count) {
+        
+        NSArray *subviews = self.pickerView.subviews;
+        if (!(subviews.count > 0)) {
+            return;
+        }
+        
+        NSArray *coloms = subviews.firstObject;
+        NSArray *subviewCache = [coloms valueForKey:@"subviewCache"];
+        if (subviewCache.count > 0) {
+            UIView *middleContainerView = [subviewCache.firstObject valueForKey:@"middleContainerView"];
+            if (middleContainerView) {
+                middleContainerView.backgroundColor = self.selectRowBGColor;
+            }
+        }
+    }
+    
 }
 
 #pragma mark - Getter && Setter
