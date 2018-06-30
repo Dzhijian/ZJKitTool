@@ -15,15 +15,31 @@ typedef void(^ZJNormalResultBlock)(id selectValue);
 typedef void(^ZJNormalCancelBlock)(void);
 
 /**
- *
+ 
+ 1.显示自定义字符串选择器,支持title,默认选择,选择回调
+ 
+ @param title 标题
+ @param dataSource 数据源
+ @param defaultSelValue 默认选中的值
+ @param resultBlock 确认返回回调
  */
-#pragma mark - 1.显示自定义字符串选择器,支持title,默认选择,选择回调
+
 + (void)showStringPickerWithTitle:(NSString *)title
                        dataSource:(id)dataSource
                   defaultSelValue:(id)defaultSelValue
                       resultBlock:(ZJNormalResultBlock)resultBlock;
 
-#pragma mark - 显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调
+/**
+ 
+显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调
+ 
+ @param title 标题
+ @param dataSource 数据源
+ @param defaultSelValue 默认选中的值
+ @param isAutoSelect 是否自动选择
+ @param resultBlock 确认返回回调
+ @param cancelBlock 取消返回回调
+ */
 + (void)zj_showStringPickerWithTitle:(NSString *)title
                           dataSource:(id)dataSource
                      defaultSelValue:(id)defaultSelValue
@@ -32,7 +48,19 @@ typedef void(^ZJNormalCancelBlock)(void);
                          cancelBlock:(ZJNormalCancelBlock)cancelBlock;
 
 
-#pragma mark - 显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高
+/**
+ 
+ 显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高
+
+ @param title 标题
+ @param dataSource 数据源
+ @param defaultSelValue 默认选中的值
+ @param isAutoSelect 是否自动选择
+ @param rowHeight 行高度
+ @param lineColor 分割线颜色
+ @param resultBlock 确认返回回调
+ @param cancelBlock 取消返回回调
+ */
 + (void)zj_showStringPickerWithTitle:(NSString *)title
                           dataSource:(id)dataSource
                      defaultSelValue:(id)defaultSelValue
@@ -42,9 +70,22 @@ typedef void(^ZJNormalCancelBlock)(void);
                          resultBlock:(ZJNormalResultBlock)resultBlock
                          cancelBlock:(ZJNormalCancelBlock)cancelBlock;
 
+
+
 /**
- * 显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高,按钮颜色
- *
+ 
+  显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高,按钮颜色
+
+ @param title 标题
+ @param dataSource 数据源
+ @param defaultSelValue 默认选中的值
+ @param isAutoSelect 是否自动选择
+ @param rowHeight 行高度
+ @param lineColor 分割线颜色
+ @param confirmBtnTitleColor 确认按钮的颜色
+ @param cancelBtnTitleColor 取消按钮的文不颜色
+ @param resultBlock 确认返回回调
+ @param cancelBlock 取消返回回调
  */
 + (void)zj_showStringPickerWithTitle:(NSString *)title
                           dataSource:(id)dataSource
