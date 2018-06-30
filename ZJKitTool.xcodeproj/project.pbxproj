@@ -24,6 +24,7 @@
 		0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86020E4C61400B8132F /* ZJAddressPickerView.m */; };
 		0430B86420E4C70A00B8132F /* ZJAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86320E4C70A00B8132F /* ZJAddressModel.m */; };
 		0430B86620E4DAC200B8132F /* ZJAddress.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0430B86520E4DAC200B8132F /* ZJAddress.plist */; };
+		0430B86920E7655500B8132F /* ZJNormalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86820E7655500B8132F /* ZJNormalPickerView.m */; };
 		044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */; };
 		044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
@@ -192,6 +193,8 @@
 		0430B86220E4C70A00B8132F /* ZJAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAddressModel.h; sourceTree = "<group>"; };
 		0430B86320E4C70A00B8132F /* ZJAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAddressModel.m; sourceTree = "<group>"; };
 		0430B86520E4DAC200B8132F /* ZJAddress.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZJAddress.plist; sourceTree = "<group>"; };
+		0430B86720E7655500B8132F /* ZJNormalPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNormalPickerView.h; sourceTree = "<group>"; };
+		0430B86820E7655500B8132F /* ZJNormalPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNormalPickerView.m; sourceTree = "<group>"; };
 		044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCellViewController.h; sourceTree = "<group>"; };
 		044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMasonryAutolayoutCellViewController.m; sourceTree = "<group>"; };
 		044EE083201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCell.h; sourceTree = "<group>"; };
@@ -652,6 +655,8 @@
 				0430B86320E4C70A00B8132F /* ZJAddressModel.m */,
 				0430B85F20E4C61400B8132F /* ZJAddressPickerView.h */,
 				0430B86020E4C61400B8132F /* ZJAddressPickerView.m */,
+				0430B86720E7655500B8132F /* ZJNormalPickerView.h */,
+				0430B86820E7655500B8132F /* ZJNormalPickerView.m */,
 			);
 			path = ZJPickerView;
 			sourceTree = "<group>";
@@ -1534,6 +1539,7 @@
 				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,
 				04B09A95209DB7BD00E66CA2 /* NSMutableDictionary+ZJHelperKit.m in Sources */,
 				0408D23E209EED8D00097E14 /* UIControl+ZJActionBlock.m in Sources */,
+				0430B86920E7655500B8132F /* ZJNormalPickerView.m in Sources */,
 				04B09A78209DB7BD00E66CA2 /* UIButton+ZJButton.m in Sources */,
 				04B09A68209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m in Sources */,
 				04BE94C32045403200DF6779 /* ZJPlayerListViewController.m in Sources */,

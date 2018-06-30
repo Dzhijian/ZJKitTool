@@ -495,11 +495,10 @@
         ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
     }
     
-   
-    
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.alertView.frame.size.width / 3, 35 * kScaleFit)];
+
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.alertView.frame.size.width / 3, self.rowHeight * kScaleFit)];
     backView.backgroundColor = [UIColor clearColor];
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(5*kScaleFit, 0, (self.alertView.frame.size.width) / 3 - 10 * kScaleFit, 35 * kScaleFit)];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(5*kScaleFit, 0, (self.alertView.frame.size.width) / 3 - 10 * kScaleFit, self.rowHeight * kScaleFit)];
     [backView addSubview:label];
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;

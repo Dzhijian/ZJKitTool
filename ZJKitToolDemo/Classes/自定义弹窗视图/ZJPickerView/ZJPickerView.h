@@ -11,5 +11,6 @@
 #define ZJPickerView_h
 
 #import "ZJPickerViewMacro.h"
-
+#import "ZJNormalPickerView.h"
+#import "ZJAddressPickerView.h"
 #endif /* ZJPickerView_h */
