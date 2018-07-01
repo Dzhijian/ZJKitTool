@@ -35,8 +35,8 @@
 		0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEEE1FD12E8A00617353 /* Assets.xcassets */; };
 		0475BEF21FD12E8A00617353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0475BEF01FD12E8A00617353 /* LaunchScreen.storyboard */; };
 		0475BEF51FD12E8A00617353 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEF41FD12E8A00617353 /* main.m */; };
-		0475BEFF1FD12E8A00617353 /* ZJUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEFE1FD12E8A00617353 /* ZJUIKitTests.m */; };
-		0475BF0A1FD12E8A00617353 /* ZJUIKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BF091FD12E8A00617353 /* ZJUIKitUITests.m */; };
+		0475BEFF1FD12E8A00617353 /* ZJKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BEFE1FD12E8A00617353 /* ZJKitTests.m */; };
+		0475BF0A1FD12E8A00617353 /* ZJKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475BF091FD12E8A00617353 /* ZJKitUITests.m */; };
 		048E8A28201728C600486470 /* ZJChooseOneRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A19201728C600486470 /* ZJChooseOneRightCell.m */; };
 		048E8A29201728C600486470 /* ZJChooseViewOneLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A1B201728C600486470 /* ZJChooseViewOneLeftCell.m */; };
 		048E8A2A201728C600486470 /* ZJChooseControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A1D201728C600486470 /* ZJChooseControlView.m */; };
@@ -214,10 +214,10 @@
 		0475BEF31FD12E8A00617353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0475BEF41FD12E8A00617353 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0475BEFA1FD12E8A00617353 /* ZJKitToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJKitToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0475BEFE1FD12E8A00617353 /* ZJUIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJUIKitTests.m; sourceTree = "<group>"; };
+		0475BEFE1FD12E8A00617353 /* ZJKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitTests.m; sourceTree = "<group>"; };
 		0475BF001FD12E8A00617353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0475BF051FD12E8A00617353 /* ZJKitToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJKitToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0475BF091FD12E8A00617353 /* ZJUIKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJUIKitUITests.m; sourceTree = "<group>"; };
+		0475BF091FD12E8A00617353 /* ZJKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitUITests.m; sourceTree = "<group>"; };
 		0475BF0B1FD12E8A00617353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048E8A18201728C600486470 /* ZJChooseOneRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJChooseOneRightCell.h; sourceTree = "<group>"; };
 		048E8A19201728C600486470 /* ZJChooseOneRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJChooseOneRightCell.m; sourceTree = "<group>"; };
@@ -753,7 +753,7 @@
 		0475BEFD1FD12E8A00617353 /* ZJKitToolTests */ = {
 			isa = PBXGroup;
 			children = (
-				0475BEFE1FD12E8A00617353 /* ZJUIKitTests.m */,
+				0475BEFE1FD12E8A00617353 /* ZJKitTests.m */,
 				0475BF001FD12E8A00617353 /* Info.plist */,
 			);
 			path = ZJKitToolTests;
@@ -762,7 +762,7 @@
 		0475BF081FD12E8A00617353 /* ZJKitToolUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0475BF091FD12E8A00617353 /* ZJUIKitUITests.m */,
+				0475BF091FD12E8A00617353 /* ZJKitUITests.m */,
 				0475BF0B1FD12E8A00617353 /* Info.plist */,
 			);
 			path = ZJKitToolUITests;
@@ -1551,7 +1551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0475BEFF1FD12E8A00617353 /* ZJUIKitTests.m in Sources */,
+				0475BEFF1FD12E8A00617353 /* ZJKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1559,7 +1559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0475BF0A1FD12E8A00617353 /* ZJUIKitUITests.m in Sources */,
+				0475BF0A1FD12E8A00617353 /* ZJKitUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

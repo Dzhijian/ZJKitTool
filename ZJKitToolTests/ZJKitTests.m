@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface ZJUIKitTests : XCTestCase
+@interface ZJKitTests : XCTestCase
 
 @end
 
-@implementation ZJUIKitTests
+@implementation ZJKitTests
 
 - (void)setUp {
     [super setUp];
