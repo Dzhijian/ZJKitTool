@@ -92,6 +92,7 @@
         
         cell.detailLab.textColor = kOrangeColor;
     }
+
     return cell;
 
 }
