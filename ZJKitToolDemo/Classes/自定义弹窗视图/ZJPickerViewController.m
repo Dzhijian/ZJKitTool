@@ -124,7 +124,6 @@
     
     
     
-    
     UILabel *lab4 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择按钮" superView: self.view constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(lab3.mas_bottom).offset(25);
         make.left.mas_equalTo(30);
@@ -139,9 +138,73 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
+        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType: ZJDatePickerModeMD defaultSelValue:nil resultBlock:^(NSString *selectValue) {
+            lab4.text = [NSString stringWithFormat:@"%@",selectValue];
+        }];
+    }];
+    
+    
+    UILabel *lab5 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择按钮" superView: self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab4.mas_bottom).offset(25);
+        make.left.mas_equalTo(30);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(35);
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"选择时间" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab5.mas_centerY);
+        make.left.equalTo(lab5.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
         [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType:ZJDatePickerModeYMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 resultBlock:^(NSString *selectValue) {
             NSLog(@"%@",selectValue);
-            lab4.text = [NSString stringWithFormat:@"%@",selectValue];
+            lab5.text = [NSString stringWithFormat:@"%@",selectValue];
+        } cancelBlock:^{
+            
+        }];
+    }];
+    
+    UILabel *lab6 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择按钮" superView: self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab5.mas_bottom).offset(25);
+        make.left.mas_equalTo(30);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(35);
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"选择时间" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab6.mas_centerY);
+        make.left.equalTo(lab6.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
+        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType:ZJDatePickerModeMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 leftBtnTitleColor:kRedColor rightBtnTitleColor:kBlueColor selecteRowTextColor:kRGB(58, 99, 159) selectRowBGColor:kRGBA(170, 130, 55, 0.6) resultBlock:^(NSString *selectValue) {
+            NSLog(@"%@",selectValue);
+            lab6.text = [NSString stringWithFormat:@"%@",selectValue];
+        } cancelBlock:^{
+            
+        }];
+    }];
+    
+    
+    UILabel *lab7 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择按钮" superView: self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab6.mas_bottom).offset(25);
+        make.left.mas_equalTo(30);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(35);
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"选择字符串" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab7.mas_centerY);
+        make.left.equalTo(lab7.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
+        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择" dataSource:@[@"男",@"女",@"人妖",@"未知"] defaultSelValue:@[@"人妖"] isAutoSelect: NO rowHeight:40 lineColor:kRedColor confirmBtnTitleColor:kGreenColor cancelBtnTitleColor:kPurpleColor selecteRowTextColor:kRGB(130, 60, 50) selectRowBGColor:kRGB(77, 99, 110) resultBlock:^(id selectValue) {
+            lab7.text = [NSString stringWithFormat:@"%@",selectValue];
         } cancelBlock:^{
             
         }];

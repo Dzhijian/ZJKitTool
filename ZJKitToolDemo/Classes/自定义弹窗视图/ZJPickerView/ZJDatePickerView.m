@@ -61,7 +61,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) ZJDateResultBlock resultBlock;
 /** 取消选择的回调 */
 @property (nonatomic, copy) ZJDateCancelBlock cancelBlock;
-
+/** 存取选中行 */
+@property (nonatomic,strong) NSMutableDictionary *selectedRowCache;
 @end
 
 @implementation ZJDatePickerView
@@ -96,7 +97,7 @@ typedef enum : NSUInteger {
                      defaultSelValue:defaultSelValue
                              minDate:nil
                              maxDate:nil
-                        isAutoSelect:YES
+                        isAutoSelect:isAutoSelect
                          resultBlock:resultBlock
                          cancelBlock:cancelBlock];
     
@@ -118,14 +119,13 @@ typedef enum : NSUInteger {
                      defaultSelValue:defaultSelValue
                              minDate:minDate
                              maxDate:maxDate
-                        isAutoSelect:YES
+                        isAutoSelect:isAutoSelect
                            lineColor:nil
                            rowHeight:0
                          resultBlock:resultBlock
                          cancelBlock:cancelBlock];
     
 }
-
 #pragma mark - 4.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、行高、取消选择的回调）
 + (void)zj_showDatePickerWithTitle:(NSString *)title
                           dateType:(ZJDatePickerMode)dateType
@@ -137,6 +137,65 @@ typedef enum : NSUInteger {
                          rowHeight:(CGFloat)rowHeight
                        resultBlock:(ZJDateResultBlock)resultBlock
                        cancelBlock:(ZJDateCancelBlock)cancelBlock {
+
+    [self zj_showDatePickerWithTitle:title
+                            dateType:dateType
+                     defaultSelValue:defaultSelValue
+                             minDate:minDate maxDate:maxDate
+                        isAutoSelect:isAutoSelect
+                           lineColor:lineColor
+                           rowHeight:rowHeight
+                   leftBtnTitleColor:nil
+                  rightBtnTitleColor:nil
+                         resultBlock:resultBlock
+                         cancelBlock:cancelBlock];
+}
+
+
+#pragma mark - 5.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、行高、按钮的颜色、取消选择的回调）
++ (void)zj_showDatePickerWithTitle:(NSString *)title
+                          dateType:(ZJDatePickerMode)dateType
+                   defaultSelValue:(NSString *)defaultSelValue
+                           minDate:(NSDate *)minDate
+                           maxDate:(NSDate *)maxDate
+                      isAutoSelect:(BOOL)isAutoSelect
+                         lineColor:(UIColor *)lineColor
+                         rowHeight:(CGFloat)rowHeight
+                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
+                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
+                       resultBlock:(ZJDateResultBlock)resultBlock
+                       cancelBlock:(ZJDateCancelBlock)cancelBlock {
+    [self zj_showDatePickerWithTitle:title
+                            dateType:dateType
+                     defaultSelValue:defaultSelValue
+                             minDate:minDate
+                             maxDate:maxDate
+                        isAutoSelect:isAutoSelect
+                           lineColor:lineColor
+                           rowHeight:rowHeight
+                   leftBtnTitleColor:leftBtnTitleColor
+                  rightBtnTitleColor:rightBtnTitleColor
+                 selecteRowTextColor:nil
+                    selectRowBGColor:nil
+                         resultBlock:resultBlock
+                         cancelBlock:cancelBlock];
+}
+
+#pragma mark - 6.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的颜色、取消选择的回调）
++ (void)zj_showDatePickerWithTitle:(NSString *)title
+                          dateType:(ZJDatePickerMode)dateType
+                   defaultSelValue:(NSString *)defaultSelValue
+                           minDate:(NSDate *)minDate
+                           maxDate:(NSDate *)maxDate
+                      isAutoSelect:(BOOL)isAutoSelect
+                         lineColor:(UIColor *)lineColor
+                         rowHeight:(CGFloat)rowHeight
+                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
+                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
+               selecteRowTextColor:(UIColor *)selecteRowTextColor
+                  selectRowBGColor:(UIColor *)selectRowBGColor
+                       resultBlock:(ZJDateResultBlock)resultBlock
+                       cancelBlock:(ZJDateCancelBlock)cancelBlock {
     ZJDatePickerView *datePickerView = [[ZJDatePickerView alloc] initWithTitle:title
                                                                       dateType:dateType
                                                                defaultSelValue:defaultSelValue
@@ -145,11 +204,14 @@ typedef enum : NSUInteger {
                                                                      lineColor:lineColor
                                                                      rowHeight:rowHeight
                                                                   isAutoSelect:isAutoSelect
+                                                             leftBtnTitleColor:leftBtnTitleColor
+                                                            rightBtnTitleColor:rightBtnTitleColor
+                                                           selecteRowTextColor:selecteRowTextColor
+                                                              selectRowBGColor:selectRowBGColor
                                                                    resultBlock:resultBlock
                                                                    cancelBlock:cancelBlock];
     [datePickerView showPickerViewWithAnimation:YES];
 }
-
 
 #pragma mark - 初始化时间选择器
 - (instancetype)initWithTitle:(NSString *)title
@@ -160,17 +222,28 @@ typedef enum : NSUInteger {
                     lineColor:(UIColor *)lineColor
                     rowHeight:(CGFloat)rowHeight
                  isAutoSelect:(BOOL)isAutoSelect
+            leftBtnTitleColor:(UIColor *)leftBtnTitleColor
+           rightBtnTitleColor:(UIColor *)rightBtnTitleColor
+          selecteRowTextColor:(UIColor *)selecteRowTextColor
+             selectRowBGColor:(UIColor *)selectRowBGColor
                   resultBlock:(ZJDateResultBlock)resultBlock
                   cancelBlock:(ZJDateCancelBlock)cancelBlock{
     
     if (self = [super init]) {
-        _title                  = title;
-        _isAutoSelect           = isAutoSelect;
-        _resultBlock            = resultBlock;
-        _cancelBlock            = cancelBlock;
-        self.pickerMode         = pickerMode;
-        self.lineColor          = lineColor;
-        self.rowHeight          = rowHeight ? rowHeight : 35.0f;
+        _title                      = title;
+        _isAutoSelect               = isAutoSelect;
+        _resultBlock                = resultBlock;
+        _cancelBlock                = cancelBlock;
+        self.pickerMode             = pickerMode;
+        self.lineColor              = lineColor;
+        self.rowHeight              = rowHeight ? rowHeight : 35.0f;
+        self.selecteRowTextColor    = selecteRowTextColor;
+        self.selectRowBGColor       = selectRowBGColor;
+        // 配置按钮的文本颜色
+        if (leftBtnTitleColor || rightBtnTitleColor) {
+            
+            [self setUpConfirmTitleColor:rightBtnTitleColor cancelColor:leftBtnTitleColor];
+        }
         
         [self setupSelectDateFormatter:pickerMode];
         // 设置最小值限制
@@ -364,6 +437,7 @@ typedef enum : NSUInteger {
             break;
     }
 }
+
 #pragma mark - 初始化子视图
 - (void)initWithAllView {
     [super initWithAllView];
@@ -376,6 +450,8 @@ typedef enum : NSUInteger {
     }
 
 }
+
+
 #pragma mark - 设置日期数据源数组
 - (void)initDefaultDateArray {
     // 1. 设置 yearArr 数组
@@ -422,7 +498,11 @@ typedef enum : NSUInteger {
         indexArr = @[@(hourIndex), @(minuteIndex)];
     }
     for (NSInteger i = 0; i < indexArr.count; i++) {
+        
         [self.pickerView selectRow:[indexArr[i] integerValue] inComponent:i animated:animated];
+        
+        //保存选中的行
+        [self.selectedRowCache setObject:@([indexArr[i] integerValue]) forKey:@(i)];
     }
 }
 #pragma mark - UIPickerViewDelegate,UIPickerViewDataSource
@@ -498,6 +578,11 @@ typedef enum : NSUInteger {
         ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
     }
     
+    // 设置选中行的背景色
+    if (self.selectRowBGColor) {
+        [self setUpPickerView:pickerView customSelectedBGRowColor:self.selectRowBGColor];
+    }
+    
     UILabel *label = (UILabel *)view;
     if (!label) {
         label = [[UILabel alloc]init];
@@ -508,6 +593,12 @@ typedef enum : NSUInteger {
         label.adjustsFontSizeToFitWidth = YES;
         // 自适应最小字体缩放比例
         label.minimumScaleFactor = 0.5f;
+        
+        NSInteger selected = [(NSNumber *)[self.selectedRowCache objectForKey:@(component)] integerValue];
+        // 设置选中行的文本颜色
+        if (self.selecteRowTextColor && selected == row) {
+            [label setTextColor:self.selecteRowTextColor];
+        };
     }
     
     [self setDateLabelText:label component:component row:row];
@@ -520,10 +611,36 @@ typedef enum : NSUInteger {
     return self.rowHeight * kScaleFit;
 }
 
+#pragma mark - 配置背景色
+- (void)setUpPickerView:(UIPickerView *)pickerView customSelectedBGRowColor:(UIColor *)color
+{
+    NSArray *subviews = pickerView.subviews;
+    if (!(subviews.count > 0)) {
+        return;
+    }
+    if (!color) {
+        return;
+    }
+    NSArray *coloms = subviews.firstObject;
+    if (coloms) {
+        NSArray *subviewCache = [coloms valueForKey:@"subviewCache"];
+        if (subviewCache.count > 0) {
+            UIView *middleContainerView = [subviewCache.firstObject valueForKey:@"middleContainerView"];
+            if (middleContainerView) {
+                middleContainerView.backgroundColor = color;
+            }
+        }
+    }
+}
+
 // 4.选中时回调的委托方法，在此方法中实现省份和城市间的联动
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     // 获取滚动后选择的日期
     self.selectDate = [self getDidSelectedDate:component row:row];
+    //保存选中的行
+    [self.selectedRowCache setObject:@(row) forKey:@(component)];
+    
+    [self.pickerView reloadComponent:component];
     // 设置是否开启自动回调
     if (_isAutoSelect) {
         // 滚动完成后，执行block回调
@@ -534,7 +651,9 @@ typedef enum : NSUInteger {
     }
 }
 
+#pragma mark - 设置pickerView 每一行的文字显示
 - (void)setDateLabelText:(UILabel *)label component:(NSInteger)component row:(NSInteger)row {
+    
     switch (self.pickerMode) {
         case ZJDatePickerModeYMDHM:
             if (component == 0) {
@@ -932,6 +1051,13 @@ typedef enum : NSUInteger {
         _pickerView.showsSelectionIndicator = YES;
     }
     return _pickerView;
+}
+
+-(NSMutableDictionary *)selectedRowCache{
+    if (!_selectedRowCache) {
+        _selectedRowCache =[NSMutableDictionary dictionary];
+    }
+    return _selectedRowCache;
 }
 - (NSArray *)yearArr {
     if (!_yearArr) {

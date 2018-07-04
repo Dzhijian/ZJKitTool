@@ -507,8 +507,6 @@
     // 字体自适应属性
     label.minimumScaleFactor = 0.5f;
     
-    
-
     if (component == 0) {
         ZJProvinceModel *model = self.provinceArr[row];
         label.text = model.name;
