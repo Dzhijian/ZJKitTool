@@ -635,12 +635,14 @@ typedef enum : NSUInteger {
 
 // 4.选中时回调的委托方法，在此方法中实现省份和城市间的联动
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    // 获取滚动后选择的日期
-    self.selectDate = [self getDidSelectedDate:component row:row];
+    
     //保存选中的行
     [self.selectedRowCache setObject:@(row) forKey:@(component)];
     
     [self.pickerView reloadComponent:component];
+    
+    // 获取滚动后选择的日期
+    self.selectDate = [self getDidSelectedDate:component row:row];
     // 设置是否开启自动回调
     if (_isAutoSelect) {
         // 滚动完成后，执行block回调
@@ -649,6 +651,7 @@ typedef enum : NSUInteger {
             self.resultBlock(selectDateValue);
         }
     }
+    
 }
 
 #pragma mark - 设置pickerView 每一行的文字显示
@@ -719,6 +722,8 @@ typedef enum : NSUInteger {
             break;
     }
 }
+
+
 - (NSDate *)getDidSelectedDate:(NSInteger)component row:(NSInteger)row {
     
     NSString *selectDateValue = nil;
@@ -772,6 +777,7 @@ typedef enum : NSUInteger {
                 _minuteIndex = row;
             }
             selectDateValue = [NSString stringWithFormat:@"%02ld-%02ld %02ld:%02ld", [self.monthArr[_monthIndex] integerValue], [self.dayArr[_dayIndex] integerValue], [self.hourArr[_hourIndex] integerValue], [self.minuteArr[_minuteIndex] integerValue]];
+            break;
         case ZJDatePickerModeYMD:
             if (component == 0) {
                 _yearIndex = row;

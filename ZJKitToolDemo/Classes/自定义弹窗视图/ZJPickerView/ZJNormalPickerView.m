@@ -16,7 +16,8 @@ typedef enum : NSUInteger {
 
 @interface ZJNormalPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
-    BOOL  isDataSourceValid;    //数据源是否合法
+    BOOL  _isDataSourceValid;    // 数据源是否合法
+    BOOL  _isAutoSelect;         // 是否开启自动选择
 }
 // 选择器
 @property (nonatomic, strong) UIPickerView *pickerView;
@@ -28,8 +29,6 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSString *selectValue;
 // 多列选中的值
 @property (nonatomic, strong) NSMutableArray *selectValueArr;
-// 是否开启自动选择
-@property (nonatomic, assign) BOOL isAutoSelect;
 // 分割线的颜色
 @property (nonatomic, strong) UIColor               *lineColor;
 // 选中行文本的颜色
@@ -158,8 +157,8 @@ typedef enum : NSUInteger {
                                                              selectRowBGColor:selectRowBGColor
                                                                   resultBlock:resultBlock
                                                                   cancelBlock:cancelBlock];
-    NSAssert(pickerView->isDataSourceValid, @"数据源不合法！请检查字符串选择器数据源的格式");
-    if (pickerView->isDataSourceValid) {
+    NSAssert(pickerView->_isDataSourceValid, @"数据源不合法！请检查字符串选择器数据源的格式");
+    if (pickerView->_isDataSourceValid) {
         [pickerView showPickerViewWithAnimation:YES];
     }
 }
@@ -181,14 +180,14 @@ typedef enum : NSUInteger {
     if (self = [super init]) {
         
         self.title                  = title;
-        self.isAutoSelect           = isAutoSelect;
+        _isAutoSelect           = isAutoSelect;
         self.resultBlock            = resultBlock;
         self.cancelBlock            = cancelBlock;
         self.lineColor              = lineColor;
         self.rowHeight              = rowHeight ? rowHeight : 35.0f;
-        self.selecteRowTextColor    = self.selecteRowTextColor;
-        self.selectRowBGColor       = self.selectRowBGColor;
-        isDataSourceValid           = YES;
+        self.selecteRowTextColor    = selecteRowTextColor;
+        self.selectRowBGColor       = selectRowBGColor;
+        _isDataSourceValid           = YES;
         
         if (confirmBtnTitleColor || cancelBtnTitleColor) {
             
@@ -196,7 +195,7 @@ typedef enum : NSUInteger {
         }
         // 配置数据
         [self configDataSource:dataSource defaultSelValue:defaultSelValue];
-        if (isDataSourceValid) {
+        if (_isDataSourceValid) {
             [self initWithAllView];
         }
     }
@@ -206,7 +205,7 @@ typedef enum : NSUInteger {
 - (void)configDataSource:(id)dataSource defaultSelValue:(id)defaultSelValue {
     // 1.先判断传入的数据源是否合法
     if (!dataSource) {
-        isDataSourceValid = NO;
+        _isDataSourceValid = NO;
     }
     NSArray *dataArr = nil;
     if ([dataSource isKindOfClass:[NSArray class]] && [dataSource count] > 0) {
@@ -216,22 +215,22 @@ typedef enum : NSUInteger {
         NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:nil];
         dataArr = [[NSArray alloc] initWithContentsOfFile:path];
         if (!dataArr || dataArr.count == 0) {
-            isDataSourceValid = NO;
+            _isDataSourceValid = NO;
         }
     } else {
-        isDataSourceValid = NO;
+        _isDataSourceValid = NO;
     }
     // 判断数组是否合法（即数组的所有元素是否是同一种数据类型）
-    if (isDataSourceValid) {
+    if (_isDataSourceValid) {
         Class itemClass = [[dataArr firstObject] class];
         for (id obj in dataArr) {
             if (![obj isKindOfClass:itemClass]) {
-                isDataSourceValid = NO;
+                _isDataSourceValid = NO;
                 break;
             }
         }
     }
-    if (!isDataSourceValid) {
+    if (!_isDataSourceValid) {
         return;
     }
     // 2. 给数据源赋值
@@ -360,7 +359,7 @@ typedef enum : NSUInteger {
         
         self.selectValue = self.dataSourceArray[row];
         // 设置是否自动回调
-        if (self.isAutoSelect) {
+        if (_isAutoSelect) {
             if (self.resultBlock) {
                 self.resultBlock(self.selectValue);
             }
@@ -379,7 +378,7 @@ typedef enum : NSUInteger {
         self.selectValueArr = tempArr;
         
         // 设置是否自动回调
-        if (self.isAutoSelect) {
+        if (_isAutoSelect) {
             if(self.resultBlock) {
                 self.resultBlock([self.selectValueArr copy]);
             }
