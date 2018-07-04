@@ -31,7 +31,14 @@
 // 字体适配
 #define kFontSize(value)     [UIFont systemFontOfSize:(value) * kScaleFit]
 
+// 静态库中编写 Category 时的便利宏，用于解决 Category 方法从静态库中加载需要特别设置的问题
+#ifndef ZJSYNTH_DUMMY_CLASS
 
+#define ZJSYNTH_DUMMY_CLASS(_name_) \
+@interface ZJSYNTH_DUMMY_CLASS_ ## _name_ : NSObject @end \
+@implementation ZJSYNTH_DUMMY_CLASS_ ## _name_ @end
+
+#endif
 // color  format：0xFFFFFF
 #define k16RGBColor(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \

@@ -123,6 +123,30 @@
     }];
     
     
+    
+    
+    UILabel *lab4 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择按钮" superView: self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab3.mas_bottom).offset(25);
+        make.left.mas_equalTo(30);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(35);
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"选择时间" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab4.mas_centerY);
+        make.left.equalTo(lab4.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
+        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType:ZJDatePickerModeYMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 resultBlock:^(NSString *selectValue) {
+            NSLog(@"%@",selectValue);
+            lab4.text = [NSString stringWithFormat:@"%@",selectValue];
+        } cancelBlock:^{
+            
+        }];
+    }];
+    
 }
 
 
