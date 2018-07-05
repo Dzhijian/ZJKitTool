@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器、性别选择器、WKWebView封装的框架"
+  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器等框架集合"
 
   s.homepage     = "https://github.com/Dzhijian/ZJKitTool"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
