@@ -108,15 +108,20 @@ Pod::Spec.new do |s|
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
+#宏
+  s.subspec 'ZJGeneraMacros' do |ss|
 
+    ss.source_files = 'ZJKitTool/ZJGeneraMacros/*.{h,m}'
+
+  end
 
   # 控制器
   s.subspec 'ZJControllerKit' do |ss|
 
     ss.dependency 'Masonry'
-
+    ss.dependency 'ZJKitTool/ZJGeneraMacros'
     ss.source_files = 'ZJKitTool/ZJControllerKit/*.{h,m}'
-    ss.source_files = 'ZJKitTool/ZJGeneraMacros.h'
+    
 
   end
 
@@ -131,9 +136,9 @@ Pod::Spec.new do |s|
   s.subspec 'ZJKitMasonry' do |ss|
 
     ss.dependency 'Masonry'
-
+    ss.dependency 'ZJKitTool/ZJGeneraMacros'
     ss.source_files = 'ZJKitTool/ZJKitMasonry/*.{h,m}'
-    ss.source_files = 'ZJKitTool/ZJGeneraMacros.h'
+    
   end
 
   # 工具类类

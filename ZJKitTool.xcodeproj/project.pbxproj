@@ -649,6 +649,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		0428DB3220EE014F003FB656 /* ZJGeneraMacros */ = {
+			isa = PBXGroup;
+			children = (
+				04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */,
+			);
+			path = ZJGeneraMacros;
+			sourceTree = "<group>";
+		};
 		0430B85420E3866200B8132F /* ZJPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,7 +832,7 @@
 			isa = PBXGroup;
 			children = (
 				04B09A32209DB7BD00E66CA2 /* ZJHelperKit.h */,
-				04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */,
+				0428DB3220EE014F003FB656 /* ZJGeneraMacros */,
 				04B099F8209DB7BD00E66CA2 /* ZJKitMasonry */,
 				04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */,
 				04B09A14209DB7BD00E66CA2 /* ZJKit */,
