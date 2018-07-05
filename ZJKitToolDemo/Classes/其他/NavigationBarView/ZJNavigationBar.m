@@ -51,7 +51,9 @@
         make.centerX.mas_equalTo(0);
     }];
     
-    self.zj_leftBtn = [UIButton zj_buttonWithTitle:@"返回" superView:self constraints:^(MASConstraintMaker *make) {
+    self.titleLab.backgroundColor = [UIColor clearColor];
+    
+    self.zj_leftBtn = [UIButton zj_buttonWithTitle:@"返回" titleColor:kBlackColor backColor:kClearColor fontSize:14 isBold:NO cornerRadius:0 supView:self constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.centerY.equalTo(_titleLab.mas_centerY);
         make.width.mas_equalTo(40);
@@ -62,6 +64,8 @@
             [weakObject.delegate zj_navigationBarLeftBtnAction:sender];
         }
     }];
+    
+    
     
     self.zj_rightBtn  = [UIButton zj_buttonWithTitle:@"确定" titleColor:kBlackColor backColor:kClearColor fontSize:14 isBold:NO cornerRadius:0 supView:self constraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-15);

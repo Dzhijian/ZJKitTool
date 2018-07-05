@@ -52,7 +52,7 @@
     
     [self.avatar zj_cornerRadiusAdvance:22 rectCornerType:UIRectCornerAllCorners];
     
-    self.nameLab = [UILabel zj_labelWithFontSize:13 text:@"ZJUIKit" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.nameLab = [UILabel zj_labelWithFontSize:13 text:@"ZJKitTool" superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_avatar.mas_right).offset(10);
         make.right.mas_equalTo(-15);
         make.top.equalTo(_avatar.mas_top);
