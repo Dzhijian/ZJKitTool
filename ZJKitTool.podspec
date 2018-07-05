@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.1.9"
+  s.version      = "2.1.9.1"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -109,11 +109,6 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = "Classes/**/*.h"
 
-  s.subspec 'ZJGenneralMacros' do |ss|
-
-    ss.source_files = 'ZJKitTool/ZJGenneralMacros/*.{h,m}'
-
-  end
 
   # 控制器
   s.subspec 'ZJControllerKit' do |ss|
@@ -121,7 +116,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Masonry'
 
     ss.source_files = 'ZJKitTool/ZJControllerKit/*.{h,m}'
-
+    ss.source_files = 'ZJKitTool/ZJGeneraMacros.h'
 
   end
 
@@ -138,7 +133,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Masonry'
 
     ss.source_files = 'ZJKitTool/ZJKitMasonry/*.{h,m}'
-
+    ss.source_files = 'ZJKitTool/ZJGeneraMacros.h'
   end
 
   # 工具类类
@@ -165,7 +160,8 @@ Pod::Spec.new do |s|
   # ZJPickerView
   s.subspec 'ZJPickerView' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJPickerView/*.{h,m,bundle}'
+    ss.source_files = 'ZJKitTool/ZJPickerView/*.{h,m}'
+    ss.resource = "ZJKitTool/ZJPickerView/ZJPickerViewBundle.bundle"
 
   end
     # ZJTool

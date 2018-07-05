@@ -8,8 +8,7 @@
 
 #import "UIButton+ZJMasonryKit.h"
 #import <objc/runtime.h>
-// 判断它是否是空字符串。
-#define kIsEmptyString(s) (s == nil || [s isKindOfClass:[NSNull class]] || ([s isKindOfClass:[NSString class]] && s.length == 0))
+#import "ZJGeneraMacros.h"
 
 static const void *s_ZJButtonTouchUpKey     = "s_ZJButtonTouchUpKey";
 

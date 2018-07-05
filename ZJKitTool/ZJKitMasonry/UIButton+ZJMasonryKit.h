@@ -25,14 +25,14 @@ typedef void(^ZJButtonActionBlock)(id sender);
 
 
 /**
-  快速创建UIButton
+  快速创建UIButton的点击事件
   @param touchUp         点击事件
   @return                返回一个button
  */
 +(instancetype)zj_buttonWithOnTouchUp:(ZJButtonBlock)touchUp;
 
 /**
- * 快速创建UIButton
+ * 1.快速创建UIButton实例
  * @param supView         父视图
  * @param constaints      Marsonry布局
  * @param touchUp         点击事件
@@ -44,7 +44,7 @@ typedef void(^ZJButtonActionBlock)(id sender);
 
 
 /**
- * 快速创建UIButton，设置：标题，父视图，Marsonry布局
+ * 2.快速创建UIButton，设置：标题，父视图，Marsonry布局
  
  @param title    圆角
  @param superView         父视图
@@ -58,7 +58,7 @@ typedef void(^ZJButtonActionBlock)(id sender);
                            touchUp:(ZJButtonBlock)touchUp;
 
 /**
- * 快速创建UIButton，设置：默认图片，圆角，父视图，Marsonry布局
+ 3.快速创建UIButton，设置：默认图片，圆角，父视图，Marsonry布局
  
  @param cornerRadius    圆角
  @param supView         父视图
@@ -73,7 +73,7 @@ typedef void(^ZJButtonActionBlock)(id sender);
                           touchUp:(ZJButtonBlock)touchUp;
 
 /**
- * 快速创建UIButton，设置：标题，标题颜色，背景颜色，字体大小，是否加粗，圆角，父视图，Marsonry布局
+  4.快速创建UIButton，设置：标题，标题颜色，背景颜色，字体大小，是否加粗，圆角，父视图，Marsonry布局
  
  @param title           标题
  @param titleColor      标题颜色
@@ -98,7 +98,7 @@ typedef void(^ZJButtonActionBlock)(id sender);
 
 
 /**
- * 快速创建UIButton，设置：标题，标题颜色，默认图片，选中的图片，背景颜色，字体大小，是否加粗，圆角，父视图，Marsonry布局
+ 5.快速创建UIButton，设置：标题，标题颜色，默认图片，选中的图片，背景颜色，字体大小，是否加粗，圆角，父视图，Marsonry布局
  
  @param title           标题
  @param titleColor      标题颜色
@@ -126,7 +126,7 @@ typedef void(^ZJButtonActionBlock)(id sender);
                           touchUp:(ZJButtonBlock)touchUp;
 
 /**
- * 快速创建UIButton，设置：标题，标题颜色，默认图片，选中的图片，背景颜色，字体大小，是否加粗，边框宽度，边框颜色，圆角，父视图，Marsonry布局
+ 6.快速创建UIButton，设置：标题，标题颜色，默认图片，选中的图片，背景颜色，字体大小，是否加粗，边框宽度，边框颜色，圆角，父视图，Marsonry布局
 
  @param title           标题
  @param titleColor      标题颜色

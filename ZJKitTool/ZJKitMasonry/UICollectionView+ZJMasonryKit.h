@@ -14,7 +14,7 @@
 @interface UICollectionView (ZJMasonryKit)
 
 /**
- *    创建一个带有流布局的colellection视图，滚动水平或垂直，设置项目大小、委托、数据源、项目间距和行间距等。
+ *   1. 创建一个带有流布局的colellection视图，滚动水平或垂直，设置项目大小、委托、数据源、项目间距和行间距等。
  *
  *    当父视图不是nil时，它将会自动添加约束。
  *
@@ -30,7 +30,7 @@
 
 /**
  *
- *    创建一个带有流布局的colellection视图，滚动水平或垂直。,
+ *   2. 创建一个带有流布局的colellection视图，滚动水平或垂直。,
  *  设置项目大小、委托、数据源、项目间距和行间距等。.
  *
  *  When super view is not nil, it will be automatically added constraints with edges of
@@ -50,7 +50,7 @@
 
 /**
  *
- *    创建一个带有流布局的colellection视图，滚动水平或垂直,
+ *  3.  创建一个带有流布局的colellection视图，滚动水平或垂直,
  *  设置项目大小、委托、数据源、项目间距和行间距等.
  *
  *  When super view is not nil, it will be automatically added constraints with edges of
@@ -74,7 +74,7 @@
 
 /**
  *
- *    创建一个带有流布局的colellection视图，滚动水平或垂直,
+ *   4. 创建一个带有流布局的colellection视图，滚动水平或垂直,
  *  设置项目大小、委托、数据源、项目间距和行间距等。.
  *
  *    @param delegate                                Delegate and data source.

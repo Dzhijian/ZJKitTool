@@ -13,7 +13,7 @@
 
 /**
  *
- *    创建一个表视图，如果superview不是nil，它将被添加约束。它的边将永远等于超级视图。.
+ *  1.  创建一个表视图，如果superview不是nil，它将被添加约束。它的边将永远等于超级视图。.
  *
  *    @param superView    The super view for table view.
  *
@@ -23,7 +23,7 @@
 
 /**
  *
- *    创建一个表视图，如果superview是nil，约束将被忽略。.
+ *   2. 创建一个表视图，如果superview是nil，约束将被忽略。.
  *
  *    @param superView        The super view for table view.
  *    @param constraints    Make constraints for table view.
@@ -35,7 +35,7 @@
 
 /**
  *
- *    创建一个表视图，如果superview不是nil，它将被添加约束。它的边缘将永远等于超级视图。
+ *   3. 创建一个表视图，如果superview不是nil，它将被添加约束。它的边缘将永远等于超级视图。
  *
  *    @param superView    The super view for table view.
  *    @param delegate   Delgate and dataSource.
@@ -46,7 +46,7 @@
 
 /**
  *
- *    创建一个表视图，如果superview是nil，约束将被忽略。
+ *   4. 创建一个表视图，如果superview是nil，约束将被忽略。
  *
  *    @param superView        The super view for table view.
  *    @param delegate     Delgate and dataSource.
@@ -60,7 +60,7 @@
 
 /**
  *
- *    创建一个表视图，如果superview是nil，约束将被忽略。可以指定表格视图的风格。
+ *   5. 创建一个表视图，如果superview是nil，约束将被忽略。可以指定表格视图的风格。
  *
  *    @param superView        The super view for table view.
  *    @param delegate     Delgate and dataSource.

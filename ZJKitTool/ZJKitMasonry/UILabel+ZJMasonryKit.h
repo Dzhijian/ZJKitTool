@@ -20,7 +20,7 @@
 
 
 /**
- *创建一个Label,设置字体大小
+ 1. 创建一个Label,设置字体大小
  @param                 fontsize 字体大小
  @return                UILabel
  */
@@ -28,7 +28,7 @@
 
 
 /**
- *快速创建一个Label,字体大小,父视图,masonry布局
+ 2.快速创建一个Label,字体大小,父视图,masonry布局
 
  @param fontsize            字体大小
  @param superView       父视图
@@ -42,7 +42,7 @@
 
 
 /**
- *快速创建一个label,字体大小,文本
+ 3. 快速创建一个label,字体大小,文本
 
  @param                 fontsize 字体大小
  @param                 text 文本
@@ -53,7 +53,7 @@
 
 
 /**
- *快速创建一个Label,字体大小,文本,父视图,masonry布局
+ 4.快速创建一个Label,字体大小,文本,父视图,masonry布局
 
  @param                 fontsize 字体大小
  @param                 text 文本
@@ -68,7 +68,7 @@
 
 
 /**
- *快速创建一个Label,字体大小,文本,行数,父视图,masonry布局
+ 5.快速创建一个Label,字体大小,文本,行数,父视图,masonry布局
  
  @param                 fontsize 字体大小
  @param                 lines 行数
@@ -85,7 +85,7 @@
 
 
 /**
- *快速创建一个Label,字体大小,文本,字体颜色,行数,父视图,masonry布局
+ 6.快速创建一个Label,字体大小,文本,字体颜色,行数,父视图,masonry布局
  
  @param                 font 字体UIFont
  @param                 lines 行数
@@ -102,7 +102,7 @@
                     constraints:(ZJConstrainMaker)constraints;
 
 /**
- *快速创建一个Label,字体大小,文本,字体颜色,行数,父视图,masonry布局
+ 7.快速创建一个Label,字体大小,文本,字体颜色,行数,父视图,masonry布局
  
  @param                 fontsize 字体大小
  @param                 lines 行数

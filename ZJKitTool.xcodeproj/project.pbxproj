@@ -824,7 +824,7 @@
 			isa = PBXGroup;
 			children = (
 				04B09A32209DB7BD00E66CA2 /* ZJHelperKit.h */,
-				04B09A97209E083100E66CA2 /* ZJGenneralMacros */,
+				04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */,
 				04B099F8209DB7BD00E66CA2 /* ZJKitMasonry */,
 				04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */,
 				04B09A14209DB7BD00E66CA2 /* ZJKit */,
@@ -1002,14 +1002,6 @@
 				04B09A57209DB7BD00E66CA2 /* NSDictionary+ZJHelperKit.m */,
 			);
 			path = Object;
-			sourceTree = "<group>";
-		};
-		04B09A97209E083100E66CA2 /* ZJGenneralMacros */ = {
-			isa = PBXGroup;
-			children = (
-				04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */,
-			);
-			path = ZJGenneralMacros;
 			sourceTree = "<group>";
 		};
 		04BE949A20453FBC00DF6779 /* ZFPlayer */ = {

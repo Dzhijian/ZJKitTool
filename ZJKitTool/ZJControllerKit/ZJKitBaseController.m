@@ -17,12 +17,7 @@
 
 #import "ZJKitBaseController.h"
 #import <objc/runtime.h>
-// 判断它是否是空字符串。
-#define kIsEmptyString(s) (s == nil || [s isKindOfClass:[NSNull class]] || ([s isKindOfClass:[NSString class]] && s.length == 0))
-// 获取系统版本号
-#define kIOSVersion ([UIDevice currentDevice].systemVersion.floatValue)
-// 判断它是否是一个有效的数组。
-#define kIsArray(objArray) (objArray != nil && [objArray isKindOfClass:[NSArray class]])
+#import "ZJGeneraMacros.h"
 
 
 @interface ZJKitBaseController ()

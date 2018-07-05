@@ -13,22 +13,22 @@
 @interface UIImageView (ZJMasonryKit)
 
 /**
- *  快速创建一个 UIImageView
+ *  1.快速创建一个 UIImageView
  */
 +(instancetype)zj_imageView;
 
 /**
- *  快速创建一个 UIImageView,设置图片
+ * 2. 快速创建一个 UIImageView,设置图片
  */
 +(instancetype)zj_imageViewWithImage:(id)image;
 /**
- *  快速创建一个 UIImageView,设置图片,父视图,Masonry约束
+ * 3. 快速创建一个 UIImageView,设置图片,父视图,Masonry约束
  */
 +(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
                              constraints:(ZJConstrainMaker)constraints;
 /**
- *  快速创建一个 UIImageView,设置图片,父视图, Masonry约束,点击事件
+ * 4. 快速创建一个 UIImageView,设置图片,父视图, Masonry约束,点击事件
  */
 +(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
@@ -36,7 +36,7 @@
                               imgViewTap:(ZJTapGestureBlock)imgViewTap;
 
 /**
- *  快速创建一个 UIImageView,设置图片,父视图,填充模式,Masonry约束,是否剪切
+ * 5. 快速创建一个 UIImageView,设置图片,父视图,填充模式,Masonry约束,是否剪切
  */
 +(instancetype)zj_imageViewWithImage:(id)image
                                SuperView:(UIView *)superView
@@ -45,7 +45,7 @@
                              constraints:(ZJConstrainMaker)constraints;
 
 /**
- *  快速创建一个 UIImageView
+ * 6. 快速创建一个 UIImageView
  *  @param image        图片或图片名
  *  @param superView    父视图
  *  @param isClip       是否剪切
