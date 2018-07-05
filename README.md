@@ -74,6 +74,39 @@ MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视�
     }];
 ```
 
+> 创建一个按钮，并且点击弹出一个地区选择器
+
+``` OBjc
+
+[UIButton zj_buttonWithTitle:@"选择地区自定义" titleColor:kLightGrayColor
+                       backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4
+                         supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab3.mas_centerY);
+        make.left.equalTo(lab3.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
+        [ZJAddressPickerView zj_showAddressPickerWithShowType:ZJAddressPickerModeArea
+                                                   dataSource:nil
+                                              defaultSelected:nil
+                                                 isAutoSelect:YES
+                                                    lineColor:[UIColor redColor]
+                                           selectRowTextColor:[UIColor orangeColor]
+                                             selectRowBGColor:kRGBColor(230, 230, 230)
+                                         confirmBtnTitleColor:kRGBColor(116, 80, 200)
+                                          cancelBtnTitleColor:kRGBColor(116, 80, 200)
+                                                    rowHeight:50.0
+                                                  resultBlock:^(ZJProvinceModel *province, ZJCityModel *city, ZJAreaModel *area) {
+                                                      lab3.text = [NSString stringWithFormat:@"%@-%@-%@",province.name,city.name,area.name];
+                                                  } cancelBlock:^{
+                                                      
+                                                  }];
+    }];
+    
+
+```
+
  在评论列表中浏览图片推荐使用 KSPhotoBrowser 第三方库浏览
  
 >  /*
@@ -111,6 +144,17 @@ MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视�
 | ![](https://github.com/Dzhijian/ZJKitTool/blob/master/img-folder/collectionViewhorizontal.jpg?raw=true) | ![](https://github.com/Dzhijian/ZJKitTool/blob/master/img-folder/collectionViewVertacal.jpg?raw=true)|
 
 
+
+
+
+ >  **ZJPickerView**
+ > 自定义日期时间、地区选择器，可以自定义数据，修改选择中行的文字颜色，背景颜色，按钮颜色，自动选择等等。
+ 
+ 
+| 时间选择器 | 地区选择器 |
+| --- | --- |
+| ![](https://github.com/Dzhijian/ZJKitTool/blob/master/img-folder/datePickerView.jpg?raw=true) | ![](https://github.com/Dzhijian/ZJKitTool/blob/master/img-folder/normalPickerView.jpg?raw=true)|
+ 
 ## License
 ZJKitTool is released under the MIT license. See LICENSE for details.
 

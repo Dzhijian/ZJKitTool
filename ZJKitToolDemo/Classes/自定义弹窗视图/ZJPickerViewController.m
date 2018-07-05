@@ -75,7 +75,9 @@
         make.height.mas_equalTo(35);
     }];
     
-    [UIButton zj_buttonWithTitle:@"选择地区自定义" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+    [UIButton zj_buttonWithTitle:@"选择地区自定义" titleColor:kLightGrayColor
+                       backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4
+                         supView:self.view constraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(lab3.mas_centerY);
         make.left.equalTo(lab3.mas_right).offset(30);
         make.width.mas_equalTo(140);
