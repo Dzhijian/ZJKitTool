@@ -8,7 +8,7 @@
 //
 
 #import "ZJNormalPickerView.h"
-
+#import "ZJPickerViewMacro.h"
 typedef enum : NSUInteger {
     ZJNormalPickerViewComponentSingle,      // 单列展示
     ZJNormalPickerViewComponentMore        // 多列展示
@@ -338,7 +338,7 @@ typedef enum : NSUInteger {
     
     NSInteger selectedIndex = [(NSNumber *)[self.selectedRowCache objectForKey:@(component)] integerValue];
     if (self.selecteRowTextColor && selectedIndex == row) {
-        label.textColor = kOrangeColor;
+        label.textColor = self.selecteRowTextColor;
     }
     
     return label;
@@ -449,7 +449,7 @@ typedef enum : NSUInteger {
     
     if (animation) {
         CGRect rect = self.alertView.frame;
-        rect.origin.y = kScreenHeight;
+        rect.origin.y = ScreenHeight;
         self.alertView.frame = rect;
         
         [UIView animateWithDuration:0.3 animations:^{

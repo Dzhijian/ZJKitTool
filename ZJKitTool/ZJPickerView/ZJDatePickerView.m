@@ -8,7 +8,7 @@
 
 #import "ZJDatePickerView.h"
 #import "NSDate+ZJPickerView.h"
-
+#import "ZJPickerViewMacro.h"
 typedef enum : NSUInteger {
     ZJDatePickerStyleSystem,    //  系统样式 UIDatePicker 类
     ZJDatePickerStyleCustom     //  自定义样式 UIPickerView 类
@@ -999,7 +999,7 @@ typedef enum : NSUInteger {
     
     if (animation) {
         CGRect rect = self.alertView.frame;
-        rect.origin.y = kScreenHeight;
+        rect.origin.y = ScreenHeight;
         self.alertView.frame = rect;
         
         [UIView animateWithDuration:0.3 animations:^{

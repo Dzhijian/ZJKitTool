@@ -7,7 +7,7 @@
 //
 
 #import "ZJPickBaseView.h"
-
+#import "ZJPickerViewMacro.h"
 @interface ZJPickBaseView ()
 
 

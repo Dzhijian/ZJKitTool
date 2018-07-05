@@ -7,7 +7,7 @@
 //
 
 #import "ZJAddressPickerView.h"
-
+#import "ZJPickerViewMacro.h"
 
 @interface ZJAddressPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
@@ -423,7 +423,7 @@
     
     if (animation) {
         CGRect rect = self.alertView.frame;
-        rect.origin.y = kScreenHeight;
+        rect.origin.y = ScreenHeight;
         self.alertView.frame = rect;
         
         [UIView animateWithDuration:0.3 animations:^{
