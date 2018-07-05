@@ -21,11 +21,11 @@
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
 		0428DB2920EC6B32003FB656 /* ZJDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2820EC6B32003FB656 /* ZJDatePickerView.m */; };
 		0428DB2F20EC772C003FB656 /* NSDate+ZJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */; };
+		0428DB3120EDC0D1003FB656 /* ZJPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */; };
 		0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85620E3868C00B8132F /* ZJPickBaseView.m */; };
 		0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85D20E396D100B8132F /* ZJPickerViewController.m */; };
 		0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86020E4C61400B8132F /* ZJAddressPickerView.m */; };
 		0430B86420E4C70A00B8132F /* ZJAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86320E4C70A00B8132F /* ZJAddressModel.m */; };
-		0430B86620E4DAC200B8132F /* ZJAddress.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0430B86520E4DAC200B8132F /* ZJAddress.plist */; };
 		0430B86920E7655500B8132F /* ZJNormalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86820E7655500B8132F /* ZJNormalPickerView.m */; };
 		044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */; };
 		044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */; };
@@ -188,6 +188,7 @@
 		0428DB2820EC6B32003FB656 /* ZJDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJDatePickerView.m; sourceTree = "<group>"; };
 		0428DB2D20EC772C003FB656 /* NSDate+ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZJPickerView.h"; sourceTree = "<group>"; };
 		0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZJPickerView.m"; sourceTree = "<group>"; };
+		0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZJPickerViewBundle.bundle; sourceTree = "<group>"; };
 		0430B85520E3868C00B8132F /* ZJPickBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickBaseView.h; sourceTree = "<group>"; };
 		0430B85620E3868C00B8132F /* ZJPickBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickBaseView.m; sourceTree = "<group>"; };
 		0430B85920E38CFE00B8132F /* ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerView.h; sourceTree = "<group>"; };
@@ -198,7 +199,6 @@
 		0430B86020E4C61400B8132F /* ZJAddressPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAddressPickerView.m; sourceTree = "<group>"; };
 		0430B86220E4C70A00B8132F /* ZJAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAddressModel.h; sourceTree = "<group>"; };
 		0430B86320E4C70A00B8132F /* ZJAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAddressModel.m; sourceTree = "<group>"; };
-		0430B86520E4DAC200B8132F /* ZJAddress.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZJAddress.plist; sourceTree = "<group>"; };
 		0430B86720E7655500B8132F /* ZJNormalPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNormalPickerView.h; sourceTree = "<group>"; };
 		0430B86820E7655500B8132F /* ZJNormalPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNormalPickerView.m; sourceTree = "<group>"; };
 		044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCellViewController.h; sourceTree = "<group>"; };
@@ -652,7 +652,6 @@
 		0430B85420E3866200B8132F /* ZJPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				0430B86520E4DAC200B8132F /* ZJAddress.plist */,
 				0430B85920E38CFE00B8132F /* ZJPickerView.h */,
 				0430B85A20E38D4A00B8132F /* ZJPickerViewMacro.h */,
 				0430B85520E3868C00B8132F /* ZJPickBaseView.h */,
@@ -667,6 +666,7 @@
 				0428DB2820EC6B32003FB656 /* ZJDatePickerView.m */,
 				0428DB2D20EC772C003FB656 /* NSDate+ZJPickerView.h */,
 				0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */,
+				0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */,
 			);
 			path = ZJPickerView;
 			sourceTree = "<group>";
@@ -674,7 +674,6 @@
 		0430B85B20E3965F00B8132F /* 自定义弹窗视图 */ = {
 			isa = PBXGroup;
 			children = (
-				0430B85420E3866200B8132F /* ZJPickerView */,
 				0430B85C20E396D100B8132F /* ZJPickerViewController.h */,
 				0430B85D20E396D100B8132F /* ZJPickerViewController.m */,
 			);
@@ -830,6 +829,7 @@
 				04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */,
 				04B09A14209DB7BD00E66CA2 /* ZJKit */,
 				04B09A2C209DB7BD00E66CA2 /* ZJTool */,
+				0430B85420E3866200B8132F /* ZJPickerView */,
 				04B09A33209DB7BD00E66CA2 /* ZJCategory */,
 			);
 			path = ZJKitTool;
@@ -1323,9 +1323,9 @@
 				0475BEEF1FD12E8A00617353 /* Assets.xcassets in Resources */,
 				04C5178A20219AB800AC15F1 /* ZJWebViewController.html in Resources */,
 				04DA13582017036500C619E5 /* CommitsData.json in Resources */,
-				0430B86620E4DAC200B8132F /* ZJAddress.plist in Resources */,
 				0475BEED1FD12E8A00617353 /* Main.storyboard in Resources */,
 				04BE94CB2045433100DF6779 /* videoData.json in Resources */,
+				0428DB3120EDC0D1003FB656 /* ZJPickerViewBundle.bundle in Resources */,
 				04191E6420889883004A24C6 /* MasonryCellData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

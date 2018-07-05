@@ -19,34 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self setUpAllView];
     
 }
 
--(void)setUpNormalView{
-    
-    UILabel *lab1 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择性别" superView: self.view constraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
-        make.left.mas_equalTo(30);
-        make.width.mas_equalTo(180);
-        make.height.mas_equalTo(35);
-    }];
-    
-    [UIButton zj_buttonWithTitle:@"选择性别" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(lab1.mas_centerY);
-        make.left.equalTo(lab1.mas_right).offset(30);
-        make.width.mas_equalTo(140);
-        make.height.mas_equalTo(35);
-    } touchUp:^(id sender) {
-        
-        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"未知"] defaultSelValue:@"未知" isAutoSelect: NO resultBlock:^(id selectValue) {
-            lab1.text = selectValue;
-            
-        } cancelBlock:^{
-            
-        }];
-    }];
-}
 
 -(void)setUpAllView{
     
@@ -213,6 +190,30 @@
 }
 
 
+-(void)setUpNormalView{
+    
+    UILabel *lab1 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择性别" superView: self.view constraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.left.mas_equalTo(30);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(35);
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"选择性别" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab1.mas_centerY);
+        make.left.equalTo(lab1.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
+        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"未知"] defaultSelValue:@"未知" isAutoSelect: NO resultBlock:^(id selectValue) {
+            lab1.text = selectValue;
+            
+        } cancelBlock:^{
+            
+        }];
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

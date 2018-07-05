@@ -229,7 +229,11 @@
 -(void)loadAddressData{
     if (!self.dataSource || self.dataSource.count == 0) {
         
-        NSString *filePath = [[NSBundle mainBundle]pathForResource:@"ZJAddress" ofType:@"plist"];
+        NSString *bundlePath = [[NSBundle mainBundle]pathForResource:@"ZJPickerViewBundle"ofType:@"bundle"];
+        
+        NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
+        
+        NSString *filePath = [resourceBundle pathForResource:@"ZJAddress" ofType:@"plist"];
         NSArray *dataSource = [NSArray arrayWithContentsOfFile:filePath];
         
         if (!dataSource || dataSource.count == 0) {

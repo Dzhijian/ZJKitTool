@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.1.8"
+  s.version      = "2.1.9"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -162,8 +162,13 @@ Pod::Spec.new do |s|
     end
 
   end
+  # ZJPickerView
+  s.subspec 'ZJPickerView' do |ss|
 
-    # UIkit + Masonry
+    ss.source_files = 'ZJKitTool/ZJPickerView/*.{h,m,bundle}'
+
+  end
+    # ZJTool
   s.subspec 'ZJTool' do |ss|
 
     ss.source_files = 'ZJKitTool/ZJTool/*.{h,m}'
