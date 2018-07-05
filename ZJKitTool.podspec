@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.1.9.1"
+  s.version      = "2.1.9"
   s.summary      = "ZJKitTool是一个对UIK封装的框架"
 
   # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类"
+  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器、性别选择器、WKWebView封装的框架"
 
   s.homepage     = "https://github.com/Dzhijian/ZJKitTool"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
