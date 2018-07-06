@@ -1,0 +1,6 @@
+framework module GDPerformanceView {
+  umbrella header "GDPerformanceView-umbrella.h"
+
+  export *
+  module * { export * }
+}

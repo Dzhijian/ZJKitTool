@@ -1,0 +1,6 @@
+framework module ZFDownload {
+  umbrella header "ZFDownload-umbrella.h"
+
+  export *
+  module * { export * }
+}

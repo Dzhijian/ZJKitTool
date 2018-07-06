@@ -1,0 +1,6 @@
+framework module Pods_ZJKitTool {
+  umbrella header "Pods-ZJKitTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
