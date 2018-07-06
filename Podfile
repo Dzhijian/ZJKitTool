@@ -3,9 +3,11 @@
 
 target 'ZJKitTool' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+#   use_frameworks!
 
   # Pods for ZJKitTool
+  
+  pod 'AFNetworking','~> 3.2.0'
   pod 'SDWebImage', '~> 4.0.0'
   pod 'Masonry'
   pod 'MBProgressHUD'

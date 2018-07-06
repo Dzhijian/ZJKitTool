@@ -44,6 +44,13 @@
     [self.window makeKeyAndVisible];
     
     
+    
+    
+    [ZJNetworking updateBaseURL:@""];
+    
+    [ZJNetworking startNetworkStatusWithBlock:^(ZJNetworkStatus status) {
+        
+    }];
     // 检测屏幕刷新率
     [self.window addSubview:self.fpsLabel];
     

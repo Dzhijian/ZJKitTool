@@ -22,6 +22,7 @@
 		0428DB2920EC6B32003FB656 /* ZJDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2820EC6B32003FB656 /* ZJDatePickerView.m */; };
 		0428DB2F20EC772C003FB656 /* NSDate+ZJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */; };
 		0428DB3120EDC0D1003FB656 /* ZJPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */; };
+		0428DB3620EE7668003FB656 /* ZJNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB3520EE7668003FB656 /* ZJNetworking.m */; };
 		0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85620E3868C00B8132F /* ZJPickBaseView.m */; };
 		0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85D20E396D100B8132F /* ZJPickerViewController.m */; };
 		0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86020E4C61400B8132F /* ZJAddressPickerView.m */; };
@@ -138,9 +139,9 @@
 		04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA134F2016E15A00C619E5 /* ZJCommitPhotoView.m */; };
 		04DA13582017036500C619E5 /* CommitsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA13572017036500C619E5 /* CommitsData.json */; };
 		04DA136120170CE400C619E5 /* ZJCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA136020170CE400C619E5 /* ZJCommit.m */; };
-		0D74F236D2188E2B4B3CF3D8 /* libPods-ZJKitTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */; };
-		1E6D2B13EECFB62663C0E957 /* libPods-ZJKitToolUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF51DE641252257866B9DE2 /* libPods-ZJKitToolUITests.a */; };
-		C871073A8522A3DBBA9F3A9F /* libPods-ZJKitToolTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */; };
+		38366BAD25E35E211E767BD8 /* libPods-ZJKitToolUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4A8C91820DDAB5C4C109 /* libPods-ZJKitToolUITests.a */; };
+		510E9EED4DE4EDA9F2AA6BA7 /* libPods-ZJKitToolTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82D407B6565C4F2368EB6D7 /* libPods-ZJKitToolTests.a */; };
+		8D5BF4418DB357E2080E7DE4 /* libPods-ZJKitTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869A70CCAA01A3BC90CD41DC /* libPods-ZJKitTool.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,8 @@
 		0428DB2D20EC772C003FB656 /* NSDate+ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZJPickerView.h"; sourceTree = "<group>"; };
 		0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZJPickerView.m"; sourceTree = "<group>"; };
 		0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZJPickerViewBundle.bundle; sourceTree = "<group>"; };
+		0428DB3420EE7668003FB656 /* ZJNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNetworking.h; sourceTree = "<group>"; };
+		0428DB3520EE7668003FB656 /* ZJNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNetworking.m; sourceTree = "<group>"; };
 		0430B85520E3868C00B8132F /* ZJPickBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickBaseView.h; sourceTree = "<group>"; };
 		0430B85620E3868C00B8132F /* ZJPickBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickBaseView.m; sourceTree = "<group>"; };
 		0430B85920E38CFE00B8132F /* ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerView.h; sourceTree = "<group>"; };
@@ -430,13 +433,13 @@
 		04DA136020170CE400C619E5 /* ZJCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCommit.m; sourceTree = "<group>"; };
 		04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJGeneraMacros.h; sourceTree = "<group>"; };
 		0618E3214C33288FB31FB5EA /* Pods-ZJKitTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool.debug.xcconfig"; sourceTree = "<group>"; };
-		1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F82386E604A58F261BD044 /* Pods-ZJKitToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolUITests/Pods-ZJKitToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BEEC7DD5B200A212A0DA94C /* Pods-ZJKitTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool.release.xcconfig"; sourceTree = "<group>"; };
-		7DF51DE641252257866B9DE2 /* libPods-ZJKitToolUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DA4A8C91820DDAB5C4C109 /* libPods-ZJKitToolUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C8ADF658247266B8E3BDD6 /* Pods-ZJKitToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolTests/Pods-ZJKitToolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		869A70CCAA01A3BC90CD41DC /* libPods-ZJKitTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05632CA13EE063842614CFA /* Pods-ZJKitToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolUITests/Pods-ZJKitToolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B82D407B6565C4F2368EB6D7 /* libPods-ZJKitToolTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJKitToolTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C265683481F63548DC1FC1 /* Pods-ZJKitToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJKitToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJKitToolTests/Pods-ZJKitToolTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -445,7 +448,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D74F236D2188E2B4B3CF3D8 /* libPods-ZJKitTool.a in Frameworks */,
+				8D5BF4418DB357E2080E7DE4 /* libPods-ZJKitTool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C871073A8522A3DBBA9F3A9F /* libPods-ZJKitToolTests.a in Frameworks */,
+				510E9EED4DE4EDA9F2AA6BA7 /* libPods-ZJKitToolTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +464,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E6D2B13EECFB62663C0E957 /* libPods-ZJKitToolUITests.a in Frameworks */,
+				38366BAD25E35E211E767BD8 /* libPods-ZJKitToolUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +559,7 @@
 		04191E5820889687004A24C6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0428DB3320EE7641003FB656 /* ZJNetworking */,
 				04191E6020889751004A24C6 /* Main */,
 				04191E53208889C2004A24C6 /* WKWebView与 JS交互 */,
 				04191E5220888988004A24C6 /* 视频列表 */,
@@ -655,6 +659,15 @@
 				04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */,
 			);
 			path = ZJGeneraMacros;
+			sourceTree = "<group>";
+		};
+		0428DB3320EE7641003FB656 /* ZJNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				0428DB3420EE7668003FB656 /* ZJNetworking.h */,
+				0428DB3520EE7668003FB656 /* ZJNetworking.m */,
+			);
+			path = ZJNetworking;
 			sourceTree = "<group>";
 		};
 		0430B85420E3866200B8132F /* ZJPickerView */ = {
@@ -1187,9 +1200,9 @@
 		1275F06D8E1D11024C6119E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				63804A7FF78CAD8ACC0B0A83 /* libPods-ZJKitTool.a */,
-				1F7F7603655E9E5143C06554 /* libPods-ZJKitToolTests.a */,
-				7DF51DE641252257866B9DE2 /* libPods-ZJKitToolUITests.a */,
+				869A70CCAA01A3BC90CD41DC /* libPods-ZJKitTool.a */,
+				B82D407B6565C4F2368EB6D7 /* libPods-ZJKitToolTests.a */,
+				80DA4A8C91820DDAB5C4C109 /* libPods-ZJKitToolUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1218,7 +1231,7 @@
 				0475BEDE1FD12E8A00617353 /* Sources */,
 				0475BEDF1FD12E8A00617353 /* Frameworks */,
 				0475BEE01FD12E8A00617353 /* Resources */,
-				D26E27C7A0AC3C98B2B084EC /* [CP] Copy Pods Resources */,
+				AFDF5CA6ED0FF71F88BA51E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1401,7 +1414,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D26E27C7A0AC3C98B2B084EC /* [CP] Copy Pods Resources */ = {
+		AFDF5CA6ED0FF71F88BA51E5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1440,6 +1453,7 @@
 				04B09A84209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m in Sources */,
 				04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */,
 				04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */,
+				0428DB3620EE7668003FB656 /* ZJNetworking.m in Sources */,
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
 				04B09A6E209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.m in Sources */,
 				04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */,

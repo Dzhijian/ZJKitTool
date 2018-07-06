@@ -22,7 +22,6 @@
 #import "ZJKitHelper.h"
 #import "ZJCategory.h"
 #import "ZJPickerView.h"
-#import <YYCategories/YYCategories.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 // 倒计时
 #import "ZJTimeCountDown.h"
