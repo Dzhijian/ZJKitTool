@@ -23,6 +23,7 @@
 		0428DB2F20EC772C003FB656 /* NSDate+ZJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */; };
 		0428DB3120EDC0D1003FB656 /* ZJPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */; };
 		0428DB3620EE7668003FB656 /* ZJNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB3520EE7668003FB656 /* ZJNetworking.m */; };
+		0428DB3920EF5092003FB656 /* ZJNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */; };
 		0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85620E3868C00B8132F /* ZJPickBaseView.m */; };
 		0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85D20E396D100B8132F /* ZJPickerViewController.m */; };
 		0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86020E4C61400B8132F /* ZJAddressPickerView.m */; };
@@ -192,6 +193,8 @@
 		0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZJPickerViewBundle.bundle; sourceTree = "<group>"; };
 		0428DB3420EE7668003FB656 /* ZJNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNetworking.h; sourceTree = "<group>"; };
 		0428DB3520EE7668003FB656 /* ZJNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNetworking.m; sourceTree = "<group>"; };
+		0428DB3720EF5092003FB656 /* ZJNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNetworkViewController.h; sourceTree = "<group>"; };
+		0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNetworkViewController.m; sourceTree = "<group>"; };
 		0430B85520E3868C00B8132F /* ZJPickBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickBaseView.h; sourceTree = "<group>"; };
 		0430B85620E3868C00B8132F /* ZJPickBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickBaseView.m; sourceTree = "<group>"; };
 		0430B85920E38CFE00B8132F /* ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerView.h; sourceTree = "<group>"; };
@@ -666,6 +669,8 @@
 			children = (
 				0428DB3420EE7668003FB656 /* ZJNetworking.h */,
 				0428DB3520EE7668003FB656 /* ZJNetworking.m */,
+				0428DB3720EF5092003FB656 /* ZJNetworkViewController.h */,
+				0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */,
 			);
 			path = ZJNetworking;
 			sourceTree = "<group>";
@@ -1494,6 +1499,7 @@
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				0408D241209EF24D00097E14 /* UIView+ZJFrame.m in Sources */,
 				04B09A8B209DB7BD00E66CA2 /* NSString+ZJHelperKit.m in Sources */,
+				0428DB3920EF5092003FB656 /* ZJNetworkViewController.m in Sources */,
 				04B09A66209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m in Sources */,
 				04B09A7C209DB7BD00E66CA2 /* UIDevice+ZJDivice.m in Sources */,
 				048E8A2B201728C600486470 /* ZJChooseShowView.m in Sources */,

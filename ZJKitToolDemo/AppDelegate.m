@@ -47,7 +47,8 @@
     
     
     [ZJNetworking updateBaseURL:@""];
-    
+    [ZJNetworking enableInterfaceDebug:YES];
+    [ZJNetworking configRequestType:kZJRequestTypeJSON responseType:kZJResponseTypeJSON shouldAutoEncodeUrl:YES callbackOnCancelRequest:YES];
     [ZJNetworking startNetworkStatusWithBlock:^(ZJNetworkStatus status) {
         
     }];
