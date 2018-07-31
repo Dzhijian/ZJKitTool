@@ -30,7 +30,6 @@
     [super viewDidLoad];
     self.title = @"CollectionView";
     [self.view addSubview:self.mainTable];
-    
     self.dataArray = @[@"普通布局",@"垂直瀑布流",@"横向瀑布流"];
     
 }

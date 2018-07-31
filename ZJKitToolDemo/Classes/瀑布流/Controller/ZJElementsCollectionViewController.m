@@ -107,26 +107,26 @@ linesMarginForItemAtIndexPath:(NSIndexPath *)indexPath{
             
             if (i == 0) {
                 
-                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 200)]];
+                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake(kScreenWidth, 200)]];
                 
             }else if (i == 1)
             {
                 
-                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, 100)]];
+                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake(kScreenWidth - 20, 100)]];
                 
             }else if (i == 2)
             {
                 
-                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, 80)]];
+                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake(kScreenWidth - 20, 80)]];
                 
             }else if (i ==3)
             {
                 
-                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 10, 300)]];
+                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake(kScreenWidth - 10, 300)]];
             }else
             {
                 
-                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake(([UIScreen mainScreen].bounds.size.width - 30) * 0.5, ([UIScreen mainScreen].bounds.size.width - 30) * 0.5)]];
+                [_elementsHight addObject:[NSValue valueWithCGSize:CGSizeMake((kScreenWidth - 30) * 0.5, (kScreenWidth - 30) * 0.5)]];
             }
             
             
