@@ -5,6 +5,13 @@
 //  Created by dzj on 2018/1/29.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
+/**
+ *  ZJKitTool
+ *
+ *  GitHub地址：https://github.com/Dzhijian/ZJKitTool
+ *
+ *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下,给个Star。😆
+ */
 
 #import "ZJBaseCollectionViewController.h"
 
@@ -14,13 +21,6 @@
 
 @implementation ZJBaseCollectionViewController
 
-/**
- *  ZJKitTool
- *
- *  GitHub地址：https://github.com/Dzhijian/ZJKitTool
- *
- *  本库会不断更新工具类，以及添加一些模块案例，请各位大神们多多指教，支持一下,给个Star。😆
- */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,7 +71,6 @@
         collectionView.delegate = self;
         collectionView.dataSource = self;
         
-        
     }
     return _collectionView;
 }
@@ -98,14 +97,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

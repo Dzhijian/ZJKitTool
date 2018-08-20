@@ -13,7 +13,7 @@
 static const NSInteger ZJ_Columns_ = 3;
 static const CGFloat ZJ_XMargin_ = 10;
 static const CGFloat ZJ_YMargin_ = 10;
-static const UIEdgeInsets ZJ_EdgeInsets_ = {20, 10, 10, 10};
+static const UIEdgeInsets ZJ_EdgeInsets = {20, 10, 10, 10};
 
 /**
  *  ZJKitTool
@@ -37,6 +37,7 @@ static const UIEdgeInsets ZJ_EdgeInsets_ = {20, 10, 10, 10};
 - (CGFloat)yMarginAtIndexPath:(NSIndexPath *)indexPath;
 
 - (UIEdgeInsets)edgeInsets;
+    
 @end
 
 @implementation ZJVerticalFlowLayout
@@ -65,8 +66,6 @@ static const UIEdgeInsets ZJ_EdgeInsets_ = {20, 10, 10, 10};
     {
         [self.zj_AtrbsArray addObject:[self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]]];
     }
-    
-    
     
 }
 
@@ -176,7 +175,7 @@ static const UIEdgeInsets ZJ_EdgeInsets_ = {20, 10, 10, 10};
     }
     else
     {
-        return ZJ_EdgeInsets_;
+        return ZJ_EdgeInsets;
     }
 }
 
@@ -193,6 +192,9 @@ static const UIEdgeInsets ZJ_EdgeInsets_ = {20, 10, 10, 10};
 }
 
 
+/**
+*  每一列的最后的高度数组
+*/
 -(NSMutableArray *)zj_ColumnsHeightArray{
     if (!_zj_ColumnsHeightArray) {
         _zj_ColumnsHeightArray = [NSMutableArray array];
@@ -200,6 +202,9 @@ static const UIEdgeInsets ZJ_EdgeInsets_ = {20, 10, 10, 10};
     return _zj_ColumnsHeightArray;
 }
 
+/**
+  所有的cell的attrbts
+*/
 -(NSMutableArray *)zj_AtrbsArray{
     if (!_zj_AtrbsArray) {
         _zj_AtrbsArray = [NSMutableArray array];

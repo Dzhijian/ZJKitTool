@@ -66,9 +66,6 @@ static const UIEdgeInsets   ZJ_EdgeInsets = {10, 10, 10, 10};
     {
         [self.zj_AtrbsArray addObject:[self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]]];
     }
-    
-    
-    
 }
 
 

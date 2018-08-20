@@ -89,7 +89,6 @@
         cell.detailLab.text = [_timeDown zj_timeGetNowTimeWithString:self.endTimeArray[indexPath.row]];
         cell.detailLab.textColor = kPurpleColor;
     }else{
-        
         cell.detailLab.textColor = kOrangeColor;
     }
 
@@ -101,6 +100,10 @@
     return 70;
 }
 
+-(void)dealloc{
+   [_timeDown zj_timeDestoryTimer];
+}
+    
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

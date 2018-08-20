@@ -41,7 +41,6 @@
     [super viewDidLoad];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -173,9 +172,7 @@
                                           touchUp:^(id sender) {
                                               
                                               if (rightBlock) {
-                                                  
                                                   rightBlock(i, sender);
-                                                  
                                               }
                                           }];
             

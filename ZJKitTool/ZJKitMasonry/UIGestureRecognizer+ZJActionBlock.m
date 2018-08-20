@@ -9,19 +9,19 @@
 #import "UIGestureRecognizer+ZJActionBlock.h"
 #import <objc/runtime.h>
 
-static const void *s_zj_gestureKey = "s_zj_gestureKey";
-static const void *s_zj_tap_gestureKey = "s_zj_tap_gestureKey";
-static const void *s_zj_long_gestureKey = "s_zj_long_gestureKey";
+static const void *k_zj_gestureKey = "k_zj_gestureKey";
+static const void *k_zj_tap_gestureKey = "k_zj_tap_gestureKey";
+static const void *k_zj_long_gestureKey = "k_zj_long_gestureKey";
 
 @implementation UIGestureRecognizer (ZJActionBlock)
 
 - (ZJGestureBlock)zj_onGesture {
-    return objc_getAssociatedObject(self, s_zj_gestureKey);
+    return objc_getAssociatedObject(self, k_zj_gestureKey);
 }
 
 - (void)setZj_onGesture:(ZJGestureBlock)zj_onGesture {
     objc_setAssociatedObject(self,
-                             s_zj_gestureKey,
+                             k_zj_gestureKey,
                              zj_onGesture,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
     
@@ -33,12 +33,12 @@ static const void *s_zj_long_gestureKey = "s_zj_long_gestureKey";
 }
 
 - (ZJTapGestureBlock)zj_onTaped {
-    return objc_getAssociatedObject(self, s_zj_tap_gestureKey);
+    return objc_getAssociatedObject(self, k_zj_tap_gestureKey);
 }
 
 - (void)setZj_onTaped:(ZJTapGestureBlock)zj_onTaped {
     objc_setAssociatedObject(self,
-                             s_zj_tap_gestureKey,
+                             k_zj_tap_gestureKey,
                              zj_onTaped,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
     
@@ -50,12 +50,12 @@ static const void *s_zj_long_gestureKey = "s_zj_long_gestureKey";
 }
 
 - (ZJLongGestureBlock)zj_onLongPressed {
-    return objc_getAssociatedObject(self, s_zj_long_gestureKey);
+    return objc_getAssociatedObject(self, k_zj_long_gestureKey);
 }
 
 - (void)setZj_onLongPressed:(ZJLongGestureBlock)zj_onLongPressed {
     objc_setAssociatedObject(self,
-                             s_zj_long_gestureKey,
+                             k_zj_long_gestureKey,
                              zj_onLongPressed,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
     

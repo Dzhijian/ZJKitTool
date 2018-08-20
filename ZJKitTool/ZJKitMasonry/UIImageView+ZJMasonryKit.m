@@ -55,11 +55,11 @@
     
     UIImageView *imageView = [[UIImageView alloc]init];
     
-    if ([image isMemberOfClass:[NSString class]]) {
+    if ([image isKindOfClass:[NSString class]]) {
         UIImage *img = [UIImage imageNamed:image];
         imageView.image = img;
         
-    }else if ([image isMemberOfClass:[UIImage class]]){
+    }else if ([image isKindOfClass:[UIImage class]]){
         
         imageView.image = image;
     }
