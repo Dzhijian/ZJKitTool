@@ -7,7 +7,6 @@
 //
 
 #import "ZJImageCompressViewController.h"
-#import "UIImage+ZJCompress.h"
 @interface ZJImageCompressViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 // 原始图片
@@ -27,6 +26,8 @@
 #pragma mark - 设置 UI
 -(void)setUpAllView{
     kWeakObject(self);
+    
+    // 按钮
     UIButton *btn =  [UIButton zj_buttonWithTitle:@"打开相册" titleColor: kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:NO cornerRadius:5 supView:self.view constraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(AdaptedWidth(50));
         make.centerX.equalTo(self.view.mas_centerX);
@@ -37,14 +38,16 @@
         
     }];
     
+    // 原始图片View
     self.orginImageV = [UIImageView zj_imageViewWithImage:nil SuperView:self.view constraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(btn.mas_bottom).offset(AdaptedWidth(50));
+        make.top.equalTo(btn.mas_bottom).offset(AdaptedWidth(30));
         make.left.mas_equalTo(AdaptedWidth(20));
         make.right.mas_equalTo(AdaptedWidth(-20));
         make.height.mas_equalTo(AdaptedWidth(200));
     }];
     self.orginImageV.backgroundColor = kRGBColor(220, 220, 220);
     
+    // 压缩图片View
     self.compressImagV = [UIImageView zj_imageViewWithImage:nil SuperView:self.view constraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.orginImageV.mas_bottom).offset(AdaptedWidth(50));
         make.left.mas_equalTo(AdaptedWidth(20));
@@ -75,23 +78,41 @@
 // 选中事件
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"editingInfo: %@",info);
+    NSLog(@"info: %@",info);
+    // 获取原始图片
     UIImage *originImg = info[@"UIImagePickerControllerOriginalImage"];
+    // 编辑后的图片
 //    UIImage *editImg = info[@"UIImagePickerControllerEditedImage"];
     
-    // 原始图片大小
+    // 子线程加载图片
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 原始图片大小
+        NSData *originData = UIImageJPEGRepresentation(originImg, 1.0f);
+        // 主线程显示图片
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@",[NSString stringWithFormat:@"原数据大小:%.4f MB",((double)originData.length/1024.0f/1024.0f)]);
+            NSLog(@"原图片数据尺寸: width:%f height:%f",originImg.size.width,originImg.size.height);
+            self.orginImageV.image = originImg;
+        });
+    });
     
-    NSData *originData = UIImageJPEGRepresentation(originImg, 1.0f);
-    NSLog(@"%@",[NSString stringWithFormat:@"原数据大小:%.4f MB",((double)originData.length/1024.0f/1024.0f)]);
-    NSLog(@"原数据尺寸: width:%f height:%f",originImg.size.width,originImg.size.height);
-    self.orginImageV.image = originImg;
     
     // 压缩后的图片大小
-    NSData *compressData = [originImg zj_compressWithMaxLengLimit:500.0f * 1024.0f];
-    UIImage *compressImage = [UIImage imageWithData:compressData];
-    NSLog(@"压缩数据尺寸: width:%f height:%f",compressImage.size.width,compressImage.size.height);
-    NSLog(@"压缩数据大小:%.4f MB",(double)compressData.length/1024.0f/1024.0f);
-    self.compressImagV.image = compressImage;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 子线程压缩
+        NSData *compressData = [originImg zj_compressWithMaxLengLimit:500.0f * 1024.0f];
+        UIImage *compressImage = [UIImage imageWithData:compressData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"压缩后图片数据尺寸: width:%f height:%f",compressImage.size.width,compressImage.size.height);
+            NSLog(@"压缩后图片数据大小:%.4f MB",(double)compressData.length/1024.0f/1024.0f);
+            // 回到主线程显示
+            self.compressImagV.image = compressImage;
+        });
+    });
+    
+    
+    
     
 }
 

@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.2.0"
-  s.summary      = "ZJKitTool是一个对UIK封装的框架"
+  s.version      = "2.3.0"
+  s.summary      = "ZJKitTool是一个对UIK封装的框架与各种工具的集合,还有各种自定义View等等"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -94,11 +94,11 @@ Pod::Spec.new do |s|
   s.requires_arc = true # 是否启用ARC
 
   # s.source_files  = "ZJKitTool", "ZJKitTool/**/*.{h,m}"
-  s.source_files = 'ZJKitTool/ZJHelperKit.h'
+  s.source_files = 'ZJKitTool/ZJKitTool.h'
   
 
   
-  s.public_header_files = 'ZJKitTool/ZJHelperKit.h'
+  s.public_header_files = 'ZJKitTool/ZJKitTool.h'
   
   s.dependency 'Masonry'
 

@@ -140,7 +140,6 @@
 		04DA13502016E15B00C619E5 /* ZJCommitPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA134F2016E15A00C619E5 /* ZJCommitPhotoView.m */; };
 		04DA13582017036500C619E5 /* CommitsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA13572017036500C619E5 /* CommitsData.json */; };
 		04DA136120170CE400C619E5 /* ZJCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA136020170CE400C619E5 /* ZJCommit.m */; };
-		04F58E20215C7588007BCE4E /* UIImage+ZJCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F58E1F215C7588007BCE4E /* UIImage+ZJCompress.m */; };
 		04F58E24215C841D007BCE4E /* ZJImageCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F58E23215C841D007BCE4E /* ZJImageCompressViewController.m */; };
 		38366BAD25E35E211E767BD8 /* libPods-ZJKitToolUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4A8C91820DDAB5C4C109 /* libPods-ZJKitToolUITests.a */; };
 		510E9EED4DE4EDA9F2AA6BA7 /* libPods-ZJKitToolTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82D407B6565C4F2368EB6D7 /* libPods-ZJKitToolTests.a */; };
@@ -305,7 +304,7 @@
 		04B09A2E209DB7BD00E66CA2 /* ZJTimeCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTimeCountDown.h; sourceTree = "<group>"; };
 		04B09A30209DB7BD00E66CA2 /* ZJBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJBaseTableViewCell.h; sourceTree = "<group>"; };
 		04B09A31209DB7BD00E66CA2 /* ZJBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJBaseTableViewCell.m; sourceTree = "<group>"; };
-		04B09A32209DB7BD00E66CA2 /* ZJHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJHelperKit.h; sourceTree = "<group>"; };
+		04B09A32209DB7BD00E66CA2 /* ZJKitTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJKitTool.h; sourceTree = "<group>"; };
 		04B09A34209DB7BD00E66CA2 /* ZJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCategory.h; sourceTree = "<group>"; };
 		04B09A36209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJHUDHelperKit.h"; sourceTree = "<group>"; };
 		04B09A37209DB7BD00E66CA2 /* UITextView+ZJHelperKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJHelperKit.m"; sourceTree = "<group>"; };
@@ -436,8 +435,6 @@
 		04DA13572017036500C619E5 /* CommitsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CommitsData.json; sourceTree = "<group>"; };
 		04DA135F20170CE400C619E5 /* ZJCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCommit.h; sourceTree = "<group>"; };
 		04DA136020170CE400C619E5 /* ZJCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCommit.m; sourceTree = "<group>"; };
-		04F58E1E215C7588007BCE4E /* UIImage+ZJCompress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZJCompress.h"; sourceTree = "<group>"; };
-		04F58E1F215C7588007BCE4E /* UIImage+ZJCompress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZJCompress.m"; sourceTree = "<group>"; };
 		04F58E22215C841D007BCE4E /* ZJImageCompressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJImageCompressViewController.h; sourceTree = "<group>"; };
 		04F58E23215C841D007BCE4E /* ZJImageCompressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJImageCompressViewController.m; sourceTree = "<group>"; };
 		04F68E4E20D8FCEB004048A6 /* ZJGeneraMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJGeneraMacros.h; sourceTree = "<group>"; };
@@ -857,7 +854,7 @@
 		04B099F7209DB7BD00E66CA2 /* ZJKitTool */ = {
 			isa = PBXGroup;
 			children = (
-				04B09A32209DB7BD00E66CA2 /* ZJHelperKit.h */,
+				04B09A32209DB7BD00E66CA2 /* ZJKitTool.h */,
 				0428DB3220EE014F003FB656 /* ZJGeneraMacros */,
 				04B099F8209DB7BD00E66CA2 /* ZJKitMasonry */,
 				04B09A0C209DB7BD00E66CA2 /* ZJControllerKit */,
@@ -1213,8 +1210,6 @@
 		04F58E1D215C74B9007BCE4E /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				04F58E1E215C7588007BCE4E /* UIImage+ZJCompress.h */,
-				04F58E1F215C7588007BCE4E /* UIImage+ZJCompress.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1484,7 +1479,6 @@
 				04B09A84209DB7BD00E66CA2 /* UICollectionViewCell+ZJBaseFunctions.m in Sources */,
 				04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */,
 				04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */,
-				04F58E20215C7588007BCE4E /* UIImage+ZJCompress.m in Sources */,
 				0428DB3620EE7668003FB656 /* ZJNetworking.m in Sources */,
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
 				04B09A6E209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.m in Sources */,
