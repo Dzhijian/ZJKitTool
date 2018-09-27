@@ -45,7 +45,7 @@
 
 /**
  压缩图片方法(先压缩质量再压缩尺寸)
- @param maxLength 最大尺寸
+ @param maxLength 最大质量
  @return 图片 Data
  */
 -(NSData *)zj_compressWithMaxLengLimit:(NSUInteger)maxLength{
@@ -61,7 +61,8 @@
     for (int i = 0; i< 6; i++) {
         compression = (max + min)/2;
         data = UIImageJPEGRepresentation(self, compression);
-        NSLog(@"Compression = %.1f", compression);
+//        NSLog(@"Compression = %.2f", compression);
+//        NSLog(@"data.length = %.2lu", (unsigned long)data.length);
         if (data.length < maxLength * 0.9) {
             min = compression;
         }else if (data.length > maxLength){
@@ -117,7 +118,7 @@
 /**
  压缩图片方法(压缩质量二分法)
  
- @param maxLength 最大尺寸
+ @param maxLength 最大质量
  @return 图片Data
  */
 -(NSData *)zj_compressMidQualityWithMaxLengthLimit:(NSInteger)maxLength{
@@ -143,7 +144,7 @@
 /**
  压缩图片方法(压缩尺寸)
  
- @param maxLength 最大尺寸
+ @param maxLength 最大质量
  @return 图片Data
  */
 -(NSData *)zj_compressBySizeWithMaxLengthLimit:(NSUInteger)maxLength{
@@ -166,4 +167,5 @@
     }
     return data;
 }
+
 @end
