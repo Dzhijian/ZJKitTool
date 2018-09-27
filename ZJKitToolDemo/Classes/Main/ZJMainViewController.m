@@ -33,7 +33,7 @@
 #import "ZJPlayerListViewController.h"
 #import "ZJPickerViewController.h"
 #import "ZJNetworkViewController.h"
-
+#import "ZJImageCompressViewController.h"
 @interface ZJMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
@@ -56,7 +56,8 @@
     self.title = @"ZJKitTool";
     self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",
                         @"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",
-                        @"导航栏渐变",@"球形TagView",@"视频列表",@"ZJPickerView",@"ZJNetworking"];
+                        @"导航栏渐变",@"球形TagView",@"视频列表",@"ZJPickerView",@"ZJNetworking",
+                        @"图片压缩"];
     [self setUpAllView];
 
 }
@@ -156,6 +157,12 @@
         {
             ZJNetworkViewController *net = [[ZJNetworkViewController alloc]init];
             [self.navigationController pushViewController:net animated:YES];
+            break;
+        }
+        case 12:
+        {
+            ZJImageCompressViewController *imageCompress = [[ZJImageCompressViewController alloc]init];
+            [self.navigationController pushViewController:imageCompress animated:YES];
             break;
         }
         default:
