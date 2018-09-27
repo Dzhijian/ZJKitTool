@@ -21,7 +21,7 @@ pod 'ZJKitTool'
 > 导入头文件
 
 ```Objc
-#import <ZJHelperKit.h>
+#import <ZJKitTool.h>
 ```
 
 ## Author
