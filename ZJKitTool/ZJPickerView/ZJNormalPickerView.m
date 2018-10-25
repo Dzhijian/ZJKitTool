@@ -134,6 +134,8 @@ typedef enum : NSUInteger {
                    cancelBtnTitleColor:cancelBtnTitleColor
                    selecteRowTextColor:nil
                       selectRowBGColor:nil
+                          leftBtnTitle:nil
+                         rightBtnTitle:nil
                            resultBlock:resultBlock
                            cancelBlock:cancelBlock];
 }
@@ -150,6 +152,8 @@ typedef enum : NSUInteger {
                      cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
                  selecteRowTextColor:(UIColor *)selecteRowTextColor
                     selectRowBGColor:(UIColor *)selectRowBGColor
+                        leftBtnTitle:(NSString *)leftBtnTitle
+                       rightBtnTitle:(NSString *)rightBtnTitle
                          resultBlock:(ZJNormalResultBlock)resultBlock
                          cancelBlock:(ZJNormalCancelBlock)cancelBlock {
     ZJNormalPickerView *pickerView = [[ZJNormalPickerView alloc]initWithTitle:title
@@ -162,8 +166,8 @@ typedef enum : NSUInteger {
                                                              cancelBtnTitleColor:cancelBtnTitleColor
                                                           selecteRowTextColor:selecteRowTextColor
                                                              selectRowBGColor:selectRowBGColor
-                                                                 leftBtnTitle:nil
-                                                                rightBtnTitle:nil
+                                                                 leftBtnTitle:leftBtnTitle
+                                                                rightBtnTitle:rightBtnTitle
                                                                   resultBlock:resultBlock
                                                                   cancelBlock:cancelBlock];
     NSAssert(pickerView->_isDataSourceValid, @"数据源不合法！请检查字符串选择器数据源的格式");

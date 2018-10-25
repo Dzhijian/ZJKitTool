@@ -118,18 +118,18 @@ typedef void(^ZJNormalCancelBlock)(void);
  @param resultBlock 确认返回回调
  @param cancelBlock 取消返回回调
  */
-- (instancetype)initWithTitle:(NSString *)title
-                   dataSource:(id)dataSource
-              defaultSelValue:(id)defaultSelValue
-                 isAutoSelect:(BOOL)isAutoSelect
-                    rowHeight:(CGFloat)rowHeight
-                    lineColor:(UIColor *)lineColor
-         confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
-          cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
-          selecteRowTextColor:(UIColor *)selecteRowTextColor
-             selectRowBGColor:(UIColor *)selectRowBGColor
-                 leftBtnTitle:(NSString *)leftBtnTitle
-                rightBtnTitle:(NSString *)rightBtnTitle
-                  resultBlock:(ZJNormalResultBlock)resultBlock
-                  cancelBlock:(ZJNormalCancelBlock)cancelBlock ;
-@end
++ (void)zj_showStringPickerWithTitle:(NSString *)title
+                       dataSource:(id)dataSource
+                  defaultSelValue:(id)defaultSelValue
+                     isAutoSelect:(BOOL)isAutoSelect
+                        rowHeight:(CGFloat)rowHeight
+                        lineColor:(UIColor *)lineColor
+             confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
+              cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
+              selecteRowTextColor:(UIColor *)selecteRowTextColor
+                 selectRowBGColor:(UIColor *)selectRowBGColor
+                     leftBtnTitle:(NSString *)leftBtnTitle
+                    rightBtnTitle:(NSString *)rightBtnTitle
+                      resultBlock:(ZJNormalResultBlock)resultBlock
+                      cancelBlock:(ZJNormalCancelBlock)cancelBlock;
+    @end
