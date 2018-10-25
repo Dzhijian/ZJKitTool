@@ -162,6 +162,8 @@ typedef enum : NSUInteger {
                                                              cancelBtnTitleColor:cancelBtnTitleColor
                                                           selecteRowTextColor:selecteRowTextColor
                                                              selectRowBGColor:selectRowBGColor
+                                                                 leftBtnTitle:nil
+                                                                rightBtnTitle:nil
                                                                   resultBlock:resultBlock
                                                                   cancelBlock:cancelBlock];
     NSAssert(pickerView->_isDataSourceValid, @"数据源不合法！请检查字符串选择器数据源的格式");
@@ -181,11 +183,18 @@ typedef enum : NSUInteger {
               cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
           selecteRowTextColor:(UIColor *)selecteRowTextColor
              selectRowBGColor:(UIColor *)selectRowBGColor
+                 leftBtnTitle:(NSString *)leftBtnTitle
+                rightBtnTitle:(NSString *)rightBtnTitle
                   resultBlock:(ZJNormalResultBlock)resultBlock
                   cancelBlock:(ZJNormalCancelBlock)cancelBlock {
     
     if (self = [super init]) {
-        
+        if (leftBtnTitle != nil) {
+            [self.leftBtn setTitle:leftBtnTitle forState:(UIControlStateNormal)];
+        }
+        if (rightBtnTitle != nil) {
+            [self.rightBtn setTitle:rightBtnTitle forState:(UIControlStateNormal)];
+        }
         self.title                  = title;
         _isAutoSelect           = isAutoSelect;
         self.resultBlock            = resultBlock;
@@ -196,8 +205,8 @@ typedef enum : NSUInteger {
         self.selectRowBGColor       = selectRowBGColor;
         _isDataSourceValid           = YES;
         
+        // 修改按钮颜色
         if (confirmBtnTitleColor || cancelBtnTitleColor) {
-            
             [self setUpConfirmTitleColor:confirmBtnTitleColor cancelColor:cancelBtnTitleColor];
         }
         // 配置数据

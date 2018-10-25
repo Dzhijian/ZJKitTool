@@ -101,7 +101,7 @@ typedef void(^ZJNormalCancelBlock)(void);
 
 /**
  
- 5.显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高,按钮颜色,选中行背景文本颜色
+ 5.显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高,按钮颜色,选中行背景文本颜色,左右按钮文字
  
  @param title 标题
  @param dataSource 数据源
@@ -113,19 +113,23 @@ typedef void(^ZJNormalCancelBlock)(void);
  @param cancelBtnTitleColor 取消按钮的文不颜色
  @param selecteRowTextColor 选中行文本颜色
  @param selectRowBGColor 选中行背景颜色
+ @param leftBtnTitle leftBtnTitle
+ @param rightBtnTitle rightBtnTitle
  @param resultBlock 确认返回回调
  @param cancelBlock 取消返回回调
  */
-+ (void)zj_showStringPickerWithTitle:(NSString *)title
-                          dataSource:(id)dataSource
-                     defaultSelValue:(id)defaultSelValue
-                        isAutoSelect:(BOOL)isAutoSelect
-                           rowHeight:(CGFloat)rowHeight
-                           lineColor:(UIColor *)lineColor
-                confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
-                 cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
-                 selecteRowTextColor:(UIColor *)selecteRowTextColor
-                    selectRowBGColor:(UIColor *)selectRowBGColor
-                         resultBlock:(ZJNormalResultBlock)resultBlock
-                         cancelBlock:(ZJNormalCancelBlock)cancelBlock;
+- (instancetype)initWithTitle:(NSString *)title
+                   dataSource:(id)dataSource
+              defaultSelValue:(id)defaultSelValue
+                 isAutoSelect:(BOOL)isAutoSelect
+                    rowHeight:(CGFloat)rowHeight
+                    lineColor:(UIColor *)lineColor
+         confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
+          cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
+          selecteRowTextColor:(UIColor *)selecteRowTextColor
+             selectRowBGColor:(UIColor *)selectRowBGColor
+                 leftBtnTitle:(NSString *)leftBtnTitle
+                rightBtnTitle:(NSString *)rightBtnTitle
+                  resultBlock:(ZJNormalResultBlock)resultBlock
+                  cancelBlock:(ZJNormalCancelBlock)cancelBlock ;
 @end
