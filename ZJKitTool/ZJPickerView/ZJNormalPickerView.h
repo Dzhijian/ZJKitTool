@@ -10,7 +10,7 @@
 
 @interface ZJNormalPickerView : ZJPickBaseView
 
-typedef void(^ZJNormalResultBlock)(id selectValue);
+typedef void(^ZJNormalResultBlock)(id selectValue , NSInteger index);
 
 typedef void(^ZJNormalCancelBlock)(void);
 
