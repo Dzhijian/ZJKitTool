@@ -6,6 +6,24 @@
 //  Copyright © 2017年 kapokcloud. All rights reserved.
 //
 
+/**
+ 1.压缩图片质量
+ NSData *data = UIImageJPEGRepresentation(image, compression);
+ UIImage *resultImage = [UIImage imageWithData:data];
+ 通过 UIImage 和 NSData 的相互转化，减小 JPEG 图片的质量来压缩图片。UIImageJPEGRepresentation:: 第二个参数 compression 取值 0.0~1.0，值越小表示图片质量越低，图片文件自然越小。
+ 
+ 2.压缩图片尺寸
+ UIGraphicsBeginImageContext(size);
+ [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+ resultImage = UIGraphicsGetImageFromCurrentImageContext();
+ UIGraphicsEndImageContext();
+ 给定所需的图片尺寸 size，resultImage 即为原图 image 绘制为 size 大小的图片。
+ 
+ 3.压缩图片使图片文件小于指定大小
+ 如果对图片清晰度要求不高，要求图片的上传、下载速度快的话，上传图片前需要压缩图片。压缩到什么程度要看具体情况，但一般会设定一个图片文件最大值，例如 100 KB。可以用上诉两种方法来压缩图片。假设图片转化来的 NSData 对象为 data，通过data.length即可得到图片的字节大小。
+ */
+
+
 #import "UIImage+ZJImage.h"
 
 @implementation UIImage (ZJImage)
