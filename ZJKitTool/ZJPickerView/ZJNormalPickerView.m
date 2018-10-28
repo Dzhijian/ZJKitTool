@@ -343,8 +343,8 @@ typedef enum : NSUInteger {
     if (self.selectRowBGColor) {
         [self setUpPickerView:pickerView customSelectedBGRowColor:self.selectRowBGColor];
     }
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.alertView.frame.size.width / 3, self.rowHeight * kScaleFit)];
+    CGFloat width = self.pickerViewMode == ZJNormalPickerViewComponentSingle ? self.alertView.frame.size.width : self.alertView.frame.size.width / 3;
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, width, self.rowHeight * kScaleFit)];
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont systemFontOfSize:18.0f * kScaleFit];
@@ -352,6 +352,7 @@ typedef enum : NSUInteger {
     label.adjustsFontSizeToFitWidth = YES;
     // 自适应最小字体缩放比例
     label.minimumScaleFactor = 0.5f;
+
     if (self.pickerViewMode == ZJNormalPickerViewComponentSingle) {
         label.text = self.dataSourceArray[row];
     } else if (self.pickerViewMode == ZJNormalPickerViewComponentMore) {
