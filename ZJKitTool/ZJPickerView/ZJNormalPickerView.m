@@ -243,15 +243,15 @@ typedef enum : NSUInteger {
         _isDataSourceValid = NO;
     }
     // 判断数组是否合法（即数组的所有元素是否是同一种数据类型）
-    if (_isDataSourceValid) {
-        Class itemClass = [[dataArr firstObject] class];
-        for (id obj in dataArr) {
-            if (![obj isKindOfClass:itemClass]) {
-                _isDataSourceValid = NO;
-                break;
-            }
-        }
-    }
+//    if (_isDataSourceValid) {
+//        Class itemClass = [[dataArr firstObject] class];
+//        for (id obj in dataArr) {
+//            if (![obj isKindOfClass:itemClass]) {
+//                _isDataSourceValid = NO;
+//                break;
+//            }
+//        }
+//    }
     if (!_isDataSourceValid) {
         return;
     }
