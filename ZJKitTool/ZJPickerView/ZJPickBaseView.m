@@ -44,7 +44,6 @@
 -(void)backViewTapAction:(UITapGestureRecognizer *)gesture{
     
     
-    
 }
 
 #pragma mark - 点击左边的按钮
