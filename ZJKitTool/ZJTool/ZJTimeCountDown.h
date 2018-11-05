@@ -70,7 +70,7 @@ typedef void(^ZJTimeDownCompleteBlock)(NSInteger day, NSInteger hour, NSInteger 
  @param PER_SECBlock 回调
  */
 -(void)zj_timeCountDownWithPER_SECBlock:(void (^)(void))PER_SECBlock;
-
+-(void)zj_timeCountDownWithTime:(NSInteger)time PER_SECBlock:(void (^)(void))PER_SECBlock;
 /**
  * 当前时间与结束时间的对比
 

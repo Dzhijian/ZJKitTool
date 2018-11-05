@@ -167,6 +167,21 @@
     }
 }
 
+// 倒计时每 time 秒执行一次
+-(void)zj_timeCountDownWithTime:(NSInteger)time PER_SECBlock:(void (^)(void))PER_SECBlock{
+    if (self.timer==nil) {
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+        dispatch_source_set_timer(self.timer,dispatch_walltime(NULL, 0),time*NSEC_PER_SEC, 0); //每秒执行
+        dispatch_source_set_event_handler(self.timer, ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                PER_SECBlock();
+            });
+        });
+        dispatch_resume(self.timer);
+    }
+}
+
 
 // 用当前的时间与最后的时间作比较
 -(NSString *)zj_timeGetNowTimeWithString:(NSString *)timeString{

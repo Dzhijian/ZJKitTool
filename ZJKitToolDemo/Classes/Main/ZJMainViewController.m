@@ -59,6 +59,10 @@
                         @"导航栏渐变",@"球形TagView",@"视频列表",@"ZJPickerView",@"ZJNetworking",
                         @"图片压缩"];
     [self setUpAllView];
+    
+    [[ZJTimeCountDown ShareManager] zj_timeCountDownWithTime:5 PER_SECBlock:^{
+        NSLog(@"12");
+    }];
 
 }
 

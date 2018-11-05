@@ -777,7 +777,6 @@
 				04BE94C82045430900DF6779 /* Model */,
 				04C517952022BD3200AC15F1 /* Libs */,
 				044EE1D2201ED24F00ACFC0A /* Other */,
-				04F58E1D215C74B9007BCE4E /* Util */,
 				0475BEE51FD12E8A00617353 /* AppDelegate.h */,
 				0475BEE61FD12E8A00617353 /* AppDelegate.m */,
 				0475BEEB1FD12E8A00617353 /* Main.storyboard */,
@@ -1205,13 +1204,6 @@
 				04DA13412016E07D00C619E5 /* ZJCommitFrame.m */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		04F58E1D215C74B9007BCE4E /* Util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		04F58E21215C83B8007BCE4E /* 图片压缩 */ = {
