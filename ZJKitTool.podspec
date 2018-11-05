@@ -16,11 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-<<<<<<< HEAD
   s.version      = "2.3.5"
-=======
-  s.version      = "2.3.4"
->>>>>>> e2e1c84c2dfacea415b609945e296dd9ae6a931f
   s.summary      = "ZJKitTool是一个对UIK封装的框架与各种工具的集合,还有各种自定义View等等"
 
   # This description is used to generate tags and improve search results.
