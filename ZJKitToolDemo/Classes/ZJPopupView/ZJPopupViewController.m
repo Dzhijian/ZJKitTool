@@ -9,7 +9,8 @@
 #import "ZJPopupViewController.h"
 #import "ZJPopupView.h"
 
-@interface ZJPopupViewController ()
+@interface ZJPopupViewController ()<ZJPopupViewDelegate>
+
 
 @property (nonatomic, strong) ZJPopupView *popupView;
 
@@ -37,9 +38,28 @@
     ZJBasePopupView *view = [[ZJBasePopupView alloc]init];
     view.backgroundColor = kRedColor;
     
-    ZJPopupView *popView = [[ZJPopupView alloc]initWithShowView:view viewSize:CGSizeMake(250, 300) style:(ZJPopupAnimationSacle)];
+    UILabel *lab = [UILabel zj_labelWithFont:kBoldFontWithSize(15) lines:1 text:@"ZJPopupView" textColor:kWhiteColor superView:view constraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+    lab.backgroundColor = kClearColor;
+    lab.textAlignment = NSTextAlignmentCenter;
     
+    ZJPopupView *popView = [[ZJPopupView alloc]initWithShowView:view viewSize:CGSizeMake(250, 300) delegate:self style:(ZJPopupAnimationTransition)];
     [popView zj_showPopupView];
 }
 
+
+-(void)zj_willShowPopupView{
+    NSLog(@"将要显示 popView");
+}
+-(void)zj_didHiddenPopupView{
+    NSLog(@"已经隐藏 popView");
+}
+-(void)zj_clickShowViewAction{
+    NSLog(@"点击了 showView");
+}
+
+-(void)zj_clickBgViewAction{
+    NSLog(@"点击了 bgView");
+}
 @end

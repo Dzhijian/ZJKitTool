@@ -22,8 +22,9 @@
 
 @implementation ZJPopupView
 
--(instancetype)initWithShowView:(ZJBasePopupView *)showView viewSize:(CGSize)size  style:(ZJPopupAnimationStyle)style{
+-(instancetype)initWithShowView:(ZJBasePopupView *)showView viewSize:(CGSize)size delegate:(id<ZJPopupViewDelegate>)delegate style:(ZJPopupAnimationStyle)style{
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
+        self.delegate = delegate;
         self.showViewSize = size;
         self.showView = showView;
         self.bgAlpha = 0.5;
@@ -55,19 +56,27 @@
 }
 
 -(void)bgViewAction:(UITapGestureRecognizer *)gesture{
+    
+    if ([self.delegate respondsToSelector:@selector(zj_clickBgViewAction)]) {
+        [self.delegate zj_clickBgViewAction];
+    }
     if (self.isBGClickAction) {
         [self zj_hiddenPopupView];
     }
 }
 
 -(void)showViewAction:(UITapGestureRecognizer *)gesture{
-    
+    if ([self.delegate respondsToSelector:@selector(zj_clickShowViewAction)]) {
+        [self.delegate zj_clickShowViewAction];
+    }
 }
 
 -(void)zj_showPopupView{
     self.alpha = 0;
     self.hidden = false;
-    
+    if ([self.delegate respondsToSelector:@selector(zj_willShowPopupView)]) {
+        [self.delegate zj_willShowPopupView];
+    }
     
     switch (self.style) {
         case ZJPopupAnimationTransition:
@@ -75,11 +84,12 @@
             self.showView.transform = CGAffineTransformMakeTranslation(0, -(ScreenH -self.showView.height)/2);
             [UIView animateWithDuration:self.durationTime animations:^{
                 self.alpha = 1.0;
-                self.showView.transform = CGAffineTransformMakeTranslation(0, (ScreenH-self.showView.height)/2+50);
+                self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, (ScreenH-self.showView.height)/2+50);
 
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:self.durationTime/2 animations:^{
-                    self.showView.transform = CGAffineTransformMakeTranslation(0, -50);
+                    //self.showView.transform = CGAffineTransformMakeTranslation(0, -50);
+                    self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, -50);
                 }];
             }];
         }
@@ -89,15 +99,16 @@
         {
             self.alpha = 1.0;
             CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+            scaleAnimation.fromValue = @0.01f;
             scaleAnimation.toValue = @1.0f;
-            scaleAnimation.fromValue = @0.2f;
             
-            CABasicAnimation *rotaAnima = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-            rotaAnima.toValue = @(M_PI * 2);
+            CABasicAnimation *rotaAnima = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+            rotaAnima.toValue = @(M_PI*2);
             
             CAAnimationGroup *group = [CAAnimationGroup animation];
             group.animations = @[scaleAnimation,rotaAnima];
             group.duration = self.durationTime * 2;
+            group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
             [self.showView.layer addAnimation:group forKey:@"groupAnimation"];
         }   break;
             
@@ -179,6 +190,11 @@
         default:
             break;
     }
+    
+    if ([self.delegate respondsToSelector:@selector(zj_didHiddenPopupView)]) {
+        [self.delegate zj_didHiddenPopupView];
+    }
+    
 }
 
 @end
