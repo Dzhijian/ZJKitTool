@@ -1239,10 +1239,10 @@
 		1AE63CDA219A5D9B001C269B /* ZJPopupView */ = {
 			isa = PBXGroup;
 			children = (
-				1AE63CDB219A5DBD001C269B /* ZJBasePopupView.h */,
-				1AE63CDC219A5DBD001C269B /* ZJBasePopupView.m */,
 				1AE63CDE219A5DD3001C269B /* ZJPopupView.h */,
 				1AE63CDF219A5DD3001C269B /* ZJPopupView.m */,
+				1AE63CDB219A5DBD001C269B /* ZJBasePopupView.h */,
+				1AE63CDC219A5DBD001C269B /* ZJBasePopupView.m */,
 			);
 			path = ZJPopupView;
 			sourceTree = "<group>";

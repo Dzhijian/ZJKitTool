@@ -38,7 +38,19 @@ typedef enum : NSUInteger {
 /// 代理
 @property (nonatomic, weak) id<ZJPopupViewDelegate>  delegate;
 
--(instancetype)initWithShowView:(ZJBasePopupView *)showView viewSize:(CGSize)size delegate:(id<ZJPopupViewDelegate>)delegate style:(ZJPopupAnimationStyle)style;
+
++(instancetype)zj_showPopView:(ZJBasePopupView *)showView
+                     viewSize:(CGSize)size
+                     delegate:(id<ZJPopupViewDelegate>)delegate
+                 durationTime:(double)durationTime
+                      bgAlpha:(CGFloat)bgAlpha
+              isBGClickAction:(BOOL)isBGClickAction
+                        style:(ZJPopupAnimationStyle)style;
+
+-(instancetype)initWithShowView:(ZJBasePopupView *)showView
+                       viewSize:(CGSize)size
+                       delegate:(id<ZJPopupViewDelegate>)delegate
+                          style:(ZJPopupAnimationStyle)style;
 
 
 -(void)zj_showPopupView;

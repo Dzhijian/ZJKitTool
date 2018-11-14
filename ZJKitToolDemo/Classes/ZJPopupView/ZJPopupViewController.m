@@ -20,20 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    kWeakObject(self);
-    [UIButton zj_buttonWithTitle:@"弹窗" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(80);
-        make.centerX.mas_equalTo(0);
-        make.width.mas_equalTo(150);
-        make.height.mas_equalTo(50);
-    } touchUp:^(id sender) {
-        [weakObject showView];
-    }];
+    self.title = @"ZJPopupView";
+
+    [self setUpAllView];
     
 }
 
--(void)showView{
+-(void)showViewWithStyle:(ZJPopupAnimationStyle)style{
     
     ZJBasePopupView *view = [[ZJBasePopupView alloc]init];
     view.backgroundColor = kRedColor;
@@ -44,7 +37,7 @@
     lab.backgroundColor = kClearColor;
     lab.textAlignment = NSTextAlignmentCenter;
     
-    ZJPopupView *popView = [[ZJPopupView alloc]initWithShowView:view viewSize:CGSizeMake(250, 300) delegate:self style:(ZJPopupAnimationTransition)];
+    ZJPopupView *popView = [[ZJPopupView alloc]initWithShowView:view viewSize:CGSizeMake(250, 300) delegate:self style:style];
     [popView zj_showPopupView];
 }
 
@@ -61,5 +54,44 @@
 
 -(void)zj_clickBgViewAction{
     NSLog(@"点击了 bgView");
+}
+
+-(void)setUpAllView{
+    kWeakObject(self);
+    UIButton *transBtn =  [UIButton zj_buttonWithTitle:@"弹窗 Transition" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(80);
+        make.centerX.mas_equalTo(0);
+        make.width.mas_equalTo(150);
+        make.height.mas_equalTo(50);
+    } touchUp:^(id sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationTransition)];
+    }];
+    
+    UIButton *rotaBtn = [UIButton zj_buttonWithTitle:@"弹窗 Rotation" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(transBtn.mas_bottom).offset(70);
+        make.centerX.mas_equalTo(0);
+        make.width.mas_equalTo(150);
+        make.height.mas_equalTo(50);
+    } touchUp:^(id sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationRotation)];
+    }];
+    
+    UIButton *sacleBtn =[UIButton zj_buttonWithTitle:@"弹窗 Sacle" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(rotaBtn.mas_bottom).offset(70);
+        make.centerX.mas_equalTo(0);
+        make.width.mas_equalTo(150);
+        make.height.mas_equalTo(50);
+    } touchUp:^(id sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationSacle)];
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"弹窗 Alpha" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(sacleBtn.mas_bottom).offset(70);
+        make.centerX.mas_equalTo(0);
+        make.width.mas_equalTo(150);
+        make.height.mas_equalTo(50);
+    } touchUp:^(id sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationAlpha)];
+    }];
 }
 @end
