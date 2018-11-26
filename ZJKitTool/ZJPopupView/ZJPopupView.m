@@ -10,6 +10,7 @@
 #import "ZJGeneraMacros.h"
 #import <Masonry/Masonry.h>
 
+#define ZJ_IS_iPhoneX ((ZJ_STATUSBAR_HEIGHT == 44) ? YES : NO)
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 @interface ZJPopupView()
@@ -170,10 +171,10 @@
     switch (self.style) {
         case ZJPopupAnimationTransition:
         {
-            self.showView.transform = CGAffineTransformMakeTranslation(0, -(ScreenH -self.showView.height)/2);
+            self.showView.transform = CGAffineTransformMakeTranslation(0, -(ScreenH -self.showView.frame.size.height)/2);
             [UIView animateWithDuration:self.durationTime animations:^{
                 self.alpha = 1.0;
-                self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, (ScreenH-self.showView.height)/2+50);
+                self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, (ScreenH-self.showView.frame.size.height)/2+50);
 
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:self.durationTime/2 animations:^{
@@ -271,7 +272,7 @@
                 self.showView.transform = CGAffineTransformScale(self.showView.transform, 0.5, 0.5);
             } completion:^(BOOL finished) {
                 self.hidden = YES;
-                [self removeAllSubviews];
+                [self removePopAllSubviews];
             }];
         }
             break;
@@ -283,6 +284,12 @@
         [self.delegate zj_didHiddenPopupView];
     }
     
+}
+
+- (void)removePopAllSubviews {
+    while (self.subviews.count) {
+        [self.subviews.lastObject removeFromSuperview];
+    }
 }
 
 #pragma mark - Getter && Setter
