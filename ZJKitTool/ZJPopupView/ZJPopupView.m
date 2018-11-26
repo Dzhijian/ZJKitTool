@@ -7,10 +7,7 @@
 //
 
 #import "ZJPopupView.h"
-#import "ZJGeneraMacros.h"
-#import <Masonry/Masonry.h>
-
-#define ZJ_IS_iPhoneX ((ZJ_STATUSBAR_HEIGHT == 44) ? YES : NO)
+#define KIS_iPhoneX ((ZJ_STATUSBAR_HEIGHT == 44) ? YES : NO)
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 @interface ZJPopupView()
@@ -134,7 +131,7 @@
     
     [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-20);
-        make.top.mas_equalTo(ZJ_IS_iPhoneX ? 60 : 30);
+        make.top.mas_equalTo(KIS_iPhoneX ? 60 : 30);
         make.width.height.mas_equalTo(30);
     }];
 }
