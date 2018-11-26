@@ -287,7 +287,7 @@
     if (!_closeBtn) {
         _closeBtn = [[UIButton alloc]init];
         [self addSubview:_closeBtn];
-        _closeBtn.backgroundColor = kRedColor;
+        _closeBtn.backgroundColor = [UIColor redColor];
         [_closeBtn addTarget:self action:@selector(closeBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     }
     return _closeBtn;
