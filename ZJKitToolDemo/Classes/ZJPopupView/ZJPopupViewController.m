@@ -37,13 +37,15 @@
     lab.backgroundColor = kClearColor;
     lab.textAlignment = NSTextAlignmentCenter;
     
+    
     ZJPopupView *popView = [[ZJPopupView alloc]initWithShowView:view
                                                        viewSize:CGSizeMake(250, 300)
                                                        delegate:self
                                                    durationTime:0.25
                                                         bgAlpha:0.5
                                                 isBGClickAction:YES
-                                                          style:style
+                                                   isBlurEffect:YES
+                                                     animaStyle:style
                                                        closeBtn:nil];
     [popView zj_showPopupView];
 }

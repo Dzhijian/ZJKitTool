@@ -29,14 +29,15 @@
                  durationTime:(double)durationTime
                       bgAlpha:(CGFloat)bgAlpha
               isBGClickAction:(BOOL)isBGClickAction
-                        style:(ZJPopupAnimationStyle)style{
+                   animaStyle:(ZJPopupAnimationStyle)animaStyle{
     return [self zj_showPopView:showView
                        viewSize:size
                        delegate:delegate
                    durationTime:durationTime
                         bgAlpha:bgAlpha
                 isBGClickAction:isBGClickAction
-                          style:style
+                   isBlurEffect:NO
+                     animaStyle:animaStyle
                        closeBtn:nil];
 }
 
@@ -46,8 +47,9 @@
                  durationTime:(double)durationTime
                       bgAlpha:(CGFloat)bgAlpha
               isBGClickAction:(BOOL)isBGClickAction
-                        style:(ZJPopupAnimationStyle)style
-                     closeBtn:(UIButton *)closeBtn{
+                 isBlurEffect:(BOOL)isBlurEffect
+                   animaStyle:(ZJPopupAnimationStyle)animaStyle
+                     closeBtn:( UIButton * _Nullable )closeBtn{
     
     ZJPopupView *popViw =  [[self alloc]initWithShowView:showView
                                                 viewSize:size
@@ -55,11 +57,9 @@
                                             durationTime:durationTime
                                                  bgAlpha:bgAlpha
                                          isBGClickAction:isBGClickAction
-                                                   style:style
+                                            isBlurEffect:isBlurEffect
+                                              animaStyle:animaStyle
                                                 closeBtn:closeBtn];
-    
-
-    popViw.backgroundColor = kRGBA(33, 33, 33, popViw.bgAlpha);
     [popViw zj_showPopupView];
     
     return popViw;
@@ -73,17 +73,28 @@
                    durationTime:(double)durationTime
                         bgAlpha:(CGFloat)bgAlpha
                 isBGClickAction:(BOOL)isBGClickAction
-                          style:(ZJPopupAnimationStyle)style
-                       closeBtn:(UIButton *)closeBtn{
+                   isBlurEffect:(BOOL)isBlurEffect
+                     animaStyle:(ZJPopupAnimationStyle)animaStyle
+                       closeBtn:(UIButton * __nullable)closeBtn{
+    
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         self.delegate = delegate;
         self.showViewSize = size;
+        
+        if (isBlurEffect) {
+            // 毛片玻璃效果
+            UIBlurEffect *blurEffect =[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+            UIVisualEffectView *effectView =[[UIVisualEffectView alloc]initWithEffect:blurEffect];
+            effectView.frame = self.bounds;
+            [self addSubview:effectView];
+        }
+        
         self.showView = showView;
         
         self.bgAlpha = bgAlpha > 0.0 ? bgAlpha : 0.5;
         self.durationTime = durationTime > 0.0 ? durationTime : 0.25;
         self.isBGClickAction = isBGClickAction;
-        self.style = style;
+        self.style = animaStyle;
         self.hidden = YES;
         self.backgroundColor = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:self.bgAlpha];
         if (showView != nil) {
@@ -92,6 +103,8 @@
             self.showView.frame = CGRectMake((ScreenW - size.width)/2, (ScreenH - size.width)/2, size.width, size.height);
             [self addSubview:self.showView];
         }
+        
+        
         
         if (closeBtn != nil) {
             self.closeBtn = closeBtn;
