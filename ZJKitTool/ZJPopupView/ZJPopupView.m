@@ -16,13 +16,13 @@
 @property (nonatomic, assign) double durationTime;
 @property (nonatomic, assign) CGFloat bgAlpha;
 @property (nonatomic, assign) CGSize showViewSize;
-
 @property (nonatomic, strong) UIButton *closeBtn;
 
 @end
 
 @implementation ZJPopupView
 #pragma mark - 初始化视图
+
 +(instancetype)zj_showPopView:(ZJBasePopupView *)showView
                      viewSize:(CGSize)size
                      delegate:(id<ZJPopupViewDelegate>)delegate
@@ -30,13 +30,36 @@
                       bgAlpha:(CGFloat)bgAlpha
               isBGClickAction:(BOOL)isBGClickAction
                         style:(ZJPopupAnimationStyle)style{
+    return [self zj_showPopView:showView
+                       viewSize:size
+                       delegate:delegate
+                   durationTime:durationTime
+                        bgAlpha:bgAlpha
+                isBGClickAction:isBGClickAction
+                          style:style
+                       closeBtn:nil];
+}
+
++(instancetype)zj_showPopView:(ZJBasePopupView *)showView
+                     viewSize:(CGSize)size
+                     delegate:(id<ZJPopupViewDelegate>)delegate
+                 durationTime:(double)durationTime
+                      bgAlpha:(CGFloat)bgAlpha
+              isBGClickAction:(BOOL)isBGClickAction
+                        style:(ZJPopupAnimationStyle)style
+                     closeBtn:(UIButton *)closeBtn{
     
-    ZJPopupView *popViw =  [[self alloc]initWithShowView:showView viewSize:size delegate:delegate style:style];
-    popViw.bgAlpha = bgAlpha;
-    popViw.durationTime = durationTime;
-    popViw.isBGClickAction = isBGClickAction;
+    ZJPopupView *popViw =  [[self alloc]initWithShowView:showView
+                                                viewSize:size
+                                                delegate:delegate
+                                            durationTime:durationTime
+                                                 bgAlpha:bgAlpha
+                                         isBGClickAction:isBGClickAction
+                                                   style:style
+                                                closeBtn:closeBtn];
+    
+
     popViw.backgroundColor = kRGBA(33, 33, 33, popViw.bgAlpha);
-    
     [popViw zj_showPopupView];
     
     return popViw;
@@ -44,17 +67,25 @@
 
 
 
--(instancetype)initWithShowView:(ZJBasePopupView *)showView viewSize:(CGSize)size delegate:(id<ZJPopupViewDelegate>)delegate style:(ZJPopupAnimationStyle)style{
+-(instancetype)initWithShowView:(ZJBasePopupView *)showView
+                       viewSize:(CGSize)size
+                       delegate:(id<ZJPopupViewDelegate>)delegate
+                   durationTime:(double)durationTime
+                        bgAlpha:(CGFloat)bgAlpha
+                isBGClickAction:(BOOL)isBGClickAction
+                          style:(ZJPopupAnimationStyle)style
+                       closeBtn:(UIButton *)closeBtn{
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         self.delegate = delegate;
         self.showViewSize = size;
         self.showView = showView;
-        self.bgAlpha = 0.5;
-        self.durationTime = 0.25;
-        self.isBGClickAction = YES;
+        
+        self.bgAlpha = bgAlpha > 0.0 ? bgAlpha : 0.5;
+        self.durationTime = durationTime > 0.0 ? durationTime : 0.25;
+        self.isBGClickAction = isBGClickAction;
         self.style = style;
         self.hidden = YES;
-        self.backgroundColor = kRGBA(33, 33, 33, self.bgAlpha);
+        self.backgroundColor = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:self.bgAlpha];
         if (showView != nil) {
             NSAssert([showView isKindOfClass:[ZJBasePopupView class]], @"showView 必须继承 ZJBasePopupView");
             self.showView = showView;
@@ -62,6 +93,9 @@
             [self addSubview:self.showView];
         }
         
+        if (closeBtn != nil) {
+            self.closeBtn = closeBtn;
+        }
         [self setUpAllView];
         
     }
@@ -127,7 +161,6 @@
 
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:self.durationTime/2 animations:^{
-                    //self.showView.transform = CGAffineTransformMakeTranslation(0, -50);
                     self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, -50);
                 }];
             }];

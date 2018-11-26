@@ -23,7 +23,7 @@
 
 -(YYFPSLabel *)fpsLabel{
     if (!_fpsLabel) {
-        _fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(70, 5, 0, 0)];
+        _fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(30, 5, 0, 0)];
         [_fpsLabel sizeToFit];
         _fpsLabel.alpha = 1;
     }

@@ -45,17 +45,29 @@ typedef enum : NSUInteger {
                  durationTime:(double)durationTime
                       bgAlpha:(CGFloat)bgAlpha
               isBGClickAction:(BOOL)isBGClickAction
-                        style:(ZJPopupAnimationStyle)style;
+                        style:(ZJPopupAnimationStyle)style
+                     closeBtn:(UIButton *)closeBtn;
 
 -(instancetype)initWithShowView:(ZJBasePopupView *)showView
                        viewSize:(CGSize)size
                        delegate:(id<ZJPopupViewDelegate>)delegate
-                          style:(ZJPopupAnimationStyle)style;
+                   durationTime:(double)durationTime
+                        bgAlpha:(CGFloat)bgAlpha
+                isBGClickAction:(BOOL)isBGClickAction
+                          style:(ZJPopupAnimationStyle)style
+                       closeBtn:(UIButton *)closeBtn;
 
 
+/**
+ *  显示 popView
+ */
 -(void)zj_showPopupView;
 
+/**
+ * 隐藏 popView
+ */
 -(void)zj_hiddenPopupView;
+
 @end
 
 NS_ASSUME_NONNULL_END
