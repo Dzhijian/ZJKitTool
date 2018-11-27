@@ -22,6 +22,8 @@
 #import "ZJKitHelper.h"
 #import "ZJCategory.h"
 #import "ZJPickerView.h"
+#import "ZJPopupViewMacros.h"
+
 #import <MBProgressHUD/MBProgressHUD.h>
 
 

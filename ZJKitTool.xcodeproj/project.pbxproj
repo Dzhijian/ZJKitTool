@@ -199,6 +199,7 @@
 		0428DB3520EE7668003FB656 /* ZJNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNetworking.m; sourceTree = "<group>"; };
 		0428DB3720EF5092003FB656 /* ZJNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNetworkViewController.h; sourceTree = "<group>"; };
 		0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNetworkViewController.m; sourceTree = "<group>"; };
+		042F8E0521ADA8060039EC71 /* ZJPopupViewMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPopupViewMacros.h; sourceTree = "<group>"; };
 		0430B85520E3868C00B8132F /* ZJPickBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickBaseView.h; sourceTree = "<group>"; };
 		0430B85620E3868C00B8132F /* ZJPickBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickBaseView.m; sourceTree = "<group>"; };
 		0430B85920E38CFE00B8132F /* ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerView.h; sourceTree = "<group>"; };
@@ -1239,6 +1240,7 @@
 		1AE63CDA219A5D9B001C269B /* ZJPopupView */ = {
 			isa = PBXGroup;
 			children = (
+				042F8E0521ADA8060039EC71 /* ZJPopupViewMacros.h */,
 				1AE63CDE219A5DD3001C269B /* ZJPopupView.h */,
 				1AE63CDF219A5DD3001C269B /* ZJPopupView.m */,
 				1AE63CDB219A5DBD001C269B /* ZJBasePopupView.h */,
