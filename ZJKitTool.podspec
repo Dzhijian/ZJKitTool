@@ -145,7 +145,6 @@ Pod::Spec.new do |s|
   s.subspec 'ZJPopupView' do |ss|
 
     ss.dependency 'Masonry'
-    ss.dependency 'ZJKitTool/ZJGeneraMacros'
     ss.source_files = 'ZJKitTool/ZJPopupView/*.{h,m}' 
   end
 
