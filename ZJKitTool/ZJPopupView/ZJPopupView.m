@@ -7,6 +7,8 @@
 //
 
 #import "ZJPopupView.h"
+
+#define ZJ_STATUSBAR_HEIGHT ([UIApplication sharedApplication].statusBarFrame.size.height)
 #define KIS_iPhoneX ((ZJ_STATUSBAR_HEIGHT == 44) ? YES : NO)
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
@@ -115,7 +117,12 @@
     }
     return self;
 }
-
+-(instancetype)init{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
 #pragma SetUpView
 -(void)setUpAllView{
     [[UIApplication sharedApplication].keyWindow addSubview:self];
@@ -226,6 +233,8 @@
     }
 }
 
+
+
 #pragma mark - 隐藏视图
 -(void)zj_hiddenPopupView{
     switch (self.style) {
@@ -236,7 +245,7 @@
                     self.showView.transform = CGAffineTransformScale(self.showView.transform, 0.5, 0.5);
                 } completion:^(BOOL finished) {
                     self.hidden = YES;
-                    [self removeAllSubviews];
+                    [self removePopAllSubviews];
                 }];
             }
             break;
@@ -247,7 +256,7 @@
                 self.showView.transform = CGAffineTransformScale(self.showView.transform, 0.5, 0.5);
             } completion:^(BOOL finished) {
                 self.hidden = YES;
-                [self removeAllSubviews];
+                [self removePopAllSubviews];
             }];
         }
             break;
@@ -258,7 +267,7 @@
                 self.showView.transform =  CGAffineTransformMakeScale(0.5, 0.5);
             } completion:^(BOOL finished) {
                 self.hidden = YES;
-                [self removeAllSubviews];
+                [self removePopAllSubviews];
             }];
         }
             break;
