@@ -24,6 +24,7 @@
 		0428DB3120EDC0D1003FB656 /* ZJPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0428DB3020EDC0D1003FB656 /* ZJPickerViewBundle.bundle */; };
 		0428DB3620EE7668003FB656 /* ZJNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB3520EE7668003FB656 /* ZJNetworking.m */; };
 		0428DB3920EF5092003FB656 /* ZJNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */; };
+		042F8E0921B0395A0039EC71 /* ZJPopShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F8E0821B0395A0039EC71 /* ZJPopShowView.m */; };
 		0430B85720E3868D00B8132F /* ZJPickBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85620E3868C00B8132F /* ZJPickBaseView.m */; };
 		0430B85E20E396D100B8132F /* ZJPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B85D20E396D100B8132F /* ZJPickerViewController.m */; };
 		0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86020E4C61400B8132F /* ZJAddressPickerView.m */; };
@@ -200,6 +201,8 @@
 		0428DB3720EF5092003FB656 /* ZJNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNetworkViewController.h; sourceTree = "<group>"; };
 		0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNetworkViewController.m; sourceTree = "<group>"; };
 		042F8E0521ADA8060039EC71 /* ZJPopupViewMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPopupViewMacros.h; sourceTree = "<group>"; };
+		042F8E0721B0395A0039EC71 /* ZJPopShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPopShowView.h; sourceTree = "<group>"; };
+		042F8E0821B0395A0039EC71 /* ZJPopShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPopShowView.m; sourceTree = "<group>"; };
 		0430B85520E3868C00B8132F /* ZJPickBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickBaseView.h; sourceTree = "<group>"; };
 		0430B85620E3868C00B8132F /* ZJPickBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPickBaseView.m; sourceTree = "<group>"; };
 		0430B85920E38CFE00B8132F /* ZJPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPickerView.h; sourceTree = "<group>"; };
@@ -688,6 +691,15 @@
 				0428DB3820EF5092003FB656 /* ZJNetworkViewController.m */,
 			);
 			path = ZJNetworking;
+			sourceTree = "<group>";
+		};
+		042F8E0621B039340039EC71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				042F8E0721B0395A0039EC71 /* ZJPopShowView.h */,
+				042F8E0821B0395A0039EC71 /* ZJPopShowView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0430B85420E3866200B8132F /* ZJPickerView */ = {
@@ -1252,6 +1264,7 @@
 		1AE63CE1219A83C6001C269B /* ZJPopupView */ = {
 			isa = PBXGroup;
 			children = (
+				042F8E0621B039340039EC71 /* View */,
 				1AE63CE2219A83F9001C269B /* ZJPopupViewController.h */,
 				1AE63CE3219A83F9001C269B /* ZJPopupViewController.m */,
 			);
@@ -1626,6 +1639,7 @@
 				04B09A68209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m in Sources */,
 				04BE94C32045403200DF6779 /* ZJPlayerListViewController.m in Sources */,
 				04B09A88209DB7BD00E66CA2 /* UIAlertView+ZJHelperKitUIKit.m in Sources */,
+				042F8E0921B0395A0039EC71 /* ZJPopShowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

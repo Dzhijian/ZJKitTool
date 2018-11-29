@@ -12,6 +12,7 @@
 #define KIS_iPhoneX ((ZJ_STATUSBAR_HEIGHT == 44) ? YES : NO)
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
+
 @interface ZJPopupView()
 @property (nonatomic, assign) ZJPopupAnimationStyle style;
 @property (nonatomic, strong) ZJBasePopupView *showView;
@@ -20,7 +21,7 @@
 @property (nonatomic, assign) CGFloat bgAlpha;
 @property (nonatomic, assign) CGSize showViewSize;
 @property (nonatomic, strong) UIButton *closeBtn;
-
+@property (nonatomic, assign) BOOL isShowComplete;
 @end
 
 @implementation ZJPopupView
@@ -111,6 +112,7 @@
         
         if (closeBtn != nil) {
             self.closeBtn = closeBtn;
+            [self addSubview:self.closeBtn];
         }
         [self setUpAllView];
         
@@ -125,7 +127,7 @@
 }
 #pragma SetUpView
 -(void)setUpAllView{
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
     [self addGestureRecognizer:tap];
     
@@ -136,6 +138,7 @@
         [weakSelf zj_hiddenPopupView];
     };
     
+    [self addSubview:self.closeBtn];
     [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-20);
         make.top.mas_equalTo(KIS_iPhoneX ? 60 : 30);
@@ -168,6 +171,7 @@
 -(void)zj_showPopupView{
     self.alpha = 0;
     self.hidden = false;
+    self.isShowComplete = false;
     if ([self.delegate respondsToSelector:@selector(zj_willShowPopupView)]) {
         [self.delegate zj_willShowPopupView];
     }
@@ -179,10 +183,11 @@
             [UIView animateWithDuration:self.durationTime animations:^{
                 self.alpha = 1.0;
                 self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, (ScreenH-self.showView.frame.size.height)/2+50);
-
+                
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:self.durationTime/2 animations:^{
                     self.showView.transform = CGAffineTransformTranslate(self.showView.transform, 0, -50);
+                    self.isShowComplete = true;
                 }];
             }];
         }
@@ -203,6 +208,7 @@
             group.duration = self.durationTime * 2;
             group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
             [self.showView.layer addAnimation:group forKey:@"groupAnimation"];
+            self.isShowComplete = true;
         }   break;
             
         case ZJPopupAnimationSacle:
@@ -212,7 +218,7 @@
                 self.alpha = 1.0;
                 self.showView.transform =  CGAffineTransformMakeScale(1.0, 1.0);
             } completion:^(BOOL finished) {
-                
+                self.isShowComplete = true;
             }];
         }
             break;
@@ -224,7 +230,7 @@
                 self.alpha = 1.0;
                 self.showView.alpha = 1.0;
             } completion:^(BOOL finished) {
-                
+                self.isShowComplete = true;
             }];
         }
             break;
@@ -237,6 +243,11 @@
 
 #pragma mark - 隐藏视图
 -(void)zj_hiddenPopupView{
+
+    // 如果未显示完毕 则不能隐藏
+    if (!self.isShowComplete) {
+        return;
+    }
     switch (self.style) {
         case ZJPopupAnimationTransition:
             {
@@ -302,7 +313,7 @@
 -(UIButton *)closeBtn{
     if (!_closeBtn) {
         _closeBtn = [[UIButton alloc]init];
-        [self addSubview:_closeBtn];
+        
         _closeBtn.backgroundColor = [UIColor redColor];
         [_closeBtn addTarget:self action:@selector(closeBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     }

@@ -8,12 +8,14 @@
 
 #import "ZJPopupViewController.h"
 #import "ZJPopupView.h"
+#import "ZJPopShowView.h"
 
 @interface ZJPopupViewController ()<ZJPopupViewDelegate>
 
 
 @property (nonatomic, strong) ZJPopupView *popupView;
 
+@property (nonatomic, strong) ZJPopShowView *showView;
 @end
 
 @implementation ZJPopupViewController
@@ -28,17 +30,15 @@
 
 -(void)showViewWithStyle:(ZJPopupAnimationStyle)style{
     
-    ZJBasePopupView *view = [[ZJBasePopupView alloc]init];
-    view.backgroundColor = kRedColor;
+    self.showView = [[ZJPopShowView alloc]initWithFrame:CGRectMake(0, 0, 250, 300)];
+    _showView.layer.cornerRadius = 10;
+    _showView.layer.masksToBounds = YES;
     
-    UILabel *lab = [UILabel zj_labelWithFont:kBoldFontWithSize(15) lines:1 text:@"ZJPopupView" textColor:kWhiteColor superView:view constraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
-    }];
-    lab.backgroundColor = kClearColor;
-    lab.textAlignment = NSTextAlignmentCenter;
+    UIButton *closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [closeBtn setImage:kImageName(@"close") forState:(UIControlStateNormal)];
+    [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:(UIControlEventTouchUpInside)];
     
-    
-    ZJPopupView *popView = [[ZJPopupView alloc]initWithShowView:view
+    self.popupView = [[ZJPopupView alloc]initWithShowView:_showView
                                                        viewSize:CGSizeMake(250, 300)
                                                        delegate:self
                                                    durationTime:0.25
@@ -46,10 +46,13 @@
                                                 isBGClickAction:YES
                                                    isBlurEffect:YES
                                                      animaStyle:style
-                                                       closeBtn:nil];
-    [popView zj_showPopupView];
+                                                       closeBtn:closeBtn];
+    [self.popupView zj_showPopupView];
 }
 
+-(void)closeBtnAction{
+    [self.popupView zj_hiddenPopupView];
+}
 
 -(void)zj_willShowPopupView{
     NSLog(@"将要显示 popView");
