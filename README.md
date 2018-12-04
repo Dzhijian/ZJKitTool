@@ -11,7 +11,8 @@ ZJKitTool 开发快速添加UIKit控件,结合Masonry，以及其他工具类的
 ##### iOS开发学习交流群
 **群号:616477537**
 加群请备注 iOS 学习交流
-![iOS学习交流群](http://image.coderdeng.xyz/iOS_study_chat.jpg)
+
+![iOS学习交流群](http://image.coderdeng.xyz/iOS_study_chat.jpg/style03)
 
 ## Installation
 
