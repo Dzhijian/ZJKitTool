@@ -39,6 +39,7 @@
     [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.popupView = [[ZJPopupView alloc]initWithShowView:_showView
+                                                superView:self.view.superview
                                                        viewSize:CGSizeMake(250, 300)
                                                        delegate:self
                                                    durationTime:0.25

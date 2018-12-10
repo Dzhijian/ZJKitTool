@@ -33,8 +33,10 @@
                  durationTime:(double)durationTime
                       bgAlpha:(CGFloat)bgAlpha
               isBGClickAction:(BOOL)isBGClickAction
-                   animaStyle:(ZJPopupAnimationStyle)animaStyle{
+                   animaStyle:(ZJPopupAnimationStyle)animaStyle {
+    
     return [self zj_showPopView:showView
+                      superView:nil
                        viewSize:size
                        delegate:delegate
                    durationTime:durationTime
@@ -46,6 +48,7 @@
 }
 
 +(instancetype)zj_showPopView:(ZJBasePopupView *)showView
+                    superView:(UIView *)superView
                      viewSize:(CGSize)size
                      delegate:(id<ZJPopupViewDelegate>)delegate
                  durationTime:(double)durationTime
@@ -56,6 +59,7 @@
                      closeBtn:( UIButton * _Nullable )closeBtn{
     
     ZJPopupView *popViw =  [[self alloc]initWithShowView:showView
+                                               superView:superView
                                                 viewSize:size
                                                 delegate:delegate
                                             durationTime:durationTime
@@ -72,6 +76,7 @@
 
 
 -(instancetype)initWithShowView:(ZJBasePopupView *)showView
+                      superView:(UIView *)superView
                        viewSize:(CGSize)size
                        delegate:(id<ZJPopupViewDelegate>)delegate
                    durationTime:(double)durationTime
@@ -79,22 +84,20 @@
                 isBGClickAction:(BOOL)isBGClickAction
                    isBlurEffect:(BOOL)isBlurEffect
                      animaStyle:(ZJPopupAnimationStyle)animaStyle
-                       closeBtn:(UIButton * __nullable)closeBtn{
+                       closeBtn:(UIButton * __nullable)closeBtn; {
     
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         self.delegate = delegate;
         self.showViewSize = size;
-        
         if (isBlurEffect) {
             // 毛片玻璃效果
-            UIBlurEffect *blurEffect =[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
             UIVisualEffectView *effectView =[[UIVisualEffectView alloc]initWithEffect:blurEffect];
             effectView.frame = self.bounds;
             [self addSubview:effectView];
         }
         
         self.showView = showView;
-        
         self.bgAlpha = bgAlpha > 0.0 ? bgAlpha : 0.5;
         self.durationTime = durationTime > 0.0 ? durationTime : 0.25;
         self.isBGClickAction = isBGClickAction;
@@ -108,28 +111,36 @@
             [self addSubview:self.showView];
         }
         
-        
-        
         if (closeBtn != nil) {
             self.closeBtn = closeBtn;
             [self addSubview:self.closeBtn];
         }
+        
+        if (superView != nil) {
+            [superView addSubview:self];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
+            [self addGestureRecognizer:tap];
+        }else{
+            [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
+            [self addGestureRecognizer:tap];
+        }
+        
         [self setUpAllView];
         
     }
     return self;
 }
+
 -(instancetype)init{
     if (self = [super init]) {
-        
     }
     return self;
 }
+
 #pragma SetUpView
--(void)setUpAllView{
-    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
-    [self addGestureRecognizer:tap];
+-(void)setUpAllView {
+    
     
     UITapGestureRecognizer *showViewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showViewAction:)];
     [self.showView addGestureRecognizer:showViewTap];
