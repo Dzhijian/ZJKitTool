@@ -104,7 +104,7 @@
         if (showView != nil) {
             NSAssert([showView isKindOfClass:[ZJBasePopupView class]], @"showView 必须继承 ZJBasePopupView");
             self.showView = showView;
-            self.showView.frame = CGRectMake((ScreenW - size.width)/2, (ScreenH - size.width)/2, size.width, size.height);
+            self.showView.frame = CGRectMake((ScreenW - size.width)/2, (ScreenH - size.height)/2, size.width, size.height);
             [self addSubview:self.showView];
         }
         
