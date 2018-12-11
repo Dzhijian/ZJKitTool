@@ -89,6 +89,17 @@
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         self.delegate = delegate;
         self.showViewSize = size;
+        if (superView != nil) {
+            self.frame = superView.bounds;
+            [superView addSubview:self];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
+            [self addGestureRecognizer:tap];
+        }else{
+            self.frame = [[UIScreen mainScreen] bounds];
+            [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
+            [self addGestureRecognizer:tap];
+        }
         if (isBlurEffect) {
             // 毛片玻璃效果
             UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
@@ -107,7 +118,7 @@
         if (showView != nil) {
             NSAssert([showView isKindOfClass:[ZJBasePopupView class]], @"showView 必须继承 ZJBasePopupView");
             self.showView = showView;
-            self.showView.frame = CGRectMake((ScreenW - size.width)/2, (ScreenH - size.height)/2, size.width, size.height);
+            self.showView.frame = CGRectMake((self.frame.size.width - size.width)/2, (self.frame.size.height - size.height)/2, size.width, size.height);
             [self addSubview:self.showView];
         }
         
@@ -115,17 +126,6 @@
             self.closeBtn = closeBtn;
             [self addSubview:self.closeBtn];
         }
-        
-        if (superView != nil) {
-            [superView addSubview:self];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
-            [self addGestureRecognizer:tap];
-        }else{
-            [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
-            [self addGestureRecognizer:tap];
-        }
-        
         [self setUpAllView];
         
     }
