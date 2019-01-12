@@ -39,6 +39,7 @@
     [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.popupView = [[ZJPopupView alloc]initWithShowView:_showView
+                                                superView:self.view
                                                        viewSize:CGSizeMake(250, 300)
                                                        delegate:self
                                                    durationTime:0.25
@@ -48,6 +49,11 @@
                                                      animaStyle:style
                                                        closeBtn:closeBtn];
     [self.popupView zj_showPopupView];
+    
+    kWeakObject(self);
+    self.showView.okBlock = ^{
+        [weakObject closeBtnAction];
+    };
 }
 
 -(void)closeBtnAction{

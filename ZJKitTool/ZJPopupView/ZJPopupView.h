@@ -73,6 +73,7 @@ typedef enum : NSUInteger {
  @return ZJPopUpView
  */
 +(instancetype)zj_showPopView:(ZJBasePopupView *)showView
+                    superView:(UIView *)superView
                      viewSize:(CGSize)size
                      delegate:(id<ZJPopupViewDelegate>)delegate
                  durationTime:(double)durationTime
@@ -98,6 +99,7 @@ typedef enum : NSUInteger {
  @return ZJPopUpView
  */
 -(instancetype)initWithShowView:(ZJBasePopupView *)showView
+                      superView:(UIView *)superView
                        viewSize:(CGSize)size
                        delegate:(id<ZJPopupViewDelegate>)delegate
                    durationTime:(double)durationTime
