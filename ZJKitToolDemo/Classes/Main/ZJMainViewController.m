@@ -56,15 +56,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ZJKitTool";
-    self.titleArray = @[@"快速创建控件+Masonry布局",@"评论列表(MVVM)",@"筛选视图",@"倒计时 Cell",
-                        @"MasonryCell(类似朋友圈)",@"CollectionView (瀑布流)",@"WKWebView的使用",
-                        @"导航栏渐变",@"球形TagView",@"视频列表",@"ZJPickerView",@"ZJNetworking",
-                        @"图片压缩",@"ZJPopupView"];
+    self.titleArray = @[@{@"title":@"快速创建控件+Masonry布局",@"className":@"ZJKitAndMasonryViewController"},
+                        @{@"title":@"评论列表(MVVM)",@"className":@"ZJCommitViewController"},
+                        @{@"title":@"筛选视图",@"className":@"ZJChooseViewController"},
+                        @{@"title":@"倒计时 Cell",@"className":@"ZJTimeCountDownViewController"},
+                        @{@"title":@"MasonryCell(类似朋友圈)",@"className":@"ZJMasonryAutolayoutCellViewController"},
+                        @{@"title":@"CollectionView (瀑布流)",@"className":@"ZJCollectionViewController"},
+                        @{@"title":@"WKWebView的使用",@"className":@"ZJWebViewController"},
+                        @{@"title":@"导航栏渐变",@"className":@"ZJNavBarShadeViewController"},
+                        @{@"title":@"球形TagView",@"className":@"ZJSphereTagCloudViewController"},
+                        @{@"title":@"视频列表",@"className":@"ZJPlayerListViewController"},
+                        @{@"title":@"ZJPickerView",@"className":@"ZJPickerViewController"},
+                        @{@"title":@"ZJNetworking",@"className":@"ZJNetworkViewController"},
+                        @{@"title":@"图片压缩",@"className":@"ZJImageCompressViewController"},
+                        @{@"title":@"ZJPopupView",@"className":@"ZJPopupViewController"}];
     [self setUpAllView];
-    
-//    [[ZJTimeCountDown ShareManager] zj_timeCountDownWithTime:5 PER_SECBlock:^{
-//        NSLog(@"12");
-//    }];
 
 }
 
@@ -84,7 +90,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ZJBaseTableViewCell *cell = [ZJBaseTableViewCell cellWithTableView:tableView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = self.titleArray[indexPath.row];
+    cell.textLabel.text = self.titleArray[indexPath.row][@"title"];
     cell.textLabel.backgroundColor = kWhiteColor;
     cell.textLabel.layer.masksToBounds = YES;
     cell.backgroundColor = kWhiteColor;
@@ -99,86 +105,11 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.row) {
-        case 0:
-        {
-            ZJKitAndMasonryViewController *kit = [[ZJKitAndMasonryViewController alloc]init];
-            [self.navigationController pushViewController:kit animated:YES];
-            break;
-        }
-        case 1:
-        {
-            ZJCommitViewController *commit = [[ZJCommitViewController alloc]init];
-            [self.navigationController pushViewController:commit animated:YES];
-            break;
-        }case 2:
-        {
-            ZJChooseViewController *choose = [[ZJChooseViewController alloc]init];
-            [self.navigationController pushViewController:choose animated:YES];
-            break;
-        }case 3:
-        {
-            ZJTimeCountDownViewController *timedown = [[ZJTimeCountDownViewController alloc]init];
-            [self.navigationController pushViewController:timedown animated:YES];
-            break;
-        }case 4:
-        {
-            ZJMasonryAutolayoutCellViewController *masonryCell = [[ZJMasonryAutolayoutCellViewController alloc]init];
-            [self.navigationController pushViewController:masonryCell animated:YES];
-            break;
-        }case 5:
-        {
-            ZJCollectionViewController *collectionView = [[ZJCollectionViewController alloc]init];
-            [self.navigationController pushViewController:collectionView animated:YES];
-            break;
-        }case 6:
-        {
-            ZJWebViewController *webView = [[ZJWebViewController alloc]init];
-            [self.navigationController pushViewController:webView animated:YES];
-            break;
-        }case 7:
-        {
-            ZJNavBarShadeViewController *navBar = [[ZJNavBarShadeViewController alloc]init];
-            [self.navigationController pushViewController:navBar animated:YES];
-            break;
-        }
-        case 8:
-        {
-            ZJSphereTagCloudViewController *sphere = [[ZJSphereTagCloudViewController alloc]init];
-            [self.navigationController pushViewController:sphere animated:YES];
-            break;
-        }
-        case 9:
-        {
-            ZJPlayerListViewController *player = [[ZJPlayerListViewController alloc]init];
-            [self.navigationController pushViewController:player animated:YES];
-            break;
-        }case 10:
-        {
-            ZJPickerViewController *pickerView = [[ZJPickerViewController alloc]init];
-            [self.navigationController pushViewController:pickerView animated:YES];
-            break;
-        }
-        case 11:
-        {
-            ZJNetworkViewController *net = [[ZJNetworkViewController alloc]init];
-            [self.navigationController pushViewController:net animated:YES];
-            break;
-        }
-        case 12:
-        {
-            ZJImageCompressViewController *imageCompress = [[ZJImageCompressViewController alloc]init];
-            [self.navigationController pushViewController:imageCompress animated:YES];
-            break;
-        }case 13:
-        {
-            ZJPopupViewController *popupView = [[ZJPopupViewController alloc]init];
-            [self.navigationController pushViewController:popupView animated:YES];
-            break;
-        }
-        default:
-            break;
-    }
+    
+    NSDictionary *dict = self.titleArray[indexPath.row];
+    UIViewController *vc = NSClassFromString(dict[@"className"]).new;
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -152,7 +152,7 @@
 
 -(ZJNavigationBar *)zj_navigationBar{
     if (!_zj_navigationBar) {
-        _zj_navigationBar = [[ZJNavigationBar alloc]initWithFrame:CGRectMake(0, 00, kScreenWidth, 64)];
+        _zj_navigationBar = [[ZJNavigationBar alloc]initWithFrame:CGRectMake(0, 00, kScreenWidth, ZJ_IS_IPHONE ? 84 : 64)];
         _zj_navigationBar.backgroundColor = kClearColor;
         _zj_navigationBar.delegate = self;
         _zj_navigationBar.lineView.hidden = YES;

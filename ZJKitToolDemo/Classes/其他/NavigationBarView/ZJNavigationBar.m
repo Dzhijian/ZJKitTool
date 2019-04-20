@@ -47,7 +47,7 @@
     
     kWeakObject(self);
     self.titleLab = [UILabel zj_labelWithFont:kBoldFontWithSize(16) lines:1 text:nil textColor:kBlackColor superView:self constraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(10);
+        make.bottom.mas_equalTo(-10);
         make.centerX.mas_equalTo(0);
     }];
     
