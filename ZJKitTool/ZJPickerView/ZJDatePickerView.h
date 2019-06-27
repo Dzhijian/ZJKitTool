@@ -168,4 +168,39 @@ typedef void(^ZJDateCancelBlock)(void);
                   selectRowBGColor:(UIColor *)selectRowBGColor
                        resultBlock:(ZJDateResultBlock)resultBlock
                        cancelBlock:(ZJDateCancelBlock)cancelBlock;
+
+/**
+ 7.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的文本 颜色、取消选择的回调,时都显示中文单位）
+ 
+ @param title    标题
+ @param dateType pickerView显示类型,
+ @param defaultSelValue 默认值
+ @param minDate 时间最小值
+ @param maxDate 时间最大值
+ @param isAutoSelect 是否自动选择
+ @param isShowChinese 是否显示中文单位 年月日,默认不显示
+ @param lineColor 分割线的颜色,默认为灰色
+ @param rowHeight 行高
+ @param leftBtnTitleColor 左边的按钮颜色
+ @param rightBtnTitleColor 右边的按钮颜色
+ @param resultBlock 确认回调
+ @param cancelBlock 取消回调
+ */
++ (void)zj_showDatePickerWithTitle:(NSString *)title
+                          dateType:(ZJDatePickerMode)dateType
+                   defaultSelValue:(NSString *)defaultSelValue
+                           minDate:(NSDate *)minDate
+                           maxDate:(NSDate *)maxDate
+                      isAutoSelect:(BOOL)isAutoSelect
+                     isShowChinese:(BOOL)isShowChinese
+                         lineColor:(UIColor *)lineColor
+                         rowHeight:(CGFloat)rowHeight
+                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
+                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
+               selecteRowTextColor:(UIColor *)selecteRowTextColor
+                  selectRowBGColor:(UIColor *)selectRowBGColor
+                         leftTitle:(NSString *)leftTitle
+                        rightTitle:(NSString *)rightTitle
+                       resultBlock:(ZJDateResultBlock)resultBlock
+                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
 @end

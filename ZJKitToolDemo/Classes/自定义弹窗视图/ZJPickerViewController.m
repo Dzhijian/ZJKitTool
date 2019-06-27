@@ -190,6 +190,31 @@
         
     }];
     
+    
+    UILabel *lab8 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择日期" superView: self.view constraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab7.mas_bottom).offset(25);
+        make.left.mas_equalTo(30);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(35);
+    }];
+    
+    [UIButton zj_buttonWithTitle:@"选择日期" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(lab8.mas_centerY);
+        make.left.equalTo(lab8.mas_right).offset(30);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(35);
+    } touchUp:^(id sender) {
+        
+        [ZJDatePickerView zj_showDatePickerWithTitle:@"Selected Date" dateType:(ZJDatePickerModeDate) defaultSelValue:nil minDate:[NSDate date] maxDate:nil isAutoSelect:true isShowChinese:false lineColor:kLightGrayColor rowHeight:40 leftBtnTitleColor:kLightGrayColor rightBtnTitleColor:kRedColor selecteRowTextColor:nil selectRowBGColor:nil leftTitle:@"Cancel" rightTitle:@"Done" resultBlock:^(NSString *selectValue) {
+            NSLog(@"%@",selectValue);
+            NSDate *date = [NSDate dateWithString:selectValue format:@"yyyy-MM-dd"];
+            NSString *str = [NSDate dateToString:date format:@"dd/MM/yyyy"];
+            NSLog(@"%@",str);
+        } cancelBlock:^{
+            
+        }];
+    }];
+    
 }
 
 
