@@ -70,6 +70,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) ZJDateCancelBlock cancelBlock;
 /** 存取选中行 */
 @property (nonatomic,strong) NSMutableDictionary *selectedRowCache;
+/**  是否显示中文名 */
+@property (nonatomic, assign) BOOL isShowChinese;
 @end
 
 @implementation ZJDatePickerView
@@ -203,18 +205,60 @@ typedef enum : NSUInteger {
                   selectRowBGColor:(UIColor *)selectRowBGColor
                        resultBlock:(ZJDateResultBlock)resultBlock
                        cancelBlock:(ZJDateCancelBlock)cancelBlock {
+    
+    [self zj_showDatePickerWithTitle:title
+                            dateType:dateType
+                     defaultSelValue:defaultSelValue
+                             minDate:minDate
+                             maxDate:maxDate
+                        isAutoSelect:isAutoSelect
+                       isShowChinese:false
+                           lineColor:lineColor
+                           rowHeight:rowHeight
+                   leftBtnTitleColor:leftBtnTitleColor
+                  rightBtnTitleColor:rightBtnTitleColor
+                 selecteRowTextColor:selecteRowTextColor
+                    selectRowBGColor:selectRowBGColor
+                           leftTitle:nil
+                          rightTitle:nil
+                         resultBlock:resultBlock
+                         cancelBlock:cancelBlock];
+}
+
+#pragma mark - 7.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的文本 颜色、取消选择的回调,时都显示中文单位）
++ (void)zj_showDatePickerWithTitle:(NSString *)title
+                          dateType:(ZJDatePickerMode)dateType
+                   defaultSelValue:(NSString *)defaultSelValue
+                           minDate:(NSDate *)minDate
+                           maxDate:(NSDate *)maxDate
+                      isAutoSelect:(BOOL)isAutoSelect
+                     isShowChinese:(BOOL)isShowChinese
+                         lineColor:(UIColor *)lineColor
+                         rowHeight:(CGFloat)rowHeight
+                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
+                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
+               selecteRowTextColor:(UIColor *)selecteRowTextColor
+                  selectRowBGColor:(UIColor *)selectRowBGColor
+                         leftTitle:(NSString *)leftTitle
+                        rightTitle:(NSString *)rightTitle
+                       resultBlock:(ZJDateResultBlock)resultBlock
+                       cancelBlock:(ZJDateCancelBlock)cancelBlock{
+    
     ZJDatePickerView *datePickerView = [[ZJDatePickerView alloc] initWithTitle:title
                                                                       dateType:dateType
                                                                defaultSelValue:defaultSelValue
                                                                        minDate:minDate
                                                                        maxDate:maxDate
+                                                                  isAutoSelect:isAutoSelect
+                                                                 isShowChinese:isShowChinese
                                                                      lineColor:lineColor
                                                                      rowHeight:rowHeight
-                                                                  isAutoSelect:isAutoSelect
                                                              leftBtnTitleColor:leftBtnTitleColor
                                                             rightBtnTitleColor:rightBtnTitleColor
                                                            selecteRowTextColor:selecteRowTextColor
                                                               selectRowBGColor:selectRowBGColor
+                                                                     leftTitle:leftTitle
+                                                                    rightTitle:rightTitle
                                                                    resultBlock:resultBlock
                                                                    cancelBlock:cancelBlock];
     [datePickerView showPickerViewWithAnimation:YES];
@@ -226,13 +270,16 @@ typedef enum : NSUInteger {
               defaultSelValue:(NSString *)defaultSelValue
                       minDate:(NSDate *)minDate
                       maxDate:(NSDate *)maxDate
+                 isAutoSelect:(BOOL)isAutoSelect
+                isShowChinese:(BOOL)isShowChinese
                     lineColor:(UIColor *)lineColor
                     rowHeight:(CGFloat)rowHeight
-                 isAutoSelect:(BOOL)isAutoSelect
             leftBtnTitleColor:(UIColor *)leftBtnTitleColor
            rightBtnTitleColor:(UIColor *)rightBtnTitleColor
           selecteRowTextColor:(UIColor *)selecteRowTextColor
              selectRowBGColor:(UIColor *)selectRowBGColor
+                    leftTitle:(NSString *)leftTitle
+                   rightTitle:(NSString *)rightTitle
                   resultBlock:(ZJDateResultBlock)resultBlock
                   cancelBlock:(ZJDateCancelBlock)cancelBlock{
     
@@ -246,10 +293,19 @@ typedef enum : NSUInteger {
         self.rowHeight              = rowHeight ? rowHeight : 35.0f;
         self.selecteRowTextColor    = selecteRowTextColor;
         self.selectRowBGColor       = selectRowBGColor;
+        self.isShowChinese          = isShowChinese;
         // 配置按钮的文本颜色
         if (leftBtnTitleColor || rightBtnTitleColor) {
             
             [self setUpConfirmTitleColor:rightBtnTitleColor cancelColor:leftBtnTitleColor];
+        }
+        
+        if (leftTitle) {
+            [self.leftBtn setTitle:leftTitle forState:(UIControlStateNormal)];
+        }
+        
+        if (rightTitle) {
+            [self.rightBtn setTitle:rightTitle forState:(UIControlStateNormal)];
         }
         
         [self setupSelectDateFormatter:pickerMode];
@@ -664,64 +720,69 @@ typedef enum : NSUInteger {
 #pragma mark - 设置pickerView 每一行的文字显示
 - (void)setDateLabelText:(UILabel *)label component:(NSInteger)component row:(NSInteger)row {
     
+    NSString *year = self.isShowChinese ? @"年" : @"";
+    NSString *month = self.isShowChinese ? @"月" : @"";
+    NSString *day = self.isShowChinese ? @"日" : @"";
+    NSString *hour = self.isShowChinese ? @"时" : @"";
+    NSString *minute = self.isShowChinese ? @"分" : @"";
     switch (self.pickerMode) {
         case ZJDatePickerModeYMDHM:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@年", self.yearArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.yearArr[row],year];
             } else if (component == 1) {
-                label.text = [NSString stringWithFormat:@"%@月", self.monthArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.monthArr[row],month];
             } else if (component == 2) {
-                label.text = [NSString stringWithFormat:@"%@日", self.dayArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.dayArr[row],day];
             } else if (component == 3) {
-                label.text = [NSString stringWithFormat:@"%@时", self.hourArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.hourArr[row],hour];
             } else if (component == 4) {
-                label.text = [NSString stringWithFormat:@"%@分", self.minuteArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.minuteArr[row],minute];
             }
             break;
         case ZJDatePickerModeMDHM:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@月", self.monthArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.monthArr[row],month];
             } else if (component == 1) {
-                label.text = [NSString stringWithFormat:@"%@日", self.dayArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.dayArr[row],day];
             } else if (component == 2) {
-                label.text = [NSString stringWithFormat:@"%@时", self.hourArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.hourArr[row],month];
             } else if (component == 3) {
-                label.text = [NSString stringWithFormat:@"%@分", self.minuteArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.minuteArr[row],minute];
             }
             break;
         case ZJDatePickerModeYMD:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@年", self.yearArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.yearArr[row],year];
             } else if (component == 1) {
-                label.text = [NSString stringWithFormat:@"%@月", self.monthArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.monthArr[row],month];
             } else if (component == 2) {
-                label.text = [NSString stringWithFormat:@"%@日", self.dayArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.dayArr[row],day];
             }
             break;
         case ZJDatePickerModeYM:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@年", self.yearArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.yearArr[row],year];
             } else if (component == 1) {
-                label.text = [NSString stringWithFormat:@"%@月", self.monthArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.monthArr[row],month];
             }
             break;
         case ZJDatePickerModeY:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@年", self.yearArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.yearArr[row],year];
             }
             break;
         case ZJDatePickerModeMD:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@月", self.monthArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.monthArr[row],month];
             } else if (component == 1) {
-                label.text = [NSString stringWithFormat:@"%@日", self.dayArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.dayArr[row],day];
             }
             break;
         case ZJDatePickerModeHM:
             if (component == 0) {
-                label.text = [NSString stringWithFormat:@"%@时", self.hourArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.hourArr[row],hour];
             } else if (component == 1) {
-                label.text = [NSString stringWithFormat:@"%@分", self.minuteArr[row]];
+                label.text = [NSString stringWithFormat:@"%@%@", self.minuteArr[row],minute];
             }
             break;
             
