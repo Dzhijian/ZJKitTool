@@ -51,9 +51,9 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "CoderDeng" => "dengzj@canplay.com.cn" }
+  s.author             = { "CoderDeng" => "646724452@qq.com" }
   # Or just: s.author    = "CodeDeng"
-  # s.authors            = { "CodeDeng" => "dengzj@canplay.com.cn" }
+  # s.authors            = { "CodeDeng" => "646724452@qq.com" }
   # s.social_media_url   = "http://twitter.com/CodeDeng"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
