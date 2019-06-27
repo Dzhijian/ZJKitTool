@@ -205,8 +205,11 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
-        [ZJDatePickerView zj_showDatePickerWithTitle:@"Selected Date" dateType:(ZJDatePickerModeYMD) defaultSelValue:nil minDate:[NSDate date] maxDate:nil isAutoSelect:true isShowChinese:false lineColor:kLightGrayColor rowHeight:40 leftBtnTitleColor:kLightGrayColor rightBtnTitleColor:kRedColor selecteRowTextColor:nil selectRowBGColor:nil leftTitle:@"Cancel" rightTitle:@"Done" resultBlock:^(NSString *selectValue) {
-            
+        [ZJDatePickerView zj_showDatePickerWithTitle:@"Selected Date" dateType:(ZJDatePickerModeDate) defaultSelValue:nil minDate:[NSDate date] maxDate:nil isAutoSelect:true isShowChinese:false lineColor:kLightGrayColor rowHeight:40 leftBtnTitleColor:kLightGrayColor rightBtnTitleColor:kRedColor selecteRowTextColor:nil selectRowBGColor:nil leftTitle:@"Cancel" rightTitle:@"Done" resultBlock:^(NSString *selectValue) {
+            NSLog(@"%@",selectValue);
+            NSDate *date = [NSDate dateWithString:selectValue format:@"yyyy-MM-dd"];
+            NSString *str = [NSDate dateToString:date format:@"dd/MM/yyyy"];
+            NSLog(@"%@",str);
         } cancelBlock:^{
             
         }];
