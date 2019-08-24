@@ -14,7 +14,7 @@
  */
 #import "ZJWebViewController.h"
 
-@interface ZJWebViewController ()
+@interface ZJWebViewController ()<WKScriptMessageHandler>
 
 @property(nonatomic ,strong) UIView *testView;
 
@@ -33,7 +33,7 @@
     self.webView.configuration.userContentController = [[WKUserContentController alloc] init];
     
     // 获取设备 deviceID 并回显到 H5
-//    [self.webView.configuration.userContentController addScriptMessageHandler:self.ocjsHelper name:LMJOCJSHelperScriptMessageHandlerName1_];
+    [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"OCJSHelper1"];
     
     [self.webView loadRequest:[NSMutableURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:NSStringFromClass(self.class) withExtension:@"html"]]];
 }
@@ -133,6 +133,13 @@
     [self presentViewController:alert animated:YES completion:NULL];
 }
 
+#pragma mark - WLScriptMessageHandler
+//js传递过来的数据
+-(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
+{
+    NSLog(@"%@",message.name);//方法名
+    NSLog(@"%@",message.body);//传递的数据
+}
 
 -(UIView *)testView{
     if (!_testView) {
