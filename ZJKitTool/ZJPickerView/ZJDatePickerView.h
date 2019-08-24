@@ -175,6 +175,7 @@ typedef void(^ZJDateCancelBlock)(void);
  @param title    标题
  @param dateType pickerView显示类型,
  @param defaultSelValue 默认值
+ @param language 语言
  @param minDate 时间最小值
  @param maxDate 时间最大值
  @param isAutoSelect 是否自动选择
@@ -189,6 +190,7 @@ typedef void(^ZJDateCancelBlock)(void);
 + (void)zj_showDatePickerWithTitle:(NSString *)title
                           dateType:(ZJDatePickerMode)dateType
                    defaultSelValue:(NSString *)defaultSelValue
+                          language:(nullable NSString *)language
                            minDate:(NSDate *)minDate
                            maxDate:(NSDate *)maxDate
                       isAutoSelect:(BOOL)isAutoSelect

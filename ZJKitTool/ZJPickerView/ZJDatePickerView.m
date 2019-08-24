@@ -209,6 +209,7 @@ typedef enum : NSUInteger {
     [self zj_showDatePickerWithTitle:title
                             dateType:dateType
                      defaultSelValue:defaultSelValue
+                            language:nil
                              minDate:minDate
                              maxDate:maxDate
                         isAutoSelect:isAutoSelect
@@ -229,6 +230,7 @@ typedef enum : NSUInteger {
 + (void)zj_showDatePickerWithTitle:(NSString *)title
                           dateType:(ZJDatePickerMode)dateType
                    defaultSelValue:(NSString *)defaultSelValue
+                          language:(nullable NSString *)language
                            minDate:(NSDate *)minDate
                            maxDate:(NSDate *)maxDate
                       isAutoSelect:(BOOL)isAutoSelect
@@ -247,6 +249,7 @@ typedef enum : NSUInteger {
     ZJDatePickerView *datePickerView = [[ZJDatePickerView alloc] initWithTitle:title
                                                                       dateType:dateType
                                                                defaultSelValue:defaultSelValue
+                                                                      language:language
                                                                        minDate:minDate
                                                                        maxDate:maxDate
                                                                   isAutoSelect:isAutoSelect
@@ -268,6 +271,7 @@ typedef enum : NSUInteger {
 - (instancetype)initWithTitle:(NSString *)title
                      dateType:(ZJDatePickerMode)pickerMode
               defaultSelValue:(NSString *)defaultSelValue
+                     language:(nullable NSString *)language
                       minDate:(NSDate *)minDate
                       maxDate:(NSDate *)maxDate
                  isAutoSelect:(BOOL)isAutoSelect
@@ -358,6 +362,10 @@ typedef enum : NSUInteger {
             // 如果最小日期大于了最大日期，就忽略两个值
             self.minLimitDate = [NSDate distantPast];
             self.maxLimitDate = [NSDate distantFuture];
+        }
+        
+        if (language.length > 0) {
+             self.datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:language];
         }
         
         

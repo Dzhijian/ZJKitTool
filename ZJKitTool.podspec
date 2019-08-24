@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.4.6"
+  s.version      = "2.4.7"
   s.summary      = "ZJKitTool是一个对UIK封装的框架与各种工具的集合,还有各种自定义View等等"
 
   # This description is used to generate tags and improve search results.
@@ -51,9 +51,9 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "CoderDeng" => "dengzj@canplay.com.cn" }
+  s.author             = { "CoderDeng" => "646724452@qq.com" }
   # Or just: s.author    = "CodeDeng"
-  # s.authors            = { "CodeDeng" => "dengzj@canplay.com.cn" }
+  # s.authors            = { "CodeDeng" => "646724452@qq.com" }
   # s.social_media_url   = "http://twitter.com/CodeDeng"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
