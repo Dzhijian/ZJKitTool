@@ -37,6 +37,27 @@ typedef enum : NSUInteger {
 
 /// 代理
 @property (nonatomic, weak) id<ZJPopupViewDelegate>  delegate;
+/** 弹出视图 */
+@property (nonatomic, strong) ZJBasePopupView *popupView;
+/** 弹出视图的宽度 */
+@property (nonatomic, assign) CGSize popupViewFrame;
+/** 动画时间  默认 0.25 */
+@property (nonatomic, assign) double durationTime;
+/** 背景颜色透明度 */
+@property (nonatomic, assign) double backgroundAlpha;
+/** 背景是否可以点击 */
+@property (nonatomic, assign) BOOL backgroundIsClick;
+/** 动画样式 */
+@property (nonatomic, assign) ZJPopupAnimationStyle animationStyle;
+/** 是否添加Blur */
+@property (nonatomic, assign) BOOL isBlurEffect;
+/** 关闭按钮 */
+@property (nonatomic, strong) UIButton *closeBtn;
+
+
++(instancetype)zj_showWithPopupView:(ZJBasePopupView *)popupView;
+
+
 
 /**
  * 3.快速创建弹窗(popView,viewSize,代理,动画类型,时间,背景颜色,允许背景点击)
