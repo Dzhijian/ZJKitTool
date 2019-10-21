@@ -17,16 +17,18 @@
 @property (nonatomic, assign) ZJPopupAnimationStyle style;
 @property (nonatomic, strong) ZJBasePopupView *showView;
 @property (nonatomic, assign) BOOL isBGClickAction;
-@property (nonatomic, assign) double durationTime;
+//@property (nonatomic, assign) double durationTime;
 @property (nonatomic, assign) CGFloat bgAlpha;
 @property (nonatomic, assign) CGSize showViewSize;
-@property (nonatomic, strong) UIButton *closeBtn;
+//@property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, assign) BOOL isShowComplete;
 @end
 
 @implementation ZJPopupView
-#pragma mark - 初始化视图
 
+
+
+#pragma mark - 初始化视图
 +(instancetype)zj_showPopView:(ZJBasePopupView *)showView
                      viewSize:(CGSize)size
                      delegate:(id<ZJPopupViewDelegate>)delegate
@@ -138,9 +140,16 @@
     return self;
 }
 
++(instancetype)zj_showWithPopupView:(ZJBasePopupView *)popupView{
+    
+   
+    ZJPopupView *popView = [[ZJPopupView alloc]init];
+    
+    return popView;
+}
+
 #pragma SetUpView
 -(void)setUpAllView {
-    
     
     UITapGestureRecognizer *showViewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showViewAction:)];
     [self.showView addGestureRecognizer:showViewTap];
@@ -156,6 +165,36 @@
         make.width.height.mas_equalTo(30);
     }];
 }
+
+#pragma mark - Setter
+-(void)setPopupView:(ZJBasePopupView *)popupView{
+    _popupView = popupView;
+}
+
+- (void)setBackgroundAlpha:(double)backgroundAlpha{
+    _backgroundAlpha = backgroundAlpha;
+}
+
+-(void)setBackgroundIsClick:(BOOL)backgroundIsClick{
+    _backgroundIsClick = backgroundIsClick;
+}
+
+-(void)setAnimationStyle:(ZJPopupAnimationStyle)animationStyle{
+    _animationStyle = animationStyle;
+}
+
+- (void)setIsBlurEffect:(BOOL)isBlurEffect{
+    _isBlurEffect = isBlurEffect;
+}
+
+-(void)setDurationTime:(double)durationTime{
+    _durationTime = durationTime;
+}
+
+- (void)setPopupViewFrame:(CGSize)popupViewFrame{
+    _popupViewFrame = popupViewFrame;
+}
+
 
 #pragma mark - Actions
 -(void)bgViewAction:(UITapGestureRecognizer *)gesture{
