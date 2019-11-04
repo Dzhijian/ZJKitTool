@@ -108,7 +108,7 @@
 
 -(UIButton *)leftBtn{
     if (!_leftBtn) {
-        _leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(6, 8, 90, 28)];
+        _leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 8, 90, 28)];
         _leftBtn.backgroundColor = [UIColor lightTextColor];
         _leftBtn.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
         _leftBtn.titleLabel.font = kFontSize(14);
@@ -123,13 +123,13 @@
 #pragma mark - 右边确定按钮
 - (UIButton *)rightBtn {
     if (!_rightBtn) {
-        _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.alertView.frame.size.width - 65, 8, 90, 28)];
+        _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.alertView.frame.size.width - 100, 8, 90, 28)];
         _rightBtn.backgroundColor = kBRToolBarColor;
         _rightBtn.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
         _rightBtn.titleLabel.font = kFontSize(14);
         [_rightBtn setTitleColor:kDefaultThemeColor forState:UIControlStateNormal];
         [_rightBtn setTitle:@"确定" forState:UIControlStateNormal];
-        _leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        _rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         [_rightBtn addTarget:self action:@selector(rightBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightBtn;

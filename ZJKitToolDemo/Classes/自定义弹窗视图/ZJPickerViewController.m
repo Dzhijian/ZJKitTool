@@ -182,7 +182,7 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
-        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"人妖",@"未知"] defaultSelValue:@"人妖" isAutoSelect: NO rowHeight:40 lineColor:kRedColor confirmBtnTitleColor:kGreenColor cancelBtnTitleColor:kPurpleColor selecteRowTextColor:kRGB(130, 60, 50) selectRowBGColor:kRGB(11, 12, 12) leftBtnTitle:@"haha" rightBtnTitle:@"hehe" resultBlock:^(id selectValue, NSInteger index) {
+        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"人妖",@"未知"] defaultSelValue:@"人妖" isAutoSelect: NO rowHeight:40 lineColor:kRedColor confirmBtnTitleColor:kGreenColor cancelBtnTitleColor:kPurpleColor selecteRowTextColor:kRGB(130, 60, 50) selectRowBGColor:kRGB(11, 12, 12) leftBtnTitle:@"嘿嘿嘿" rightBtnTitle:@"哈哈哈哈哈哈哈哈哈哈" resultBlock:^(id selectValue, NSInteger index) {
             NSLog(@"index---%ld",index);
         } cancelBlock:^{
             
