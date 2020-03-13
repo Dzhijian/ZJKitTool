@@ -22,7 +22,6 @@
 #import "UILabel+ZJMasonryKit.h"
 #import "UIButton+ZJMasonryKit.h"
 #import "UIView+ZJMasonryKit.h"
-#import "UIWebView+ZJMasonryKit.h"
 #import "UITextField+ZJMasonryKit.h"
 #import "UITableView+ZJMarsonryKit.h"
 #import "UITextView+ZJMasonryKit.h"

@@ -109,7 +109,7 @@
     NSDictionary *dict = self.titleArray[indexPath.row];
     UIViewController *vc = NSClassFromString(dict[@"className"]).new;
     [self.navigationController pushViewController:vc animated:YES];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {

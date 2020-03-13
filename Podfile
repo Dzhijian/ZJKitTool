@@ -17,11 +17,6 @@ target 'ZJKitTool' do
   pod 'GDPerformanceView'
   pod 'UITableView+FDTemplateLayoutCell'
   
-  pod 'LBXScan/LBXNative','~> 2.3'
-  pod 'LBXScan/LBXZXing','~> 2.3'
-  pod 'LBXScan/LBXZBar','~> 2.3'
-  pod 'LBXScan/UI','~> 2.3'
-  
   pod 'YYImage'
   pod 'YYText'
   pod 'YYAsyncLayer'

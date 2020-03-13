@@ -53,7 +53,6 @@
 		048E8A3320172E9300486470 /* ZJChooseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E8A3220172E9300486470 /* ZJChooseModel.m */; };
 		04B097F7209CCE7E00E66CA2 /* ZJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B097F5209CCE7D00E66CA2 /* ZJButton.m */; };
 		04B09A66209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B099F9209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m */; };
-		04B09A67209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B099FB209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m */; };
 		04B09A68209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B099FC209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m */; };
 		04B09A69209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B099FD209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.m */; };
 		04B09A6A209DB7BD00E66CA2 /* UIView+ZJMasonryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B099FE209DB7BD00E66CA2 /* UIView+ZJMasonryKit.m */; };
@@ -261,14 +260,12 @@
 		04B097F6209CCE7E00E66CA2 /* ZJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJButton.h; sourceTree = "<group>"; };
 		04B099F9209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B099FA209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+ZJMasonryKit.h"; sourceTree = "<group>"; };
-		04B099FB209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B099FC209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B099FD209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B099FE209DB7BD00E66CA2 /* UIView+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B099FF209DB7BD00E66CA2 /* UITextField+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B09A00209DB7BD00E66CA2 /* UITableView+ZJMarsonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZJMarsonryKit.m"; sourceTree = "<group>"; };
 		04B09A01209DB7BD00E66CA2 /* UILabel+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJMasonryKit.m"; sourceTree = "<group>"; };
-		04B09A02209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+ZJMasonryKit.h"; sourceTree = "<group>"; };
 		04B09A03209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+ZJMasonryKit.m"; sourceTree = "<group>"; };
 		04B09A04209DB7BD00E66CA2 /* UITextView+ZJMasonryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZJMasonryKit.h"; sourceTree = "<group>"; };
 		04B09A05209DB7BD00E66CA2 /* ZJUIMasonsyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUIMasonsyKit.h; sourceTree = "<group>"; };
@@ -912,8 +909,6 @@
 				0408D249209EF90900097E14 /* UIView+ZJMasonryFrame.m */,
 				04B09A08209DB7BD00E66CA2 /* UIView+ZJMasonryKit.h */,
 				04B099FE209DB7BD00E66CA2 /* UIView+ZJMasonryKit.m */,
-				04B09A02209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.h */,
-				04B099FB209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m */,
 				0408D242209EF58E00097E14 /* ZJKitMasonryTool.h */,
 				0408D243209EF58E00097E14 /* ZJKitMasonryTool.m */,
 				04B09A05209DB7BD00E66CA2 /* ZJUIMasonsyKit.h */,
@@ -1484,26 +1479,16 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool-resources.sh",
-				"${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png",
-				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html",
-				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png",
-				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-samples.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CodeScan.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-back.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-help.html",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-helpicons.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-samples.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZJKitTool/Pods-ZJKitTool-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1614,7 +1599,6 @@
 				04F58E24215C841D007BCE4E /* ZJImageCompressViewController.m in Sources */,
 				04B09A6F209DB7BD00E66CA2 /* ZJBaseWKWebViewController.m in Sources */,
 				04B09A73209DB7BD00E66CA2 /* UIColor+ZJColor.m in Sources */,
-				04B09A67209DB7BD00E66CA2 /* UIWebView+ZJMasonryKit.m in Sources */,
 				04B09A93209DB7BD00E66CA2 /* NSTimer+ZJHelperKit.m in Sources */,
 				04B09A6D209DB7BD00E66CA2 /* UILabel+ZJMasonryKit.m in Sources */,
 				04B09A87209DB7BD00E66CA2 /* UITableViewCell+ZJBaseFunctions.m in Sources */,
