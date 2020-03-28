@@ -29,6 +29,78 @@ static NSString *const ButtonTextObjectKey = @"buttonTextObject";
     return button;
 }
 
+#pragma mark - 设置背景颜色
+- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state
+{
+    
+    [self setBackgroundImage:[self zj_imageWithColor:backgroundColor] forState:state];
+}
+
+#pragma mark - 设置图片位置
+- (CGSize)zj_setButtonImagePosition:(ZJButtonImagePosition)position spacing:(CGFloat)spacing
+{
+   // 1. 得到imageView和titleLabel的宽、高
+       CGFloat imageWith = self.imageView.frame.size.width;
+       CGFloat imageHeight = self.imageView.frame.size.height;
+    
+       CGFloat labelWidth = 0.0;
+       CGFloat labelHeight = 0.0;
+       if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0) {
+           // 由于iOS8中titleLabel的size为0，用下面的这种设置
+           labelWidth = self.titleLabel.intrinsicContentSize.width;
+           labelHeight = self.titleLabel.intrinsicContentSize.height;
+       } else {
+           labelWidth = self.titleLabel.frame.size.width;
+           labelHeight = self.titleLabel.frame.size.height;
+       }
+    
+       // 2. 声明全局的imageEdgeInsets和labelEdgeInsets
+       UIEdgeInsets imageEdgeInsets = UIEdgeInsetsZero;
+       UIEdgeInsets labelEdgeInsets = UIEdgeInsetsZero;
+    
+
+    CGSize buttonSize = CGSizeZero;
+    
+    
+   // 3. 根据style和space得到imageEdgeInsets和labelEdgeInsets的值
+    switch (position) {
+        case ZJButtonImagePositionTop:
+        {
+            imageEdgeInsets = UIEdgeInsetsMake(-labelHeight-spacing/2.0, 0, 0, -labelWidth);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, -imageHeight-spacing/2.0, 0);
+        }
+            break;
+        case ZJButtonImagePositionLeft:
+        {
+            imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2.0, 0, spacing/2.0);
+            labelEdgeInsets = UIEdgeInsetsMake(0, spacing/2.0, 0, -spacing/2.0);
+        }
+            break;
+        case ZJButtonImagePositionBottom:
+        {
+            imageEdgeInsets = UIEdgeInsetsMake(0, 0, -labelHeight-spacing/2.0, -labelWidth);
+            labelEdgeInsets = UIEdgeInsetsMake(-imageHeight-spacing/2.0, -imageWith, 0, 0);
+        }
+            break;
+        case ZJButtonImagePositionRight:
+        {
+            imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth+spacing/2.0, 0, -labelWidth-spacing/2.0);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith-spacing/2.0, 0, imageWith+spacing/2.0);
+        }
+            break;
+        default:
+            break;
+    }
+    // 4. 赋
+    
+    self.titleEdgeInsets = labelEdgeInsets;
+    
+    self.imageEdgeInsets = imageEdgeInsets;
+    
+    return buttonSize;
+}
+
+
 #pragma mark - 点击事件
 -(void)zj_addBtnActionHandler:(ButtonTouchUpInsideBlock)touchHandler{
     objc_setAssociatedObject(self, @selector(zj_addBtnActionHandler:), touchHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -60,7 +132,7 @@ static NSString *const ButtonTextObjectKey = @"buttonTextObject";
     [self setTitle:@"" forState:UIControlStateNormal];
     [self addSubview:indicator];
 }
-
+#pragma mark - 隐藏菊花
 -(void)zj_hideIndicator{
     NSString *currentBtnText = (NSString *)objc_getAssociatedObject(self, &ButtonTextObjectKey);
     UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)objc_getAssociatedObject(self, &IndicatorViewKey);
@@ -106,6 +178,16 @@ static NSString *const ButtonTextObjectKey = @"buttonTextObject";
     dispatch_resume(_timer);
 }
 
-
+- (UIImage *)zj_imageWithColor:(UIColor *)color{
+    if (!color) return nil;
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1, 1);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 @end

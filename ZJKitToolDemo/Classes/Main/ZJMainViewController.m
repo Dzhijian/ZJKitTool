@@ -57,6 +57,7 @@
     [super viewDidLoad];
     self.title = @"ZJKitTool";
     self.titleArray = @[@{@"title":@"快速创建控件+Masonry布局",@"className":@"ZJKitAndMasonryViewController"},
+                        @{@"title":@"UI控件",@"className":@"ZJUIViewController"},
                         @{@"title":@"评论列表(MVVM)",@"className":@"ZJCommitViewController"},
                         @{@"title":@"筛选视图",@"className":@"ZJChooseViewController"},
                         @{@"title":@"倒计时 Cell",@"className":@"ZJTimeCountDownViewController"},
@@ -69,7 +70,8 @@
                         @{@"title":@"ZJPickerView",@"className":@"ZJPickerViewController"},
                         @{@"title":@"ZJNetworking",@"className":@"ZJNetworkViewController"},
                         @{@"title":@"图片压缩",@"className":@"ZJImageCompressViewController"},
-                        @{@"title":@"ZJPopupView",@"className":@"ZJPopupViewController"}];
+                        @{@"title":@"ZJPopupView",@"className":@"ZJPopupViewController"},
+                        @{@"title":@"Method chaining",@"className":@"ZJChainViewController"},];
     [self setUpAllView];
 
 }
