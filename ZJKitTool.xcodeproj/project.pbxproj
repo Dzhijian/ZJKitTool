@@ -39,6 +39,8 @@
 		0430B86920E7655500B8132F /* ZJNormalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430B86820E7655500B8132F /* ZJNormalPickerView.m */; };
 		04351666242906C10065FFBC /* ZJViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04351665242906C10065FFBC /* ZJViewChainModel.m */; };
 		04351669242908870065FFBC /* UIView+ZJChainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04351668242908870065FFBC /* UIView+ZJChainFrame.m */; };
+		04398A072434DFA300B14523 /* ZJCollectionViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04398A062434DFA300B14523 /* ZJCollectionViewChainModel.m */; };
+		04398A0A2434F2F200B14523 /* ZJScrollViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04398A092434F2F200B14523 /* ZJScrollViewChainModel.m */; };
 		044EE082201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */; };
 		044EE085201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE084201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.m */; };
 		044EE1D7201EF16D00ACFC0A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE1D6201EF16D00ACFC0A /* YYFPSLabel.m */; };
@@ -244,6 +246,10 @@
 		04351665242906C10065FFBC /* ZJViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJViewChainModel.m; sourceTree = "<group>"; };
 		04351667242908870065FFBC /* UIView+ZJChainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJChainFrame.h"; sourceTree = "<group>"; };
 		04351668242908870065FFBC /* UIView+ZJChainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJChainFrame.m"; sourceTree = "<group>"; };
+		04398A052434DFA300B14523 /* ZJCollectionViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewChainModel.h; sourceTree = "<group>"; };
+		04398A062434DFA300B14523 /* ZJCollectionViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewChainModel.m; sourceTree = "<group>"; };
+		04398A082434F2F200B14523 /* ZJScrollViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJScrollViewChainModel.h; sourceTree = "<group>"; };
+		04398A092434F2F200B14523 /* ZJScrollViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJScrollViewChainModel.m; sourceTree = "<group>"; };
 		044EE080201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCellViewController.h; sourceTree = "<group>"; };
 		044EE081201ACB3200ACFC0A /* ZJMasonryAutolayoutCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMasonryAutolayoutCellViewController.m; sourceTree = "<group>"; };
 		044EE083201ACCD200ACFC0A /* ZJMasonryAutolayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMasonryAutolayoutCell.h; sourceTree = "<group>"; };
@@ -1188,6 +1194,10 @@
 				040DBF0E242FB39F007E7604 /* ZJSwitchChainModel.m */,
 				040DBF10242FBC92007E7604 /* ZJTabeleviewChainModel.h */,
 				040DBF11242FBC92007E7604 /* ZJTabeleviewChainModel.m */,
+				04398A052434DFA300B14523 /* ZJCollectionViewChainModel.h */,
+				04398A062434DFA300B14523 /* ZJCollectionViewChainModel.m */,
+				04398A082434F2F200B14523 /* ZJScrollViewChainModel.h */,
+				04398A092434F2F200B14523 /* ZJScrollViewChainModel.m */,
 			);
 			path = ZJChain;
 			sourceTree = "<group>";
@@ -1596,6 +1606,7 @@
 				04B09A6E209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.m in Sources */,
 				04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */,
 				044EE1DB201F130A00ACFC0A /* ZJBaseCollectionViewController.m in Sources */,
+				04398A0A2434F2F200B14523 /* ZJScrollViewChainModel.m in Sources */,
 				04BE94B720453FBC00DF6779 /* UIImageView+ZFCache.m in Sources */,
 				04C5178820219A6300AC15F1 /* ZJWebViewController.m in Sources */,
 				04B09A7D209DB7BD00E66CA2 /* ZJTimeCountDown.m in Sources */,
@@ -1707,6 +1718,7 @@
 				0430B86420E4C70A00B8132F /* ZJAddressModel.m in Sources */,
 				04BE94B920453FBC00DF6779 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				0403A0082019B1D600D4DF1B /* ZJTimeCountDownCell.m in Sources */,
+				04398A072434DFA300B14523 /* ZJCollectionViewChainModel.m in Sources */,
 				04B09A77209DB7BD00E66CA2 /* UITextView+ZJTextView.m in Sources */,
 				04B09A8F209DB7BD00E66CA2 /* NSNumber+ZJHelperKit.m in Sources */,
 				04BE94BB20453FBC00DF6779 /* MMMaterialDesignSpinner.m in Sources */,
