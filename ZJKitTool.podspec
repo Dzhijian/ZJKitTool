@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.4.91"
+  s.version      = "2.5.00"
   s.summary      = "ZJKitTool是一个对UIK封装的框架与各种工具的集合,还有各种自定义View等等"
 
   # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器等框架集合"
+  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器等框架集合 链式编程语法"
 
   s.homepage     = "https://github.com/Dzhijian/ZJKitTool"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -96,8 +96,6 @@ Pod::Spec.new do |s|
   # s.source_files  = "ZJKitTool", "ZJKitTool/**/*.{h,m}"
   s.source_files = 'ZJKitTool/ZJKitTool.h'
   
-
-  
   s.public_header_files = 'ZJKitTool/ZJKitTool.h'
   
   s.dependency 'Masonry'
@@ -124,7 +122,12 @@ Pod::Spec.new do |s|
     
 
   end
+ # 链式语法
+  s.subspec 'ZJChain' do |ss|
 
+    ss.source_files = 'ZJKitTool/ZJChain/*.{h,m}'
+
+  end
   # ZJKit
   s.subspec 'ZJKit' do |ss|
 

@@ -25,6 +25,7 @@
 #import "ZJPopupViewMacros.h"
 
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "ZJChainHelper.h"
 
 
 // 倒计时

@@ -18,6 +18,9 @@
 #import "ZJTextFieldChainModel.h"
 #import "ZJTextViewChainModel.h"
 #import "ZJSwitchChainModel.h"
+#import "ZJTabeleviewChainModel.h"
+#import "ZJCollectionViewChainModel.h"
+#import "ZJScrollViewChainModel.h"
 
 
 #endif /* ZJChainHelper_h */
