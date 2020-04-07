@@ -52,7 +52,8 @@
         make.right.mas_equalTo(-50);
         make.height.mas_equalTo(100);
     });
-    
+//    view.zj_chain.origin(CGPointMake(self.view.center.x, self.view.origin.y));
+    [view setOrigin:CGPointMake(self.view.center.x, self.view.origin.y)];
 //    [(UIView *)view setFrame:CGRectMake(0, 0, 0, 0)];
     
 //    view.backgroundColor = kRedColor;

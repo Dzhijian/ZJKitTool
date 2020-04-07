@@ -124,7 +124,7 @@ Pod::Spec.new do |s|
   end
  # 链式语法
   s.subspec 'ZJChain' do |ss|
-
+    ss.dependency 'Masonry'
     ss.source_files = 'ZJKitTool/ZJChain/*.{h,m}'
 
   end
