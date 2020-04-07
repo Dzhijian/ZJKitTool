@@ -7,6 +7,7 @@
 //
 
 #import "ZJCollectionViewChainModel.h"
+#import <objc/runtime.h>
 
 #define  ZJ_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJCollectionViewChainModel * , UICollectionView)
 #define  ZJ_CHAIN_SCROLLVIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJCollectionViewChainModel * , UICollectionView)

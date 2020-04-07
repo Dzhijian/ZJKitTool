@@ -7,6 +7,8 @@
 //
 
 #import "ZJScrollViewChainModel.h"
+#import <objc/runtime.h>
+
 #define  ZJ_CHAIN_SCROLLVIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJScrollViewChainModel * , UIScrollView)
 
 @implementation ZJScrollViewChainModel

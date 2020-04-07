@@ -7,6 +7,7 @@
 //
 
 #import "ZJViewChainModel.h"
+#import <objc/runtime.h>
 
 #define weak_self(value)     __weak typeof(value) weakSelf = value
 
@@ -61,108 +62,6 @@
 
 
 @implementation ZJViewChainModel
-
-//#pragma mark - Masonry
-//#if __has_include(<Masonry.h>) || __has_include("Masonry.h")
-//
-//ZJ_CHAIN_MASONRY_IMPLEMENTATION(makeMasonry, makeMasonry, mas_makeConstraints, self.chainView);
-//ZJ_CHAIN_MASONRY_IMPLEMENTATION(updateMasonry, updateMasonry, mas_updateConstraints, self.chainView);
-//ZJ_CHAIN_MASONRY_IMPLEMENTATION(remakeMasonry, remakeMasonry, mas_remakeConstraints, self.chainView);
-//
-//#else
-//ZJ_CHAIN_MASONRY_IMPLEMENTATION_NULL(makeMasonry, makeMasonry, mas_makeConstraints);
-//ZJ_CHAIN_MASONRY_IMPLEMENTATION_NULL(updateMasonry, updateMasonry, mas_updateConstraints);
-//ZJ_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, remakeMasonry, mas_remakeConstraints);
-//
-//#endif
-
-//
-//- (frame)frame{
-//    __weak typeof(self) weakSelf = self;
-//    return ^(CGRect frame){
-//        weakSelf.chainView.frame = frame;
-//        return weakSelf;
-//    };
-//}
-//
-//- (background_color)background_color{
-//    __weak typeof(self) weakSelf = self;
-//    return ^(UIColor *background_color){
-//        weakSelf.chainView.backgroundColor = background_color;
-//        return weakSelf;
-//    };
-//}
-//
-//- (border_color)border_color{
-//    __weak typeof(self) weakSelf = self;
-//    return ^(UIColor *border_color){
-//        weakSelf.chainView.layer.borderColor = border_color.CGColor;
-//        return weakSelf;
-//    };
-//}
-//
-//- (border_width)border_width{
-//    __weak typeof(self) weakSelf = self;
-//    return ^(CGFloat border_width){
-//        weakSelf.chainView.layer.borderWidth = border_width;
-//        return weakSelf;
-//    };
-//}
-//
-//- (userInteraction_enabled)userInteraction_enabled{
-//    __weak typeof(self) weakSelf = self;
-//       return ^(BOOL userInteraction_enabled){
-//           weakSelf.chainView.userInteractionEnabled = userInteraction_enabled;
-//           return weakSelf;
-//       };
-//}
-
-#pragma mark - Shadow
-
-//ZJ_CHAIN_SHADOW_IMPLEMENTATION(shadowRadius, shadowRadius, setShadowRadius, self.chainView, CGFloat);
-//ZJ_CHAIN_SHADOW_IMPLEMENTATION(shadowColor, shadowColor, setShadowColor, self.chainView, CGColorRef);
-//ZJ_CHAIN_SHADOW_IMPLEMENTATION(shadowOpacity, shadowOpacity, setShadowOpacity, self.chainView, float);
-//ZJ_CHAIN_SHADOW_IMPLEMENTATION(shadowOffset, shadowOffset, setShadowOffset, self.chainView, CGSize);
-//ZJ_CHAIN_SHADOW_IMPLEMENTATION(layerMasksToBounds, layerMasksToBounds, setMasksToBounds, self.chainView, BOOL);
-
-//
-//- (shadowPath)shadowPath{
-//    weak_self(self);
-//    return ^(CGRect roundedRect, CGFloat cornerRadius){
-//        [weakSelf.chainView.layer setShadowPath:[UIBezierPath bezierPathWithRoundedRect:roundedRect cornerRadius:cornerRadius].CGPath];
-//        return weakSelf;
-//    };
-//}
-//
-//- (setShadow)setShadow{
-//    weak_self(self);
-//    return ^(CGColorRef shadowColor,CGSize shadowOffset,CGFloat shadowRadius,float shadowOpacity){
-//        [weakSelf.chainView.layer setShadowColor:shadowColor];
-//        [weakSelf.chainView.layer setShadowOffset:shadowOffset];
-//        [weakSelf.chainView.layer setShadowRadius:shadowRadius];
-//        [weakSelf.chainView.layer setShadowOpacity:shadowOpacity];
-//        return weakSelf;
-//    };
-//}
-
-#pragma mark - Label
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UILabel, text, lab_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UILabel, text_color, lab_text_color, setTextColor, UIColor *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UILabel, font, lab_font, setFont, UIFont *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UILabel, textAlignment, lab_textAlignment, setTextAlignment, NSTextAlignment);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UILabel, numberOfLines, lab_numberOfLines, setNumberOfLines, NSInteger);
-
-#pragma mark - TextField
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text_color, tf_text_color, setTextColor, UIColor *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, font, tf_font, setFont, UIFont *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, textAlignment, tf_textAlignment, setTextAlignment, NSTextAlignment);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
-//ZJ_CHAIN_VIEW_IMPLEMENTATION(UITextField, text, tf_text, setText, NSString *);
 
 @end
 

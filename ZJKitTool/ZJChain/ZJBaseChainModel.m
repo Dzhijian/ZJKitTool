@@ -8,6 +8,7 @@
 
 
 #import "ZJBaseChainModel.h"
+#import <objc/runtime.h>
 #define weak_self(value)     __weak typeof(value) weakSelf = value
 
 #define  ZJ_CHAIN_VIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, id , UIView)

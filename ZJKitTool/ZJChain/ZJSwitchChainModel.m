@@ -7,6 +7,7 @@
 //
 
 #import "ZJSwitchChainModel.h"
+#import <objc/runtime.h>
 
 #define  ZJ_CHAIN_SWITCH_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJSwitchChainModel * , UISwitch)
 

@@ -8,6 +8,7 @@
 
 #import "ZJLabelChainModel.h"
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 
 #define  ZJ_CHAIN_LABEL_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJLabelChainModel * , UILabel)
 

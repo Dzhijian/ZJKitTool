@@ -7,6 +7,7 @@
 //
 
 #import "ZJTextViewChainModel.h"
+#import <objc/runtime.h>
 
 #define  ZJ_CHAIN_TEXTVIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJTextViewChainModel * , UITextView)
 #define  ZJ_CHAIN_SCROLLVIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJTextViewChainModel * , UITextView)

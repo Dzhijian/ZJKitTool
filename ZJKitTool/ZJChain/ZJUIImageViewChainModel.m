@@ -7,6 +7,8 @@
 //
 
 #import "ZJUIImageViewChainModel.h"
+#import <objc/runtime.h>
+
 #define  ZJ_CHAIN_IMAGEVIEW_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJUIImageViewChainModel * , UIImageView)
 @implementation ZJUIImageViewChainModel
 

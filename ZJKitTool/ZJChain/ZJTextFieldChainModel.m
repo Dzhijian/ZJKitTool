@@ -7,6 +7,7 @@
 //
 
 #import "ZJTextFieldChainModel.h"
+#import <objc/runtime.h>
 
 #define  ZJ_CHAIN_TEXTFIELD_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJTextFieldChainModel * , UITextField)
 

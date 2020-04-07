@@ -7,6 +7,7 @@
 //
 
 #import "ZJButtonChainModel.h"
+#import <objc/runtime.h>
 
 #define  ZJ_CHAIN_BUTTON_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJButtonChainModel * , UIButton)
 
