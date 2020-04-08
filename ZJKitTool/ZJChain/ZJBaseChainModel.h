@@ -37,6 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) __kindof UIView *view;
 
+ZJ_CHAIN_PROPERTY ObjcType (^ superView)(UIView *superView);
+
+
 #pragma mark - AutoLayout
 ZJ_CHAIN_PROPERTY ObjcType (^ makeMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
 ZJ_CHAIN_PROPERTY ObjcType (^ updateMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
@@ -46,17 +49,19 @@ ZJ_CHAIN_PROPERTY ObjcType (^ remakeMasonry)( void (^constraints)(__kindof UIVie
 ZJ_CHAIN_PROPERTY ObjcType (^ frame)(CGRect frame);
 
 ZJ_CHAIN_PROPERTY ObjcType (^ origin)(CGPoint origin);
-
 ZJ_CHAIN_PROPERTY ObjcType (^backgroundColor)(UIColor *backgroundColor);
-ZJ_CHAIN_PROPERTY ObjcType (^borderColor)(CGColorRef borderColor);
-ZJ_CHAIN_PROPERTY ObjcType (^borderWidth)(CGFloat borderWidth);
-ZJ_CHAIN_PROPERTY ObjcType (^userInteractionEnabled)(BOOL userInteractionEnabled);
-ZJ_CHAIN_PROPERTY ObjcType (^clipsToBounds)(BOOL clipsToBounds);
+
 
 ZJ_CHAIN_PROPERTY ObjcType (^ contentMode)(UIViewContentMode contentMode);
 ZJ_CHAIN_PROPERTY ObjcType (^ opaque)(BOOL opaque);
 ZJ_CHAIN_PROPERTY ObjcType (^ hidden)(BOOL hidden);
 
+#pragma mark - # Layer
+ZJ_CHAIN_PROPERTY ObjcType (^cornerRadius)(CGFloat cornerRadius);
+ZJ_CHAIN_PROPERTY ObjcType (^borderColor)(CGColorRef borderColor);
+ZJ_CHAIN_PROPERTY ObjcType (^borderWidth)(CGFloat borderWidth);
+ZJ_CHAIN_PROPERTY ObjcType (^userInteractionEnabled)(BOOL userInteractionEnabled);
+ZJ_CHAIN_PROPERTY ObjcType (^clipsToBounds)(BOOL clipsToBounds);
 
 #pragma mark - Shadow
 ZJ_CHAIN_PROPERTY ObjcType (^shadowColor)(CGColorRef shadowColor);

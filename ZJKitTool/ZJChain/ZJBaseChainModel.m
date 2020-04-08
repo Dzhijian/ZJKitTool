@@ -83,6 +83,7 @@ ZJ_CHAIN_VIEW_IMPLEMENTATION(contentMode, setContentMode, UIViewContentMode);
 #pragma mark - Layer
 ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(borderColor, setBorderColor, CGColorRef);
 ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(borderWidth, setBorderWidth, CGFloat);
+ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(cornerRadius, setCornerRadius, CGFloat);
 
 ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(shadowColor, setShadowColor, CGColorRef);
 ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(shadowRadius, setShadowRadius, CGFloat);
@@ -90,4 +91,12 @@ ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(shadowOffset, setShadowOffset, CGSize);
 ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(shadowOpacity, setShadowOpacity, float);
 ZJ_CHAIN_VIEW_lAYER_IMPLEMENTATION(masksToBounds, setMasksToBounds, BOOL);
 
+- (id  _Nonnull (^)(UIView * _Nonnull))superView{
+    __weak typeof(self) weakSelf = self;
+    return  ^(UIView * _Nonnull superView) {
+        [superView addSubview:weakSelf.view];
+        return weakSelf;
+    };
+    
+}
 @end
