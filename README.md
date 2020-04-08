@@ -43,6 +43,47 @@ pod 'ZJKitTool'
 MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。
 请各位大神多多指教，多多支持点个Star。
 
+> 2.5.0 添加 UIKit 链式语法 支持 UIView 、UILabel、UIButton、UIImageView、UITextField、UITextView、UITableView、UICollection、UIScrollView、UISwitch。
+
+> 可以结合使用 Masonry, 使用前必须先添加 `superView` ，否则 masonry 约束会无效，详细用法看 Demo 的 `ZJUIViewController` 控制器代码
+
+示例代码如下：
+
+```Objc
+UIView *view = [[UIView alloc]init];
+view.zj_chain.backgroundColor(kRedColor)
+.shadowRadius(6)
+.shadowOffset(CGSizeMake(3, 3))
+.shadowOpacity(0.7)
+.shadowColor(kBlackColor.CGColor)
+.borderColor(kOrangeColor.CGColor)
+.borderWidth(5)
+.superView(self.view)
+.makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+    make.bottom.mas_equalTo(-100);
+    make.left.mas_equalTo(50);
+    make.right.mas_equalTo(-50);
+    make.height.mas_equalTo(100);
+});
+
+    
+UILabel *label = [[UILabel alloc]init];
+label.zj_chain
+.frame(CGRectMake(50, 500, 220, 30))
+.backgroundColor(kOrangeColor)
+.text(@"James is the champion")
+.font(kBoldFontWithSize(18))
+.textAlignment(NSTextAlignmentRight)
+.superView(self.view)
+.textColor(kWhiteColor).makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+    make.bottom.equalTo(view.mas_top).offset(-30);
+    make.centerX.mas_equalTo(0);
+    make.width.mas_equalTo(300);
+    make.height.mas_equalTo(40);
+    NSLog(@"%@",sender);
+});
+```
+
 > 快速创建一个按钮,赋给实例的按钮,并实现点击事件：
 
 ```Objc
