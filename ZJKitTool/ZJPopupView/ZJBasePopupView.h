@@ -11,10 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^ShowViewActionBlock)(void);
+/// 关闭弹窗
+typedef void(^ShowViewCloseBlock)(void);
 
 @interface ZJBasePopupView : UIView
 
 @property (nonatomic, copy) ShowViewActionBlock baseBlock;
+@property (nonatomic, copy) ShowViewCloseBlock closeBlock;
 
 
 @end

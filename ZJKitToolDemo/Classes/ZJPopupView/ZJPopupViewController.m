@@ -37,18 +37,32 @@
     UIButton *closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     [closeBtn setImage:kImageName(@"close") forState:(UIControlStateNormal)];
     [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:(UIControlEventTouchUpInside)];
-    
-    self.popupView = [[ZJPopupView alloc]initWithShowView:_showView
-                                                superView:self.view
-                                                       viewSize:CGSizeMake(250, 300)
-                                                       delegate:self
-                                                   durationTime:0.25
-                                                        bgAlpha:0.5
-                                                isBGClickAction:YES
-                                                   isBlurEffect:YES
-                                                     animaStyle:style
-                                                       closeBtn:closeBtn];
+    // 新的创建方式
+    self.popupView = [[ZJPopupView alloc]init];
+    self.popupView.delegate = self;
+    self.popupView.durationTime = 0.25;
+    self.popupView.backgroundAlpha = 0.5;
+    self.popupView.backgroundIsClick = true;
+    self.popupView.isBlurEffect = false;
+    self.popupView.animationStyle = style;
+    self.popupView.closeBtn = closeBtn;
+    self.popupView.superView = self.view;
+    self.popupView.showView = self.showView;
     [self.popupView zj_showPopupView];
+    
+    /// 下面创建方式即将被抛弃
+//    self.popupView = [[ZJPopupView alloc]initWithShowView:_showView
+//                                                superView:self.view
+//                                                       viewSize:CGSizeMake(250, 300)
+//                                                       delegate:self
+//                                                   durationTime:0.25
+//                                                        bgAlpha:0.5
+//                                                isBGClickAction:YES
+//                                                   isBlurEffect:YES
+//                                                     animaStyle:style
+//                                                       closeBtn:closeBtn];
+//    [self.popupView zj_showPopupView];
+
     
     kWeakObject(self);
     self.showView.okBlock = ^{

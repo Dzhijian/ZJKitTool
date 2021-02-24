@@ -306,7 +306,7 @@ static AFHTTPSessionManager *manager = nil;
             }
         }
         
-        session = [manager GET:URLString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        session = [manager GET:URLString parameters:params headers:zj_httpHeaders progress:^(NSProgress * _Nonnull downloadProgress) {
             if (progress) {
                 progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
             }
@@ -355,6 +355,56 @@ static AFHTTPSessionManager *manager = nil;
                 }
             }
         }];
+        
+//        session = [manager GET:URLString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+//            if (progress) {
+//                progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+//            }
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            [self successResponse:responseObject callback:success];
+//
+//            if (zj_cacheGet) {
+//                [self cacheResponseObject:responseObject request:task.currentRequest parameters:params];
+//            }
+//
+//            [[self allTasks] removeObject:task];
+//
+//            if ([self isDebug]) {
+//                [self logWithSuccessResponse:responseObject
+//                                         url:absolute
+//                                      params:params];
+//            }
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            [[self allTasks] removeObject:task];
+//
+//            if ([error code] < 0 && zj_cacheGet) {// 获取缓存
+//                id response = [ZJNetworking cahceResponseWithURL:absolute
+//                                                      parameters:params];
+//                if (response) {
+//                    if (success) {
+//                        [self successResponse:response callback:success];
+//
+//                        if ([self isDebug]) {
+//                            [self logWithSuccessResponse:response
+//                                                     url:absolute
+//                                                  params:params];
+//                        }
+//                    }
+//                } else {
+//                    [self handleCallbackWithError:error fail:fail];
+//
+//                    if ([self isDebug]) {
+//                        [self logWithFailError:error url:absolute params:params];
+//                    }
+//                }
+//            } else {
+//                [self handleCallbackWithError:error fail:fail];
+//
+//                if ([self isDebug]) {
+//                    [self logWithFailError:error url:absolute params:params];
+//                }
+//            }
+//        }];
     } else if (httpMethod == 2) {
         if (zj_cachePost ) {// 获取缓存
             if (zj_shoulObtainLocalWhenUnconnected) {
@@ -392,10 +442,9 @@ static AFHTTPSessionManager *manager = nil;
                 }
             }
         }
-        
-        session = [manager POST:URLString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        session = [manager POST:URLString parameters:params headers:zj_httpHeaders progress:^(NSProgress * _Nonnull uploadProgress) {
             if (progress) {
-                progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+                progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
             }
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self successResponse:responseObject callback:success];
@@ -443,6 +492,56 @@ static AFHTTPSessionManager *manager = nil;
                 }
             }
         }];
+//        session = [manager POST:URLString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+//            if (progress) {
+//                progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+//            }
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            [self successResponse:responseObject callback:success];
+//
+//            if (zj_cachePost) {
+//                [self cacheResponseObject:responseObject request:task.currentRequest  parameters:params];
+//            }
+//
+//            [[self allTasks] removeObject:task];
+//
+//            if ([self isDebug]) {
+//                [self logWithSuccessResponse:responseObject
+//                                         url:absolute
+//                                      params:params];
+//            }
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            [[self allTasks] removeObject:task];
+//
+//            if ([error code] < 0 && zj_cachePost) {// 获取缓存
+//                id response = [ZJNetworking cahceResponseWithURL:absolute
+//                                                      parameters:params];
+//
+//                if (response) {
+//                    if (success) {
+//                        [self successResponse:response callback:success];
+//
+//                        if ([self isDebug]) {
+//                            [self logWithSuccessResponse:response
+//                                                     url:absolute
+//                                                  params:params];
+//                        }
+//                    }
+//                } else {
+//                    [self handleCallbackWithError:error fail:fail];
+//
+//                    if ([self isDebug]) {
+//                        [self logWithFailError:error url:absolute params:params];
+//                    }
+//                }
+//            } else {
+//                [self handleCallbackWithError:error fail:fail];
+//
+//                if ([self isDebug]) {
+//                    [self logWithFailError:error url:absolute params:params];
+//                }
+//            }
+//        }];
     }
     
     if (session) {
@@ -536,7 +635,8 @@ static AFHTTPSessionManager *manager = nil;
     NSString *absolute = [self absoluteUrlWithPath:URLString];
     
     AFHTTPSessionManager *manager = [self manager];
-    ZJURLSessionTask *session = [manager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    
+    ZJURLSessionTask *session = [manager POST:URLString parameters:parameters headers:zj_httpHeaders constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSData *imageData = UIImageJPEGRepresentation(image, 1);
         
         NSString *imageFileName = filename;
@@ -571,6 +671,41 @@ static AFHTTPSessionManager *manager = nil;
             [self logWithFailError:error url:absolute params:nil];
         }
     }];
+//    ZJURLSessionTask *session = [manager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        NSData *imageData = UIImageJPEGRepresentation(image, 1);
+//        
+//        NSString *imageFileName = filename;
+//        if (filename == nil || ![filename isKindOfClass:[NSString class]] || filename.length == 0) {
+//            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//            formatter.dateFormat = @"yyyyMMddHHmmss";
+//            NSString *str = [formatter stringFromDate:[NSDate date]];
+//            imageFileName = [NSString stringWithFormat:@"%@.jpg", str];
+//        }
+//        
+//        // 上传图片，以文件流的格式
+//        [formData appendPartWithFileData:imageData name:name fileName:imageFileName mimeType:mimeType];
+//    } progress:^(NSProgress * _Nonnull uploadProgress) {
+//        if (progress) {
+//            progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+//        }
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        [[self allTasks] removeObject:task];
+//        [self successResponse:responseObject callback:success];
+//        
+//        if ([self isDebug]) {
+//            [self logWithSuccessResponse:responseObject
+//                                     url:absolute
+//                                  params:parameters];
+//        }
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        [[self allTasks] removeObject:task];
+//        
+//        [self handleCallbackWithError:error fail:fail];
+//        
+//        if ([self isDebug]) {
+//            [self logWithFailError:error url:absolute params:nil];
+//        }
+//    }];
     
     [session resume];
     if (session) {

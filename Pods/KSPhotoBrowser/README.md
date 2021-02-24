@@ -7,29 +7,35 @@ KSPhotoBrowser
 
 ### A beautiful photo browser with interactive dismissal animation.
 
-![Rotation~](https://raw.github.com/skx926/KSPhotoBrowser/master/Demo/Rotation.gif)<br>
-![Blur~](https://raw.github.com/skx926/KSPhotoBrowser/master/Demo/Blur.gif)<br>
-![Scale~](https://raw.github.com/skx926/KSPhotoBrowser/master/Demo/Scale.gif)
+![Rotation~](https://raw.github.com/skx926/KSPhotoBrowser/master/Images/Rotation.gif)
+![Blur~](https://raw.github.com/skx926/KSPhotoBrowser/master/Images/Blur.gif)
+![Scale~](https://raw.github.com/skx926/KSPhotoBrowser/master/Images/Scale.gif)
+![Corner~](https://raw.github.com/skx926/KSPhotoBrowser/master/Images/Corner.gif)
+![Orientation~](https://raw.github.com/skx926/KSPhotoBrowser/master/Images/Orientation.gif)
+![Index~](https://raw.github.com/skx926/KSPhotoBrowser/master/Images/Index.png)
 
 
 Features
 ==============
-- 4 different interactive dismissal animations(Rotation, Scale, Slide).
-- 3 different background styles(Blur Photo, Blur, Black).
-- 2 different loading styles(Determinate, Indeterminate).
-- 2 different pager styles(Dot, Text).
-- Support bounce animation.
-- Optimized for image which has a very large height.
-- Can display one or more images by providing either image urls or UIImage objects.
-- Custom image downloader library support.
+- [x] 4 different interactive dismissal animations (Rotation, Scale, Slide)
+- [x] 3 different background styles (Blur Photo, Blur, Black)
+- [x] 2 different loading styles (Determinate, Indeterminate)
+- [x] 2 different pager styles (Dot, Text)
+- [x] Support bounce animation
+- [x] Optimized for image which has a very large height
+- [x] Can display one or more images by providing either image urls or UIImage objects
+- [x] Custom image downloader library support
+- [x] Smooth animation with corner radius
+- [x] Support both portrait and landscape device orientation
+- [ ] Support video browse
 
 
 Usage
 ==============
 ### Display images from urls
 ```objc
-NSArray *urls = @[@"http://ww4.sinaimg.cn/bmiddle/a15bd3a5jw1f12r9ku6wjj20u00mhn22.jpg",
-                  @"http://ww2.sinaimg.cn/bmiddle/a15bd3a5jw1f01hkxyjhej20u00jzacj.jpg"];
+NSArray *urls = @[@"https://ww4.sinaimg.cn/bmiddle/a15bd3a5jw1f12r9ku6wjj20u00mhn22.jpg",
+                  @"https://ww2.sinaimg.cn/bmiddle/a15bd3a5jw1f01hkxyjhej20u00jzacj.jpg"];
 NSMutableArray *items = @[].mutableCopy;
 for (int i = 0; i < urls.count; i++) {
     // Get the large image url
@@ -66,20 +72,20 @@ Installation
 
 ### Manually
 1. Download all the files of KSPhotoBrowser and add source files to your project.
-2. Manually install [YYWebImage](https://github.com/ibireme/YYWebImage) to your project.
+2. Manually install [SDWebImage](https://github.com/rs/SDWebImage) to your project.
 3. Import `KSPhotoBrowser.h`.
 
 ### Custom Image Downloader
-It use `YYWebImage` as default image downloader, you can also use your custom image downloader like `SDWebImage`, `Kingfisher` and so on.
+It use `SDWebImage` as default image downloader, you can also use your custom image downloader like `YYWebImage`, `Kingfisher` and so on.
 
-To use a custom image downloader, you need to create a class and make it conforms to `KSImageManager` protocol and implement those methods inside that protocol.
+To use a custom image downloader, you need to create a class and make it conforms to `KSImageManagerProtocol` and implement those methods inside that protocol.
 
-For convenience, I have already created `KSSDImageManager` to support `SDWebImage 4.0` as an example in the demo, you can also use it directly.
+For convenience, I have already created `KSYYImageManager` to support `YYWebImage` as an example in the demo, you can also use it directly.
 
 Finally, just use the code below to set your class to `KSPhotoBrowser` before you use the browser to show images.
 
 ```objc
-[KSPhotoBrowser setImageManagerClass:KSSDImageManager.class]
+[KSPhotoBrowser setImageManagerClass:KSYYImageManager.class]
 ```
 
 Requirements
@@ -90,8 +96,3 @@ This library requires `iOS 8.0+` and `Xcode 8.0+`.
 License
 ==============
 KSPhotoBrowser is provided under the MIT license. See LICENSE file for details.
-
-
-中文介绍
-==============
-[查看中文介绍](http://skx926.com/2017/01/04/ksphotobrowser/)

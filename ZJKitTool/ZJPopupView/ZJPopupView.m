@@ -14,14 +14,9 @@
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 
 @interface ZJPopupView()
-@property (nonatomic, assign) ZJPopupAnimationStyle style;
-@property (nonatomic, strong) ZJBasePopupView *showView;
-@property (nonatomic, assign) BOOL isBGClickAction;
-//@property (nonatomic, assign) double durationTime;
-@property (nonatomic, assign) CGFloat bgAlpha;
-@property (nonatomic, assign) CGSize showViewSize;
-//@property (nonatomic, strong) UIButton *closeBtn;
+
 @property (nonatomic, assign) BOOL isShowComplete;
+
 @end
 
 @implementation ZJPopupView
@@ -36,7 +31,7 @@
                       bgAlpha:(CGFloat)bgAlpha
               isBGClickAction:(BOOL)isBGClickAction
                    animaStyle:(ZJPopupAnimationStyle)animaStyle {
-    
+
     return [self zj_showPopView:showView
                       superView:nil
                        viewSize:size
@@ -50,7 +45,7 @@
 }
 
 +(instancetype)zj_showPopView:(ZJBasePopupView *)showView
-                    superView:(UIView *)superView
+                    superView:(UIView * __nullable)superView
                      viewSize:(CGSize)size
                      delegate:(id<ZJPopupViewDelegate>)delegate
                  durationTime:(double)durationTime
@@ -78,7 +73,7 @@
 
 
 -(instancetype)initWithShowView:(ZJBasePopupView *)showView
-                      superView:(UIView *)superView
+                      superView:(UIView * __nullable)superView
                        viewSize:(CGSize)size
                        delegate:(id<ZJPopupViewDelegate>)delegate
                    durationTime:(double)durationTime
@@ -90,45 +85,18 @@
     
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         self.delegate = delegate;
-        self.showViewSize = size;
-        if (superView != nil) {
-            self.frame = superView.bounds;
-            [superView addSubview:self];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
-            [self addGestureRecognizer:tap];
-        }else{
-            self.frame = [[UIScreen mainScreen] bounds];
-            [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
-            [self addGestureRecognizer:tap];
-        }
-        if (isBlurEffect) {
-            // 毛片玻璃效果
-            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-            UIVisualEffectView *effectView =[[UIVisualEffectView alloc]initWithEffect:blurEffect];
-            effectView.frame = self.bounds;
-            [self addSubview:effectView];
-        }
-        
+        self.superView = superView;
+        self.isBlurEffect = isBlurEffect;
         self.showView = showView;
-        self.bgAlpha = bgAlpha > 0.0 ? bgAlpha : 0.5;
+        self.backgroundAlpha = bgAlpha > 0.0 ? bgAlpha : 0.5;
         self.durationTime = durationTime > 0.0 ? durationTime : 0.25;
-        self.isBGClickAction = isBGClickAction;
-        self.style = animaStyle;
+        self.backgroundIsClick = isBGClickAction;
+        self.animationStyle = animaStyle;
         self.hidden = YES;
-        self.backgroundColor = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:self.bgAlpha];
-        if (showView != nil) {
-            NSAssert([showView isKindOfClass:[ZJBasePopupView class]], @"showView 必须继承 ZJBasePopupView");
-            self.showView = showView;
-            self.showView.frame = CGRectMake((self.frame.size.width - size.width)/2, (self.frame.size.height - size.height)/2, size.width, size.height);
-            [self addSubview:self.showView];
-        }
-        
-        if (closeBtn != nil) {
-            self.closeBtn = closeBtn;
-            [self addSubview:self.closeBtn];
-        }
-        [self setUpAllView];
+        self.closeBtn = closeBtn;
+//        if (closeBtn != nil) {
+//            self.closeBtn = closeBtn;
+//        }
         
     }
     return self;
@@ -136,13 +104,20 @@
 
 -(instancetype)init{
     if (self = [super init]) {
+        self.backgroundAlpha = 0.5;
+        self.durationTime = 0.25;
+        self.backgroundIsClick = true;
+        self.animationStyle = ZJPopupAnimationSacle;
+        self.isBlurEffect = false;
+        self.hidden = YES;
+        self.backgroundColor = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:self.backgroundAlpha];
     }
     return self;
 }
 
 +(instancetype)zj_showWithPopupView:(ZJBasePopupView *)popupView{
     
-   
+    
     ZJPopupView *popView = [[ZJPopupView alloc]init];
     
     return popView;
@@ -157,18 +132,14 @@
     self.showView.baseBlock = ^{
         [weakSelf zj_hiddenPopupView];
     };
-    
-    [self addSubview:self.closeBtn];
-    [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-20);
-        make.top.mas_equalTo(KIS_iPhoneX ? 60 : 30);
-        make.width.height.mas_equalTo(30);
-    }];
+    self.showView.closeBlock = ^{
+        [weakSelf zj_hiddenPopupView];
+    };
 }
 
 #pragma mark - Setter
--(void)setPopupView:(ZJBasePopupView *)popupView{
-    _popupView = popupView;
+-(void)setShowView:(ZJBasePopupView *)showView{
+    _showView = showView;
 }
 
 - (void)setBackgroundAlpha:(double)backgroundAlpha{
@@ -195,6 +166,13 @@
     _popupViewFrame = popupViewFrame;
 }
 
+- (void)setSuperView:(UIView *)superView{
+    _superView = superView;
+}
+
+- (void)setCloseBtn:(UIButton *)closeBtn{
+    _closeBtn = closeBtn;
+}
 
 #pragma mark - Actions
 -(void)bgViewAction:(UITapGestureRecognizer *)gesture{
@@ -202,7 +180,7 @@
     if ([self.delegate respondsToSelector:@selector(zj_clickBgViewAction)]) {
         [self.delegate zj_clickBgViewAction];
     }
-    if (self.isBGClickAction) {
+    if (self.backgroundIsClick) {
         [self zj_hiddenPopupView];
     }
 }
@@ -219,6 +197,46 @@
 
 #pragma mark - 显示视图
 -(void)zj_showPopupView{
+    // 背景颜色 透明
+    self.backgroundColor = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:self.backgroundAlpha];
+    // 在哪个视图下弹窗
+    if (_superView != nil) {
+        self.frame = _superView.bounds;
+        [_superView addSubview:self];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
+        [self addGestureRecognizer:tap];
+    }else{
+        self.frame = [[UIScreen mainScreen] bounds];
+        [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewAction:)];
+        [self addGestureRecognizer:tap];
+    }
+    if (_isBlurEffect) {
+        // 毛片玻璃效果
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *effectView =[[UIVisualEffectView alloc]initWithEffect:blurEffect];
+        effectView.frame = self.bounds;
+        [self addSubview:effectView];
+    }
+    if (self.showView != nil) {
+        NSAssert([self.showView isKindOfClass:[ZJBasePopupView class]], @"popupView 必须继承 ZJBasePopupView");
+        self.showView.frame = CGRectMake((self.frame.size.width - self.showView.frame.size.width)/2, (self.frame.size.height - self.showView.frame.size.height)/2, self.showView.frame.size.width, self.showView.frame.size.height);
+        [self addSubview:self.showView];
+        
+        [self setUpAllView];
+        
+    }
+    
+    if (self.closeBtn != nil) {
+        [self addSubview:self.closeBtn];
+        [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-20);
+            make.top.mas_equalTo(KIS_iPhoneX ? 60 : 30);
+            make.width.height.mas_equalTo(30);
+        }];
+    }
+    
+    
     self.alpha = 0;
     self.hidden = false;
     self.isShowComplete = false;
@@ -226,7 +244,7 @@
         [self.delegate zj_willShowPopupView];
     }
     
-    switch (self.style) {
+    switch (self.animationStyle) {
         case ZJPopupAnimationTransition:
         {
             self.showView.transform = CGAffineTransformMakeTranslation(0, -(ScreenH -self.showView.frame.size.height)/2);
@@ -293,22 +311,22 @@
 
 #pragma mark - 隐藏视图
 -(void)zj_hiddenPopupView{
-
+    
     // 如果未显示完毕 则不能隐藏
     if (!self.isShowComplete) {
         return;
     }
-    switch (self.style) {
+    switch (self.animationStyle) {
         case ZJPopupAnimationTransition:
-            {
-                [UIView animateWithDuration:self.durationTime animations:^{
-                    self.alpha = 0.0;
-                    self.showView.transform = CGAffineTransformScale(self.showView.transform, 0.5, 0.5);
-                } completion:^(BOOL finished) {
-                    self.hidden = YES;
-                    [self removePopAllSubviews];
-                }];
-            }
+        {
+            [UIView animateWithDuration:self.durationTime animations:^{
+                self.alpha = 0.0;
+                self.showView.transform = CGAffineTransformScale(self.showView.transform, 0.5, 0.5);
+            } completion:^(BOOL finished) {
+                self.hidden = YES;
+                [self removePopAllSubviews];
+            }];
+        }
             break;
         case ZJPopupAnimationRotation:
         {
@@ -353,18 +371,11 @@
     
 }
 
+/// 移除视图
 - (void)removePopAllSubviews {
     while (self.subviews.count) {
         [self.subviews.lastObject removeFromSuperview];
     }
 }
 
-#pragma mark - Getter && Setter
--(UIButton *)closeBtn{
-    if (!_closeBtn) {
-        _closeBtn = [[UIButton alloc]init];
-        [_closeBtn addTarget:self action:@selector(closeBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    }
-    return _closeBtn;
-}
 @end
