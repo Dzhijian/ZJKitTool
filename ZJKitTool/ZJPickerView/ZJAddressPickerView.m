@@ -19,44 +19,28 @@
 @interface ZJAddressPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
     UIView *_selectBackView;
-    BOOL _isDataSourceValid;    // 数据源是否合法
+//    BOOL _isDataSourceValid;    // 数据源是否合法
     NSInteger _provinceIndex;   // 记录省选中的位置
     NSInteger _cityIndex;       // 记录市选中的位置
     NSInteger _areaIndex;       // 记录区选中的位置
     NSArray * _defaultSelectedArr;
 }
-// 地址选择器
-@property (nonatomic, strong) UIPickerView          *pickerView;
-// 省模型数组
-@property (nonatomic, strong) NSArray               *provinceArr;
-// 市模型数组
-@property (nonatomic, strong) NSArray               *cityArr;
-// 区模型数组
-@property (nonatomic, strong) NSArray               *areaArr;
-// 数据源
+/// 数据源
 @property (nonatomic, strong) NSArray               *dataSource;
-// 选中的省
+/// 地址选择器
+@property (nonatomic, strong) UIPickerView          *pickerView;
+/// 省模型数组
+@property (nonatomic, strong) NSArray               *provinceArr;
+/// 市模型数组
+@property (nonatomic, strong) NSArray               *cityArr;
+/// 区模型数组
+@property (nonatomic, strong) NSArray               *areaArr;
+/// 选中的省
 @property(nonatomic, strong) ZJProvinceModel        *selectProvinceModel;
-// 选中的市
+/// 选中的市
 @property(nonatomic, strong) ZJCityModel            *selectCityModel;
-// 选中的区
+/// 选中的区
 @property(nonatomic, strong) ZJAreaModel            *selectAreaModel;
-// 选中后的回调
-@property (nonatomic, copy) ZJAddressResultBlock    resultBlock;
-// 取消选择的回调
-@property (nonatomic, copy) ZJAddressCancelBlock    cancelBlock;
-// 展示类型
-@property (nonatomic, assign) ZJAddressPickerMode   pickerViewMode;
-// 是否开启自动选择
-@property (nonatomic, assign) BOOL                  isAutoSelect;
-// 分割线的颜色
-@property (nonatomic, strong) UIColor               *lineColor;
-// 选中行文本的颜色
-@property (nonatomic, strong) UIColor               *selecteRowTextColor;
-// 选中行背景颜色
-@property (nonatomic, strong) UIColor               *selectRowBGColor;
-// 行高
-@property (nonatomic, assign) CGFloat               rowHeight;
 @end
 
 
@@ -174,6 +158,70 @@
     
 }
 
+- (void)setPickerViewMode:(ZJAddressPickerMode)pickerViewMode{
+    _pickerViewMode = pickerViewMode;
+}
+
+- (void)setResultBlock:(ZJAddressResultBlock)resultBlock{
+    _resultBlock = resultBlock;
+}
+
+- (void)setCancelBlock:(ZJAddressCancelBlock)cancelBlock{
+    _cancelBlock = cancelBlock;
+}
+//- (void)setLineColor:(UIColor *)lineColor{
+//    _lineColor = lineColor;
+//}
+- (void)setSelecteRowTextColor:(UIColor *)selecteRowTextColor{
+    _selecteRowTextColor = selecteRowTextColor;
+}
+
+- (void)setSelectRowBGColor:(UIColor *)selectRowBGColor{
+    _selectRowBGColor = selectRowBGColor;
+}
+
+- (void)setRowHeight:(CGFloat)rowHeight{
+    _rowHeight = rowHeight;
+}
+
+- (void)setLeftBtnTitleColor:(UIColor *)leftBtnTitleColor{
+    _leftBtnTitleColor = leftBtnTitleColor;
+    [self.leftBtn setTitleColor:leftBtnTitleColor forState:(UIControlStateNormal)];
+
+}
+
+- (void)setRightBtnTitleColor:(UIColor *)rightBtnTitleColor {
+    _rightBtnTitleColor = rightBtnTitleColor;
+    [self.rightBtn setTitleColor:rightBtnTitleColor forState:(UIControlStateNormal)];
+}
+
+- (void)setIsAutoSelect:(BOOL)isAutoSelect{
+    _isAutoSelect = isAutoSelect;
+}
+
+- (instancetype)initWithPickerMode:(ZJAddressPickerMode)pickerMode
+{
+    self = [super init];
+    if (self) {
+        self.isDataSourceValid          = YES;
+        self.pickerViewMode         = pickerMode;
+        self.isAutoSelect           = false;
+
+//        _defaultSelectedArr         = defaultSelectedArr;
+//        self.dataSource             = dataSource;
+//        self.resultBlock            = resultBlock;
+//        self.cancelBlock            = cancelBlock;
+//        self.lineColor              = [UIColor la];
+//        self.selecteRowTextColor    = selectRowTextColor;
+//        self.selectRowBGColor       = selectRowBGColor;
+        self.rowHeight              =  35.0f;
+        [self loadAddressData];
+        if (self.isDataSourceValid) {
+            [self initWithAllView];
+        }
+    }
+    return self;
+}
 #pragma mark - 创建一个 pickerview
 -(instancetype)initWithShowPickerViewMode:(ZJAddressPickerMode)pickerViewMode
                                dataSource:(NSArray *)dataSource
@@ -192,11 +240,11 @@
         _isDataSourceValid          = YES;
         self.pickerViewMode         = pickerViewMode;
         _defaultSelectedArr         = defaultSelectedArr;
-        self.dataSource             = dataSource;
+        self.dataSource             = dataSource != nil ? dataSource : [NSArray array];
         self.resultBlock            = resultBlock;
         self.cancelBlock            = cancelBlock;
         self.isAutoSelect           = isAutoSelect;
-        self.lineColor              = lineColor;
+//        self.lineColor              = lineColor;
         self.selecteRowTextColor    = selectRowTextColor;
         self.selectRowBGColor       = selectRowBGColor;
         self.rowHeight              = rowHeight ? rowHeight : 35.0f;
@@ -212,10 +260,10 @@
         if (_isDataSourceValid) {
             [self initWithAllView];
         }
+        
     }
     
     return self;
-    
 }
 -(void)initWithAllView{
     [super initWithAllView];
@@ -500,11 +548,16 @@
 // 配置 pickerView 的显示内容,在此方法中实现省份和城市间的联动
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
-    if (self.lineColor) {
+//    if (self.lineColor) {
         // 设置分割线的颜色
-        ((UIView *)[pickerView.subviews objectAtIndex:1]).backgroundColor = self.lineColor;
-        ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
-    }
+//        if (pickerView.subviews.count > 0) {
+//            ((UIView *)[pickerView.subviews objectAtIndex:1]).backgroundColor = self.lineColor;
+//            if (pickerView.subviews.count > 1) {
+//                ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
+
+//            }
+//        }
+//    }
     
 
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.alertView.frame.size.width / 3, self.rowHeight * kScaleFit)];

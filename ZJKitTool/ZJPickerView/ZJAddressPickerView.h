@@ -22,6 +22,32 @@ typedef void(^ZJAddressCancelBlock)(void);
 
 @interface ZJAddressPickerView : ZJPickBaseView
 
+/// 选中后的回调
+@property (nonatomic, copy) ZJAddressResultBlock    resultBlock;
+/// 取消选择的回调
+@property (nonatomic, copy) ZJAddressCancelBlock    cancelBlock;
+/// 展示类型
+@property (nonatomic, assign) ZJAddressPickerMode   pickerViewMode;
+/// 是否开启自动选择
+@property (nonatomic, assign) BOOL                  isAutoSelect;
+/// 分割线的颜色
+//@property (nonatomic, strong) UIColor               *lineColor;
+/// 选中行文本的颜色
+@property (nonatomic, strong) UIColor               *selecteRowTextColor;
+/// 选中行背景颜色
+@property (nonatomic, strong) UIColor               *selectRowBGColor;
+/// 右边按钮颜色
+@property (nonatomic, strong) UIColor               *rightBtnTitleColor;
+/// 左边按钮颜色
+@property (nonatomic, strong) UIColor               *leftBtnTitleColor;
+/// 行高
+@property (nonatomic, assign) CGFloat               rowHeight;
+/// 数据源是否合法
+@property (nonatomic, assign) bool                  isDataSourceValid;
+
+- (instancetype)initWithPickerMode:(ZJAddressPickerMode)pickerMode;
+
+-(void)showPickerViewWithAnimation:(BOOL)animation;
 /**
  *  1.显示地址选择器
  *
