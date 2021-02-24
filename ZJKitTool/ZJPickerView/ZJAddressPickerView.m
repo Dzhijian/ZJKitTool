@@ -169,9 +169,7 @@
 - (void)setCancelBlock:(ZJAddressCancelBlock)cancelBlock{
     _cancelBlock = cancelBlock;
 }
-//- (void)setLineColor:(UIColor *)lineColor{
-//    _lineColor = lineColor;
-//}
+
 - (void)setSelecteRowTextColor:(UIColor *)selecteRowTextColor{
     _selecteRowTextColor = selecteRowTextColor;
 }

@@ -57,7 +57,7 @@ typedef enum : NSUInteger {
 /** 选择的日期的格式 */
 @property (nonatomic, strong) NSString *selectDateFormatter;
 /** 线的颜色 */
-@property (nonatomic, strong) UIColor *lineColor;
+//@property (nonatomic, strong) UIColor *lineColor;
 // 选中行文本的颜色
 @property (nonatomic, strong) UIColor  *selecteRowTextColor;
 // 选中行背景颜色
@@ -293,7 +293,7 @@ typedef enum : NSUInteger {
         _resultBlock                = resultBlock;
         _cancelBlock                = cancelBlock;
         self.pickerMode             = pickerMode;
-        self.lineColor              = lineColor;
+//        self.lineColor              = lineColor;
         self.rowHeight              = rowHeight ? rowHeight : 35.0f;
         self.selecteRowTextColor    = selecteRowTextColor;
         self.selectRowBGColor       = selectRowBGColor;
@@ -643,11 +643,11 @@ typedef enum : NSUInteger {
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
     //设置分割线的颜色
-    if (self.lineColor) {
-        // 设置分割线的颜色
-        ((UIView *)[pickerView.subviews objectAtIndex:1]).backgroundColor = self.lineColor;
-        ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
-    }
+//    if (self.lineColor) {
+//        // 设置分割线的颜色
+//        ((UIView *)[pickerView.subviews objectAtIndex:1]).backgroundColor = self.lineColor;
+//        ((UIView *)[pickerView.subviews objectAtIndex:2]).backgroundColor = self.lineColor;
+//    }
     
     // 设置选中行的背景色
     if (self.selectRowBGColor) {

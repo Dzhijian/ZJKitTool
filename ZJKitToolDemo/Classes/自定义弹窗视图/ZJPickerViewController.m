@@ -44,6 +44,8 @@
     });
     
     btn.zj_onTouchUp = ^(id sender) {
+        
+        // 地区选择弹窗,推荐用这种形式创建
         ZJAddressPickerView *address = [[ZJAddressPickerView alloc]initWithPickerMode:(ZJAddressPickerModeArea)];
         address.leftBtnTitleColor = [UIColor orangeColor];
         address.rightBtnTitleColor = [UIColor purpleColor];
@@ -74,7 +76,7 @@
         make.width.mas_equalTo(140);
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
-        
+        // 地区选择弹窗,不推荐用这种形式创建
         [ZJAddressPickerView zj_showAddressPickerWithShowType:ZJAddressPickerModeArea
                                                    dataSource:nil
                                               defaultSelected:nil
@@ -172,12 +174,23 @@
         make.width.mas_equalTo(140);
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
+        ZJNormalPickerView *custom = [[ZJNormalPickerView alloc]init];
+        custom.title = @"请选择性别";
+        custom.defaultValue = @"人妖";
+        custom.dataSource = @[@"男",@"女",@"人妖",@"未知"];
+        custom.rowHeight = 40;
+        custom.rightBtnTitleColor = [UIColor orangeColor];
+        custom.leftBtnTitleColor = [UIColor blueColor];
+        [custom showView];
         
-        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"人妖",@"未知"] defaultSelValue:@"人妖" isAutoSelect: NO rowHeight:40 lineColor:kRedColor confirmBtnTitleColor:kGreenColor cancelBtnTitleColor:kPurpleColor selecteRowTextColor:kRGB(130, 60, 50) selectRowBGColor:kRGB(11, 12, 12) leftBtnTitle:@"haha" rightBtnTitle:@"hehe" resultBlock:^(id selectValue, NSInteger index) {
-            NSLog(@"index---%ld",index);
-        } cancelBlock:^{
-            
-        }];
+        custom.resultBlock = ^(id selectValue, NSInteger index) {
+            NSLog(@"selectValue---%@,  index---%ld",selectValue,index);
+        };
+//        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"人妖",@"未知"] defaultSelValue:@"人妖" isAutoSelect: NO rowHeight:40 lineColor:kRedColor confirmBtnTitleColor:kGreenColor cancelBtnTitleColor:kPurpleColor selecteRowTextColor:kRGB(130, 60, 50) selectRowBGColor:kRGB(11, 12, 12) leftBtnTitle:@"haha" rightBtnTitle:@"hehe" resultBlock:^(id selectValue, NSInteger index) {
+//            NSLog(@"index---%ld",index);
+//        } cancelBlock:^{
+//
+//        }];
         
     }];
     
@@ -225,13 +238,13 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
-        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"未知"] defaultSelValue:@"未知" isAutoSelect: NO resultBlock:^(id selectValue, NSInteger index) {
-            lab1.text = selectValue;
-            
-            NSLog(@"index---%ld",index);
-        } cancelBlock:^{
-            
-        }];
+//        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"未知"] defaultSelValue:@"未知" isAutoSelect: NO resultBlock:^(id selectValue, NSInteger index) {
+//            lab1.text = selectValue;
+//            
+//            NSLog(@"index---%ld",index);
+//        } cancelBlock:^{
+//            
+//        }];
     }];
 }
 - (void)didReceiveMemoryWarning {
