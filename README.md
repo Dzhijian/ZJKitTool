@@ -40,8 +40,7 @@ pod 'ZJKitTool'
 
 ## Usage
 
-MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。
-请各位大神多多指教，多多支持点个Star。
+#### ZJChain UIKIt 链式语法
 
 > 2.5.0 添加 UIKit 链式语法 支持 UIView 、UILabel、UIButton、UIImageView、UITextField、UITextView、UITableView、UICollection、UIScrollView、UISwitch。
 
@@ -156,7 +155,10 @@ label.zj_chain
 
 ```
 
- 在评论列表中浏览图片推荐使用 KSPhotoBrowser 第三方库浏览
+MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。
+请各位大神多多指教，多多支持点个Star。
+
+在评论列表中浏览图片推荐使用 KSPhotoBrowser 第三方库浏览
  
 >  /*
 >   * 使用 KSPhotoBrowser 浏览图片

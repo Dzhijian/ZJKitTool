@@ -1897,6 +1897,7 @@
 				GCC_PREFIX_HEADER = ZJKitToolDemo/Header.h;
 				INFOPLIST_FILE = "$(SRCROOT)/ZJKitToolDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeDeng.ZJKitTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1916,6 +1917,7 @@
 				GCC_PREFIX_HEADER = ZJKitToolDemo/Header.h;
 				INFOPLIST_FILE = "$(SRCROOT)/ZJKitToolDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeDeng.ZJKitTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
