@@ -38,7 +38,7 @@ typedef enum : NSUInteger {
 /// 代理
 @property (nonatomic, weak) id<ZJPopupViewDelegate>  delegate;
 /** 弹出视图 */
-@property (nonatomic, strong) ZJBasePopupView *popupView;
+@property (nonatomic, strong) ZJBasePopupView *showView;
 /** 弹出视图的宽度 */
 @property (nonatomic, assign) CGSize popupViewFrame;
 /** 动画时间  默认 0.25 */
@@ -53,6 +53,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) BOOL isBlurEffect;
 /** 关闭按钮 */
 @property (nonatomic, strong) UIButton *closeBtn;
+/** 弹窗父视图 */
+@property (nonatomic, strong) UIView *superView;
 
 
 +(instancetype)zj_showWithPopupView:(ZJBasePopupView *)popupView;
@@ -94,7 +96,7 @@ typedef enum : NSUInteger {
  @return ZJPopUpView
  */
 +(instancetype)zj_showPopView:(ZJBasePopupView *)showView
-                    superView:(UIView *)superView
+                    superView:(UIView * __nullable)superView
                      viewSize:(CGSize)size
                      delegate:(id<ZJPopupViewDelegate>)delegate
                  durationTime:(double)durationTime
@@ -120,7 +122,7 @@ typedef enum : NSUInteger {
  @return ZJPopUpView
  */
 -(instancetype)initWithShowView:(ZJBasePopupView *)showView
-                      superView:(UIView *)superView
+                      superView:(UIView * __nullable)superView
                        viewSize:(CGSize)size
                        delegate:(id<ZJPopupViewDelegate>)delegate
                    durationTime:(double)durationTime

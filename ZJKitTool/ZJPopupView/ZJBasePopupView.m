@@ -16,6 +16,9 @@
         if (self.baseBlock) {
             self.baseBlock();
         }
+        if (self.closeBlock) {
+            self.closeBlock();
+        }
     }
     return self;
 }

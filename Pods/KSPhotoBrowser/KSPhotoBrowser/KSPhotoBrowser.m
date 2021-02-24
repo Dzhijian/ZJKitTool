@@ -8,20 +8,17 @@
 
 #import "KSPhotoBrowser.h"
 #import "KSPhotoView.h"
+#import "UIImage+KS.h"
+#import "KSSDImageManager.h"
 
-#if __has_include(<YYWebImage/YYWebImage.h>)
-#import <YYWebImage/YYWebImage.h>
-#else
-#import "YYWebImage.h"
-#endif
-
-static const NSTimeInterval kAnimationDuration = 0.3;
+static const NSTimeInterval kAnimationDuration = 0.33;
 static const NSTimeInterval kSpringAnimationDuration = 0.5;
-static Class imageManagerClass = nil;
+static const CGFloat kPageControlHeight = 20;
+static const CGFloat kPageControlBottomSpacing = 40;
 
-@interface KSPhotoBrowser () <UIScrollViewDelegate, UIViewControllerTransitioningDelegate, CAAnimationDelegate> {
-    CGPoint _startLocation;
-}
+static Class ImageManagerClass = nil;
+
+@interface KSPhotoBrowser () <UIScrollViewDelegate, UIViewControllerTransitioningDelegate, CAAnimationDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSMutableArray *photoItems;
@@ -32,7 +29,8 @@ static Class imageManagerClass = nil;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UILabel *pageLabel;
 @property (nonatomic, assign) BOOL presented;
-@property (nonatomic, strong) id<KSImageManager> imageManager;
+@property (nonatomic, assign) CGPoint startLocation;
+@property (nonatomic, assign) CGRect startFrame;
 
 @end
 
@@ -67,10 +65,9 @@ static Class imageManagerClass = nil;
         _reusableItemViews = [[NSMutableSet alloc] init];
         _visibleItemViews = [[NSMutableArray alloc] init];
         
-        if (imageManagerClass == nil) {
-            imageManagerClass = KSYYImageManager.class;
+        if (ImageManagerClass == nil) {
+            ImageManagerClass = KSSDImageManager.class;
         }
-        _imageManager = [[imageManagerClass alloc] init];
     }
     return self;
 }
@@ -83,15 +80,12 @@ static Class imageManagerClass = nil;
     
     self.view.backgroundColor = [UIColor clearColor];
     
-    _backgroundView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    _backgroundView.contentMode = UIViewContentModeScaleAspectFill;
-    _backgroundView.alpha = 0;
-    [self.view addSubview:_backgroundView];
+    self.backgroundView = [[UIImageView alloc] init];
+    self.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundView.alpha = 0;
+    [self.view addSubview:self.backgroundView];
     
-    CGRect rect = self.view.bounds;
-    rect.origin.x -= kKSPhotoViewPadding;
-    rect.size.width += 2 * kKSPhotoViewPadding;
-    _scrollView = [[UIScrollView alloc] initWithFrame:rect];
+    _scrollView = [[UIScrollView alloc] init];
     _scrollView.pagingEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.delegate = self;
@@ -99,13 +93,13 @@ static Class imageManagerClass = nil;
     
     if (_pageindicatorStyle == KSPhotoBrowserPageIndicatorStyleDot) {
         if (_photoItems.count > 1) {
-            _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-40, self.view.bounds.size.width, 20)];
+            _pageControl = [[UIPageControl alloc] init];
             _pageControl.numberOfPages = _photoItems.count;
             _pageControl.currentPage = _currentPage;
             [self.view addSubview:_pageControl];
         }
     } else {
-        _pageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-40, self.view.bounds.size.width, 20)];
+        _pageLabel = [[UILabel alloc] init];
         _pageLabel.textColor = [UIColor whiteColor];
         _pageLabel.font = [UIFont systemFontOfSize:16];
         _pageLabel.textAlignment = NSTextAlignmentCenter;
@@ -113,29 +107,41 @@ static Class imageManagerClass = nil;
         [self.view addSubview:_pageLabel];
     }
     
-    CGSize contentSize = CGSizeMake(rect.size.width * _photoItems.count, rect.size.height);
-    _scrollView.contentSize = contentSize;
+    [self setupFrames];
     
     [self addGestureRecognizer];
-    
-    CGPoint contentOffset = CGPointMake(_scrollView.frame.size.width*_currentPage, 0);
-    [_scrollView setContentOffset:contentOffset animated:NO];
-    if (contentOffset.x == 0) {
-        [self scrollViewDidScroll:_scrollView];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    
     KSPhotoItem *item = [_photoItems objectAtIndex:_currentPage];
-    KSPhotoView *photoView = [self photoViewForPage:_currentPage];
+    if (_delegate && [_delegate respondsToSelector:@selector(ks_photoBrowser:didSelectItem:atIndex:)]) {
+        [_delegate ks_photoBrowser:self didSelectItem:item atIndex:_currentPage];
+    }
     
-    if ([_imageManager imageFromMemoryForURL:item.imageUrl]) {
-        [self configPhotoView:photoView withItem:item];
-    } else {
-        photoView.imageView.image = item.thumbImage;
-        [photoView resizeImageView];
+    KSPhotoView *photoView = [self photoViewForPage:_currentPage];
+    photoView.imageView.image = item.thumbImage;
+    [photoView resizeImageView];
+    
+    if (_backgroundStyle == KSPhotoBrowserBackgroundStyleBlur) {
+        [self blurBackgroundWithImage:[self screenshot] animated:NO];
+    } else if (_backgroundStyle == KSPhotoBrowserBackgroundStyleBlurPhoto) {
+        [self blurBackgroundWithImage:item.thumbImage animated:NO];
+    }
+    
+    if (item.sourceView == nil) {
+        photoView.alpha = 0;
+        [UIView animateWithDuration:kAnimationDuration animations:^{
+            self.view.backgroundColor = [UIColor blackColor];
+            self.backgroundView.alpha = 1;
+            photoView.alpha = 1;
+        } completion:^(BOOL finished) {
+            [self configPhotoView:photoView withItem:item];
+            self.presented = YES;
+            [self setStatusBarHidden:YES];
+        }];
+        return;
     }
     
     CGRect endRect = photoView.imageView.frame;
@@ -148,32 +154,50 @@ static Class imageManagerClass = nil;
     }
     photoView.imageView.frame = sourceRect;
     
-    if (_backgroundStyle == KSPhotoBrowserBackgroundStyleBlur) {
-        [self blurBackgroundWithImage:[self screenshot] animated:NO];
-    } else if (_backgroundStyle == KSPhotoBrowserBackgroundStyleBlurPhoto) {
-        [self blurBackgroundWithImage:item.thumbImage animated:NO];
-    }
     if (_bounces) {
         [UIView animateWithDuration:kSpringAnimationDuration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:kNilOptions animations:^{
             photoView.imageView.frame = endRect;
             self.view.backgroundColor = [UIColor blackColor];
-            _backgroundView.alpha = 1;
+            self.backgroundView.alpha = 1;
         } completion:^(BOOL finished) {
             [self configPhotoView:photoView withItem:item];
-            _presented = YES;
+            self.presented = YES;
             [self setStatusBarHidden:YES];
         }];
     } else {
+        CGRect startBounds = CGRectMake(0, 0, sourceRect.size.width, sourceRect.size.height);
+        CGRect endBounds = CGRectMake(0, 0, endRect.size.width, endRect.size.height);
+        UIBezierPath *startPath = [UIBezierPath bezierPathWithRoundedRect:startBounds cornerRadius:MAX(item.sourceView.layer.cornerRadius, 0.1)];
+        UIBezierPath *endPath = [UIBezierPath bezierPathWithRoundedRect:endBounds cornerRadius:0.1];
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        maskLayer.frame = endBounds;
+        photoView.imageView.layer.mask = maskLayer;
+        
+        CABasicAnimation *maskAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+        maskAnimation.duration = kAnimationDuration;
+        maskAnimation.fromValue = (__bridge id _Nullable)startPath.CGPath;
+        maskAnimation.toValue = (__bridge id _Nullable)endPath.CGPath;
+        maskAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        [maskLayer addAnimation:maskAnimation forKey:nil];
+        maskLayer.path = endPath.CGPath;
+        
+        
         [UIView animateWithDuration:kAnimationDuration animations:^{
             photoView.imageView.frame = endRect;
             self.view.backgroundColor = [UIColor blackColor];
-            _backgroundView.alpha = 1;
+            self.backgroundView.alpha = 1;
         } completion:^(BOOL finished) {
             [self configPhotoView:photoView withItem:item];
-            _presented = YES;
+            self.presented = YES;
             [self setStatusBarHidden:YES];
+            photoView.imageView.layer.mask = nil;
         }];
     }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self setupFrames];
 }
 
 - (void)dealloc {
@@ -186,11 +210,45 @@ static Class imageManagerClass = nil;
     [vc presentViewController:self animated:NO completion:nil];
 }
 
-+ (void)setImageManagerClass:(Class<KSImageManager>)cls {
-    imageManagerClass = cls;
+- (UIImage *)imageForItem:(KSPhotoItem *)item {
+    return [ImageManagerClass imageForURL:item.imageUrl];
+}
+
+- (UIImage *)imageAtIndex:(NSUInteger)index {
+    KSPhotoItem *item = [_photoItems objectAtIndex:index];
+    return [ImageManagerClass imageForURL:item.imageUrl];
 }
 
 // MARK: - Private
+
+- (void)setupFrames {
+    CGRect rect = self.view.bounds;
+    _backgroundView.frame = rect;
+    
+    rect.origin.x -= kKSPhotoViewPadding;
+    rect.size.width += 2 * kKSPhotoViewPadding;
+    _scrollView.frame = rect;
+    
+    CGRect pageRect = CGRectMake(0, self.view.bounds.size.height - kPageControlBottomSpacing, self.view.bounds.size.width, kPageControlHeight);
+    _pageControl.frame = pageRect;
+    _pageLabel.frame = pageRect;
+    
+    for (KSPhotoView *photoView in _visibleItemViews) {
+        CGRect rect = _scrollView.bounds;
+        rect.origin.x = photoView.tag * _scrollView.bounds.size.width;
+        photoView.frame = rect;
+        [photoView resizeImageView];
+    }
+    
+    CGPoint contentOffset = CGPointMake(_scrollView.frame.size.width * _currentPage, 0);
+    [_scrollView setContentOffset:contentOffset animated:false];
+    if (contentOffset.x == 0) {
+        [self scrollViewDidScroll:_scrollView];
+    }
+    
+    CGSize contentSize = CGSizeMake(rect.size.width * _photoItems.count, rect.size.height);
+    _scrollView.contentSize = contentSize;
+}
 
 - (void)setStatusBarHidden:(BOOL)hidden {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -202,7 +260,7 @@ static Class imageManagerClass = nil;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 - (KSPhotoView *)photoViewForPage:(NSUInteger)page {
@@ -217,7 +275,7 @@ static Class imageManagerClass = nil;
 - (KSPhotoView *)dequeueReusableItemView {
     KSPhotoView *photoView = [_reusableItemViews anyObject];
     if (photoView == nil) {
-        photoView = [[KSPhotoView alloc] initWithFrame:_scrollView.bounds imageManager:_imageManager];
+        photoView = [[KSPhotoView alloc] initWithFrame:_scrollView.bounds];
     } else {
         [_reusableItemViews removeObject:photoView];
     }
@@ -255,13 +313,13 @@ static Class imageManagerClass = nil;
             [_scrollView addSubview:photoView];
             [_visibleItemViews addObject:photoView];
         }
-        if (photoView.item == nil && _presented) {
+        if (photoView.item == nil && self.presented) {
             KSPhotoItem *item = [_photoItems objectAtIndex:i];
             [self configPhotoView:photoView withItem:item];
         }
     }
     
-    if (page != _currentPage && _presented && (page >= 0 && page < _photoItems.count)) {
+    if (page != _currentPage && self.presented && (page >= 0 && page < _photoItems.count)) {
         KSPhotoItem *item = [_photoItems objectAtIndex:page];
         if (_backgroundStyle == KSPhotoBrowserBackgroundStyleBlurPhoto) {
             [self blurBackgroundWithImage:item.thumbImage animated:YES];
@@ -305,10 +363,11 @@ static Class imageManagerClass = nil;
             break;
         case UIGestureRecognizerStateChanged: {
             CGFloat angle = 0;
+            CGFloat height = MAX(photoView.imageView.frame.size.height, photoView.frame.size.height);
             if (_startLocation.x < self.view.frame.size.width/2) {
-                angle = -(M_PI / 2) * (point.y / self.view.frame.size.height);
+                angle = -(M_PI / 2) * (point.y / height);
             } else {
-                angle = (M_PI / 2) * (point.y / self.view.frame.size.height);
+                angle = (M_PI / 2) * (point.y / height);
             }
             CGAffineTransform rotation = CGAffineTransformMakeRotation(angle);
             CGAffineTransform translation = CGAffineTransformMakeTranslation(0, point.y);
@@ -317,13 +376,13 @@ static Class imageManagerClass = nil;
             
             double percent = 1 - fabs(point.y)/(self.view.frame.size.height/2);
             self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:percent];
-            _backgroundView.alpha = percent;
+            self.backgroundView.alpha = percent;
         }
             break;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled: {
             if (fabs(point.y) > 200 || fabs(velocity.y) > 500) {
-                [self showRotationCompletionAnimationFromPoint:point];
+                [self showRotationCompletionAnimationFromPoint:point velocity:velocity];
             } else {
                 [self showCancellationAnimation];
             }
@@ -336,24 +395,36 @@ static Class imageManagerClass = nil;
 }
 
 - (void)performScaleWithPan:(UIPanGestureRecognizer *)pan {
-    CGPoint point = [pan translationInView:self.view];
-    CGPoint location = [pan locationInView:self.view];
-    CGPoint velocity = [pan velocityInView:self.view];
     KSPhotoView *photoView = [self photoViewForPage:_currentPage];
+    CGPoint point = [pan translationInView:self.view];
+    CGPoint location = [pan locationInView:photoView];
+    CGPoint velocity = [pan velocityInView:self.view];
+    
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:
             _startLocation = location;
+            self.startFrame = photoView.imageView.frame;
             [self handlePanBegin];
             break;
         case UIGestureRecognizerStateChanged: {
             double percent = 1 - fabs(point.y) / self.view.frame.size.height;
-            percent = MAX(percent, 0);
-            double s = MAX(percent, 0.5);
-            CGAffineTransform translation = CGAffineTransformMakeTranslation(point.x/s, point.y/s);
-            CGAffineTransform scale = CGAffineTransformMakeScale(s, s);
-            photoView.imageView.transform = CGAffineTransformConcat(translation, scale);
+            double s = MAX(percent, 0.3);
+            
+            CGFloat width = self.startFrame.size.width * s;
+            CGFloat height = self.startFrame.size.height * s;
+            
+            CGFloat rateX = (_startLocation.x - self.startFrame.origin.x) / self.startFrame.size.width;
+            CGFloat x = location.x - width * rateX;
+            
+            CGFloat rateY = (_startLocation.y - self.startFrame.origin.y) / self.startFrame.size.height;
+            CGFloat y = location.y - height * rateY;
+            
+            NSLog(@"%f", rateY);
+            
+            photoView.imageView.frame = CGRectMake(x, y, width, height);
+            
             self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:percent];
-            _backgroundView.alpha = percent;
+            self.backgroundView.alpha = percent;
         }
             break;
         case UIGestureRecognizerStateEnded:
@@ -385,13 +456,13 @@ static Class imageManagerClass = nil;
             photoView.imageView.transform = CGAffineTransformMakeTranslation(0, point.y);
             double percent = 1 - fabs(point.y)/(self.view.frame.size.height/2);
             self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:percent];
-            _backgroundView.alpha = percent;
+            self.backgroundView.alpha = percent;
         }
             break;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled: {
             if (fabs(point.y) > 200 || fabs(velocity.y) > 500) {
-                [self showSlideCompletionAnimationFromPoint:point];
+                [self showSlideCompletionAnimationFromPoint:point velocity:velocity];
             } else {
                 [self showCancellationAnimation];
             }
@@ -414,19 +485,19 @@ static Class imageManagerClass = nil;
 
 - (void)blurBackgroundWithImage:(UIImage *)image animated:(BOOL)animated {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *blurImage = [image yy_imageByBlurDark];
+        UIImage *blurImage = [image ks_imageByBlurDark];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (animated) {
                 [UIView animateWithDuration:kAnimationDuration animations:^{
-                    _backgroundView.alpha = 0;
+                    self.backgroundView.alpha = 0;
                 } completion:^(BOOL finished) {
-                    _backgroundView.image = blurImage;
+                    self.backgroundView.image = blurImage;
                     [UIView animateWithDuration:kAnimationDuration animations:^{
-                        _backgroundView.alpha = 1;
+                        self.backgroundView.alpha = 1;
                     } completion:nil];
                 }];
             } else {
-                _backgroundView.image = blurImage;
+                self.backgroundView.image = blurImage;
             }
         });
     });
@@ -498,6 +569,10 @@ static Class imageManagerClass = nil;
     if (!image) {
         return;
     }
+    if (_delegate && [_delegate respondsToSelector:@selector(ks_photoBrowser:didLongPressItem:atIndex:)]) {
+        [_delegate ks_photoBrowser:self didLongPressItem:_photoItems[_currentPage] atIndex:_currentPage];
+        return;
+    }
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         activityViewController.popoverPresentationController.sourceView = longPress.view;
@@ -537,20 +612,28 @@ static Class imageManagerClass = nil;
     if (!item.finished) {
         photoView.progressLayer.hidden = NO;
     }
-    if (_bounces && _dismissalStyle == KSPhotoBrowserInteractiveDismissalStyleScale) {
+    if (_bounces) {
         [UIView animateWithDuration:kSpringAnimationDuration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:kNilOptions animations:^{
-            photoView.imageView.transform = CGAffineTransformIdentity;
+            if (self.dismissalStyle == KSPhotoBrowserInteractiveDismissalStyleScale) {
+                photoView.imageView.frame = self.startFrame;
+            } else {
+                photoView.imageView.transform = CGAffineTransformIdentity;
+            }
             self.view.backgroundColor = [UIColor blackColor];
-            _backgroundView.alpha = 1;
+            self.backgroundView.alpha = 1;
         } completion:^(BOOL finished) {
             [self setStatusBarHidden:YES];
             [self configPhotoView:photoView withItem:item];
         }];
     } else {
         [UIView animateWithDuration:kAnimationDuration animations:^{
-            photoView.imageView.transform = CGAffineTransformIdentity;
+            if (self.dismissalStyle == KSPhotoBrowserInteractiveDismissalStyleScale) {
+                photoView.imageView.frame = self.startFrame;
+            } else {
+                photoView.imageView.transform = CGAffineTransformIdentity;
+            }
             self.view.backgroundColor = [UIColor blackColor];
-            _backgroundView.alpha = 1;
+            self.backgroundView.alpha = 1;
         } completion:^(BOOL finished) {
             [self setStatusBarHidden:YES];
             [self configPhotoView:photoView withItem:item];
@@ -558,25 +641,29 @@ static Class imageManagerClass = nil;
     }
 }
 
-- (void)showRotationCompletionAnimationFromPoint:(CGPoint)point {
+- (void)showRotationCompletionAnimationFromPoint:(CGPoint)point velocity:(CGPoint)velocity {
     KSPhotoView *photoView = [self photoViewForPage:_currentPage];
     BOOL startFromLeft = _startLocation.x < self.view.frame.size.width / 2;
     BOOL throwToTop = point.y < 0;
     CGFloat angle, toTranslationY;
+    CGFloat height = MAX(photoView.imageView.frame.size.height, photoView.frame.size.height);
+    
     if (throwToTop) {
         angle = startFromLeft ? (M_PI / 2) : -(M_PI / 2);
-        toTranslationY = -self.view.frame.size.height;
+        toTranslationY = -height;
     } else {
         angle = startFromLeft ? -(M_PI / 2) : (M_PI / 2);
-        toTranslationY = self.view.frame.size.height;
+        toTranslationY = height;
     }
     
     CGFloat angle0 = 0;
     if (_startLocation.x < self.view.frame.size.width/2) {
-        angle0 = -(M_PI / 2) * (point.y / self.view.frame.size.height);
+        angle0 = -(M_PI / 2) * (point.y / height);
     } else {
-        angle0 = (M_PI / 2) * (point.y / self.view.frame.size.height);
+        angle0 = (M_PI / 2) * (point.y / height);
     }
+    
+    NSTimeInterval duration = MIN(500 / fabs(velocity.y), kAnimationDuration);
     
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.fromValue = @(angle0);
@@ -585,7 +672,7 @@ static Class imageManagerClass = nil;
     translationAnimation.fromValue = @(point.y);
     translationAnimation.toValue = @(toTranslationY);
     CAAnimationGroup *throwAnimation = [CAAnimationGroup animation];
-    throwAnimation.duration = kAnimationDuration;
+    throwAnimation.duration = duration;
     throwAnimation.delegate = self;
     throwAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     throwAnimation.animations = @[rotationAnimation, translationAnimation];
@@ -597,9 +684,9 @@ static Class imageManagerClass = nil;
     CGAffineTransform transform = CGAffineTransformConcat(rotation, translation);
     photoView.imageView.transform = transform;
     
-    [UIView animateWithDuration:kAnimationDuration animations:^{
+    [UIView animateWithDuration:duration animations:^{
         self.view.backgroundColor = [UIColor clearColor];
-        _backgroundView.alpha = 0;
+        self.backgroundView.alpha = 0;
     } completion:nil];
 }
 
@@ -631,22 +718,39 @@ static Class imageManagerClass = nil;
         [UIView animateWithDuration:kSpringAnimationDuration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:kNilOptions animations:^{
             photoView.imageView.frame = sourceRect;
             self.view.backgroundColor = [UIColor clearColor];
-            _backgroundView.alpha = 0;
+            self.backgroundView.alpha = 0;
         } completion:^(BOOL finished) {
             [self dismissAnimated:NO];
         }];
     } else {
+        CGRect startRect = photoView.imageView.frame;
+        CGRect endBounds = CGRectMake(0, 0, sourceRect.size.width, sourceRect.size.height);
+        CGRect startBounds = CGRectMake(0, 0, startRect.size.width, startRect.size.height);
+        UIBezierPath *startPath = [UIBezierPath bezierPathWithRoundedRect:startBounds cornerRadius:0.1];
+        UIBezierPath *endPath = [UIBezierPath bezierPathWithRoundedRect:endBounds cornerRadius:MAX(item.sourceView.layer.cornerRadius, 0.1)];
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        maskLayer.frame = endBounds;
+        photoView.imageView.layer.mask = maskLayer;
+        
+        CABasicAnimation *maskAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+        maskAnimation.duration = kAnimationDuration;
+        maskAnimation.fromValue = (__bridge id _Nullable)startPath.CGPath;
+        maskAnimation.toValue = (__bridge id _Nullable)endPath.CGPath;
+        maskAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        [maskLayer addAnimation:maskAnimation forKey:nil];
+        maskLayer.path = endPath.CGPath;
+        
         [UIView animateWithDuration:kAnimationDuration animations:^{
             photoView.imageView.frame = sourceRect;
             self.view.backgroundColor = [UIColor clearColor];
-            _backgroundView.alpha = 0;
+            self.backgroundView.alpha = 0;
         } completion:^(BOOL finished) {
             [self dismissAnimated:NO];
         }];
     }
 }
 
-- (void)showSlideCompletionAnimationFromPoint:(CGPoint)point {
+- (void)showSlideCompletionAnimationFromPoint:(CGPoint)point velocity:(CGPoint)velocity {
     KSPhotoView *photoView = [self photoViewForPage:_currentPage];
     BOOL throwToTop = point.y < 0;
     CGFloat toTranslationY = 0;
@@ -655,10 +759,11 @@ static Class imageManagerClass = nil;
     } else {
         toTranslationY = self.view.frame.size.height;
     }
-    [UIView animateWithDuration:kAnimationDuration animations:^{
+    NSTimeInterval duration = MIN(500 / fabs(velocity.y), kAnimationDuration);
+    [UIView animateWithDuration:duration animations:^{
         photoView.imageView.transform = CGAffineTransformMakeTranslation(0, toTranslationY);
         self.view.backgroundColor = [UIColor clearColor];
-        _backgroundView.alpha = 0;
+        self.backgroundView.alpha = 0;
     } completion:^(BOOL finished) {
         [self dismissAnimated:YES];
     }];
@@ -677,6 +782,26 @@ static Class imageManagerClass = nil;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self updateReusableItemViews];
     [self configItemViews];
+}
+
+// MARK: - Setter
+
++ (void)setImageManagerClass:(Class)imageManagerClass {
+    ImageManagerClass = imageManagerClass;
+}
+
++ (void)setImageViewBackgroundColor:(UIColor *)imageViewBackgroundColor {
+    KSPhotoView.backgroundColor = imageViewBackgroundColor;
+}
+
+// MARK: - Getter
+
++ (Class)imageManagerClass {
+    return ImageManagerClass;
+}
+
++ (UIColor *)imageViewBackgroundColor {
+    return KSPhotoView.backgroundColor;
 }
 
 @end

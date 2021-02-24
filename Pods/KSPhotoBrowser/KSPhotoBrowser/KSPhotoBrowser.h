@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KSPhotoItem.h"
-#import "KSYYImageManager.h"
+#import "KSImageManagerProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,17 +44,24 @@ typedef NS_ENUM(NSUInteger, KSPhotoBrowserImageLoadingStyle) {
 @property (nonatomic, assign) KSPhotoBrowserImageLoadingStyle loadingStyle;
 @property (nonatomic, assign) BOOL bounces;
 @property (nonatomic, weak) id<KSPhotoBrowserDelegate> delegate;
+@property (class, nonatomic, strong) Class<KSImageManager> imageManagerClass;
+@property (class, nonatomic, strong) UIColor *imageViewBackgroundColor;
 
 + (instancetype)browserWithPhotoItems:(NSArray<KSPhotoItem *> *)photoItems selectedIndex:(NSUInteger)selectedIndex;
 - (instancetype)initWithPhotoItems:(NSArray<KSPhotoItem *> *)photoItems selectedIndex:(NSUInteger)selectedIndex;
 - (void)showFromViewController:(UIViewController *)vc;
-+ (void)setImageManagerClass:(Class<KSImageManager>)cls;
+- (UIImage *)imageForItem:(KSPhotoItem *)item;
+- (UIImage *)imageAtIndex:(NSUInteger)index;
 
 @end
 
 @protocol KSPhotoBrowserDelegate <NSObject>
 
+@optional
 - (void)ks_photoBrowser:(KSPhotoBrowser *)browser didSelectItem:(KSPhotoItem *)item atIndex:(NSUInteger)index;
+
+// If you do not implement this method, there will be a default implementation which will call the system share sheet `UIActivityViewController`
+- (void)ks_photoBrowser:(KSPhotoBrowser *)browser didLongPressItem:(KSPhotoItem *)item atIndex:(NSUInteger)index;
 
 @end
 
