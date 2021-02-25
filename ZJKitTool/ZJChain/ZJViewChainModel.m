@@ -9,6 +9,8 @@
 #import "ZJViewChainModel.h"
 #import <objc/runtime.h>
 
+static const void *s_zj_tapGestureKey = "s_zjChain_tapGestureKey";
+static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
 #define weak_self(value)     __weak typeof(value) weakSelf = value
 
 #pragma mark - Masonry
@@ -62,7 +64,20 @@
 
 
 @implementation ZJViewChainModel
-
+- (ZJViewChainModel * _Nonnull (^)(void (^constraints)(ZJTapGestureBlock _Nonnull)))gestureOnTap{
+        __weak typeof(self) weakSelf = self;
+    return ^ZJViewChainModel* (void (^constraints)(ZJTapGestureBlock gestureOnTap)) {
+//            [weakSelf.view zj_addTapGestureWithCallback:gestureOnTap];
+            return weakSelf;
+        };
+}
+//- (ZJViewChainModel * _Nonnull (^)(void (^ _Nonnull)(__kindof UIView * _Nonnull)))gestureOnTap{
+//    __weak typeof(self) weakSelf = self;
+//    return ^ZJViewChainModel* (void (^constraints)(__kindof UIView *) ) {
+//        [weakSelf.view zj_addTapGestureWithCallback:constraints];
+//        return weakSelf;
+//    };
+//}
 @end
 
 @implementation UIView (ZJChain)
@@ -82,6 +97,49 @@
             
     }
     return model;
+}
+
+
+//- (ZJViewChainModel * _Nonnull (^)(void (^ _Nonnull)(__kindof UIView * _Nonnull)))gestureOnTap{
+//    __weak typeof(self) weakSelf = self;
+//    return ^ZJViewChainModel* ( void (^gestureOnTap)(__kindof UIView *view) ) {
+//        weakSelf
+//        return weakSelf;
+//    };
+//}
+
+- (UITapGestureRecognizer *)zj_tapGesture {
+    return objc_getAssociatedObject(self, s_zj_tapGestureKey);
+}
+
+- (UILongPressGestureRecognizer *)zj_longGesure {
+    return objc_getAssociatedObject(self, s_zj_longGestureKey);
+}
+
+- (void)zj_addTapGestureWithCallback:(ZJTapGestureBlock)onTaped {
+    self.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    tap.zj_onTaped = onTaped;
+    [self addGestureRecognizer:tap];
+    
+    objc_setAssociatedObject(self,
+                             s_zj_tapGestureKey,
+                             tap,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)zj_addLongGestureWithCallback:(ZJLongGestureBlock)onLongPressed {
+    self.userInteractionEnabled = YES;
+    
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] init];
+    gesture.zj_onLongPressed = onLongPressed;
+    [self addGestureRecognizer:gesture];
+    
+    objc_setAssociatedObject(self,
+                             s_zj_longGestureKey,
+                             gesture,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end

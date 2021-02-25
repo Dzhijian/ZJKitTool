@@ -939,8 +939,6 @@
 				04B099FC209DB7BD00E66CA2 /* UIButton+ZJMasonryKit.m */,
 				04B099FA209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.h */,
 				04B09A03209DB7BD00E66CA2 /* UICollectionView+ZJMasonryKit.m */,
-				0408D245209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.h */,
-				0408D246209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m */,
 				04B09A06209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.h */,
 				04B099FD209DB7BD00E66CA2 /* UIImageView+ZJMasonryKit.m */,
 				04B09A09209DB7BD00E66CA2 /* UILabel+ZJMasonryKit.h */,
@@ -1198,6 +1196,8 @@
 				04398A062434DFA300B14523 /* ZJCollectionViewChainModel.m */,
 				04398A082434F2F200B14523 /* ZJScrollViewChainModel.h */,
 				04398A092434F2F200B14523 /* ZJScrollViewChainModel.m */,
+				0408D245209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.h */,
+				0408D246209EF7CE00097E14 /* UIGestureRecognizer+ZJActionBlock.m */,
 			);
 			path = ZJChain;
 			sourceTree = "<group>";
