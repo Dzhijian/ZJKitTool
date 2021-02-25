@@ -64,20 +64,15 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
 
 
 @implementation ZJViewChainModel
-- (ZJViewChainModel * _Nonnull (^)(void (^constraints)(ZJTapGestureBlock _Nonnull)))gestureOnTap{
-        __weak typeof(self) weakSelf = self;
-    return ^ZJViewChainModel* (void (^constraints)(ZJTapGestureBlock gestureOnTap)) {
-//            [weakSelf.view zj_addTapGestureWithCallback:gestureOnTap];
-            return weakSelf;
-        };
+
+- (ZJViewChainModel *  (^)(ZJTapGestureBlock ))onTap{
+    __weak typeof(self) weakSelf = self;
+    return ^ZJViewChainModel* (ZJTapGestureBlock tap) {
+        [weakSelf.view zj_addTapGestureWithCallback:tap];
+        return weakSelf;
+    };
 }
-//- (ZJViewChainModel * _Nonnull (^)(void (^ _Nonnull)(__kindof UIView * _Nonnull)))gestureOnTap{
-//    __weak typeof(self) weakSelf = self;
-//    return ^ZJViewChainModel* (void (^constraints)(__kindof UIView *) ) {
-//        [weakSelf.view zj_addTapGestureWithCallback:constraints];
-//        return weakSelf;
-//    };
-//}
+
 @end
 
 @implementation UIView (ZJChain)
@@ -99,14 +94,6 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
     return model;
 }
 
-
-//- (ZJViewChainModel * _Nonnull (^)(void (^ _Nonnull)(__kindof UIView * _Nonnull)))gestureOnTap{
-//    __weak typeof(self) weakSelf = self;
-//    return ^ZJViewChainModel* ( void (^gestureOnTap)(__kindof UIView *view) ) {
-//        weakSelf
-//        return weakSelf;
-//    };
-//}
 
 - (UITapGestureRecognizer *)zj_tapGesture {
     return objc_getAssociatedObject(self, s_zj_tapGestureKey);

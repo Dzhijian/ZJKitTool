@@ -34,6 +34,7 @@
         make.width.mas_equalTo(180);
         make.height.mas_equalTo(35);
     });
+    lab1.zj_chain.text(@"12314");
     
     UIButton *btn = [[UIButton alloc]init];
     
@@ -166,12 +167,14 @@
         
     }];
     
-    [[UIView alloc]init].zj_chain.backgroundColor([UIColor orangeColor]).makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+    UIView *testView = [UIView new];
+    testView.zj_chain.superView(self.view).backgroundColor([UIColor orangeColor]).makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(lab7.mas_bottom).offset(50);
         make.left.mas_equalTo(100);
         make.width.height.mas_equalTo(100);
+    }).onTap(^(UITapGestureRecognizer *gesture){
+        NSLog(@"11111");
     });
-    
 }
 
 - (void)didReceiveMemoryWarning {

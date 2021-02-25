@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mrk - Action
 
-ZJ_CHAIN_PROPERTY ZJViewChainModel* (^ gestureOnTap)(void (^constraints)(ZJTapGestureBlock ontap));
+ZJ_CHAIN_PROPERTY ZJViewChainModel* (^ onTap)(ZJTapGestureBlock ontap);
 
 @end
 
