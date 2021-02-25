@@ -16,10 +16,6 @@
 #import "ZJDatePickerView.h"
 #import "NSDate+ZJPickerView.h"
 #import "ZJPickerViewMacro.h"
-typedef enum : NSUInteger {
-    ZJDatePickerStyleSystem,    //  系统样式 UIDatePicker 类
-    ZJDatePickerStyleCustom     //  自定义样式 UIPickerView 类
-} ZJDatePickerStyle;
 
 @interface ZJDatePickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
@@ -29,10 +25,7 @@ typedef enum : NSUInteger {
     NSInteger _dayIndex;
     NSInteger _hourIndex;
     NSInteger _minuteIndex;
-    
-    NSString *_title;
     UIDatePickerMode _datePickerMode;
-    BOOL _isAutoSelect;      // 是否开启自动选择
 }
 /** 时间选择器1 */
 @property (nonatomic, strong) UIDatePicker *datePicker;
@@ -44,390 +37,213 @@ typedef enum : NSUInteger {
 @property(nonatomic, strong) NSArray *dayArr;
 @property(nonatomic, strong) NSArray *hourArr;
 @property(nonatomic, strong) NSArray *minuteArr;
-/** 显示类型 */
-@property (nonatomic, assign) ZJDatePickerMode pickerMode;
-/** 时间选择器的类型 */
-@property (nonatomic, assign) ZJDatePickerStyle pickerStyle;
-/** 限制最小日期 */
-@property (nonatomic, strong) NSDate *minLimitDate;
-/** 限制最大日期 */
-@property (nonatomic, strong) NSDate *maxLimitDate;
+
 /** 当前选择的日期 */
 @property (nonatomic, strong) NSDate *selectDate;
-/** 选择的日期的格式 */
-@property (nonatomic, strong) NSString *selectDateFormatter;
-/** 线的颜色 */
-//@property (nonatomic, strong) UIColor *lineColor;
-// 选中行文本的颜色
-@property (nonatomic, strong) UIColor  *selecteRowTextColor;
-// 选中行背景颜色
-@property (nonatomic, strong) UIColor  *selectRowBGColor;
-// 行高
-@property (nonatomic, assign) CGFloat  rowHeight;
-/** 选中后的回调 */
-@property (nonatomic, copy) ZJDateResultBlock resultBlock;
-/** 取消选择的回调 */
-@property (nonatomic, copy) ZJDateCancelBlock cancelBlock;
 /** 存取选中行 */
 @property (nonatomic,strong) NSMutableDictionary *selectedRowCache;
-/**  是否显示中文名 */
-@property (nonatomic, assign) BOOL isShowChinese;
+
+
 @end
 
 @implementation ZJDatePickerView
 
-#pragma mark - 1.显示时间选择器
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                       resultBlock:(ZJDateResultBlock)resultBlock{
-    
-    
-    [self zj_showDatePickerWithTitle:title
-                            dateType:dateType
-                     defaultSelValue:defaultSelValue
-                        isAutoSelect:NO
-                         resultBlock:resultBlock
-                         cancelBlock:nil];
-    
-}
 
-#pragma mark - 2.显示时间选择器（支持 设置自动选择、取消选择的回调）
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                      isAutoSelect:(BOOL)isAutoSelect
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock{
-    
-    
-    [self zj_showDatePickerWithTitle:title
-                            dateType:dateType
-                     defaultSelValue:defaultSelValue
-                             minDate:nil
-                             maxDate:nil
-                        isAutoSelect:isAutoSelect
-                         resultBlock:resultBlock
-                         cancelBlock:cancelBlock];
-    
-}
-
-#pragma mark - 3.显示时间选择器（支持 设置自动选择、最大值、最小值、取消选择的回调）
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock{
-    
-    
-    [self zj_showDatePickerWithTitle:title
-                            dateType:dateType
-                     defaultSelValue:defaultSelValue
-                             minDate:minDate
-                             maxDate:maxDate
-                        isAutoSelect:isAutoSelect
-                           lineColor:nil
-                           rowHeight:0
-                         resultBlock:resultBlock
-                         cancelBlock:cancelBlock];
-    
-}
-#pragma mark - 4.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、行高、取消选择的回调）
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock {
-
-    [self zj_showDatePickerWithTitle:title
-                            dateType:dateType
-                     defaultSelValue:defaultSelValue
-                             minDate:minDate maxDate:maxDate
-                        isAutoSelect:isAutoSelect
-                           lineColor:lineColor
-                           rowHeight:rowHeight
-                   leftBtnTitleColor:nil
-                  rightBtnTitleColor:nil
-                         resultBlock:resultBlock
-                         cancelBlock:cancelBlock];
-}
-
-
-#pragma mark - 5.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、行高、按钮的颜色、取消选择的回调）
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock {
-    [self zj_showDatePickerWithTitle:title
-                            dateType:dateType
-                     defaultSelValue:defaultSelValue
-                             minDate:minDate
-                             maxDate:maxDate
-                        isAutoSelect:isAutoSelect
-                           lineColor:lineColor
-                           rowHeight:rowHeight
-                   leftBtnTitleColor:leftBtnTitleColor
-                  rightBtnTitleColor:rightBtnTitleColor
-                 selecteRowTextColor:nil
-                    selectRowBGColor:nil
-                         resultBlock:resultBlock
-                         cancelBlock:cancelBlock];
-}
-
-#pragma mark - 6.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的颜色、取消选择的回调）
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-               selecteRowTextColor:(UIColor *)selecteRowTextColor
-                  selectRowBGColor:(UIColor *)selectRowBGColor
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock {
-    
-    [self zj_showDatePickerWithTitle:title
-                            dateType:dateType
-                     defaultSelValue:defaultSelValue
-                            language:nil
-                             minDate:minDate
-                             maxDate:maxDate
-                        isAutoSelect:isAutoSelect
-                       isShowChinese:false
-                           lineColor:lineColor
-                           rowHeight:rowHeight
-                   leftBtnTitleColor:leftBtnTitleColor
-                  rightBtnTitleColor:rightBtnTitleColor
-                 selecteRowTextColor:selecteRowTextColor
-                    selectRowBGColor:selectRowBGColor
-                           leftTitle:nil
-                          rightTitle:nil
-                         resultBlock:resultBlock
-                         cancelBlock:cancelBlock];
-}
-
-#pragma mark - 7.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的文本 颜色、取消选择的回调,时都显示中文单位）
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                          language:(nullable NSString *)language
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                     isShowChinese:(BOOL)isShowChinese
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-               selecteRowTextColor:(UIColor *)selecteRowTextColor
-                  selectRowBGColor:(UIColor *)selectRowBGColor
-                         leftTitle:(NSString *)leftTitle
-                        rightTitle:(NSString *)rightTitle
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock{
-    
-    ZJDatePickerView *datePickerView = [[ZJDatePickerView alloc] initWithTitle:title
-                                                                      dateType:dateType
-                                                               defaultSelValue:defaultSelValue
-                                                                      language:language
-                                                                       minDate:minDate
-                                                                       maxDate:maxDate
-                                                                  isAutoSelect:isAutoSelect
-                                                                 isShowChinese:isShowChinese
-                                                                     lineColor:lineColor
-                                                                     rowHeight:rowHeight
-                                                             leftBtnTitleColor:leftBtnTitleColor
-                                                            rightBtnTitleColor:rightBtnTitleColor
-                                                           selecteRowTextColor:selecteRowTextColor
-                                                              selectRowBGColor:selectRowBGColor
-                                                                     leftTitle:leftTitle
-                                                                    rightTitle:rightTitle
-                                                                   resultBlock:resultBlock
-                                                                   cancelBlock:cancelBlock];
-    [datePickerView showPickerViewWithAnimation:YES];
-}
-
-#pragma mark - 初始化时间选择器
-- (instancetype)initWithTitle:(NSString *)title
-                     dateType:(ZJDatePickerMode)pickerMode
-              defaultSelValue:(NSString *)defaultSelValue
-                     language:(nullable NSString *)language
-                      minDate:(NSDate *)minDate
-                      maxDate:(NSDate *)maxDate
-                 isAutoSelect:(BOOL)isAutoSelect
-                isShowChinese:(BOOL)isShowChinese
-                    lineColor:(UIColor *)lineColor
-                    rowHeight:(CGFloat)rowHeight
-            leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-           rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-          selecteRowTextColor:(UIColor *)selecteRowTextColor
-             selectRowBGColor:(UIColor *)selectRowBGColor
-                    leftTitle:(NSString *)leftTitle
-                   rightTitle:(NSString *)rightTitle
-                  resultBlock:(ZJDateResultBlock)resultBlock
-                  cancelBlock:(ZJDateCancelBlock)cancelBlock{
-    
-    if (self = [super init]) {
-        _title                      = title;
-        _isAutoSelect               = isAutoSelect;
-        _resultBlock                = resultBlock;
-        _cancelBlock                = cancelBlock;
+- (instancetype)initWithPickerMode:(ZJDatePickerMode)pickerMode
+{
+    self = [super init];
+    if (self) {
+        self.rowHeight              = 35.0f;
+        self.isShowChinese          = false;
+        self.animation              = true;
         self.pickerMode             = pickerMode;
-//        self.lineColor              = lineColor;
-        self.rowHeight              = rowHeight ? rowHeight : 35.0f;
-        self.selecteRowTextColor    = selecteRowTextColor;
-        self.selectRowBGColor       = selectRowBGColor;
-        self.isShowChinese          = isShowChinese;
-        // 配置按钮的文本颜色
-        if (leftBtnTitleColor || rightBtnTitleColor) {
-            
-            [self setUpConfirmTitleColor:rightBtnTitleColor cancelColor:leftBtnTitleColor];
-        }
-        
-        if (leftTitle) {
-            [self.leftBtn setTitle:leftTitle forState:(UIControlStateNormal)];
-        }
-        
-        if (rightTitle) {
-            [self.rightBtn setTitle:rightTitle forState:(UIControlStateNormal)];
-        }
-        
+        self.isAutoSelect           = false;
+        self.leftBtnTitleColor      = [UIColor grayColor];
+        self.rightBtnTitleColor     = [UIColor grayColor];
         [self setupSelectDateFormatter:pickerMode];
-        // 设置最小值限制
-        if (minDate) {
-            self.minLimitDate   = minDate;
-        }else{
-            
-            if (self.pickerMode == ZJDatePickerModeTime || self.pickerMode == ZJDatePickerModeCountDownTimer || self.pickerMode == ZJDatePickerModeHM) {
-                self.pickerMode = ZJDatePickerModeHM;
-                self.minLimitDate = [NSDate zj_setHour:0 minute:0];
-            }else if (self.pickerMode == ZJDatePickerModeMDHM){
-                self.minLimitDate = [NSDate zj_setMonth:1 day:1 hour:0 minute:0];
-            }else if (self.pickerMode == ZJDatePickerModeMD){
-                self.minLimitDate = [NSDate zj_setMonth:1 day:1];
-            }else{
-                self.minLimitDate = [NSDate distantPast]; // 遥远的过去的一个时间点
-            }
-            
-        }
-        
-        // 最大值限制
-        if (maxDate) {
-            
-            self.maxLimitDate = maxDate;
-        }else{
-            if (self.pickerMode == ZJDatePickerModeTime || self.pickerMode == ZJDatePickerModeCountDownTimer || self.pickerMode == ZJDatePickerModeHM) {
-                
-                self.maxLimitDate = [NSDate zj_setHour:23 minute:59];
-                
-            } else if (self.pickerMode == ZJDatePickerModeMDHM) {
-                
-                self.maxLimitDate = [NSDate zj_setMonth:12 day:31 hour:23 minute:59];
-            
-            } else if (self.pickerMode == ZJDatePickerModeMD) {
-              
-                self.maxLimitDate = [NSDate zj_setMonth:12 day:31];
-            
-            } else {
-             
-                self.maxLimitDate = [NSDate distantFuture]; // 遥远的未来的一个时间点
-            }
-        }
-        
-        BOOL minMOreThanMax = [self.minLimitDate zj_compare:self.maxLimitDate format:self.selectDateFormatter] == NSOrderedDescending;
-        
-        NSAssert(!minMOreThanMax, @"最小日期不能大于最大日期!");
-        
-        if (minMOreThanMax) {
-            // 如果最小日期大于了最大日期，就忽略两个值
-            self.minLimitDate = [NSDate distantPast];
-            self.maxLimitDate = [NSDate distantFuture];
-        }
-        
-        if (language.length > 0) {
-             self.datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:language];
-        }
-        
-        
-        // 默认选中的日期
-        
-        if (defaultSelValue && defaultSelValue.length > 0) {
-            
-            NSDate *defaultSelDate  = [NSDate zj_getDate:defaultSelValue format:self.selectDateFormatter];
-            if (!defaultSelDate) {
-                NSLog(@"参数格式错误！参数 defaultSelValue 的正确格式是：%@", self.selectDateFormatter);
-                NSAssert(defaultSelDate, @"参数格式错误！请检查形参 defaultSelValue 的格式");
-                defaultSelDate = [NSDate date]; // 默认值参数格式错误时，重置/忽略默认值，防止在 Release 环境下崩溃！
-            }
-            
-            if (self.pickerMode == ZJDatePickerModeTime || self.pickerMode == ZJDatePickerModeCountDownTimer || self.pickerMode == ZJDatePickerModeHM) {
-                self.selectDate = [NSDate zj_setHour:defaultSelDate.zj_hour minute:defaultSelDate.zj_minute];
-            } else if (self.pickerMode == ZJDatePickerModeMDHM) {
-                self.selectDate = [NSDate zj_setMonth:defaultSelDate.zj_month day:defaultSelDate.zj_day hour:defaultSelDate.zj_hour minute:defaultSelDate.zj_minute];
-            } else if (self.pickerMode == ZJDatePickerModeMD) {
-                self.selectDate = [NSDate zj_setMonth:defaultSelDate.zj_month day:defaultSelDate.zj_day];
-            } else {
-                self.selectDate = defaultSelDate;
-            }
-        }else {
-            // 不设置默认日期，就默认选中今天的日期
-            self.selectDate = [NSDate date];
-        }
-        
-        BOOL selectLessThanMin = [self.selectDate zj_compare:self.minLimitDate format:self.selectDateFormatter] == NSOrderedAscending;
-        BOOL selectMoreThanMax = [self.selectDate zj_compare:self.maxLimitDate format:self.selectDateFormatter] == NSOrderedDescending;
-        NSAssert(!selectLessThanMin, @"默认选择的日期不能小于最小日期！");
-        NSAssert(!selectMoreThanMax, @"默认选择的日期不能大于最大日期！");
-        if (selectLessThanMin) {
-            self.selectDate = self.minLimitDate;
-        }
-        if (selectMoreThanMax) {
-            self.selectDate = self.maxLimitDate;
-        }
-        
-#ifdef DEBUG
-        NSLog(@"最小时间date：%@", self.minLimitDate);
-        NSLog(@"默认时间date：%@", self.selectDate);
-        NSLog(@"最大时间date：%@", self.maxLimitDate);
-        
-        NSLog(@"最小时间：%@", [NSDate zj_getDateString:self.minLimitDate format:self.selectDateFormatter]);
-        NSLog(@"默认时间：%@", [NSDate zj_getDateString:self.selectDate format:self.selectDateFormatter]);
-        NSLog(@"最大时间：%@", [NSDate zj_getDateString:self.maxLimitDate format:self.selectDateFormatter]);
-#endif
-        
-        if (self.pickerStyle == ZJDatePickerStyleCustom) {
-            [self initDefaultDateArray];
-        }
-        [self initWithAllView];
-        
-        // 默认滚动的行
-        if (self.pickerStyle == ZJDatePickerStyleSystem) {
-            [self.datePicker setDate:self.selectDate animated:NO];
-        } else if (self.pickerStyle == ZJDatePickerStyleCustom) {
-            [self scrollToSelectDate:self.selectDate animated:NO];
-        }
+
     }
     return self;
+}
+
+- (void)setResultBlock:(ZJDateResultBlock)resultBlock{
+    _resultBlock = resultBlock;
+}
+
+- (void)setCancelBlock:(ZJDateCancelBlock)cancelBlock{
+    _cancelBlock = cancelBlock;
+}
+
+- (void)setSelecteRowTextColor:(UIColor *)selecteRowTextColor{
+    _selecteRowTextColor = selecteRowTextColor;
+}
+
+- (void)setSelectRowBGColor:(UIColor *)selectRowBGColor{
+    _selectRowBGColor = selectRowBGColor;
+}
+
+- (void)setRowHeight:(CGFloat)rowHeight{
+    _rowHeight = rowHeight;
+}
+
+- (void)setLeftBtnTitleColor:(UIColor *)leftBtnTitleColor{
+    _leftBtnTitleColor = leftBtnTitleColor;
+    [self.leftBtn setTitleColor:leftBtnTitleColor forState:(UIControlStateNormal)];
+
+}
+
+- (void)setRightBtnTitleColor:(UIColor *)rightBtnTitleColor {
+    _rightBtnTitleColor = rightBtnTitleColor;
+    [self.rightBtn setTitleColor:rightBtnTitleColor forState:(UIControlStateNormal)];
+}
+
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    self.titleLab.text  = title;
+}
+
+- (void)setAnimation:(bool)animation{
+    _animation = animation;
+}
+
+- (void)setDefaultValue:(NSString *)defaultValue{
+    _defaultValue = defaultValue;
+}
+
+- (void)setMinLimitDate:(NSDate *)minLimitDate{
+    _minLimitDate = minLimitDate;
+}
+
+- (void)setMaxLimitDate:(NSDate *)maxLimitDate{
+    _maxLimitDate = maxLimitDate;
+}
+
+- (void)setLanguage:(NSString *)language{
+    _language = language;
+}
+
+- (void)setIsAutoSelect:(BOOL)isAutoSelect{
+    _isAutoSelect = isAutoSelect;
+}
+
+- (void)setPickerMode:(ZJDatePickerMode)pickerMode{
+    _pickerMode = pickerMode;
+    [self setupSelectDateFormatter:pickerMode];
+}
+
+- (void)setSelectDateFormatter:(NSString *)selectDateFormatter{
+    _selectDateFormatter = selectDateFormatter;
+    
+}
+#pragma mark - 处理数据
+-(void)dealDate{
+    // 设置最小值限制
+    if (!self.minLimitDate) {
+        if (self.pickerMode == ZJDatePickerModeTime || self.pickerMode == ZJDatePickerModeCountDownTimer || self.pickerMode == ZJDatePickerModeHM) {
+            self.pickerMode = ZJDatePickerModeHM;
+            self.minLimitDate = [NSDate zj_setHour:0 minute:0];
+        }else if (self.pickerMode == ZJDatePickerModeMDHM){
+            self.minLimitDate = [NSDate zj_setMonth:1 day:1 hour:0 minute:0];
+        }else if (self.pickerMode == ZJDatePickerModeMD){
+            self.minLimitDate = [NSDate zj_setMonth:1 day:1];
+        }else{
+            self.minLimitDate = [NSDate distantPast]; // 遥远的过去的一个时间点
+        }
+        
+    }
+    
+    // 最大值限制
+    if (!self.maxLimitDate) {
+        if (self.pickerMode == ZJDatePickerModeTime || self.pickerMode == ZJDatePickerModeCountDownTimer || self.pickerMode == ZJDatePickerModeHM) {
+            
+            self.maxLimitDate = [NSDate zj_setHour:23 minute:59];
+            
+        } else if (self.pickerMode == ZJDatePickerModeMDHM) {
+            
+            self.maxLimitDate = [NSDate zj_setMonth:12 day:31 hour:23 minute:59];
+        
+        } else if (self.pickerMode == ZJDatePickerModeMD) {
+          
+            self.maxLimitDate = [NSDate zj_setMonth:12 day:31];
+        
+        } else {
+         
+            self.maxLimitDate = [NSDate distantFuture]; // 遥远的未来的一个时间点
+        }
+    }
+    
+    BOOL minMOreThanMax = [self.minLimitDate zj_compare:self.maxLimitDate format:self.selectDateFormatter] == NSOrderedDescending;
+    
+    NSAssert(!minMOreThanMax, @"最小日期不能大于最大日期!");
+    
+    if (minMOreThanMax) {
+        // 如果最小日期大于了最大日期，就忽略两个值
+        self.minLimitDate = [NSDate distantPast];
+        self.maxLimitDate = [NSDate distantFuture];
+    }
+    
+    if (self.language.length > 0) {
+         self.datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:self.language];
+    }
+    
+    
+    // 默认选中的日期
+    
+    if (self.defaultValue && self.defaultValue.length > 0) {
+        
+        NSDate *defaultSelDate  = [NSDate zj_getDate:self.defaultValue format:self.selectDateFormatter];
+        if (!defaultSelDate) {
+            NSLog(@"参数格式错误！参数 defaultValue 的正确格式是：%@", self.selectDateFormatter);
+            NSAssert(defaultSelDate, @"参数格式错误！请检查形参 defaultValue 的格式");
+            defaultSelDate = [NSDate date]; // 默认值参数格式错误时，重置/忽略默认值，防止在 Release 环境下崩溃！
+        }
+        
+        if (self.pickerMode == ZJDatePickerModeTime || self.pickerMode == ZJDatePickerModeCountDownTimer || self.pickerMode == ZJDatePickerModeHM) {
+            self.selectDate = [NSDate zj_setHour:defaultSelDate.zj_hour minute:defaultSelDate.zj_minute];
+        } else if (self.pickerMode == ZJDatePickerModeMDHM) {
+            self.selectDate = [NSDate zj_setMonth:defaultSelDate.zj_month day:defaultSelDate.zj_day hour:defaultSelDate.zj_hour minute:defaultSelDate.zj_minute];
+        } else if (self.pickerMode == ZJDatePickerModeMD) {
+            self.selectDate = [NSDate zj_setMonth:defaultSelDate.zj_month day:defaultSelDate.zj_day];
+        } else {
+            self.selectDate = defaultSelDate;
+        }
+    }else {
+        // 不设置默认日期，就默认选中今天的日期
+        self.selectDate = [NSDate date];
+    }
+    
+    BOOL selectLessThanMin = [self.selectDate zj_compare:self.minLimitDate format:self.selectDateFormatter] == NSOrderedAscending;
+    BOOL selectMoreThanMax = [self.selectDate zj_compare:self.maxLimitDate format:self.selectDateFormatter] == NSOrderedDescending;
+    NSAssert(!selectLessThanMin, @"默认选择的日期不能小于最小日期！");
+    NSAssert(!selectMoreThanMax, @"默认选择的日期不能大于最大日期！");
+    if (selectLessThanMin) {
+        self.selectDate = self.minLimitDate;
+    }
+    if (selectMoreThanMax) {
+        self.selectDate = self.maxLimitDate;
+    }
+    
+#ifdef DEBUG
+    NSLog(@"最小时间date：%@", self.minLimitDate);
+    NSLog(@"默认时间date：%@", self.selectDate);
+    NSLog(@"最大时间date：%@", self.maxLimitDate);
+    
+    NSLog(@"最小时间：%@", [NSDate zj_getDateString:self.minLimitDate format:self.selectDateFormatter]);
+    NSLog(@"默认时间：%@", [NSDate zj_getDateString:self.selectDate format:self.selectDateFormatter]);
+    NSLog(@"最大时间：%@", [NSDate zj_getDateString:self.maxLimitDate format:self.selectDateFormatter]);
+#endif
+    
+    if (self.pickerStyle == ZJDatePickerStyleCustom) {
+        [self initDefaultDateArray];
+    }
+    [self initWithAllView];
+    
+    // 默认滚动的行
+    if (self.pickerStyle == ZJDatePickerStyleSystem) {
+        [self.datePicker setDate:self.selectDate animated:NO];
+    } else if (self.pickerStyle == ZJDatePickerStyleCustom) {
+        [self scrollToSelectDate:self.selectDate animated:NO];
+    }
 }
 
 - (void)setupSelectDateFormatter:(ZJDatePickerMode)mode{
@@ -512,10 +328,11 @@ typedef enum : NSUInteger {
 #pragma mark - 初始化子视图
 - (void)initWithAllView {
     [super initWithAllView];
-    self.titleLab.text = _title;
     // 添加时间选择器
     if (self.pickerStyle == ZJDatePickerStyleSystem) {
         [self.alertView addSubview:self.datePicker];
+        self.datePicker.frame = CGRectMake(0, kZJTopViewHeight + 0.5, self.alertView.frame.size.width, kZJPickerHeight);
+
     } else if (self.pickerStyle == ZJDatePickerStyleCustom) {
         [self.alertView addSubview:self.pickerView];
     }
@@ -715,7 +532,7 @@ typedef enum : NSUInteger {
     // 获取滚动后选择的日期
     self.selectDate = [self getDidSelectedDate:component row:row];
     // 设置是否开启自动回调
-    if (_isAutoSelect) {
+    if (self.isAutoSelect) {
         // 滚动完成后，执行block回调
         if (self.resultBlock) {
             NSString *selectDateValue = [NSDate zj_getDateString:self.selectDate format:self.selectDateFormatter];
@@ -1069,11 +886,13 @@ typedef enum : NSUInteger {
 }
 
 #pragma mark - 弹出窗口
--(void)showPickerViewWithAnimation:(BOOL)animation{
+-(void)showView{
+    [self dealDate];
+    
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
     
-    if (animation) {
+    if (self.animation) {
         CGRect rect = self.alertView.frame;
         rect.origin.y = ScreenHeight;
         self.alertView.frame = rect;
@@ -1102,9 +921,10 @@ typedef enum : NSUInteger {
 #pragma mark - 时间选择器 系统样式
 -(UIDatePicker *)datePicker{
     if (!_datePicker) {
-        _datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, kZJTopViewHeight + 0.5, self.alertView.frame.size.width, kZJPickerHeight)];
-        _datePicker.backgroundColor = [UIColor whiteColor];
-        _datePicker.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth ;
+        _datePicker = [UIDatePicker new];
+        _datePicker.frame = CGRectMake(0, kZJTopViewHeight + 0.5, self.alertView.frame.size.width, kZJPickerHeight);
+//        _datePicker.backgroundColor = [UIColor whiteColor];
+        _datePicker.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth ;
         _datePicker.datePickerMode = _datePickerMode;
         // 设置 datepicker 的国际化 locale, 以简体中文显示日期
         _datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CHS_CN"];
@@ -1114,6 +934,11 @@ typedef enum : NSUInteger {
         }
         if (self.maxLimitDate) {
             _datePicker.maximumDate = self.maxLimitDate;
+        }
+        if (@available(iOS 13.4, *)) {
+            _datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+        } else {
+            // Fallback on earlier versions
         }
         // 滚动改变值的响应事件
         [_datePicker addTarget:self action:@selector(didSelectValueChanged:) forControlEvents:UIControlEventValueChanged];

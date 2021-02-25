@@ -25,7 +25,7 @@ typedef enum : NSUInteger {
 
 @interface ZJNormalPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
-//    BOOL  _isDataSourceValid;    // 数据源是否合法
+    BOOL  _isDataSourceValid;    // 数据源是否合法
 //    BOOL  _isAutoSelect;         // 是否开启自动选择
 }
 // 选择器
@@ -36,145 +36,33 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSString              *selectValue;
 // 多列选中的值
 @property (nonatomic, strong) NSMutableArray        *selectValueArr;
-// 分割线的颜色
-//@property (nonatomic, strong) UIColor               *lineColor;
-// 选中行文本的颜色
-//@property (nonatomic, strong) UIColor               *selecteRowTextColor;
-//// 选中行背景颜色
-//@property (nonatomic, strong) UIColor               *selectRowBGColor;
-//// 行高
-//@property (nonatomic, assign) CGFloat               rowHeight;
 /** 存取选中行 */
 @property (nonatomic,strong) NSMutableDictionary    *selectedRowCache;
 // pickerView 类型
 @property (nonatomic, assign) ZJNormalPickerViewMode pickerViewMode;
 
-//@property (nonatomic, copy) ZJNormalResultBlock     resultBlock;
-//@property (nonatomic, copy) ZJNormalCancelBlock     cancelBlock;
 
 @end
 
 @implementation ZJNormalPickerView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.title                  = @"";
+        self.isAutoSelect           = false;
+        self.rowHeight              = 35.0f;
+        _isDataSourceValid      = YES;
+        self.animation              = true;
+        if (_isDataSourceValid) {
+            [self initWithAllView];
+        }
 
-
-#pragma mark - 1.显示自定义字符串选择器,支持title,默认选择,选择回调
-+ (void)zj_showStringPickerWithTitle:(NSString *)title
-                       dataSource:(id)dataSource
-                  defaultValue:(id)defaultValue
-                      resultBlock:(ZJNormalResultBlock)resultBlock {
-    
-    [self zj_showStringPickerWithTitle:title
-                            dataSource:dataSource
-                       defaultValue:defaultValue
-                          isAutoSelect:NO
-                           resultBlock:resultBlock
-                           cancelBlock:nil];
-}
-
-
-#pragma mark - 2.显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调
-+ (void)zj_showStringPickerWithTitle:(NSString *)title
-                       dataSource:(id)dataSource
-                  defaultValue:(id)defaultValue
-                     isAutoSelect:(BOOL)isAutoSelect
-                      resultBlock:(ZJNormalResultBlock)resultBlock
-                      cancelBlock:(ZJNormalCancelBlock)cancelBlock {
-    
-    [self zj_showStringPickerWithTitle:title
-                            dataSource:dataSource
-                       defaultValue:defaultValue
-                          isAutoSelect:isAutoSelect
-                             rowHeight:0
-                             lineColor:nil
-                           resultBlock:resultBlock
-                           cancelBlock:cancelBlock];
- 
-                                      
-}
-
-#pragma mark - 3.显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高
-+ (void)zj_showStringPickerWithTitle:(NSString *)title
-                          dataSource:(id)dataSource
-                     defaultValue:(id)defaultValue
-                        isAutoSelect:(BOOL)isAutoSelect
-                           rowHeight:(CGFloat)rowHeight
-                           lineColor:(UIColor *)lineColor
-                         resultBlock:(ZJNormalResultBlock)resultBlock
-                         cancelBlock:(ZJNormalCancelBlock)cancelBlock {
-    [self zj_showStringPickerWithTitle:title
-                            dataSource:dataSource
-                       defaultValue:defaultValue
-                          isAutoSelect:isAutoSelect
-                             rowHeight:rowHeight
-                             lineColor:lineColor
-                   confirmBtnTitleColor:nil
-                       cancelBtnTitleColor:nil
-                           resultBlock:resultBlock
-                           cancelBlock:cancelBlock];
-}
-#pragma mark - 4.显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高,按钮颜色
-+ (void)zj_showStringPickerWithTitle:(NSString *)title
-                          dataSource:(id)dataSource
-                     defaultValue:(id)defaultValue
-                        isAutoSelect:(BOOL)isAutoSelect
-                           rowHeight:(CGFloat)rowHeight
-                           lineColor:(UIColor *)lineColor
-                confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
-                 cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
-                         resultBlock:(ZJNormalResultBlock)resultBlock
-                         cancelBlock:(ZJNormalCancelBlock)cancelBlock {
-    [self zj_showStringPickerWithTitle:title
-                            dataSource:dataSource
-                       defaultValue:defaultValue
-                          isAutoSelect:isAutoSelect
-                             rowHeight:rowHeight
-                             lineColor:lineColor
-                  confirmBtnTitleColor:confirmBtnTitleColor
-                   cancelBtnTitleColor:cancelBtnTitleColor
-                   selecteRowTextColor:nil
-                      selectRowBGColor:nil
-                          leftBtnTitle:nil
-                         rightBtnTitle:nil
-                           resultBlock:resultBlock
-                           cancelBlock:cancelBlock];
-}
-
-
-#pragma mark - 5.显示自定义字符串选择器,设置自动选择、默认值、取消选择的回调,分割线颜色,行高,按钮颜色,选中行背景文本颜色
-+ (void)zj_showStringPickerWithTitle:(NSString *)title
-                          dataSource:(id)dataSource
-                     defaultValue:(id)defaultValue
-                        isAutoSelect:(BOOL)isAutoSelect
-                           rowHeight:(CGFloat)rowHeight
-                           lineColor:(UIColor *)lineColor
-                 confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
-                     cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
-                 selecteRowTextColor:(UIColor *)selecteRowTextColor
-                    selectRowBGColor:(UIColor *)selectRowBGColor
-                        leftBtnTitle:(NSString *)leftBtnTitle
-                       rightBtnTitle:(NSString *)rightBtnTitle
-                         resultBlock:(ZJNormalResultBlock)resultBlock
-                         cancelBlock:(ZJNormalCancelBlock)cancelBlock {
-    ZJNormalPickerView *pickerView = [[ZJNormalPickerView alloc]initWithTitle:title
-                                                                   dataSource:dataSource
-                                                              defaultValue:defaultValue
-                                                                 isAutoSelect:isAutoSelect
-                                                                    rowHeight:rowHeight
-                                                                    lineColor:lineColor
-                                                         confirmBtnTitleColor:confirmBtnTitleColor
-                                                             cancelBtnTitleColor:cancelBtnTitleColor
-                                                          selecteRowTextColor:selecteRowTextColor
-                                                             selectRowBGColor:selectRowBGColor
-                                                                 leftBtnTitle:leftBtnTitle
-                                                                rightBtnTitle:rightBtnTitle
-                                                                  resultBlock:resultBlock
-                                                                  cancelBlock:cancelBlock];
-    NSAssert(pickerView->_isDataSourceValid, @"数据源不合法！请检查字符串选择器数据源的格式");
-    if (pickerView->_isDataSourceValid) {
-        [pickerView showView];
     }
+    return self;
 }
+
 
 - (void)setResultBlock:(ZJNormalResultBlock)resultBlock{
     _resultBlock = resultBlock;
@@ -211,10 +99,6 @@ typedef enum : NSUInteger {
     _isAutoSelect = isAutoSelect;
 }
 
-- (void)setIsDataSourceValid:(bool)isDataSourceValid{
-    _isDataSourceValid = isDataSourceValid;
-}
-
 - (void)setDataSource:(NSArray *)dataSource{
     _dataSource = dataSource;
     [self configDataSource:dataSource];
@@ -222,78 +106,18 @@ typedef enum : NSUInteger {
 
 - (void)setTitle:(NSString *)title{
     _title = title;
+    self.titleLab.text  = title;
 }
 
 - (void)setDefaultValue:(NSString *)defaultValue{
     _defaultValue = defaultValue;
-    [self configDataSource:_dataSource];
 
 }
 
 - (void)setAnimation:(bool)animation{
     _animation = animation;
 }
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.title                  = @"";
-        self.isAutoSelect           = false;
-        self.rowHeight              = 35.0f;
-        self.isDataSourceValid      = YES;
-        self.animation              = true;
-        if (_isDataSourceValid) {
-            [self initWithAllView];
-        }
 
-    }
-    return self;
-}
-#pragma mark - 初始化自定义字符串选择器
-- (instancetype)initWithTitle:(NSString *)title
-                   dataSource:(id)dataSource
-              defaultValue:(id)defaultValue
-                 isAutoSelect:(BOOL)isAutoSelect
-                    rowHeight:(CGFloat)rowHeight
-                    lineColor:(UIColor *)lineColor
-          confirmBtnTitleColor:(UIColor *)confirmBtnTitleColor
-              cancelBtnTitleColor:(UIColor *)cancelBtnTitleColor
-          selecteRowTextColor:(UIColor *)selecteRowTextColor
-             selectRowBGColor:(UIColor *)selectRowBGColor
-                 leftBtnTitle:(NSString *)leftBtnTitle
-                rightBtnTitle:(NSString *)rightBtnTitle
-                  resultBlock:(ZJNormalResultBlock)resultBlock
-                  cancelBlock:(ZJNormalCancelBlock)cancelBlock {
-    
-    if (self = [super init]) {
-        if (leftBtnTitle != nil) {
-            [self.leftBtn setTitle:leftBtnTitle forState:(UIControlStateNormal)];
-        }
-        if (rightBtnTitle != nil) {
-            [self.rightBtn setTitle:rightBtnTitle forState:(UIControlStateNormal)];
-        }
-        self.title                  = title;
-        _isAutoSelect           = isAutoSelect;
-        self.resultBlock            = resultBlock;
-        self.cancelBlock            = cancelBlock;
-        self.rowHeight              = rowHeight ? rowHeight : 35.0f;
-        self.selecteRowTextColor    = selecteRowTextColor;
-        self.selectRowBGColor       = selectRowBGColor;
-        _isDataSourceValid          = YES;
-        self.defaultValue           = defaultValue;
-        self.animation = true;
-        // 修改按钮颜色
-        if (confirmBtnTitleColor || cancelBtnTitleColor) {
-            [self setUpConfirmTitleColor:confirmBtnTitleColor cancelColor:cancelBtnTitleColor];
-        }
-        // 配置数据
-        [self configDataSource:dataSource];
-        if (_isDataSourceValid) {
-            [self initWithAllView];
-        }
-    }
-    return self;
-}
 #pragma mark - 设置数据源
 - (void)configDataSource:(id)dataSource{
     // 1.先判断传入的数据源是否合法
@@ -314,15 +138,15 @@ typedef enum : NSUInteger {
         _isDataSourceValid = NO;
     }
     // 判断数组是否合法（即数组的所有元素是否是同一种数据类型）
-//    if (_isDataSourceValid) {
-//        Class itemClass = [[dataArr firstObject] class];
-//        for (id obj in dataArr) {
-//            if (![obj isKindOfClass:itemClass]) {
-//                _isDataSourceValid = NO;
-//                break;
-//            }
-//        }
-//    }
+    if (_isDataSourceValid) {
+        Class itemClass = [[dataArr firstObject] class];
+        for (id obj in dataArr) {
+            if (![obj isKindOfClass:itemClass]) {
+                _isDataSourceValid = NO;
+                break;
+            }
+        }
+    }
     if (!_isDataSourceValid) {
         return;
     }
@@ -335,37 +159,7 @@ typedef enum : NSUInteger {
     } else if ([[self.dataSource firstObject] isKindOfClass:[NSArray class]]) {
         self.pickerViewMode = ZJNormalPickerViewComponentMore;
     }
-    // 4. 给选择器设置默认值
-    if (self.pickerViewMode == ZJNormalPickerViewComponentSingle) {
-        if (_defaultValue && [_defaultValue isKindOfClass:[NSString class]] && [_defaultValue length] > 0 && [_dataSource containsObject:_defaultValue]) {
-            self.selectValue = _defaultValue;
-        } else {
-            self.selectValue = [self.dataSource firstObject];
-        }
-        NSInteger row = [self.dataSource indexOfObject:self.selectValue];
-        // 默认滚动的行
-        [self.pickerView selectRow:row inComponent:0 animated:NO];
-        //保存选中的行
-        [self.selectedRowCache setObject:@(row) forKey:@(0)];
-    } else if (self.pickerViewMode == ZJNormalPickerViewComponentMore) {
-        NSMutableArray *tempArr = [NSMutableArray array];
-        for (NSInteger i = 0; i < self.dataSource.count; i++) {
-            NSString *selValue = nil;
-            if (_defaultValue && [_defaultValue isKindOfClass:[NSArray class]] && [_defaultValue count] > 0 && i < [_defaultValue count] && [self.dataSource[i] containsObject:_defaultValue[i]]) {
-                [tempArr addObject:_defaultValue[i]];
-                selValue = _defaultValue[i];
-            } else {
-                [tempArr addObject:[self.dataSource[i] firstObject]];
-                selValue = [self.dataSource[i] firstObject];
-            }
-            NSInteger row = [self.dataSource[i] indexOfObject:selValue];
-            // 默认滚动的行
-            [self.pickerView selectRow:row inComponent:i animated:NO];
-            //保存选中的行
-            [self.selectedRowCache setObject:@(row) forKey:@(i)];
-        }
-        self.selectValueArr = [tempArr copy];
-    }
+
 }
 
 
@@ -425,9 +219,9 @@ typedef enum : NSUInteger {
     label.minimumScaleFactor = 0.5f;
 
     if (self.pickerViewMode == ZJNormalPickerViewComponentSingle) {
-        label.text = self.dataSource[row];
+        label.text =[NSString stringWithFormat:@"%@",self.dataSource[row]];
     } else if (self.pickerViewMode == ZJNormalPickerViewComponentMore) {
-        label.text = self.dataSource[component][row];
+        label.text = [NSString stringWithFormat:@"%@",self.dataSource[component][row]];
     }
     
     NSInteger selectedIndex = [(NSNumber *)[self.selectedRowCache objectForKey:@(component)] integerValue];
@@ -540,6 +334,39 @@ typedef enum : NSUInteger {
 
 #pragma mark - 弹出窗口
 -(void)showView{
+    
+    // 4. 给选择器设置默认值
+    if (self.pickerViewMode == ZJNormalPickerViewComponentSingle) {
+        if (self.defaultValue && [self.defaultValue isKindOfClass:[NSString class]] && [self.defaultValue length] > 0 && [self.dataSource containsObject:self.defaultValue]) {
+            self.selectValue = self.defaultValue;
+        } else {
+            self.selectValue = [self.dataSource firstObject];
+        }
+        NSInteger row = [self.dataSource indexOfObject:self.selectValue];
+        // 默认滚动的行
+        [self.pickerView selectRow:row inComponent:0 animated:NO];
+        //保存选中的行
+        [self.selectedRowCache setObject:@(row) forKey:@(0)];
+    } else if (self.pickerViewMode == ZJNormalPickerViewComponentMore) {
+        NSMutableArray *tempArr = [NSMutableArray array];
+        for (NSInteger i = 0; i < self.dataSource.count; i++) {
+            NSString *selValue = nil;
+            if (self.defaultValue && [self.defaultValue isKindOfClass:[NSArray class]] && [self.defaultValue count] > 0 && i < [self.defaultValue count] && [self.dataSource[i] containsObject:self.defaultValue[i]]) {
+                [tempArr addObject:self.defaultValue[i]];
+                selValue = self.defaultValue[i];
+            } else {
+                [tempArr addObject:[self.dataSource[i] firstObject]];
+                selValue = [self.dataSource[i] firstObject];
+            }
+            NSInteger row = [self.dataSource[i] indexOfObject:selValue];
+            // 默认滚动的行
+            [self.pickerView selectRow:row inComponent:i animated:NO];
+            //保存选中的行
+            [self.selectedRowCache setObject:@(row) forKey:@(i)];
+        }
+        self.selectValueArr = [tempArr copy];
+    }
+    
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
     
@@ -587,12 +414,6 @@ typedef enum : NSUInteger {
     }
     return _selectedRowCache;
 }
-//-(NSArray *)dataSource{
-//    if (!_dataSource) {
-//        _dataSource = [NSArray array];
-//    }
-//    return _dataSource;
-//}
 
 - (NSMutableArray *)selectValueArr {
     if (!_selectValueArr) {

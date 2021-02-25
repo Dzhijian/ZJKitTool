@@ -44,6 +44,9 @@ typedef void(^ZJAddressCancelBlock)(void);
 @property (nonatomic, assign) CGFloat               rowHeight;
 /// 数据源是否合法
 @property (nonatomic, assign) bool                  isDataSourceValid;
+/// 弹穿是否需要动画
+@property (nonatomic, assign) bool                  animation;
+
 
 - (instancetype)initWithPickerMode:(ZJAddressPickerMode)pickerMode;
 

@@ -8,7 +8,6 @@
 
 #import "ZJPickBaseView.h"
 
-
 typedef enum : NSUInteger {
     // 以下四个为系统自带样式,不能修改文字颜色和背景颜色
     ZJDatePickerModeTime,           // UIDatePickerModeTime             HH:mm
@@ -26,183 +25,55 @@ typedef enum : NSUInteger {
     ZJDatePickerModeHM          // 时分          HH:mm
 } ZJDatePickerMode;
 
-typedef void(^ZJDateResultBlock)(NSString *selectValue);
+typedef enum : NSUInteger {
+    ZJDatePickerStyleSystem,    //  系统样式 UIDatePicker 类
+    ZJDatePickerStyleCustom     //  自定义样式 UIPickerView 类
+} ZJDatePickerStyle;
+
+typedef void(^ZJDateResultBlock)(NSString * _Nonnull selectValue);
 typedef void(^ZJDateCancelBlock)(void);
 
 
 @interface ZJDatePickerView : ZJPickBaseView
 
-/**
- 1.显示时间选择器
- 
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param resultBlock 确认回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                       resultBlock:(ZJDateResultBlock)resultBlock;
-/**
- 2.显示时间选择器（支持 设置自动选择、取消选择的回调）
- 
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param isAutoSelect 是否自动选择
- @param resultBlock 确认回调
- @param cancelBlock 取消回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                      isAutoSelect:(BOOL)isAutoSelect
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
+/** 显示类型 */
+@property (nonatomic, assign) ZJDatePickerMode pickerMode;
+/** 时间选择器的类型 */
+@property (nonatomic, assign) ZJDatePickerStyle pickerStyle;
+/** 限制最小日期 */
+@property (nonatomic, strong) NSDate * _Nullable minLimitDate;
+/** 限制最大日期 */
+@property (nonatomic, strong) NSDate * _Nullable maxLimitDate;
+/** 默认值 */
+@property (nonatomic, copy) NSString * _Nullable defaultValue;
+/// 选中行文本的颜色
+@property (nonatomic, strong) UIColor  * _Nullable selecteRowTextColor;
+/// 选中行背景颜色
+@property (nonatomic, strong) UIColor  * _Nullable selectRowBGColor;
+/// 行高
+@property (nonatomic, assign) CGFloat  rowHeight;
+/** 选中后的回调 */
+@property (nonatomic, copy) ZJDateResultBlock _Nullable resultBlock;
+/** 取消选择的回调 */
+@property (nonatomic, copy) ZJDateCancelBlock _Nullable cancelBlock;
+/**  是否显示中文名 */
+@property (nonatomic, assign) BOOL isShowChinese;
+/// 右边按钮颜色
+@property (nonatomic, strong) UIColor               * _Nullable rightBtnTitleColor;
+/// 左边按钮颜色
+@property (nonatomic, strong) UIColor               * _Nullable leftBtnTitleColor;
+/// 弹穿是否需要动画
+@property (nonatomic, assign) bool                  animation;
+/**文本语言*/
+@property (nonatomic, copy) NSString                * _Nullable language;
+/**文本语言*/
+@property (nonatomic, copy) NSString                * _Nullable title;
 
+/// 是否开启自动选择
+@property (nonatomic, assign) BOOL                  isAutoSelect;
+/** 选择的日期的格式 */
+@property (nonatomic, copy) NSString * _Nullable selectDateFormatter;
+- (instancetype _Nullable )initWithPickerMode:(ZJDatePickerMode)pickerMode;
 
-/**
- 3.显示时间选择器（支持 设置自动选择、最大值、最小值、取消选择的回调）
- 
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param minDate 时间最小值
- @param maxDate 时间最大值
- @param isAutoSelect 是否自动选择
- @param resultBlock 确认回调
- @param cancelBlock 取消回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
-
-/**
- 4.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、行高、取消选择的回调）
-
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param minDate 时间最小值
- @param maxDate 时间最大值
- @param isAutoSelect 是否自动选择
- @param lineColor 分割线的颜色,默认为灰色
- @param rowHeight 行高
- @param resultBlock 确认回调
- @param cancelBlock 取消回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
-
-/**
- 5.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、行高、按钮的文本颜色、取消选择的回调）
- 
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param minDate 时间最小值
- @param maxDate 时间最大值
- @param isAutoSelect 是否自动选择
- @param lineColor 分割线的颜色,默认为灰色
- @param rowHeight 行高
- @param leftBtnTitleColor 左边的按钮颜色
- @param rightBtnTitleColor 右边的按钮颜色
- @param resultBlock 确认回调
- @param cancelBlock 取消回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
-
-
-/**
- 6.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的颜色、取消选择的回调）
- 
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param minDate 时间最小值
- @param maxDate 时间最大值
- @param isAutoSelect 是否自动选择
- @param lineColor 分割线的颜色,默认为灰色
- @param rowHeight 行高
- @param leftBtnTitleColor 左边的按钮颜色
- @param rightBtnTitleColor 右边的按钮颜色
- @param resultBlock 确认回调
- @param cancelBlock 取消回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-               selecteRowTextColor:(UIColor *)selecteRowTextColor
-                  selectRowBGColor:(UIColor *)selectRowBGColor
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
-
-/**
- 7.显示时间选择器（支持 设置自动选择、最大值、最小值、自定义分割线颜色、选中文本行颜色、行高、按钮的文本 颜色、取消选择的回调,时都显示中文单位）
- 
- @param title    标题
- @param dateType pickerView显示类型,
- @param defaultSelValue 默认值
- @param language 语言
- @param minDate 时间最小值
- @param maxDate 时间最大值
- @param isAutoSelect 是否自动选择
- @param isShowChinese 是否显示中文单位 年月日,默认不显示
- @param lineColor 分割线的颜色,默认为灰色
- @param rowHeight 行高
- @param leftBtnTitleColor 左边的按钮颜色
- @param rightBtnTitleColor 右边的按钮颜色
- @param resultBlock 确认回调
- @param cancelBlock 取消回调
- */
-+ (void)zj_showDatePickerWithTitle:(NSString *)title
-                          dateType:(ZJDatePickerMode)dateType
-                   defaultSelValue:(NSString *)defaultSelValue
-                          language:(nullable NSString *)language
-                           minDate:(NSDate *)minDate
-                           maxDate:(NSDate *)maxDate
-                      isAutoSelect:(BOOL)isAutoSelect
-                     isShowChinese:(BOOL)isShowChinese
-                         lineColor:(UIColor *)lineColor
-                         rowHeight:(CGFloat)rowHeight
-                 leftBtnTitleColor:(UIColor *)leftBtnTitleColor
-                rightBtnTitleColor:(UIColor *)rightBtnTitleColor
-               selecteRowTextColor:(UIColor *)selecteRowTextColor
-                  selectRowBGColor:(UIColor *)selectRowBGColor
-                         leftTitle:(NSString *)leftTitle
-                        rightTitle:(NSString *)rightTitle
-                       resultBlock:(ZJDateResultBlock)resultBlock
-                       cancelBlock:(ZJDateCancelBlock)cancelBlock;
+-(void)showView;
 @end

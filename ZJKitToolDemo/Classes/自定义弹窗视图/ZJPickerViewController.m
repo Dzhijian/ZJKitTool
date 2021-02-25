@@ -96,28 +96,28 @@
     
     
     
-    UILabel *lab4 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择时间" superView: self.view constraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(lab3.mas_bottom).offset(25);
-        make.left.mas_equalTo(30);
-        make.width.mas_equalTo(180);
-        make.height.mas_equalTo(35);
-    }];
-    
-    [UIButton zj_buttonWithTitle:@"选择时间" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(lab4.mas_centerY);
-        make.left.equalTo(lab4.mas_right).offset(30);
-        make.width.mas_equalTo(140);
-        make.height.mas_equalTo(35);
-    } touchUp:^(id sender) {
-        
-        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType: ZJDatePickerModeMD defaultSelValue:nil resultBlock:^(NSString *selectValue) {
-            lab4.text = [NSString stringWithFormat:@"%@",selectValue];
-        }];
-    }];
-    
+//    UILabel *lab4 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择时间" superView: self.view constraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(lab3.mas_bottom).offset(25);
+//        make.left.mas_equalTo(30);
+//        make.width.mas_equalTo(180);
+//        make.height.mas_equalTo(35);
+//    }];
+//
+//    [UIButton zj_buttonWithTitle:@"选择时间" titleColor:kLightGrayColor backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(lab4.mas_centerY);
+//        make.left.equalTo(lab4.mas_right).offset(30);
+//        make.width.mas_equalTo(140);
+//        make.height.mas_equalTo(35);
+//    } touchUp:^(id sender) {
+//
+////        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType: ZJDatePickerModeMD defaultSelValue:nil resultBlock:^(NSString *selectValue) {
+////            lab4.text = [NSString stringWithFormat:@"%@",selectValue];
+////        }];
+//    }];
+//
     
     UILabel *lab5 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择日期" superView: self.view constraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(lab4.mas_bottom).offset(25);
+        make.top.equalTo(lab3.mas_bottom).offset(25);
         make.left.mas_equalTo(30);
         make.width.mas_equalTo(180);
         make.height.mas_equalTo(35);
@@ -130,12 +130,21 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
-        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择日期" dateType:ZJDatePickerModeYMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 resultBlock:^(NSString *selectValue) {
-            NSLog(@"%@",selectValue);
+        ZJDatePickerView *date = [[ZJDatePickerView alloc]initWithPickerMode:(ZJDatePickerModeDate)];
+        date.title = @"选择时间";
+//        date.selectDateFormatter = @"yyyy年MM月dd日";
+        date.minLimitDate = [NSDate dateWithString:@"1990-01-02 12:12:00" format:@"yyyy-MM-dd hh:mm:ss"];
+        date.maxLimitDate = [NSDate dateWithString:@"2050-12-12 12:12:00" format:@"yyyy-MM-dd hh:mm:ss"];
+        [date showView];
+        date.resultBlock = ^(NSString * _Nonnull selectValue) {
             lab5.text = [NSString stringWithFormat:@"%@",selectValue];
-        } cancelBlock:^{
-            
-        }];
+        };
+//        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择日期" dateType:ZJDatePickerModeYMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 resultBlock:^(NSString *selectValue) {
+//            NSLog(@"%@",selectValue);
+//            lab5.text = [NSString stringWithFormat:@"%@",selectValue];
+//        } cancelBlock:^{
+//
+//        }];
     }];
     
     UILabel *lab6 = [UILabel zj_labelWithFontSize:14 text:@"点击右边选择时间" superView: self.view constraints:^(MASConstraintMaker *make) {
@@ -152,12 +161,12 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
-        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType:ZJDatePickerModeMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 leftBtnTitleColor:kRedColor rightBtnTitleColor:kBlueColor selecteRowTextColor:kRGB(58, 99, 159) selectRowBGColor:kRGBA(170, 130, 55, 0.6) resultBlock:^(NSString *selectValue) {
-            NSLog(@"%@",selectValue);
-            lab6.text = [NSString stringWithFormat:@"%@",selectValue];
-        } cancelBlock:^{
-            
-        }];
+//        [ZJDatePickerView zj_showDatePickerWithTitle:@"请选择时间" dateType:ZJDatePickerModeMDHM defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:YES lineColor:kOrangeColor rowHeight:40 leftBtnTitleColor:kRedColor rightBtnTitleColor:kBlueColor selecteRowTextColor:kRGB(58, 99, 159) selectRowBGColor:kRGBA(170, 130, 55, 0.6) resultBlock:^(NSString *selectValue) {
+//            NSLog(@"%@",selectValue);
+//            lab6.text = [NSString stringWithFormat:@"%@",selectValue];
+//        } cancelBlock:^{
+//
+//        }];
     }];
     
     
@@ -176,8 +185,8 @@
     } touchUp:^(id sender) {
         ZJNormalPickerView *custom = [[ZJNormalPickerView alloc]init];
         custom.title = @"请选择性别";
-        custom.defaultValue = @"人妖";
-        custom.dataSource = @[@"男",@"女",@"人妖",@"未知"];
+        custom.defaultValue = @"女";
+        custom.dataSource = @[@"男",@"女",@"未知"];
         custom.rowHeight = 40;
         custom.rightBtnTitleColor = [UIColor orangeColor];
         custom.leftBtnTitleColor = [UIColor blueColor];
@@ -186,11 +195,6 @@
         custom.resultBlock = ^(id selectValue, NSInteger index) {
             NSLog(@"selectValue---%@,  index---%ld",selectValue,index);
         };
-//        [ZJNormalPickerView zj_showStringPickerWithTitle:@"请选择性别" dataSource:@[@"男",@"女",@"人妖",@"未知"] defaultSelValue:@"人妖" isAutoSelect: NO rowHeight:40 lineColor:kRedColor confirmBtnTitleColor:kGreenColor cancelBtnTitleColor:kPurpleColor selecteRowTextColor:kRGB(130, 60, 50) selectRowBGColor:kRGB(11, 12, 12) leftBtnTitle:@"haha" rightBtnTitle:@"hehe" resultBlock:^(id selectValue, NSInteger index) {
-//            NSLog(@"index---%ld",index);
-//        } cancelBlock:^{
-//
-//        }];
         
     }];
     
@@ -209,14 +213,14 @@
         make.height.mas_equalTo(35);
     } touchUp:^(id sender) {
         
-        [ZJDatePickerView zj_showDatePickerWithTitle:@"Selected Date" dateType:(ZJDatePickerModeDate) defaultSelValue:nil language:@"zh-Hant" minDate:[NSDate date] maxDate:nil isAutoSelect:true isShowChinese:false lineColor:kLightGrayColor rowHeight:40 leftBtnTitleColor:kLightGrayColor rightBtnTitleColor:kRedColor selecteRowTextColor:nil selectRowBGColor:nil leftTitle:@"Cancel" rightTitle:@"Done" resultBlock:^(NSString *selectValue) {
-            NSLog(@"%@",selectValue);
-            NSDate *date = [NSDate dateWithString:selectValue format:@"yyyy-MM-dd"];
-            NSString *str = [NSDate dateToString:date format:@"dd/MM/yyyy"];
-            NSLog(@"%@",str);
-        } cancelBlock:^{
-            
-        }];
+//        [ZJDatePickerView zj_showDatePickerWithTitle:@"Selected Date" dateType:(ZJDatePickerModeDate) defaultSelValue:nil language:@"zh-Hant" minDate:[NSDate date] maxDate:nil isAutoSelect:true isShowChinese:false lineColor:kLightGrayColor rowHeight:40 leftBtnTitleColor:kLightGrayColor rightBtnTitleColor:kRedColor selecteRowTextColor:nil selectRowBGColor:nil leftTitle:@"Cancel" rightTitle:@"Done" resultBlock:^(NSString *selectValue) {
+//            NSLog(@"%@",selectValue);
+//            NSDate *date = [NSDate dateWithString:selectValue format:@"yyyy-MM-dd"];
+//            NSString *str = [NSDate dateToString:date format:@"dd/MM/yyyy"];
+//            NSLog(@"%@",str);
+//        } cancelBlock:^{
+//
+//        }];
     }];
     
 }

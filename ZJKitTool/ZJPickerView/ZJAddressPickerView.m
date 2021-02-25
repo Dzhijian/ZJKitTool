@@ -197,6 +197,11 @@
     _isAutoSelect = isAutoSelect;
 }
 
+
+- (void)setAnimation:(bool)animation{
+    _animation = animation;
+}
+
 - (instancetype)initWithPickerMode:(ZJAddressPickerMode)pickerMode
 {
     self = [super init];
@@ -204,14 +209,6 @@
         self.isDataSourceValid          = YES;
         self.pickerViewMode         = pickerMode;
         self.isAutoSelect           = false;
-
-//        _defaultSelectedArr         = defaultSelectedArr;
-//        self.dataSource             = dataSource;
-//        self.resultBlock            = resultBlock;
-//        self.cancelBlock            = cancelBlock;
-//        self.lineColor              = [UIColor la];
-//        self.selecteRowTextColor    = selectRowTextColor;
-//        self.selectRowBGColor       = selectRowBGColor;
         self.rowHeight              =  35.0f;
         [self loadAddressData];
         if (self.isDataSourceValid) {
