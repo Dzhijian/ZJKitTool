@@ -32,48 +32,94 @@
     kWeakObject(self);
     
     // 按钮
-    UIButton *btn =  [UIButton zj_buttonWithTitle:@"打开相册" titleColor: kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:NO cornerRadius:5 supView:self.view constraints:^(MASConstraintMaker *make) {
+    UIButton *btn = [[UIButton alloc]init];
+    btn.zj_chain.title(@"打开相册", UIControlStateNormal)
+    .titleColor(kWhiteColor, UIControlStateNormal)
+    .backgroundColor(kOrangeColor)
+    .titleFont([UIFont systemFontOfSize:14])
+    .cornerRadius(5)
+    .superView(self.view)
+    .onTouchUp(^(id  _Nonnull sender) {
+        [weakObject showImagePicker];
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.mas_equalTo(AdaptedWidth(20));
         make.centerX.equalTo(self.view.mas_centerX);
         make.width.mas_equalTo(AdaptedWidth(120));
         make.height.mas_equalTo(AdaptedWidth(40));
-    } touchUp:^(id sender) {
-        [weakObject showImagePicker];
-        
-    }];
+    });
+//    UIButton *btn =  [UIButton zj_buttonWithTitle:@"打开相册" titleColor: kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:NO cornerRadius:5 supView:self.view constraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(AdaptedWidth(20));
+//        make.centerX.equalTo(self.view.mas_centerX);
+//        make.width.mas_equalTo(AdaptedWidth(120));
+//        make.height.mas_equalTo(AdaptedWidth(40));
+//    } touchUp:^(id sender) {
+//        [weakObject showImagePicker];
+//
+//    }];
     
     // 原始图片View
-    self.orginImageV = [UIImageView zj_imageViewWithImage:nil SuperView:self.view constraints:^(MASConstraintMaker *make) {
+    self.orginImageV = [UIImageView new];
+    self.orginImageV.zj_chain.superView(self.view)
+    .backgroundColor(kRGBColor(220, 220, 220))
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(btn.mas_bottom).offset(AdaptedWidth(30));
         make.left.mas_equalTo(AdaptedWidth(20));
         make.right.mas_equalTo(AdaptedWidth(-20));
         make.height.mas_equalTo(AdaptedWidth(200));
-    }];
-    self.orginImageV.backgroundColor = kRGBColor(220, 220, 220);
+    });
     
     
-    self.originLab = [UILabel zj_labelWithFontSize:12 text:@"" superView:self.view constraints:^(MASConstraintMaker *make) {
+    self.originLab = [UILabel new];
+    self.originLab.zj_chain.font([UIFont systemFontOfSize:12])
+    .superView(self.view)
+    .numberOfLines(2)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(self.orginImageV.mas_bottom);
         make.left.equalTo(self.orginImageV.mas_left);
         make.height.mas_equalTo(AdaptedWidth(40));
-    }];
-    self.originLab.numberOfLines = 2;
+    });
+    
+//    self.orginImageV = [UIImageView zj_imageViewWithImage:nil SuperView:self.view constraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(btn.mas_bottom).offset(AdaptedWidth(30));
+//        make.left.mas_equalTo(AdaptedWidth(20));
+//        make.right.mas_equalTo(AdaptedWidth(-20));
+//        make.height.mas_equalTo(AdaptedWidth(200));
+//    }];
+//    self.orginImageV.backgroundColor = kRGBColor(220, 220, 220);
+    
+   
+    
+    
+//    self.originLab = [UILabel zj_labelWithFontSize:12 text:@"" superView:self.view constraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.orginImageV.mas_bottom);
+//        make.left.equalTo(self.orginImageV.mas_left);
+//        make.height.mas_equalTo(AdaptedWidth(40));
+//    }];
+//    self.originLab.numberOfLines = 2;
     
     // 压缩图片View
-    self.compressImagV = [UIImageView zj_imageViewWithImage:nil SuperView:self.view constraints:^(MASConstraintMaker *make) {
+    self.compressImagV = [UIImageView new];
+    self.compressImagV.zj_chain.superView(self.view)
+    .backgroundColor(kRGBColor(220, 220, 220))
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(self.orginImageV.mas_bottom).offset(AdaptedWidth(50));
         make.left.mas_equalTo(AdaptedWidth(20));
         make.right.mas_equalTo(AdaptedWidth(-20));
         make.height.mas_equalTo(AdaptedWidth(200));
-    }];
-    self.compressImagV.backgroundColor = kRGBColor(220, 220, 220);
+    });
     
-    self.compressLab = [UILabel zj_labelWithFontSize:14 text:@"" superView:self.view constraints:^(MASConstraintMaker *make) {
+    
+    self.compressLab = [UILabel new];
+    self.compressLab.zj_chain.font([UIFont systemFontOfSize:12])
+    .superView(self.view)
+    .numberOfLines(2)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(self.compressImagV.mas_bottom);
         make.left.equalTo(self.compressImagV.mas_left);
         make.height.mas_equalTo(AdaptedWidth(35));
-    }];
-    self.compressLab.numberOfLines = 2;
+    });
+    
 }
 
 #pragma mark - 显示图库

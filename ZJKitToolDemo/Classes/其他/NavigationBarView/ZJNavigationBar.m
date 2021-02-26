@@ -46,44 +46,62 @@
 -(void)setUpAllView{
     
     kWeakObject(self);
-    self.titleLab = [UILabel zj_labelWithFont:kBoldFontWithSize(16) lines:1 text:nil textColor:kBlackColor superView:self constraints:^(MASConstraintMaker *make) {
+    self.titleLab = [UILabel new];
+    self.titleLab.zj_chain.font(kBoldFontWithSize(16))
+    .numberOfLines(1)
+    .textColor(kBlackColor)
+    .superView(self)
+    .backgroundColor( [UIColor clearColor])
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.bottom.mas_equalTo(-10);
         make.centerX.mas_equalTo(0);
-    }];
-    
-    self.titleLab.backgroundColor = [UIColor clearColor];
-    
-    self.zj_leftBtn = [UIButton zj_buttonWithTitle:@"返回" titleColor:kBlackColor backColor:kClearColor fontSize:14 isBold:NO cornerRadius:0 supView:self constraints:^(MASConstraintMaker *make) {
+    });
+   
+    self.zj_leftBtn = [[UIButton alloc]init];
+    self.zj_leftBtn.zj_chain.title(@"返回", UIControlStateNormal)
+    .titleColor(kBlackColor, UIControlStateNormal)
+    .backgroundColor(kClearColor)
+    .titleFont([UIFont systemFontOfSize:15])
+    .superView(self)
+    .onTouchUp(^(id  _Nonnull sender) {
+        if ([weakObject.delegate respondsToSelector:@selector(zj_navigationBarLeftBtnAction:)]) {
+            [weakObject.delegate zj_navigationBarLeftBtnAction:sender];
+        }
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.mas_equalTo(15);
         make.centerY.equalTo(_titleLab.mas_centerY);
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(40);
-    } touchUp:^(id sender) {
+    });
         
-        if ([weakObject.delegate respondsToSelector:@selector(zj_navigationBarLeftBtnAction:)]) {
-            [weakObject.delegate zj_navigationBarLeftBtnAction:sender];
+    
+    self.zj_rightBtn = [[UIButton alloc]init];
+    self.zj_rightBtn.zj_chain.title(@"确定", UIControlStateNormal)
+    .titleColor(kBlackColor, UIControlStateNormal)
+    .backgroundColor(kClearColor)
+    .titleFont([UIFont systemFontOfSize:15])
+    .superView(self)
+    .onTouchUp(^(id  _Nonnull sender) {
+        if ([weakObject.delegate respondsToSelector:@selector(zj_navigationBarRightBtnAction:)]) {
+            [weakObject.delegate zj_navigationBarRightBtnAction:sender];
         }
-    }];
-    
-    
-    
-    self.zj_rightBtn  = [UIButton zj_buttonWithTitle:@"确定" titleColor:kBlackColor backColor:kClearColor fontSize:14 isBold:NO cornerRadius:0 supView:self constraints:^(MASConstraintMaker *make) {
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.right.mas_equalTo(-15);
         make.centerY.equalTo(_titleLab.mas_centerY);
         make.height.mas_equalTo(40);
         make.width.mas_equalTo(40);
-    } touchUp:^(id sender) {
-        if ([weakObject.delegate respondsToSelector:@selector(zj_navigationBarRightBtnAction:)]) {
-            [weakObject.delegate zj_navigationBarRightBtnAction:sender];
-        }
-    }];
+    });
     
-    self.zj_leftBtn.titleLabel.font = kFontWithSize(15);
     
-    self.lineView = [UIView zj_viewWithBackColor:kLightGrayColor supView:self constraints:^(MASConstraintMaker *make) {
+    self.lineView = [[UIView alloc]init];
+    self.lineView.zj_chain.backgroundColor(kLightGrayColor)
+    .superView(self)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.bottom.right.mas_equalTo(0);
         make.height.mas_equalTo(0.5);
-    }];
+    });
 }
 
 @end

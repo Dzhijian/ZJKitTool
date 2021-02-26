@@ -19,41 +19,55 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = kOrangeColor;
         kWeakObject(self)
-        UILabel *lab = [UILabel zj_labelWithFont:kFontSize(14) lines:1 text:@"ZJPopShowView" textColor:kWhiteColor superView:self constraints:^(MASConstraintMaker *make) {
+        UILabel *lab = [UILabel new];
+        lab.zj_chain.font(kFontSize(14))
+        .numberOfLines(1)
+        .text(@"ZJPopShowView")
+        .textColor(kWhiteColor)
+        .superView(self)
+        .backgroundColor(kOrangeColor)
+        .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
             make.center.mas_equalTo(0);
-        }];
-        
-        lab.backgroundColor = kOrangeColor;
-        
-        UIButton *cancelBtn = [UIButton zj_buttonWithTitle:@"取消" superView:self constraints:^(MASConstraintMaker *make) {
+        });
+
+        UIButton *cancelBtn =  [UIButton new];
+        cancelBtn.zj_chain
+        .title(@"取消", UIControlStateNormal)
+        .titleColor(kOrangeColor, UIControlStateNormal)
+        .backgroundColor(kWhiteColor)
+        .titleFont([UIFont boldSystemFontOfSize:14])
+        .superView(self)
+        .cornerRadius(20)
+        .onTouchUp(^(id  _Nonnull sender) {
+            if (weakObject.closeBlock) {
+                weakObject.closeBlock();
+            }        })
+        .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
             make.bottom.mas_equalTo(-10);
             make.left.mas_equalTo(20);
             make.right.equalTo(self.mas_centerX).offset(-10);
             make.height.mas_equalTo(40);
-        } touchUp:^(id sender) {
-            if (weakObject.closeBlock) {
-                weakObject.closeBlock();
+        });
+        
+        UIButton *OKBtn =  [UIButton new];
+        OKBtn.zj_chain
+        .title(@"确认", UIControlStateNormal)
+        .titleColor(kOrangeColor, UIControlStateNormal)
+        .backgroundColor(kWhiteColor)
+        .titleFont([UIFont boldSystemFontOfSize:14])
+        .superView(self)
+        .cornerRadius(20)
+        .onTouchUp(^(id  _Nonnull sender) {
+            if (weakObject.okBlock) {
+                weakObject.okBlock();
             }
-        }];
-        
-        cancelBtn.backgroundColor = kWhiteColor;
-        [cancelBtn setTitleColor:kOrangeColor forState:(UIControlStateNormal)];
-        cancelBtn.layer.cornerRadius = 20;
-        
-        UIButton *OKBtn = [UIButton zj_buttonWithTitle:@"确认" superView:self constraints:^(MASConstraintMaker *make) {
+        })
+        .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
             make.bottom.mas_equalTo(-10);
             make.left.equalTo(cancelBtn.mas_right).offset(20);
             make.right.mas_equalTo(-30);
             make.height.mas_equalTo(40);
-        } touchUp:^(id sender) {
-            if (weakObject.okBlock) {
-                weakObject.okBlock();
-            }
-        }];
-        
-        OKBtn.backgroundColor = kWhiteColor;
-        [OKBtn setTitleColor:kOrangeColor forState:(UIControlStateNormal)];
-        OKBtn.layer.cornerRadius = 20;
+        });
         
        
     }

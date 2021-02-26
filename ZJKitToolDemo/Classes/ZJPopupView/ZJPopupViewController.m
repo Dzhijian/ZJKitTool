@@ -50,20 +50,6 @@
     self.popupView.showView = self.showView;
     [self.popupView zj_showPopupView];
     
-    /// 下面创建方式即将被抛弃
-//    self.popupView = [[ZJPopupView alloc]initWithShowView:_showView
-//                                                superView:self.view
-//                                                       viewSize:CGSizeMake(250, 300)
-//                                                       delegate:self
-//                                                   durationTime:0.25
-//                                                        bgAlpha:0.5
-//                                                isBGClickAction:YES
-//                                                   isBlurEffect:YES
-//                                                     animaStyle:style
-//                                                       closeBtn:closeBtn];
-//    [self.popupView zj_showPopupView];
-
-    
     kWeakObject(self);
     self.showView.okBlock = ^{
         [weakObject closeBtnAction];
@@ -90,40 +76,75 @@
 
 -(void)setUpAllView{
     kWeakObject(self);
-    UIButton *transBtn =  [UIButton zj_buttonWithTitle:@"弹窗 Transition" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+    
+    UIButton *transBtn =  [UIButton new];
+    transBtn.zj_chain
+    .title(@"弹窗 Transition", UIControlStateNormal)
+    .titleColor(kWhiteColor, UIControlStateNormal)
+    .backgroundColor(kOrangeColor)
+    .titleFont([UIFont boldSystemFontOfSize:14])
+    .superView(self.view)
+    .onTouchUp(^(id  _Nonnull sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationTransition)];
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.mas_equalTo(80);
         make.centerX.mas_equalTo(0);
         make.width.mas_equalTo(150);
         make.height.mas_equalTo(50);
-    } touchUp:^(id sender) {
-        [weakObject showViewWithStyle:(ZJPopupAnimationTransition)];
-    }];
+    });
     
-    UIButton *rotaBtn = [UIButton zj_buttonWithTitle:@"弹窗 Rotation" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+    UIButton *rotaBtn =  [UIButton new];
+    rotaBtn.zj_chain
+    .title(@"弹窗 Rotation", UIControlStateNormal)
+    .titleColor(kWhiteColor, UIControlStateNormal)
+    .backgroundColor(kOrangeColor)
+    .titleFont([UIFont boldSystemFontOfSize:14])
+    .superView(self.view)
+    .onTouchUp(^(id  _Nonnull sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationRotation)];
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(transBtn.mas_bottom).offset(70);
         make.centerX.mas_equalTo(0);
         make.width.mas_equalTo(150);
         make.height.mas_equalTo(50);
-    } touchUp:^(id sender) {
-        [weakObject showViewWithStyle:(ZJPopupAnimationRotation)];
-    }];
+    });
     
-    UIButton *sacleBtn =[UIButton zj_buttonWithTitle:@"弹窗 Sacle" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+    UIButton *sacleBtn =  [UIButton new];
+    sacleBtn.zj_chain
+    .title(@"弹窗 Sacle", UIControlStateNormal)
+    .titleColor(kWhiteColor, UIControlStateNormal)
+    .backgroundColor(kOrangeColor)
+    .titleFont([UIFont boldSystemFontOfSize:14])
+    .superView(self.view)
+    .onTouchUp(^(id  _Nonnull sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationSacle)];
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(rotaBtn.mas_bottom).offset(70);
         make.centerX.mas_equalTo(0);
         make.width.mas_equalTo(150);
         make.height.mas_equalTo(50);
-    } touchUp:^(id sender) {
-        [weakObject showViewWithStyle:(ZJPopupAnimationSacle)];
-    }];
+    });
     
-    [UIButton zj_buttonWithTitle:@"弹窗 Alpha" titleColor:kWhiteColor norImage:nil selectedImage:nil backColor:kOrangeColor fontSize:14 isBold:true cornerRadius:4 supView:self.view constraints:^(MASConstraintMaker *make) {
+    UIButton *alphaBtn =  [UIButton new];
+    alphaBtn.zj_chain
+    .title(@"弹窗 Alpha", UIControlStateNormal)
+    .titleColor(kWhiteColor, UIControlStateNormal)
+    .backgroundColor(kOrangeColor)
+    .titleFont([UIFont boldSystemFontOfSize:14])
+    .superView(self.view)
+    .onTouchUp(^(id  _Nonnull sender) {
+        [weakObject showViewWithStyle:(ZJPopupAnimationAlpha)];
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(sacleBtn.mas_bottom).offset(70);
         make.centerX.mas_equalTo(0);
         make.width.mas_equalTo(150);
         make.height.mas_equalTo(50);
-    } touchUp:^(id sender) {
-        [weakObject showViewWithStyle:(ZJPopupAnimationAlpha)];
-    }];
+    });
+    
+
 }
 @end

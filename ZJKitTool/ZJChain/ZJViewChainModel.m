@@ -68,7 +68,7 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
 - (ZJViewChainModel *  (^)(ZJTapGestureBlock ))onTap{
     __weak typeof(self) weakSelf = self;
     return ^ZJViewChainModel* (ZJTapGestureBlock tap) {
-        [weakSelf.view zj_addTapGestureWithCallback:tap];
+        [weakSelf.view addTapGestureWithCallback:tap];
         return weakSelf;
     };
 }
@@ -95,15 +95,15 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
 }
 
 
-- (UITapGestureRecognizer *)zj_tapGesture {
-    return objc_getAssociatedObject(self, s_zj_tapGestureKey);
-}
+//- (UITapGestureRecognizer *)zj_tapGesture {
+//    return objc_getAssociatedObject(self, s_zj_tapGestureKey);
+//}
+//
+//- (UILongPressGestureRecognizer *)zj_longGesure {
+//    return objc_getAssociatedObject(self, s_zj_longGestureKey);
+//}
 
-- (UILongPressGestureRecognizer *)zj_longGesure {
-    return objc_getAssociatedObject(self, s_zj_longGestureKey);
-}
-
-- (void)zj_addTapGestureWithCallback:(ZJTapGestureBlock)onTaped {
+- (void)addTapGestureWithCallback:(ZJTapGestureBlock)onTaped{
     self.userInteractionEnabled = YES;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];

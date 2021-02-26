@@ -35,9 +35,17 @@
 -(void)loadData{
     NSMutableArray *dataArray = [NSMutableArray array];
     for (int i = 0; i<50; i++) {
-        UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(0, 0, 60, 20) title:[NSString stringWithFormat:@"%d",i] titleColor:kBlackColor imageName:nil backColor:nil fontSize:24 cornerRadius:0 traget:self action:@selector(btnAction:)];
+        UIButton *btn = [[UIButton alloc]init];
+        btn.zj_chain.frame(CGRectMake(0, 0, 60, 20))
+        .title([NSString stringWithFormat:@"%d",i], UIControlStateNormal)
+        .titleColor(kBlackColor, UIControlStateNormal)
+        .titleFont([UIFont systemFontOfSize:24])
+        .superView(self.sphereView).onTouchUp(^(id  _Nonnull sender) {
+            [self btnAction:sender];
+        });
+//        UIButton *btn = [UIButton zj_buttonWithFrame:CGRectMake(0, 0, 60, 20) title:[NSString stringWithFormat:@"%d",i] titleColor:kBlackColor imageName:nil backColor:nil fontSize:24 cornerRadius:0 traget:self action:@selector(btnAction:)];
         [dataArray addObject:btn];
-        [self.sphereView addSubview:btn];
+//        [self.sphereView addSubview:btn];
     }
     [self.sphereView setCloudTags:dataArray];
 }

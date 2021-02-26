@@ -1,14 +1,39 @@
 //
-//  UIColor+ZJColor.m
+//  UIColor+ZJHelperKitUIkit.m
 //  ZJUIKit
 //
-//  Created by dzj on 2017/12/1.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2018/1/19.
+//  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 
-#import "UIColor+ZJColor.h"
+#import "UIColor+ZJHelperkit.h"
 
-@implementation UIColor (ZJColor)
+@implementation UIColor (ZJHelperkit)
+- (UIImage *)zj_toImage {
+    return [UIColor zj_imageWithColor:self];
+}
+
++ (UIImage *)zj_imageWithColor:(UIColor *)color {
+    return [self zj_imageWithColor:color size:CGSizeMake(1, 1)];
+}
+
+- (UIImage *)zj_toImageWithSize:(CGSize)size {
+    return [UIColor zj_imageWithColor:self size:size];
+}
+
++ (UIImage *)zj_imageWithColor:(UIColor *)color size:(CGSize)size {
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 +(instancetype)zj_colorWithHex:(uint32_t)hex{
     uint8_t r = (hex & 0xff0000) >> 16;
     uint8_t g = (hex & 0x00ff00) >> 8;
@@ -19,9 +44,11 @@
 +(instancetype)zj_randomColor{
     return [UIColor zj_colorWithRed:arc4random_uniform(256) green:arc4random_uniform(256) blue:arc4random_uniform(256)];
 }
+
 +(instancetype)zj_colorWithRed:(uint8_t)red green:(uint8_t)green blue:(uint8_t)blue{
     return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
 }
+
 +(UIColor *)zj_colorWithHexString:(NSString *)color alpha:(CGFloat)alpha{
     NSString *cstring = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]uppercaseString];
     if ([cstring length] < 6) {

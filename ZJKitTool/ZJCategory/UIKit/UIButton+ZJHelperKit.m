@@ -1,33 +1,18 @@
 //
-//  UIButton+ZJButton.m
-//  ZJUIKit
+//  UIButton+ZJHelperKit.m
+//  ZJKitTool
 //
-//  Created by dzj on 2017/12/1.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2021/2/26.
+//  Copyright © 2021 kapokcloud. All rights reserved.
 //
 
-#import "UIButton+ZJButton.h"
+#import "UIButton+ZJHelperKit.h"
 #import <objc/runtime.h>
 
 static NSString *const IndicatorViewKey = @"indicatorView";
 static NSString *const ButtonTextObjectKey = @"buttonTextObject";
 
-@implementation UIButton (ZJButton)
-
-+(instancetype)zj_buttonWithFrame:(CGRect)frame title:(NSString *)title titleColor:(UIColor *)titleColor imageName:(NSString *)imageName backColor:(UIColor *)backColor fontSize:(int)fontSize cornerRadius:(CGFloat)radius traget:(id)traget action:(SEL)action{
-    
-    UIButton *button = [[UIButton alloc]init];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:titleColor forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-    [button setBackgroundColor:backColor];
-    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
-    button.frame = frame;
-    button.layer.cornerRadius = radius;
-    button.clipsToBounds = YES;
-    [button addTarget:traget action:action forControlEvents:UIControlEventTouchUpInside];
-    return button;
-}
+@implementation UIButton (ZJHelperKit)
 
 #pragma mark - 设置背景颜色
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state

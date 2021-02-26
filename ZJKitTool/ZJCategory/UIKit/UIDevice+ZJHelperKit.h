@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIDevice (ZJHelperKitUIKit)
+@interface UIDevice (ZJHelperKit)
 
 /**
- *  Return the device platform string
+ *  返回设备平台字符串
  *  Example: "iPhone3,2"
  *
  *  @return Return the device platform string
@@ -19,7 +19,7 @@
 + (NSString *)zj_devicePlatform;
 
 /**
- *  Return the user-friendly device platform string
+ *  返回用户友好的设备平台字符串
  *  Example: "iPad Air (Cellular)"
  *
  *  @return Return the user-friendly device platform string
@@ -27,42 +27,42 @@
 + (NSString *)zj_devicePlatformString;
 
 /**
- *  Check if the current device is an iPad
+ *  检查当前设备是否为iPad
  *
  *  @return Return YES if it's an iPad, NO if not
  */
 + (BOOL)zj_isiPad;
 
 /**
- *  Check if the current device is an iPhone
+ *  检查当前设备是否为iPhone
  *
  *  @return Return YES if it's an iPhone, NO if not
  */
 + (BOOL)zj_isiPhone;
 
 /**
- *  Check if the current device is an iPod
+ *  检查当前设备是否为 iPod
  *
  *  @return Return YES if it's an iPod, NO if not
  */
 + (BOOL)zj_isiPod;
 
 /**
- *  Check if the current device is the simulator
+ *  检查当前设备是否为 simulator
  *
  *  @return Return YES if it's the simulator, NO if not
  */
 + (BOOL)zj_isSimulator;
 
 /**
- *  Check if the current device has a Retina display
+ *  检查当前设备是否是视网膜显示
  *
  *  @return Return YES if it has a Retina display, NO if not
  */
 + (BOOL)zj_isRetina;
 
 /**
- *  Check if the current device has a Retina HD display
+ *  检查当前设备是否有视网膜高清显示
  *
  *  @return Return YES if it has a Retina HD display, NO if not
  */
@@ -77,73 +77,99 @@
 + (NSInteger)zj_iOSVersion;
 
 /**
- *  Return the current device CPU frequency
+ *  返回当前设备的CPU频率
  *
  *  @return Return the current device CPU frequency
  */
 + (NSUInteger)zj_cpuFrequency;
 
 /**
- *  Return the current device BUS frequency
+ *  返回当前设备总线频率
  *
  *  @return Return the current device BUS frequency
  */
 + (NSUInteger)zj_busFrequency;
 
 /**
- *  Return the current device RAM size
+ *  返回当前设备RAM大小
  *
  *  @return Return the current device RAM size
  */
 + (NSUInteger)zj_ramSize;
 
 /**
- *  Return the current device CPU number
+ *  返回当前设备CPU号
  *
  *  @return Return the current device CPU number
  */
 + (NSUInteger)zj_cpuNumber;
 
 /**
- *  Return the current device total memory
+ *  返回当前设备的总内存
  *
  *  @return Return the current device total memory
  */
 + (NSUInteger)zj_totalMemory;
 
 /**
- *  Return the current device non-kernel memory
+ *  返回当前设备的非内核内存
  *
  *  @return Return the current device non-kernel memory
  */
 + (NSUInteger)zj_userMemory;
 
 /**
- *  Return the current device total disk space
+ *  返回当前设备的总磁盘空间
  *
  *  @return Return the current device total disk space
  */
 + (NSNumber *)zj_totalDiskSpace;
 
 /**
- *  Return the current device free disk space
+ *  返回当前设备的空闲磁盘空间
  *
  *  @return Return the current device free disk space
  */
 + (NSNumber *)zj_freeDiskSpace;
 
 /**
- *  Return the current device MAC address
+ *  返回当前设备MAC地址
  *
  *  @return Return the current device MAC address
  */
 + (NSString *)zj_macAddress;
 
 /**
- *  Generate an unique identifier and store it into standardUserDefaults
+ *  生成唯一标识符并将其存储到standardUserDefaults中
  *
  *  @return Return a unique identifier as a NSString
  */
 + (NSString *)zj_uniqueIdentifier;
 
+/** mac地址 */
++ (NSString *)macAddress;
+
+/** ram的size */
++ (NSUInteger)ramSize;
+
+/** cpu个数 */
++ (NSUInteger)cpuNumber;
+
+/** 系统的版本号 */
++ (NSString *)systemVersion;
+
+/** 是否有摄像头 */
++ (BOOL)hasCamera;
+
+/** 获取手机内存总量, 返回的是字节数 */
++ (NSUInteger)totalMemoryBytes;
+
+/** 获取手机可用内存, 返回的是字节数 */
++ (NSUInteger)freeMemoryBytes;
+
+/** 获取手机硬盘总空间, 返回的是字节数 */
++ (NSUInteger)totalDiskSpaceBytes;
+
+/** 获取手机硬盘空闲空间, 返回的是字节数 */
++ (NSUInteger)freeDiskSpaceBytes;
 @end

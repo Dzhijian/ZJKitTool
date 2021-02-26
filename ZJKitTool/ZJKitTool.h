@@ -18,8 +18,6 @@
 
 #import <Masonry/Masonry.h>
 #import "ZJGeneraMacros.h"
-#import "ZJUIMasonsyKit.h"
-#import "ZJKitHelper.h"
 #import "ZJCategory.h"
 #import "ZJPickerView.h"
 #import "ZJPopupViewMacros.h"

@@ -1,14 +1,14 @@
 //
-//  UIButton+ZJButton.h
-//  ZJUIKit
+//  UIButton+ZJHelperKit.h
+//  ZJKitTool
 //
-//  Created by dzj on 2017/12/1.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2021/2/26.
+//  Copyright © 2021 kapokcloud. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-
+NS_ASSUME_NONNULL_BEGIN
 typedef enum : NSUInteger {
     ZJButtonImagePositionLeft,              // 图片在左
     ZJButtonImagePositionRight,             // 图片在右
@@ -19,19 +19,7 @@ typedef enum : NSUInteger {
 
 typedef void (^ButtonTouchUpInsideBlock)(void);
 
-@interface UIButton (ZJButton)
-
-// 创建UIButton
-+(instancetype)zj_buttonWithFrame:(CGRect)frame
-                            title:(NSString *)title
-                       titleColor:(UIColor *)titleColor
-                        imageName:(NSString *)imageName
-                        backColor:(UIColor *)backColor
-                         fontSize:(int)fontSize
-                     cornerRadius:(CGFloat)radius
-                           traget:(id)traget
-                           action:(SEL)action;
-
+@interface UIButton (ZJHelperKit)
 
 /**
  *  设置Button的背景色
@@ -63,6 +51,6 @@ typedef void (^ButtonTouchUpInsideBlock)(void);
 /** 隐藏菊花 */
 -(void)zj_hideIndicator;
 
-
-
 @end
+
+NS_ASSUME_NONNULL_END

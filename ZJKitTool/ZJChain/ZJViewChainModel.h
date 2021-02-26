@@ -26,18 +26,19 @@ ZJ_CHAIN_PROPERTY ZJViewChainModel* (^ onTap)(ZJTapGestureBlock ontap);
 @interface UIView (ZJChain)
 
 -(ZJViewChainModel *)zj_chain;
+- (void)addTapGestureWithCallback:(ZJTapGestureBlock)onTaped;
 
-
-/**
- *  点击手势
- */
-@property (nonatomic, strong, readonly) UITapGestureRecognizer *zj_tapGesture;
-
-/**
- *
- *    长按手势
- */
-@property (nonatomic, strong, readonly) UILongPressGestureRecognizer *zj_longGesure;
+//
+///**
+// *  点击手势
+// */
+//@property (nonatomic, strong, readonly) UITapGestureRecognizer *zj_tapGesture;
+//
+///**
+// *
+// *    长按手势
+// */
+//@property (nonatomic, strong, readonly) UILongPressGestureRecognizer *zj_longGesure;
 
 @end
 NS_ASSUME_NONNULL_END

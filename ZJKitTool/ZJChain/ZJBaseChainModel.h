@@ -41,20 +41,20 @@ ZJ_CHAIN_PROPERTY ObjcType (^ superView)(UIView *superView);
 
 
 #pragma mark - AutoLayout
-ZJ_CHAIN_PROPERTY ObjcType (^ makeMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
-ZJ_CHAIN_PROPERTY ObjcType (^ updateMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
-ZJ_CHAIN_PROPERTY ObjcType (^ remakeMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
+ZJ_CHAIN_PROPERTY ObjcType (^makeMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
+ZJ_CHAIN_PROPERTY ObjcType (^updateMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
+ZJ_CHAIN_PROPERTY ObjcType (^remakeMasonry)( void (^constraints)(__kindof UIView *sender, MASConstraintMaker *make) );
 
 #pragma mark - # Frame
-ZJ_CHAIN_PROPERTY ObjcType (^ frame)(CGRect frame);
+ZJ_CHAIN_PROPERTY ObjcType (^frame)(CGRect frame);
 
-ZJ_CHAIN_PROPERTY ObjcType (^ origin)(CGPoint origin);
+ZJ_CHAIN_PROPERTY ObjcType (^origin)(CGPoint origin);
 ZJ_CHAIN_PROPERTY ObjcType (^backgroundColor)(UIColor *backgroundColor);
 
 
-ZJ_CHAIN_PROPERTY ObjcType (^ contentMode)(UIViewContentMode contentMode);
-ZJ_CHAIN_PROPERTY ObjcType (^ opaque)(BOOL opaque);
-ZJ_CHAIN_PROPERTY ObjcType (^ hidden)(BOOL hidden);
+ZJ_CHAIN_PROPERTY ObjcType (^contentMode)(UIViewContentMode contentMode);
+ZJ_CHAIN_PROPERTY ObjcType (^opaque)(BOOL opaque);
+ZJ_CHAIN_PROPERTY ObjcType (^hidden)(BOOL hidden);
 
 #pragma mark - # Layer
 ZJ_CHAIN_PROPERTY ObjcType (^cornerRadius)(CGFloat cornerRadius);

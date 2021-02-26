@@ -1,14 +1,16 @@
 //
-//  UIImage+ZJImage.h
-//  ZJUIKit
+//  UIImage+ZJHelperKit.h
+//  ZJKitTool
 //
-//  Created by dzj on 2017/12/5.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2021/2/26.
+//  Copyright © 2021 kapokcloud. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (ZJImage)
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIImage (ZJHelperKit)
 
 /** 截屏 */
 +(instancetype)zj_snapshotCurrentcreen;
@@ -50,3 +52,5 @@
  */
 -(NSData *)zj_compressBySizeWithMaxLengthLimit:(NSUInteger)maxLength;
 @end
+
+NS_ASSUME_NONNULL_END

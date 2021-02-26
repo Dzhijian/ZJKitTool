@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class ZJButtonChainModel;
+/**
+ * Button点击事件Block
+ *
+ */
+typedef void(^ZJButtonChainBlock)(id sender);
 
 @interface ZJButtonChainModel : ZJBaseChainModel<ZJButtonChainModel *>
 
@@ -31,6 +36,7 @@ ZJ_CHAIN_PROPERTY ZJButtonChainModel *_Nullable(^selected)(BOOL selected);
 ZJ_CHAIN_PROPERTY ZJButtonChainModel *_Nullable(^highlighted)(BOOL highlighted);
 
 
+ZJ_CHAIN_PROPERTY ZJButtonChainModel* _Nullable(^ onTouchUp)(ZJButtonChainBlock onTouchUp);
 
 
 @end
@@ -39,6 +45,8 @@ ZJ_CHAIN_PROPERTY ZJButtonChainModel *_Nullable(^highlighted)(BOOL highlighted);
 @interface UIButton (ZJChain)
 
 -(ZJButtonChainModel *)zj_chain;
+
+@property (nonatomic, copy) ZJButtonChainBlock onTouchUp;
 
 @end
 

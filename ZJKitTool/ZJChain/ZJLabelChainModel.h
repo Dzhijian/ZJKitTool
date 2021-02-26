@@ -30,5 +30,14 @@ ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsF
 
 -(ZJLabelChainModel *)zj_chain;
 
+/**
+ *  设置字间距
+ */
+- (void)setColumnSpace:(CGFloat)columnSpace;
+
+/**
+ *  设置行距
+ */
+- (void)setRowSpace:(CGFloat)rowSpace;
 @end
 NS_ASSUME_NONNULL_END

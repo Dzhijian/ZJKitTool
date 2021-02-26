@@ -1,14 +1,15 @@
 //
-//  UIView+ZJMasonryFrame.m
-//  ZJKitTool
+//  UIView+ZJHelperKitUIkit.m
+//  ZJUIKit
 //
-//  Created by 邓志坚 on 2018/5/6.
+//  Created by dzj on 2018/1/17.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 
-#import "UIView+ZJMasonryFrame.h"
+#import "UIView+ZJHelperKit.h"
 
-@implementation UIView (ZJMasonryFrame)
+@implementation UIView (ZJHelperKit)
+
 - (void)setZj_origin:(CGPoint)zj_origin {
     CGRect frame = self.frame;
     frame.origin = zj_origin;
@@ -100,4 +101,5 @@
 - (void)setZj_rightX:(CGFloat)zj_rightX {
     self.zj_originX = zj_rightX - self.zj_width;
 }
+
 @end

@@ -104,37 +104,77 @@
 // 添加所子控件
 -(void)setUpAllView{
     // 头像
-    self.avatar = [UIImageView zj_imageViewWithImage:@"" SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
+    self.avatar = [UIImageView new];
+    self.avatar.zj_chain.superView(self.contentView)
+    .contentMode(UIViewContentModeScaleAspectFill)
+    .clipsToBounds(true)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.mas_equalTo(15);
         make.top.mas_equalTo(15);
         make.width.height.mas_equalTo(40);
-    }];
+    });
+//    self.avatar = [UIImageView zj_imageViewWithImage:@"" SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(15);
+//        make.top.mas_equalTo(15);
+//        make.width.height.mas_equalTo(40);
+//    }];
     
     // 昵称
-    self.nameLab = [UILabel zj_labelWithFontSize:15 textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.nameLab = [UILabel new];
+    self.nameLab.zj_chain.font([UIFont systemFontOfSize:15])
+    .numberOfLines(1)
+    .textColor(kBlackColor)
+    .superView(self.contentView)
+    .backgroundColor( [UIColor clearColor])
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.centerY.equalTo(_avatar.mas_centerY);
         make.left.equalTo(_avatar.mas_right).offset(15);
         make.right.mas_equalTo(-100);
         make.height.mas_equalTo(20);
-    }];
+    });
+//    self.nameLab = [UILabel zj_labelWithFontSize:15 textColor:kBlackColor superView:self.kBlackColor constraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_avatar.mas_centerY);
+//        make.left.equalTo(_avatar.mas_right).offset(15);
+//        make.right.mas_equalTo(-100);
+//        make.height.mas_equalTo(20);
+//    }];
     
     // 时间
-    self.timeLab = [UILabel zj_labelWithFontSize:12 textColor:kLightGrayColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.timeLab = [UILabel new];
+    self.timeLab.zj_chain.font([UIFont systemFontOfSize:12])
+    .numberOfLines(1)
+    .textColor(kLightGrayColor)
+    .superView(self.contentView)
+    .backgroundColor( [UIColor clearColor])
+    .textAlignment(NSTextAlignmentRight)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.centerY.equalTo(_avatar.mas_centerY);
         make.right.mas_equalTo(-15);
         make.width.mas_equalTo(80);
         make.height.mas_equalTo(20);
-        
-    }];
-    self.timeLab.textAlignment = NSTextAlignmentRight;
+    });
+
     
     // 内容
-    self.contentLab = [UILabel zj_labelWithFontSize:14 lines:0 text:nil textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.contentLab = [UILabel new];
+    self.contentLab.zj_chain.font([UIFont systemFontOfSize:14])
+    .numberOfLines(1)
+    .textColor(kBlackColor)
+    .superView(self.contentView)
+    .backgroundColor( [UIColor clearColor])
+    .textAlignment(NSTextAlignmentRight)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(_avatar.mas_bottom).offset(10);
         make.left.equalTo(_nameLab.mas_left);
         make.right.mas_equalTo(-15);
         make.height.mas_lessThanOrEqualTo(16);
-    }];
+    });
+//    self.contentLab = [UILabel zj_labelWithFontSize:14 lines:0 text:nil textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_avatar.mas_bottom).offset(10);
+//        make.left.equalTo(_nameLab.mas_left);
+//        make.right.mas_equalTo(-15);
+//        make.height.mas_lessThanOrEqualTo(16);
+//    }];
     
     // 图片
     self.photosView = [[ZJCommitPhotoView alloc]init];
@@ -146,21 +186,18 @@
         make.height.mas_equalTo(0.001);
     }];
     
-//    [self.contentView addSubview:self.commentTable];
-//    [self.commentTable mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(_contentLab.mas_left);
-//        make.right.equalTo(_contentLab.mas_right);
-//        make.top.equalTo(_contentLab.mas_bottom).offset(10);
-//    }];
 #warning 注意  不管你的布局是怎样的 ，一定要有一个(最好是最底部的控件)相对 contentView.bottom的约束，否则计算cell的高度的时候会不正确！
-    self.line = [UIView zj_viewWithBackColor:kLightGrayColor supView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.line = [[UIView alloc]init];
+    self.line.zj_chain.backgroundColor(kLightGrayColor)
+    .superView(self.contentView)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(_photosView.mas_bottom).offset(15);
         make.left.mas_equalTo(15);
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(0.5);
         make.bottom.mas_equalTo(0); // 这句很重要！！！
-        
-    }];
+    });
+
     
     
 }

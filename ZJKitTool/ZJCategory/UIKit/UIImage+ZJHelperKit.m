@@ -1,11 +1,12 @@
 //
-//  UIImage+ZJImage.m
-//  ZJUIKit
+//  UIImage+ZJHelperKit.m
+//  ZJKitTool
 //
-//  Created by dzj on 2017/12/5.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2021/2/26.
+//  Copyright © 2021 kapokcloud. All rights reserved.
 //
 
+#import "UIImage+ZJHelperKit.h"
 /**
  1.压缩图片质量
  NSData *data = UIImageJPEGRepresentation(image, compression);
@@ -24,9 +25,7 @@
  */
 
 
-#import "UIImage+ZJImage.h"
-
-@implementation UIImage (ZJImage)
+@implementation UIImage (ZJHelperKit)
 
 /**
  截屏
@@ -185,5 +184,4 @@
     }
     return data;
 }
-
 @end

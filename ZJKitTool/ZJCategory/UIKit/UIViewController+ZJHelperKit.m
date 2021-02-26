@@ -1,14 +1,14 @@
 //
-//  UIViewController+ZJViewController.m
-//  ZJUIKit
+//  UIViewController+ZJHelperKit.m
+//  ZJKitTool
 //
-//  Created by dzj on 2017/12/1.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2021/2/26.
+//  Copyright © 2021 kapokcloud. All rights reserved.
 //
 
-#import "UIViewController+ZJViewController.h"
+#import "UIViewController+ZJHelperKit.h"
 
-@implementation UIViewController (ZJViewController)
+@implementation UIViewController (ZJHelperKit)
 
 +(instancetype)findBestViewController:(UIViewController *)vc{
     if (vc.presentedViewController) {

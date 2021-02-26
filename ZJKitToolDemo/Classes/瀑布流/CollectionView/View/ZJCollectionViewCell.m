@@ -24,9 +24,14 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         // 添加一个UIImageView
-        self.imgView = [UIImageView zj_imageViewWithImage:nil SuperView:self.contentView contentMode:UIViewContentModeScaleAspectFill isClip:YES constraints:^(MASConstraintMaker *make) {
+        self.imgView = [UIImageView new];
+        self.imgView.zj_chain.superView(self.contentView)
+        .backgroundColor(kRGBColor(220, 220, 220))
+        .contentMode(UIViewContentModeScaleAspectFill)
+        .clipsToBounds(true)
+        .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
             make.edges.mas_equalTo(0);
-        }];
+        });
     }
     return self;
 }

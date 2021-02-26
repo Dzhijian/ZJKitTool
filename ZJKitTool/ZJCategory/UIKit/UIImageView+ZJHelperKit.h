@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImageView (ZJCornerRadiusHelperKit)
+@interface UIImageView (ZJHelperKit)
 
 - (instancetype)initWithCornerRadiusAdvance:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType;
 

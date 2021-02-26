@@ -12,7 +12,7 @@ typedef NS_ENUM(NSInteger, OptionStyle) {
     OptionStyleStyleOnlyOK
 };
 
-@interface UIAlertController (ZJAlert)
+@interface UIAlertController (ZJHelperKit)
 /**
  中间弹窗
  

@@ -43,42 +43,96 @@
 
 // 添加所子控件
 -(void)setUpAllView{
-    self.avatar = [UIImageView zj_imageViewWithImage:@"001" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+    self.avatar = [[UIImageView alloc]init];
+    self.avatar.zj_chain.image([UIImage imageNamed:@"001"])
+    .superView(self.contentView)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.mas_equalTo(15);
         make.top.mas_equalTo(10);
         make.width.height.mas_equalTo(44);
-    }];
+    });
+    
+    
+//    self.avatar = [UIImageView zj_imageViewWithImage:@"001" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(15);
+//        make.top.mas_equalTo(10);
+//        make.width.height.mas_equalTo(44);
+//    }];
 
     
     [self.avatar zj_cornerRadiusAdvance:22 rectCornerType:UIRectCornerAllCorners];
     
-    self.nameLab = [UILabel zj_labelWithFontSize:13 text:@"ZJKitTool" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+    
+    self.nameLab = [[UILabel alloc]init];
+    self.nameLab.zj_chain.font([UIFont systemFontOfSize:13])
+    .text(@"ZJKitTool")
+    .superView(self.contentView)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.equalTo(_avatar.mas_right).offset(10);
         make.right.mas_equalTo(-15);
         make.top.equalTo(_avatar.mas_top);
-    }];
+    });
     
-    self.timeLab = [UILabel zj_labelWithFontSize:13 lines:1 text:@"2018-08-08 08:08:08" textColor:kLightGrayColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+//    self.nameLab = [UILabel zj_labelWithFontSize:13 text:@"ZJKitTool" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(_avatar.mas_right).offset(10);
+//        make.right.mas_equalTo(-15);
+//        make.top.equalTo(_avatar.mas_top);
+//    }];
+    
+    self.timeLab = [[UILabel alloc]init];
+    self.timeLab.zj_chain.font([UIFont systemFontOfSize:13])
+    .text(@"2018-08-08 08:08:08")
+    .textColor(kLightGrayColor)
+    .superView(self.contentView)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.equalTo(_avatar.mas_right).offset(10);
         make.right.mas_equalTo(-15);
         make.bottom.equalTo(_avatar.mas_bottom);
-    }];
+    });
     
-    self.titleLab = [UILabel zj_labelWithFontSize:15 lines:1 text:@"哈哈哈哈哈哈哈哈哈哈" textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+//    self.timeLab = [UILabel zj_labelWithFontSize:13 lines:1 text:@"2018-08-08 08:08:08" textColor:kLightGrayColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(_avatar.mas_right).offset(10);
+//        make.right.mas_equalTo(-15);
+//        make.bottom.equalTo(_avatar.mas_bottom);
+//    }];
+    self.titleLab = [[UILabel alloc]init];
+    self.titleLab.zj_chain.font([UIFont systemFontOfSize:15])
+    .text(@"哈哈哈哈哈哈哈哈哈哈8")
+    .textColor(kBlackColor)
+    .superView(self.contentView)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.mas_equalTo(15);
         make.right.mas_equalTo(-15);
         make.top.equalTo(_avatar.mas_bottom).offset(10);
-    }];
+    });
     
-    self.picImageV = [UIImageView zj_imageViewWithImage:@"loading_bgView" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+//    self.titleLab = [UILabel zj_labelWithFontSize:15 lines:1 text:@"哈哈哈哈哈哈哈哈哈哈" textColor:kBlackColor superView:self.contentView constraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(15);
+//        make.right.mas_equalTo(-15);
+//        make.top.equalTo(_avatar.mas_bottom).offset(10);
+//    }];
+    
+    
+    self.picImageV = [[UIImageView alloc]init];
+    self.picImageV.zj_chain.image([UIImage imageNamed:@"loading_bgView"])
+    .superView(self.contentView)
+    .userInteractionEnabled(true)
+    .contentMode(UIViewContentModeScaleAspectFill)
+    .clipsToBounds(true)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(_titleLab.mas_bottom).offset(10);
         make.height.mas_equalTo(kVideoHeight);
-    }];
-    self.picImageV.userInteractionEnabled = YES;
-    self.picImageV.contentMode = UIViewContentModeScaleAspectFill;
-    self.picImageV.clipsToBounds = YES;
-    
+    });
+//    self.picImageV = [UIImageView zj_imageViewWithImage:@"loading_bgView" SuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+//        make.left.right.mas_equalTo(0);
+//        make.top.equalTo(_titleLab.mas_bottom).offset(10);
+//        make.height.mas_equalTo(kVideoHeight);
+//    }];
+//    self.picImageV.userInteractionEnabled = YES;
+//    self.picImageV.contentMode = UIViewContentModeScaleAspectFill;
+//    self.picImageV.clipsToBounds = YES;
+//
     // 设置imageView的tag，在PlayerView中取（建议设置100以上）
     self.picImageV.tag = 101;
     

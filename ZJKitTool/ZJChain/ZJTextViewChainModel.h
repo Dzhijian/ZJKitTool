@@ -59,6 +59,7 @@ ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
 @interface UITextView (ZJChain)
 
 -(ZJTextViewChainModel *)zj_chain;
+- (void)zj_textViewsSetPlaceholderWithText:(NSString *)text Color:(UIColor *)color;
 
 @end
 

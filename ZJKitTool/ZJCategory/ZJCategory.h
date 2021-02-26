@@ -14,19 +14,22 @@
 
 // UIKit ZJCategory
 #import "UIControl+ZJHelperBlockKit.h"
-#import "UIView+ZJHelperKitUIkit.h"
+#import "UIView+ZJHelperKit.h"
 #import "UIGestureRecognizer+ZJHelperBlockKit.h"
-#import "UIColor+ZJHelperKitUIkit.h"
-#import "UIDevice+ZJHelperKitUIKit.h"
-#import "UIAlertView+ZJHelperKitUIKit.h"
-#import "UIActionSheet+ZJHelperKit.h"
+#import "UIColor+ZJHelperKit.h"
+#import "UIDevice+ZJHelperKit.h"
 #import "UIView+ZJHUDHelperKit.h"
 #import "UITextView+ZJHelperKit.h"
 #import "UITableViewCell+ZJBaseFunctions.h"
 #import "UICollectionViewCell+ZJBaseFunctions.h"
 #import "UIView+ZJBaseFunctions.h"
 // 高效切圆角
-#import "UIImageView+ZJCornerRadiusHelperKit.h"
+#import "UIImageView+ZJHelperKit.h"
+#import "UIAlertController+ZJHelperKit.h"
+#import "UIImage+ZJHelperKit.h"
+#import "UIButton+ZJHelperKit.h"
+#import "UIViewController+ZJHelperKit.h"
+
 
 
 // NSObject ZJCategory

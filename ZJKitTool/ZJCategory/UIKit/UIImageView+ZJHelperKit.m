@@ -6,7 +6,7 @@
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 
-#import "UIImageView+ZJCornerRadiusHelperKit.h"
+#import "UIImageView+ZJHelperKit.h"
 #import <objc/runtime.h>
 
 const char kProcessedImage;
@@ -23,7 +23,7 @@ const char kProcessedImage;
 @end
 
 
-@implementation UIImageView (ZJCornerRadiusHelperKit)
+@implementation UIImageView (ZJHelperKit)
 /**
  * @brief init the Rounding UIImageView, no off-screen-rendered
  */

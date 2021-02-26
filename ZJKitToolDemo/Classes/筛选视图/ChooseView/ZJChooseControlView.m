@@ -32,12 +32,13 @@
     if (self = [super initWithFrame:frame]) {
         self.btnBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 45)];
         [self addSubview:self.btnBackView];
-        UIView *line = [UIView zj_viewWithBackColor:kLightGrayColor supView:self.btnBackView constraints:^(MASConstraintMaker *make) {
+        UIView *line = [[UIView alloc]init];
+        line.zj_chain.backgroundColor(kLightGrayColor)
+        .superView(self.btnBackView)
+        .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
             make.left.right.bottom.mas_equalTo(0);
             make.height.mas_equalTo(0.5);
-        }];
-        [self.btnBackView addSubview:line];
-                
+        });
         
     }
     return self;

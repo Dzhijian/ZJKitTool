@@ -26,6 +26,9 @@ if ([self.view.class instancesRespondToSelector:@selector(viewMethod:forState:)]
     }; \
 } \
 
+
+static const void *s_ZJButtonChainTouchUpKey     = "s_ZJButtonChainTouchUpKey";
+
 @implementation ZJButtonChainModel
 
 //ZJ_CHAIN_BUTTON_IMPLEMENTATION(title, title, setTitle, NSString *, UIControlState);
@@ -140,6 +143,14 @@ ZJ_CHAIN_BUTTON_IMPLEMENTATION(highlighted,setHighlighted,BOOL);
     return image;
 }
 
+
+- (ZJButtonChainModel * _Nullable (^)(ZJButtonChainBlock _Nonnull))onTouchUp{
+    __weak typeof(self) weakSelf = self;
+    return ^ZJButtonChainModel* _Nullable(ZJButtonChainBlock onTouchUp) {
+        ((UIButton *)weakSelf.view).onTouchUp = onTouchUp;
+        return weakSelf;
+    };
+}
 @end
 
 
@@ -160,4 +171,25 @@ ZJ_CHAIN_BUTTON_IMPLEMENTATION(highlighted,setHighlighted,BOOL);
     return model;
 }
 
+-(ZJButtonChainBlock)onTouchUp{
+    return objc_getAssociatedObject(self, s_ZJButtonChainTouchUpKey);
+}
+
+-(void)setOnTouchUp:(ZJButtonChainBlock)onTouchUp{
+    objc_setAssociatedObject(self, s_ZJButtonChainTouchUpKey, onTouchUp, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    
+    [self removeTarget:self action:@selector(zj_chain_private_onTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (onTouchUp) {
+        [self addTarget:self action:@selector(zj_chain_private_onTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+}
+
+-(void)zj_chain_private_onTouchUp:(id)sender{
+    ZJButtonChainBlock block  = [self onTouchUp];
+    if (block) {
+        block(sender);
+    }
+}
 @end

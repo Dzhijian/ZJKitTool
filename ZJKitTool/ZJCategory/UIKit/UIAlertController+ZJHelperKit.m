@@ -6,10 +6,10 @@
 //  Copyright © 2017年 kapokcloud. All rights reserved.
 //
 
-#import "UIAlertController+ZJAlert.h"
+#import "UIAlertController+ZJHelperKit.h"
 
 
-@implementation UIAlertController (ZJAlert)
+@implementation UIAlertController (ZJHelperKit)
 
 + (UIAlertController *)zj_alertControllerWithTitle:(NSString *)title message:(NSString *)message optionStyle:(OptionStyle)optionStyle OkTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okBlock:(dispatch_block_t)okBlock cancelBlock:(dispatch_block_t)cancelBlock{
     

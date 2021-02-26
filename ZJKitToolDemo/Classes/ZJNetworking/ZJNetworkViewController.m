@@ -26,12 +26,17 @@
     [super viewDidLoad];
     
     self.title = @"ZJNewWorking网络请求";
-    
-    self.textView = [UITextView zj_textViewWithFontSize:14 textColor:kOrangeColor placeColor:kBlackColor placeText:@"请点击右边按钮请求数据" superView:self.view constraints:^(MASConstraintMaker *make) {
+    self.textView = [[UITextView alloc]init];
+    self.textView.zj_chain.font([UIFont systemFontOfSize:14])
+    .superView(self.view)
+    .textColor(kOrangeColor)
+    .editable(false)
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.left.mas_equalTo(10);
         make.right.bottom.mas_equalTo(-10);
-    }];
-    
+    });
+
+    [self.textView zj_setPlaceholderWithText:@"请点击右边按钮请求数据" Color:kBlackColor];
     
     kWeakObject(self);
     [self zj_setNavRightButtonTitle:@"请求网络" onCliked:^(id sender) {

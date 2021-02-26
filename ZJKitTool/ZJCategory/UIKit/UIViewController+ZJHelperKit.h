@@ -1,15 +1,16 @@
 //
-//  UIViewController+ZJViewController.h
-//  ZJUIKit
+//  UIViewController+ZJHelperKit.h
+//  ZJKitTool
 //
-//  Created by dzj on 2017/12/1.
-//  Copyright © 2017年 kapokcloud. All rights reserved.
+//  Created by dzj on 2021/2/26.
+//  Copyright © 2021 kapokcloud. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (ZJViewController)
+NS_ASSUME_NONNULL_BEGIN
 
+@interface UIViewController (ZJHelperKit)
 //找到当前视图控制器
 + (UIViewController *)zj_currentViewController;
 
@@ -24,3 +25,5 @@
  */
 - (void)zj_addChildController:(UIViewController *)childController intoView:(UIView *)view;
 @end
+
+NS_ASSUME_NONNULL_END

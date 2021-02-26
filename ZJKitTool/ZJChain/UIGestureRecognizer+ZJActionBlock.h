@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZJKitMasonryTool.h"
 @interface UIGestureRecognizer (ZJActionBlock)
 /**
  *  所有手势都支持Block回调。

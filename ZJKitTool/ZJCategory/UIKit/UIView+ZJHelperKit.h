@@ -1,14 +1,15 @@
 //
-//  UIView+ZJMasonryFrame.h
-//  ZJKitTool
+//  UIView+ZJHelperKitUIkit.h
+//  ZJUIKit
 //
-//  Created by 邓志坚 on 2018/5/6.
+//  Created by dzj on 2018/1/17.
 //  Copyright © 2018年 kapokcloud. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (ZJMasonryFrame)
+@interface UIView (ZJHelperKit)
+#pragma mark - Convenience frame api
 /**
  * view.frame.origin.x
  */
