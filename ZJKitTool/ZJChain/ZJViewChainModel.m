@@ -7,10 +7,11 @@
 //
 
 #import "ZJViewChainModel.h"
+
 #import <objc/runtime.h>
 
-static const void *s_zj_tapGestureKey = "s_zjChain_tapGestureKey";
-static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
+static const void *s_zjChain_tapGestureKey = "s_zjChain_tapGestureKey";
+static const void *s_zjChain_longGestureKey = "s_zjChain_longGestureKey";
 #define weak_self(value)     __weak typeof(value) weakSelf = value
 
 #pragma mark - Masonry
@@ -65,7 +66,7 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
 
 @implementation ZJViewChainModel
 
-- (ZJViewChainModel *  (^)(ZJTapGestureBlock ))onTap{
+- (ZJViewChainModel * _Nonnull (^)(ZJTapGestureBlock ))onTap{
     __weak typeof(self) weakSelf = self;
     return ^ZJViewChainModel* (ZJTapGestureBlock tap) {
         [weakSelf.view addTapGestureWithCallback:tap];
@@ -111,12 +112,12 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
     [self addGestureRecognizer:tap];
     
     objc_setAssociatedObject(self,
-                             s_zj_tapGestureKey,
+                             s_zjChain_tapGestureKey,
                              tap,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)zj_addLongGestureWithCallback:(ZJLongGestureBlock)onLongPressed {
+- (void)addLongGestureWithCallback:(ZJLongGestureBlock)onLongPressed {
     self.userInteractionEnabled = YES;
     
     UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] init];
@@ -124,7 +125,7 @@ static const void *s_zj_longGestureKey = "s_zjChain_longGestureKey";
     [self addGestureRecognizer:gesture];
     
     objc_setAssociatedObject(self,
-                             s_zj_longGestureKey,
+                             s_zjChain_longGestureKey,
                              gesture,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
 }

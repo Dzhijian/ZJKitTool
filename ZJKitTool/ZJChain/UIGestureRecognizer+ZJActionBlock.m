@@ -69,7 +69,6 @@ static const void *k_zj_long_gestureKey = "k_zj_long_gestureKey";
 #pragma mark - Private
 - (void)zj_private_onGesture:(UIGestureRecognizer *)sender {
     ZJGestureBlock block = [self zj_onGesture];
-    
     if (block) {
         block(sender);
     }
@@ -77,7 +76,6 @@ static const void *k_zj_long_gestureKey = "k_zj_long_gestureKey";
 
 - (void)zj_private_onTaped:(UITapGestureRecognizer *)sender {
     ZJTapGestureBlock block = [self zj_onTaped];
-    
     if (block) {
         block(sender);
     }
@@ -85,7 +83,6 @@ static const void *k_zj_long_gestureKey = "k_zj_long_gestureKey";
 
 - (void)zj_private_onLongPressed:(UILongPressGestureRecognizer *)sender {
     ZJLongGestureBlock block = [self zj_onLongPressed];
-    
     if (block) {
         block(sender);
     }

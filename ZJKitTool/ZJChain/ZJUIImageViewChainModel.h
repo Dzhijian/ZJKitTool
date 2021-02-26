@@ -16,12 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 ZJ_CHAIN_PROPERTY  ZJUIImageViewChainModel *_Nullable(^image)(UIImage *image);
 ZJ_CHAIN_PROPERTY ZJUIImageViewChainModel *_Nullable(^highlightedImage)(UIImage *image);
 ZJ_CHAIN_PROPERTY ZJUIImageViewChainModel *_Nullable(^highlighted)(BOOL highlighted);
-
+/// 点击事件
+ZJ_CHAIN_PROPERTY ZJUIImageViewChainModel* (^ onTap)(ZJTapGestureBlock ontap);
 @end
 
 @interface UIImageView (ZJChain)
 
 -(ZJUIImageViewChainModel *)zj_chain;
+- (void)addTapGestureWithCallback:(ZJTapGestureBlock)onTaped;
 
 @end
 NS_ASSUME_NONNULL_END

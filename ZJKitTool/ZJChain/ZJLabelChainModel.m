@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 
 #define  ZJ_CHAIN_LABEL_IMPLEMENTATION(methodName, viewMethod, ParmaType)  ZJ_CHAIN_IMPLEMENTATION(methodName, viewMethod, ParmaType, ZJLabelChainModel * , UILabel)
+static const void *s_zjChain_label_tapGestureKey = "s_zjChain_label_tapGestureKey";
 
 @implementation ZJLabelChainModel
 
@@ -23,7 +24,29 @@ ZJ_CHAIN_LABEL_IMPLEMENTATION(numberOfLines, setNumberOfLines, NSInteger);
 ZJ_CHAIN_LABEL_IMPLEMENTATION(lineBreakMode, setLineBreakMode, NSLineBreakMode);
 ZJ_CHAIN_LABEL_IMPLEMENTATION(adjustsFontSizeToFitWidth, setAdjustsFontSizeToFitWidth, BOOL);
 
+- (ZJLabelChainModel * _Nonnull (^)(CGFloat))columnSpace{
+    __weak typeof(self) weakSelf = self;
+    return ^(CGFloat columnSpace){
+        [(UILabel *)weakSelf.view setColumnSpace:columnSpace];
+        return weakSelf;
+    };
+}
 
+- (ZJLabelChainModel * _Nonnull (^)(CGFloat))rowSpace{
+    __weak typeof(self) weakSelf = self;
+    return ^(CGFloat rowSpace){
+        [(UILabel *)weakSelf.view setRowSpace:rowSpace];
+        return weakSelf;
+    };
+}
+
+- (ZJLabelChainModel * _Nonnull (^)(ZJTapGestureBlock _Nonnull))onTap{
+    __weak typeof(self) weakSelf = self;
+    return ^ZJLabelChainModel* (ZJTapGestureBlock _Nonnull tap) {
+        [weakSelf.view addTapGestureWithCallback:tap];
+        return weakSelf;
+    };
+}
 
 @end
 
@@ -62,8 +85,22 @@ ZJ_CHAIN_LABEL_IMPLEMENTATION(adjustsFontSizeToFitWidth, setAdjustsFontSizeToFit
     paragraphStyle.lineSpacing = rowSpace;
     paragraphStyle.baseWritingDirection = NSWritingDirectionLeftToRight;
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    paragraphStyle.alignment = self.textAlignment;
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [self.text length])];
     self.attributedText = attributedString;
+}
+
+- (void)addTapGestureWithCallback:(ZJTapGestureBlock)onTaped{
+    self.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    tap.zj_onTaped = onTaped;
+    [self addGestureRecognizer:tap];
+    
+    objc_setAssociatedObject(self,
+                             s_zjChain_label_tapGestureKey,
+                             tap,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

@@ -31,15 +31,6 @@
         make.height.mas_equalTo(20);
     });
     
-    
-//    self.titleLab = [UILabel zj_labelWithFontSize:16 lines:1 text:@"这是第一个倒计时" superView:self.contentView constraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(10);
-//        make.left.mas_equalTo(20);
-//        make.right.mas_equalTo(-20);
-//        make.height.mas_equalTo(20);
-//    }];
-//
-    
     self.detailLab = [UILabel new];
     self.detailLab.zj_chain.text(@"还剩多少小时").font([UIFont systemFontOfSize:15]).textColor(kOrangeColor).superView(self.contentView).makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
         make.top.equalTo(_titleLab.mas_bottom).offset(10);
@@ -47,9 +38,6 @@
         make.right.mas_equalTo(-20);
         make.height.mas_equalTo(20);
     });
-    
-    
-    
 }
 
 

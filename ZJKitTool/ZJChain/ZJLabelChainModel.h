@@ -24,6 +24,14 @@ ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ numberOfLines)(NSInteger numberOfLines);
 ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ lineBreakMode)(NSLineBreakMode lineBreakMode);
 ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsFontSizeToFitWidth);
 
+/// 字间距
+ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ columnSpace)(CGFloat columnSpace);
+/// 行间距
+ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ rowSpace)(CGFloat rowSpace);
+/// 点击事件
+ZJ_CHAIN_PROPERTY ZJLabelChainModel* (^ onTap)(ZJTapGestureBlock ontap);
+
+
 @end
 
 @interface UILabel (ZJChain)
@@ -39,5 +47,8 @@ ZJ_CHAIN_PROPERTY ZJLabelChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsF
  *  设置行距
  */
 - (void)setRowSpace:(CGFloat)rowSpace;
+
+- (void)addTapGestureWithCallback:(ZJTapGestureBlock)onTaped;
+
 @end
 NS_ASSUME_NONNULL_END
