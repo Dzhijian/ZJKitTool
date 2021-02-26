@@ -16,15 +16,15 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZJKitTool"
-  s.version      = "2.5.01"
-  s.summary      = "ZJKitTool是一个对UIK封装的框架与各种工具的集合,还有各种自定义View等等"
+  s.version      = "2.6.0"
+  s.summary      = "ZJKitTool是一个对UIK封装的框架,链式语法,各种工具的集合,还有各种自定义View等等"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "ZJKitTool是一个对UIK封装的框架,添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器等框架集合 链式编程语法"
+  s.description  = "ZJKitTool是一个对UIK封装的框架,控件链式语法创建、添加多种方便的工具类,倒计时、 自定义PickerView 时间日期选择器等框架集合 链式编程语法"
 
   s.homepage     = "https://github.com/Dzhijian/ZJKitTool"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -128,23 +128,8 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZJKitTool/ZJChain/*.{h,m}'
 
   end
-  # ZJKit
-  s.subspec 'ZJKit' do |ss|
 
-    ss.source_files = 'ZJKitTool/ZJKit/*.{h,m}'
-
-  end
-
-  # UIkit + Masonry
-  s.subspec 'ZJKitMasonry' do |ss|
-
-    ss.dependency 'Masonry'
-    ss.dependency 'ZJKitTool/ZJGeneraMacros'
-    ss.source_files = 'ZJKitTool/ZJKitMasonry/*.{h,m}'
-  
-  end
-
-   # ZJPopupView
+  # ZJPopupView
   s.subspec 'ZJPopupView' do |ss|
 
     ss.dependency 'Masonry'
