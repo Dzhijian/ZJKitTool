@@ -21,6 +21,7 @@
 #import "ZJTabeleviewChainModel.h"
 #import "ZJCollectionViewChainModel.h"
 #import "ZJScrollViewChainModel.h"
+#import "UIGestureRecognizer+ZJActionBlock.h"
 
 
 #endif /* ZJChainHelper_h */

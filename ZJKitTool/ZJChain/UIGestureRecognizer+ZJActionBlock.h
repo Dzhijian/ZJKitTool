@@ -7,6 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+/**
+ * gesture事件Block
+ *
+ */
+typedef void(^ZJGestureBlock)(UIGestureRecognizer *gesture);
+
+
+/**
+ * Tap点击事件Block
+ *
+ */
+typedef void(^ZJTapGestureBlock)(UITapGestureRecognizer *gesture);
+
+/**
+ * Tap长按事件Block
+ *
+ */
+typedef void(^ZJLongGestureBlock)(UILongPressGestureRecognizer *gesture);
+
 @interface UIGestureRecognizer (ZJActionBlock)
 /**
  *  所有手势都支持Block回调。
