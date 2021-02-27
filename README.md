@@ -85,61 +85,61 @@ label.zj_chain
 > 快速创建一个按钮,赋给实例的按钮,并实现点击事件：
 
 ```Objc
-    UIButton *btn  = [[UIButton alloc]init];
-    btn.zj_chain.superView(self.view)
-    .title(@"这是一个按钮", UIControlStateNormal)
-    .titleColor([UIColor whiteColor], UIControlStateNormal)
-    .titleFont([UIFont boldSystemFontOfSize:16])
-    .backgroundColor([UIColor systemTealColor])
-    .cornerRadius(6)
-    .onTouchUp(^(id  _Nonnull sender) {
-        NSLog(@"点击了按钮");
-    })
-    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
-        make.top.equalTo(textView.mas_bottom).offset(20);
-        make.left.mas_equalTo(30);
-        make.right.mas_equalTo(-30);
-        make.height.mas_equalTo(50);
-    });    
+UIButton *btn  = [[UIButton alloc]init];
+btn.zj_chain.superView(self.view)
+.title(@"这是一个按钮", UIControlStateNormal)
+.titleColor([UIColor whiteColor], UIControlStateNormal)
+.titleFont([UIFont boldSystemFontOfSize:16])
+.backgroundColor([UIColor systemTealColor])
+.cornerRadius(6)
+.onTouchUp(^(id  _Nonnull sender) {
+    NSLog(@"点击了按钮");
+})
+.makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+    make.top.equalTo(textView.mas_bottom).offset(20);
+    make.left.mas_equalTo(30);
+    make.right.mas_equalTo(-30);
+    make.height.mas_equalTo(50);
+});    
 ```
 
 
 > 快速添加一个带placeholder的UITextView控件,并可以修改颜色
 
 ```Objc
-    UITextView *textView = [[UITextView alloc]init];
-    textView.zj_chain.superView(self.view)
-    .textColor([UIColor grayColor])
-    .font([UIFont systemFontOfSize:15])
-    .borderColor([UIColor blackColor].CGColor)
-    .borderWidth(1)
-    .placeholder(@"这是一个 UITextView")
-    .placeholderColor([UIColor redColor])
-    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
-        make.top.equalTo(textField.mas_bottom).offset(20);
-        make.left.mas_equalTo(30);
-        make.right.mas_equalTo(-30);
-        make.height.mas_equalTo(90);
-    });
+UITextView *textView = [[UITextView alloc]init];
+textView.zj_chain.superView(self.view)
+.textColor([UIColor grayColor])
+.font([UIFont systemFontOfSize:15])
+.borderColor([UIColor blackColor].CGColor)
+.borderWidth(1)
+.placeholder(@"这是一个 UITextView")
+.placeholderColor([UIColor redColor])
+.makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+    make.top.equalTo(textField.mas_bottom).offset(20);
+    make.left.mas_equalTo(30);
+    make.right.mas_equalTo(-30);
+    make.height.mas_equalTo(90);
+});
     
 ```
 
 > 地区选择器，确认点击事件通过 block 返回
 
 ``` OBjc
-    // 地区选择弹窗,推荐用这种形式创建
-    ZJAddressPickerView *address = [[ZJAddressPickerView alloc]initWithPickerMode:(ZJAddressPickerModeArea)];
-    address.leftBtnTitleColor = [UIColor orangeColor];
-    address.rightBtnTitleColor = [UIColor purpleColor];
-    address.selectRowBGColor = [UIColor lightGrayColor];
-    address.selecteRowTextColor = [UIColor orangeColor];
-    address.isAutoSelect = true;
-    address.rowHeight = 40;
-    [address showPickerViewWithAnimation:true];
-    address.resultBlock = ^(ZJProvinceModel *province, ZJCityModel *city, ZJAreaModel *area) {
-        lab1.text = [NSString stringWithFormat:@"%@-%@-%@",province.name,city.name,area.name];
-        
-    };
+// 地区选择弹窗,推荐用这种形式创建
+ZJAddressPickerView *address = [[ZJAddressPickerView alloc]initWithPickerMode:(ZJAddressPickerModeArea)];
+address.leftBtnTitleColor = [UIColor orangeColor];
+address.rightBtnTitleColor = [UIColor purpleColor];
+address.selectRowBGColor = [UIColor lightGrayColor];
+address.selecteRowTextColor = [UIColor orangeColor];
+address.isAutoSelect = true;
+address.rowHeight = 40;
+[address showPickerViewWithAnimation:true];
+address.resultBlock = ^(ZJProvinceModel *province, ZJCityModel *city, ZJAreaModel *area) {
+    lab1.text = [NSString stringWithFormat:@"%@-%@-%@",province.name,city.name,area.name];
+    
+};
 ```
 
 MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。
