@@ -35,7 +35,7 @@ ZJ_CHAIN_PROPERTY ZJButtonChainModel *_Nullable(^enabled)(BOOL enabled);
 ZJ_CHAIN_PROPERTY ZJButtonChainModel *_Nullable(^selected)(BOOL selected);
 ZJ_CHAIN_PROPERTY ZJButtonChainModel *_Nullable(^highlighted)(BOOL highlighted);
 
-
+/// 点击事件
 ZJ_CHAIN_PROPERTY ZJButtonChainModel* _Nullable(^ onTouchUp)(ZJButtonChainBlock onTouchUp);
 
 

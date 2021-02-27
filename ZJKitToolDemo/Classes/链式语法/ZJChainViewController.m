@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"链式语法";
     
     UIView *view = [[UIView alloc]init];
     view.zj_chain.superView(self.view)
@@ -68,6 +69,50 @@
         make.width.height.mas_equalTo(80);
     });
     
+    UITextField *textField = [[UITextField alloc]init];
+    textField.zj_chain.superView(self.view)
+    .font([UIFont systemFontOfSize:15])
+    .textColor([UIColor orangeColor])
+    .borderStyle(UITextBorderStyleRoundedRect)
+    .placeholder(@"这是一个 UITextField")
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.top.equalTo(imageView.mas_bottom).offset(20);
+        make.height.mas_equalTo(40);
+    });
+    
+    UITextView *textView = [[UITextView alloc]init];
+    textView.zj_chain.superView(self.view)
+    .textColor([UIColor grayColor])
+    .font([UIFont systemFontOfSize:15])
+    .borderColor([UIColor blackColor].CGColor)
+    .borderWidth(1)
+    .placeholder(@"这是一个 UITextView")
+    .placeholderColor([UIColor redColor])
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+        make.top.equalTo(textField.mas_bottom).offset(20);
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.height.mas_equalTo(90);
+    });
+    
+    UIButton *btn  = [[UIButton alloc]init];
+    btn.zj_chain.superView(self.view)
+    .title(@"返回上一页", UIControlStateNormal)
+    .titleColor([UIColor whiteColor], UIControlStateNormal)
+    .titleFont([UIFont boldSystemFontOfSize:16])
+    .backgroundColor([UIColor systemTealColor])
+    .cornerRadius(6)
+    .onTouchUp(^(id  _Nonnull sender) {
+        [self.navigationController popViewControllerAnimated:true];
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+        make.top.equalTo(textView.mas_bottom).offset(20);
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.height.mas_equalTo(50);
+    });
 }
 
 /*

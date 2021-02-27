@@ -6,7 +6,7 @@
 
 ## Statement
 
-ZJKitTool 开发快速添加UIKit控件,结合Masonry，以及其他工具类的简单使用,底层的封装.
+ZJKitTool 可以更加便捷高效的添加UIKit控件,使用链式编程的思想，结合使用Masonry，以及其他工具类的简单使用,底层的封装.
 
 ### iOS开发学习交流群
 
@@ -30,7 +30,6 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'ZJKitTool'
 ```
-
 
 > 导入头文件
 
@@ -86,73 +85,61 @@ label.zj_chain
 > 快速创建一个按钮,赋给实例的按钮,并实现点击事件：
 
 ```Objc
-  self.btn = [UIButton  zj_buttonWithTitle:@"评论列表"
-                                  titleColor:kWhiteColor
-                                   backColor:kOrangeColor
-                                    fontSize:16 isBold:YES
-                                cornerRadius:3
-                                     supView:self.view constraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(chooseBtn.mas_centerY);
-        make.left.equalTo(chooseBtn.mas_right).offset(50);
-        make.width.mas_equalTo(100);
-        make.height.mas_equalTo(40);
-    } touchUp:^(id sender) {
-        NSLog(@"这是按钮的点击事件");
-    }];
-    
+    UIButton *btn  = [[UIButton alloc]init];
+    btn.zj_chain.superView(self.view)
+    .title(@"这是一个按钮", UIControlStateNormal)
+    .titleColor([UIColor whiteColor], UIControlStateNormal)
+    .titleFont([UIFont boldSystemFontOfSize:16])
+    .backgroundColor([UIColor systemTealColor])
+    .cornerRadius(6)
+    .onTouchUp(^(id  _Nonnull sender) {
+        NSLog(@"点击了按钮");
+    })
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+        make.top.equalTo(textView.mas_bottom).offset(20);
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.height.mas_equalTo(50);
+    });    
 ```
 
 
 > 快速添加一个带placeholder的UITextView控件,并可以修改颜色
 
 ```Objc
-[UITextView zj_textViewWithFontSize:16
-                              textColor:kOrangeColor
-                            borderColor:k16RGBColor(0xCCCCCC)
-                            borderWidth:0.5
-                            cornerRadiu:4
-                             placeColor:k16RGBColor(0xBBBBBB)
-                              placeText:@"请输入..."
-                              superView:self.view
-                            constraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(20);
-        make.right.mas_equalTo(-20);
-        make.bottom.mas_equalTo(-100);
-        make.height.mas_equalTo(180);
-    }];
+    UITextView *textView = [[UITextView alloc]init];
+    textView.zj_chain.superView(self.view)
+    .textColor([UIColor grayColor])
+    .font([UIFont systemFontOfSize:15])
+    .borderColor([UIColor blackColor].CGColor)
+    .borderWidth(1)
+    .placeholder(@"这是一个 UITextView")
+    .placeholderColor([UIColor redColor])
+    .makeMasonry(^(__kindof UIView * _Nonnull sender, MASConstraintMaker * _Nonnull make) {
+        make.top.equalTo(textField.mas_bottom).offset(20);
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.height.mas_equalTo(90);
+    });
+    
 ```
 
-> 创建一个按钮，并且点击弹出一个地区选择器
+> 地区选择器，确认点击事件通过 block 返回
 
 ``` OBjc
-
-[UIButton zj_buttonWithTitle:@"选择地区自定义" titleColor:kLightGrayColor
-                       backColor:kWhiteColor fontSize:14 isBold:YES cornerRadius:4
-                         supView:self.view constraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(lab3.mas_centerY);
-        make.left.equalTo(lab3.mas_right).offset(30);
-        make.width.mas_equalTo(140);
-        make.height.mas_equalTo(35);
-    } touchUp:^(id sender) {
+    // 地区选择弹窗,推荐用这种形式创建
+    ZJAddressPickerView *address = [[ZJAddressPickerView alloc]initWithPickerMode:(ZJAddressPickerModeArea)];
+    address.leftBtnTitleColor = [UIColor orangeColor];
+    address.rightBtnTitleColor = [UIColor purpleColor];
+    address.selectRowBGColor = [UIColor lightGrayColor];
+    address.selecteRowTextColor = [UIColor orangeColor];
+    address.isAutoSelect = true;
+    address.rowHeight = 40;
+    [address showPickerViewWithAnimation:true];
+    address.resultBlock = ^(ZJProvinceModel *province, ZJCityModel *city, ZJAreaModel *area) {
+        lab1.text = [NSString stringWithFormat:@"%@-%@-%@",province.name,city.name,area.name];
         
-        [ZJAddressPickerView zj_showAddressPickerWithShowType:ZJAddressPickerModeArea
-                                                   dataSource:nil
-                                              defaultSelected:nil
-                                                 isAutoSelect:YES
-                                                    lineColor:[UIColor redColor]
-                                           selectRowTextColor:[UIColor orangeColor]
-                                             selectRowBGColor:kRGBColor(230, 230, 230)
-                                         confirmBtnTitleColor:kRGBColor(116, 80, 200)
-                                          cancelBtnTitleColor:kRGBColor(116, 80, 200)
-                                                    rowHeight:50.0
-                                                  resultBlock:^(ZJProvinceModel *province, ZJCityModel *city, ZJAreaModel *area) {
-                                                      lab3.text = [NSString stringWithFormat:@"%@-%@-%@",province.name,city.name,area.name];
-                                                  } cancelBlock:^{
-                                                      
-                                                  }];
-    }];
-    
-
+    };
 ```
 
 MVVM模式设计的图文混排评论列表，简单可随意更改的筛选视图，后期会不断完善，以及各个控件的封装，Block回调可以简单快速创建和使用Masonry布局，以及实现方法。还包括许多工具类的封装。

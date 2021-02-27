@@ -52,6 +52,10 @@ ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ showsHorizontalScrollIndicator)(BOOL 
 ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ showsVerticalScrollIndicator)(BOOL showsVerticalScrollIndicator);
 
 ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
+/// placeholder 占位符
+ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ placeholder)(NSString *placeholder);
+/// placeholder 占位符颜色,请在设置 placeholder 后,再使用 placeholderColor
+ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ placeholderColor)(UIColor *placeholderColor);
 
 @end
 
@@ -59,7 +63,10 @@ ZJ_CHAIN_PROPERTY ZJTextViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
 @interface UITextView (ZJChain)
 
 -(ZJTextViewChainModel *)zj_chain;
-- (void)zj_textViewsSetPlaceholderWithText:(NSString *)text Color:(UIColor *)color;
+/// 设置 placeholder
+- (void)zj_textViewsPlaceholder:(NSString *)placeholder;
+/// 设置 placeholderColor
+- (void)zj_textViewsSetPlaceholderColor:(UIColor *)placeholderColor;
 
 @end
 
