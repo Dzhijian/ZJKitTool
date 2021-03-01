@@ -117,7 +117,6 @@
 		04C5179B2022BD8800AC15F1 /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179A2022BD8800AC15F1 /* DBSphereView.m */; };
 		04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */; };
 		04C906B120AFFC3400B818D6 /* UIView+ZJBaseFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C906B020AFFC3400B818D6 /* UIView+ZJBaseFunctions.m */; };
-		04C9BCD82427193200B32E7D /* ZJUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9BCD72427193200B32E7D /* ZJUIViewController.m */; };
 		04C9BCDB2427B7E300B32E7D /* ZJBaseChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9BCDA2427B7E300B32E7D /* ZJBaseChainModel.m */; };
 		04DA133E2016E02E00C619E5 /* ZJCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA133D2016E02E00C619E5 /* ZJCommitViewController.m */; };
 		04DA13432016E07D00C619E5 /* ZJCommitFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA13412016E07D00C619E5 /* ZJCommitFrame.m */; };
@@ -384,8 +383,6 @@
 		04C748081FD6476C00A749E3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		04C906AF20AFFC3400B818D6 /* UIView+ZJBaseFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJBaseFunctions.h"; sourceTree = "<group>"; };
 		04C906B020AFFC3400B818D6 /* UIView+ZJBaseFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJBaseFunctions.m"; sourceTree = "<group>"; };
-		04C9BCD62427193200B32E7D /* ZJUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJUIViewController.h; sourceTree = "<group>"; };
-		04C9BCD72427193200B32E7D /* ZJUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJUIViewController.m; sourceTree = "<group>"; };
 		04C9BCD92427B7E300B32E7D /* ZJBaseChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseChainModel.h; sourceTree = "<group>"; };
 		04C9BCDA2427B7E300B32E7D /* ZJBaseChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseChainModel.m; sourceTree = "<group>"; };
 		04DA133C2016E02E00C619E5 /* ZJCommitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCommitViewController.h; sourceTree = "<group>"; };
@@ -541,7 +538,6 @@
 			isa = PBXGroup;
 			children = (
 				04191E6020889751004A24C6 /* Main */,
-				04C9BCD52427190A00B32E7D /* UI 控件 */,
 				04BFC733241E8C4700FC21CB /* 链式语法 */,
 				1AE63CE1219A83C6001C269B /* ZJPopupView */,
 				0428DB3320EE7641003FB656 /* ZJNetworking */,
@@ -1128,15 +1124,6 @@
 			path = DBSphereTagCloud;
 			sourceTree = "<group>";
 		};
-		04C9BCD52427190A00B32E7D /* UI 控件 */ = {
-			isa = PBXGroup;
-			children = (
-				04C9BCD62427193200B32E7D /* ZJUIViewController.h */,
-				04C9BCD72427193200B32E7D /* ZJUIViewController.m */,
-			);
-			path = "UI 控件";
-			sourceTree = "<group>";
-		};
 		04DA13382016DFB800C619E5 /* Commit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1474,7 +1461,6 @@
 				04B09A85209DB7BD00E66CA2 /* UIView+ZJHUDHelperKit.m in Sources */,
 				04C517692020153200AC15F1 /* ZJElementsCollectionViewController.m in Sources */,
 				04BE94B620453FBC00DF6779 /* ASValueTrackingSlider.m in Sources */,
-				04C9BCD82427193200B32E7D /* ZJUIViewController.m in Sources */,
 				048E8A28201728C600486470 /* ZJChooseOneRightCell.m in Sources */,
 				04C906B120AFFC3400B818D6 /* UIView+ZJBaseFunctions.m in Sources */,
 				1AE63CDD219A5DBD001C269B /* ZJBasePopupView.m in Sources */,

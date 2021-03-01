@@ -55,7 +55,6 @@
     [super viewDidLoad];
     self.title = @"ZJKitTool";
     self.titleArray = @[@{@"title":@"链式语法",@"className":@"ZJChainViewController"},
-                        @{@"title":@"UI控件",@"className":@"ZJUIViewController"},
                         @{@"title":@"评论列表(MVVM)",@"className":@"ZJCommitViewController"},
                         @{@"title":@"筛选视图",@"className":@"ZJChooseViewController"},
                         @{@"title":@"倒计时 Cell",@"className":@"ZJTimeCountDownViewController"},
