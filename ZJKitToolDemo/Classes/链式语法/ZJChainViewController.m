@@ -59,7 +59,7 @@
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.zj_chain.superView(self.view)
     .cornerRadius(10)
-    .image([UIImage imageNamed:@"006"])
+    .image([UIImage imageNamed:@"005"])
     .onTap(^(UITapGestureRecognizer *gesture) {
         NSLog(@"点击了 UIImageView");
     })

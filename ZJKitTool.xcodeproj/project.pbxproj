@@ -19,7 +19,6 @@
 		04191E5720888DB1004A24C6 /* ZJReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04191E5620888DB1004A24C6 /* ZJReplyCell.m */; };
 		04191E6420889883004A24C6 /* MasonryCellData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04191E6320889883004A24C6 /* MasonryCellData.json */; };
 		042190C020186182009056E2 /* ZJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190BF20186182009056E2 /* ZJMainViewController.m */; };
-		042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */; };
 		04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */; };
 		0428DB2920EC6B32003FB656 /* ZJDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2820EC6B32003FB656 /* ZJDatePickerView.m */; };
 		0428DB2F20EC772C003FB656 /* NSDate+ZJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0428DB2E20EC772C003FB656 /* NSDate+ZJPickerView.m */; };
@@ -115,9 +114,6 @@
 		04C51782202059AB00AC15F1 /* ZJImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C51780202059AB00AC15F1 /* ZJImageModel.m */; };
 		04C5178820219A6300AC15F1 /* ZJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178720219A6300AC15F1 /* ZJWebViewController.m */; };
 		04C5178A20219AB800AC15F1 /* ZJWebViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 04C5178920219AB800AC15F1 /* ZJWebViewController.html */; };
-		04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */; };
-		04C517902021AC5E00AC15F1 /* ZJExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */; };
-		04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C517922021B83500AC15F1 /* ZJNavigationBar.m */; };
 		04C5179B2022BD8800AC15F1 /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179A2022BD8800AC15F1 /* DBSphereView.m */; };
 		04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */; };
 		04C906B120AFFC3400B818D6 /* UIView+ZJBaseFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C906B020AFFC3400B818D6 /* UIView+ZJBaseFunctions.m */; };
@@ -184,8 +180,6 @@
 		04191E6320889883004A24C6 /* MasonryCellData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MasonryCellData.json; sourceTree = "<group>"; };
 		042190BE20186182009056E2 /* ZJMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJMainViewController.h; sourceTree = "<group>"; };
 		042190BF20186182009056E2 /* ZJMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMainViewController.m; sourceTree = "<group>"; };
-		042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJKitAndMasonryViewController.h; sourceTree = "<group>"; };
-		042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJKitAndMasonryViewController.m; sourceTree = "<group>"; };
 		04242DDE1FDA3AE2004682D3 /* ZJChooseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJChooseViewController.h; sourceTree = "<group>"; };
 		04242DDF1FDA3AE2004682D3 /* ZJChooseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJChooseViewController.m; sourceTree = "<group>"; };
 		0428DB2720EC6B32003FB656 /* ZJDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJDatePickerView.h; sourceTree = "<group>"; };
@@ -381,12 +375,6 @@
 		04C5178620219A6300AC15F1 /* ZJWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJWebViewController.h; sourceTree = "<group>"; };
 		04C5178720219A6300AC15F1 /* ZJWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJWebViewController.m; sourceTree = "<group>"; };
 		04C5178920219AB800AC15F1 /* ZJWebViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ZJWebViewController.html; sourceTree = "<group>"; };
-		04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavBarShadeViewController.h; sourceTree = "<group>"; };
-		04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavBarShadeViewController.m; sourceTree = "<group>"; };
-		04C5178E2021AC5E00AC15F1 /* ZJExpandHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJExpandHeader.h; sourceTree = "<group>"; };
-		04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJExpandHeader.m; sourceTree = "<group>"; };
-		04C517912021B83500AC15F1 /* ZJNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavigationBar.h; sourceTree = "<group>"; };
-		04C517922021B83500AC15F1 /* ZJNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavigationBar.m; sourceTree = "<group>"; };
 		04C517972022BD8800AC15F1 /* DBMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMatrix.h; sourceTree = "<group>"; };
 		04C517982022BD8800AC15F1 /* DBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPoint.h; sourceTree = "<group>"; };
 		04C517992022BD8800AC15F1 /* DBSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSphereView.h; sourceTree = "<group>"; };
@@ -543,11 +531,6 @@
 		04191E54208889F9004A24C6 /* 其他 */ = {
 			isa = PBXGroup;
 			children = (
-				04C517942021C52700AC15F1 /* NavigationBarView */,
-				042190C120186A8A009056E2 /* ZJKitAndMasonryViewController.h */,
-				042190C220186A8A009056E2 /* ZJKitAndMasonryViewController.m */,
-				04C5178B2021A6CB00AC15F1 /* ZJNavBarShadeViewController.h */,
-				04C5178C2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m */,
 				04C5179C2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.h */,
 				04C5179D2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m */,
 			);
@@ -1124,17 +1107,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		04C517942021C52700AC15F1 /* NavigationBarView */ = {
-			isa = PBXGroup;
-			children = (
-				04C5178E2021AC5E00AC15F1 /* ZJExpandHeader.h */,
-				04C5178F2021AC5E00AC15F1 /* ZJExpandHeader.m */,
-				04C517912021B83500AC15F1 /* ZJNavigationBar.h */,
-				04C517922021B83500AC15F1 /* ZJNavigationBar.m */,
-			);
-			path = NavigationBarView;
-			sourceTree = "<group>";
-		};
 		04C517952022BD3200AC15F1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1480,7 +1452,6 @@
 				04C5179E2022BDCD00AC15F1 /* ZJSphereTagCloudViewController.m in Sources */,
 				040DBF09242F9E9A007E7604 /* ZJTextFieldChainModel.m in Sources */,
 				1AE63CE4219A83F9001C269B /* ZJPopupViewController.m in Sources */,
-				04C517932021B83500AC15F1 /* ZJNavigationBar.m in Sources */,
 				0428DB3620EE7668003FB656 /* ZJNetworking.m in Sources */,
 				04242DE01FDA3AE2004682D3 /* ZJChooseViewController.m in Sources */,
 				04C517622020045200AC15F1 /* ZJHorizontalFlowLayout.m in Sources */,
@@ -1514,7 +1485,6 @@
 				048E8A3320172E9300486470 /* ZJChooseModel.m in Sources */,
 				04B097F7209CCE7E00E66CA2 /* ZJButton.m in Sources */,
 				048E8A2A201728C600486470 /* ZJChooseControlView.m in Sources */,
-				042190C320186A8A009056E2 /* ZJKitAndMasonryViewController.m in Sources */,
 				04B09A8E209DB7BD00E66CA2 /* NSFileManager+ZJHelperKit.m in Sources */,
 				0475BEF51FD12E8A00617353 /* main.m in Sources */,
 				0408D241209EF24D00097E14 /* UIView+ZJFrame.m in Sources */,
@@ -1556,7 +1526,6 @@
 				04B09A92209DB7BD00E66CA2 /* NSObject+ZJHelperKit.m in Sources */,
 				04B09A8D209DB7BD00E66CA2 /* NSUserDefaults+ZJHelperKit.m in Sources */,
 				042F8ABB242E7A9A007BCAA2 /* ZJButtonChainModel.m in Sources */,
-				04C517902021AC5E00AC15F1 /* ZJExpandHeader.m in Sources */,
 				048E8A29201728C600486470 /* ZJChooseViewOneLeftCell.m in Sources */,
 				04BFC736241E8CF500FC21CB /* ZJChainViewController.m in Sources */,
 				04B09A7F209DB7BD00E66CA2 /* UITextView+ZJHelperKit.m in Sources */,
@@ -1586,7 +1555,6 @@
 				04B09A8F209DB7BD00E66CA2 /* NSNumber+ZJHelperKit.m in Sources */,
 				04BE94BB20453FBC00DF6779 /* MMMaterialDesignSpinner.m in Sources */,
 				0430B86120E4C61400B8132F /* ZJAddressPickerView.m in Sources */,
-				04C5178D2021A6CB00AC15F1 /* ZJNavBarShadeViewController.m in Sources */,
 				0428DB2F20EC772C003FB656 /* NSDate+ZJPickerView.m in Sources */,
 				04351669242908870065FFBC /* UIView+ZJChainFrame.m in Sources */,
 				0403A0042019A9B200D4DF1B /* ZJTimeCountDownViewController.m in Sources */,

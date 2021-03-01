@@ -22,12 +22,11 @@
 #import "ZJCommitFrame.h"
 #import "ZJCommit.h"
 #import "ZJBaseTableViewCell.h"
-#import "ZJKitAndMasonryViewController.h"
 #import "ZJTimeCountDownViewController.h"
 #import "ZJMasonryAutolayoutCellViewController.h"
 #import "ZJCollectionViewController.h"
 #import "ZJWebViewController.h"
-#import "ZJNavBarShadeViewController.h"
+//#import "ZJNavBarShadeViewController.h"
 #import "ZJSphereTagCloudViewController.h"
 #import "ZJPlayerListViewController.h"
 #import "ZJPickerViewController.h"
@@ -63,7 +62,6 @@
                         @{@"title":@"MasonryCell(类似朋友圈)",@"className":@"ZJMasonryAutolayoutCellViewController"},
                         @{@"title":@"CollectionView (瀑布流)",@"className":@"ZJCollectionViewController"},
                         @{@"title":@"WKWebView的使用",@"className":@"ZJWebViewController"},
-                        @{@"title":@"导航栏渐变",@"className":@"ZJNavBarShadeViewController"},
                         @{@"title":@"球形TagView",@"className":@"ZJSphereTagCloudViewController"},
                         @{@"title":@"视频列表",@"className":@"ZJPlayerListViewController"},
                         @{@"title":@"ZJPickerView",@"className":@"ZJPickerViewController"},
@@ -109,6 +107,7 @@
     
     NSDictionary *dict = self.titleArray[indexPath.row];
     UIViewController *vc = NSClassFromString(dict[@"className"]).new;
+    vc.title = dict[@"title"];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
